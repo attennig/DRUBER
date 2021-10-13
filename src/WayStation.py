@@ -1,3 +1,4 @@
+
 class WayStation:
     def __init__(self, ID):
         #self.SIMULATION = sim

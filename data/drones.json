@@ -1,0 +1,44 @@
+{
+  "Drones": [
+    {
+      "ID": 1,
+      "Owner": 1,
+      "HomeWS": 1
+    },
+    {
+      "ID": 2,
+      "Owner": 1,
+      "HomeWS": 1
+    },
+    {
+      "ID": 3,
+      "Owner": 1,
+      "HomeWS": 2
+    },
+    {
+      "ID": 4,
+      "Owner": 1,
+      "HomeWS": 2
+    },
+    {
+      "ID": 5,
+      "Owner": 2,
+      "HomeWS": 3
+    },
+    {
+      "ID": 6,
+      "Owner": 2,
+      "HomeWS": 3
+    },
+    {
+      "ID": 7,
+      "Owner": 3,
+      "HomeWS": 4
+    },
+    {
+      "ID": 8,
+      "Owner": 3,
+      "HomeWS": 4
+    }
+  ]
+}
