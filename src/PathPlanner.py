@@ -23,7 +23,6 @@ class PathPlanner:
                 e[f"{c.src.ID}, {c.dst.ID}"] = self.model.addVar(vtype=GRB.BINARY, name=f"e_{c.src.ID}{c.dst.ID}")
                 o_func_coeff.append((c.cost, e[f"{c.src.ID}, {c.dst.ID}"]))
             # Objective function
-            print(e)
             o_func = gp.LinExpr(o_func_coeff)
             self.model.setObjective(o_func, GRB.MINIMIZE)
 
@@ -34,7 +33,6 @@ class PathPlanner:
             c4_coeff = []
 
             for c in commitments:
-                print(f"{c.src.ID},{mission.src.ID}")
                 # constraint: sum_i e[mission.src][i] = 1
                 if c.src.ID == mission.src.ID:
                     c1_coeff.append((1.0, e[f"{c.src.ID}, {c.dst.ID}"]))
@@ -69,13 +67,11 @@ class PathPlanner:
             for j in nodes:
                 if j == mission.src.ID or j == mission.dst.ID: continue
                 coeff = []
-                print(f"outedge dst endpoint of {j}: {set([edge[1] for edge in edges if edge[0] == j])}")
                 for i in set([edge[1] for edge in edges if edge[0] == j]):
                     coeff.append((1.0, e[f"{j}, {i}"]))
                 if len(coeff) > 0:
                     c6_func = gp.LinExpr(coeff)
                     self.model.addConstr(c6_func <= 1, f"c6-{j}")
-                print(f"inedge src endpoint of {j}: {[edge[0] for edge in edges if edge[1] == j]}")
                 for i in set([edge[0] for edge in edges if edge[1] == j]):
                     coeff.append((-1.0, e[f"{i}, {j}"]))
                 if len(coeff) > 0:
@@ -93,9 +89,14 @@ class PathPlanner:
 
             # Extract solution
             for v in self.model.getVars():
-                print('%s %g' % (v.varName, v.x))
+                if v.x == 1:
+                    src = v.varName.split('_')[1][0]
+                    dst = v.varName.split('_')[1][1]
+                    print(f"edge {src}->{dst} has been selected")
+                    # what id 2 drones commit for the same pair (src,dst)??
 
-            print('Obj: %g' % self.model.objVal)
+
+
 
         except gp.GurobiError as err:
             print('Error code ' + str(err.errno) + ': ' + str(err))

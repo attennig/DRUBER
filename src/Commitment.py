@@ -1,5 +1,4 @@
-from WayStation import*
-
+from WayStation import *
 class Commitment:
     def __init__(self, src, dst, cost):
         assert type(src) == WayStation
@@ -10,4 +9,4 @@ class Commitment:
         self.cost = cost
 
     def printInfo(self):
-        print(f"from {self.src} to {self.dst} with cost {self.cost}")
+        print(f"from {self.src.ID} to {self.dst.ID} with cost {self.cost}")

@@ -1,7 +1,7 @@
-from PathPlanner import *
+from PathPlanner  import *
 from WayStation import *
 class Mission:
-    def __init__(self, ws_src, ws_dst, budget, sim):
+    def __init__(self, ws_src, ws_dst, budget):
         assert type(ws_src) == WayStation
         assert type(ws_dst) == WayStation
         assert type(budget) == float
@@ -10,11 +10,8 @@ class Mission:
         self.budget = budget
         self.commitments = []
         self.pathPlanner = PathPlanner()
-        self.SIMULATION = sim
-
 
     def printInfo(self):
-        #if not self.SIMULATION.VERBOSE: return
         print(f"Mission source: {self.src.ID}")
         print(f"Mission destination: {self.dst.ID}")
         print(f"Currently {len(self.commitments)} commitments have been collected")

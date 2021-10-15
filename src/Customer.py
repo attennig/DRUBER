@@ -1,7 +1,6 @@
 class Customer:
-    def __init__(self, ID, sim):
+    def __init__(self, ID):
         assert type(ID) == int
-        self.SIMULATION = sim
         self.ID = ID
 
     '''def requestDelivery(self, src_id, dst_id, budget):

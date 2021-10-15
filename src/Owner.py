@@ -1,26 +1,24 @@
 from Drone import *
 from WayStation import *
-from Mission import *
+
 class Owner:
-    def __init__(self, ID, sim):
-        self.SIMULATION = sim
+    def __init__(self, ID):
         assert type(ID) == int
         self.ID = ID
-        self.drones = []
-        self.wayStations = []
+        self.drones = set()
+        self.wayStations = set()
 
     def addDrone(self, drone):
         assert type(drone) == Drone
-        self.drones.append(drone)
+        self.drones.add(drone)
 
     def addWayStation(self, wayStation):
         assert type(wayStation) == WayStation
-        self.wayStations.append(wayStation)
+        self.wayStations.add(wayStation)
 
     def getWayStation(self, id):
         for ws in self.wayStations:
             if ws.ID == id:
-                if self.SIMULATION.VERBOSE: print(f"found of type {type(ws)}")
                 return ws
         return None
 
@@ -32,4 +30,3 @@ class Owner:
         for d in self.drones: d.printInfo()
         print(f"way stations:")
         for ws in self.wayStations: ws.printInfo()
-
