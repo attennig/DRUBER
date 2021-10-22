@@ -7,8 +7,6 @@ class Drone:
         self.ID = ID
         self.homeWS = homeWS
 
-    def sendCommitment(self, request):
-        pass
 
     def printInfo(self):
-        print(f"drone ID: {self.ID}")
+        print(f"Drone {self.ID} is initially located in way-station number {self.homeWS.ID}")
