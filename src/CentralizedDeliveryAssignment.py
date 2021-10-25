@@ -4,7 +4,7 @@ from gurobipy import GRB
 
 class CentralizedDeliveryAssignment:
     def __init__(self, sim):
-        print("create OPT")
+        print("create OPT using model 1")
         self.model = gp.Model("pathplanner")
         self.simulation = sim
         print(type(sim))

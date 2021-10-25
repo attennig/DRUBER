@@ -4,7 +4,7 @@ from gurobipy import GRB
 
 class CentralizedDeliveryAssignment2:
     def __init__(self, sim):
-        print("create OPT")
+        print("create OPT using model 2")
         self.model = gp.Model("pathplanner")
         self.simulation = sim
         print(type(sim))
@@ -28,7 +28,7 @@ class CentralizedDeliveryAssignment2:
 
         for u in self.simulation.drones.keys():
             for e in edges:
-                for t in self.simulation.T:
+                for t in self.simulation.T[:-1]:
                     # e(u,e_i,e_j,t)
                     drones_movements[f"{u},{e[0]},{e[1]},{t}"] = self.model.addVar(vtype=GRB.BINARY, name=f"e_{u},{e[0]},{e[1]},{t}")
 
@@ -40,7 +40,7 @@ class CentralizedDeliveryAssignment2:
 
         for d in self.simulation.deliveries.keys():
             for u in self.simulation.drones.keys():
-                for t in self.simulation.T:
+                for t in self.simulation.T[:-1]:
                     # p(d,u,i,j,t)
                     deliveries_movements[f"{d},{u},{t}"] = self.model.addVar(vtype=GRB.BINARY, name=f"p_{d},{u},{t}")
 
@@ -96,43 +96,60 @@ class CentralizedDeliveryAssignment2:
                     sum0.append((1.0, drones_movements[f"{u},{e[0]},{e[1]},{t}"]))
             self.model.addConstr(gp.LinExpr(sum1) == 1, f"c{c}a_{u},{self.simulation.drones[u].homeWS.ID}")
             self.model.addConstr(gp.LinExpr(sum0) == 0, f"c{c}b_{u},{self.simulation.drones[u].homeWS.ID}")
-        #   One drone action per time slot
+        #   One drone action per time slot until completion
         c += 1
         # for u,t sum_(i,j)in E e(u,i,j,t) = delta(t)
         for u in self.simulation.drones.keys():
-            for t in self.simulation.T[1:]:
+            for t in self.simulation.T[1:-1]:
                 sum = []
                 for e in edges:
                     sum.append((1.0, drones_movements[f"{u},{e[0]},{e[1]},{t}"]))
-                self.model.addConstr(gp.LinExpr(sum) == 1, f"c{c}_{u},{t}")
-        #   Flow conservation
+                self.model.addConstr(gp.LinExpr(sum) == deltas[f"{t}"], f"c{c}_{u},{t}")
+        #   d can be carried at most by one drone
         c += 1
-        # OUT - IN = N_init
-        # N_init = - \sum_{(i, j) in E} \sum_{u in U} e(u, i, j, t - 1)  + \sum_{(j, i) in E}e(u, j, i, t)
-        for j in self.simulation.wayStations.keys():
-            j_initial_count = len([0 for drone in self.simulation.drones.values() if drone.homeWS == self.simulation.wayStations[j]])
-            for t in self.simulation.T[1:]:
+        # for d, t < T sum_u p(d,u,t) >= 1
+        for d in self.simulation.deliveries.keys():
+            for t in self.simulation.T[:-1]:
                 sum = []
                 for u in self.simulation.drones.keys():
-                    for e in edges:
-                        if e[0] == j:  # OUT
-                            sum.append((1.0, drones_movements[f"{u},{e[0]},{e[1]},{t}"]))
-                        elif e[1] == j:  # IN
-                            sum.append((-1.0, drones_movements[f"{u},{e[0]},{e[1]},{t - 1}"]))
-                self.model.addConstr(gp.LinExpr(sum) == j_initial_count, f"c{c}_flow{j},{t}")
-        #   Parcel location update
+                    sum.append((1.0, deliveries_movements[f"{d},{u},{t}"]))
+                self.model.addConstr(gp.LinExpr(sum) <= 1, f"c{c}_{d},{t}")
+        #   If d change position then it is assigned to a drone
         c += 1
-        # for d, (i,j), t < T x(d,i,t) + x(d,j,t+1) - sum_u  p(d,u,t) <= 1
+        # for d, (i,j) i!=j, t < T x(d,i,t) + x(d,j,t+1) - sum_u  p(d,u,t) <= 1
         for d in self.simulation.drones.keys():
             for e in edges:
+                if e[0] != e[1]:
+                    for t in self.simulation.T[:-1]:
+                        sum = [(1.0, deliveries_states[f"{d},{e[0]},{t}"]), (1.0, deliveries_states[f"{d},{e[1]},{t+1}"])]
+                        for u in self.simulation.drones.keys():
+                            sum.append((-1.0,deliveries_movements[f"{d},{u},{t}"]))
+                        self.model.addConstr(gp.LinExpr(sum) <= 1, f"c{c}_{d},{e[0]},{e[1]},{t}")
+        #   If d does not change position then is can't be assigned to a drone
+        c += 1
+        # for d, w, t < T x(d,i,t) + x(d,j,t+1) + sum_u  p(d,u,t) <= 2
+        for d in self.simulation.drones.keys():
+            for w in self.simulation.deliveries.keys():
                 for t in self.simulation.T[:-1]:
-                    sum = [(1.0, deliveries_states[f"{d},{e[0]},{t}"]), (1.0, deliveries_states[f"{d},{e[1]},{t+1}"])]
+                    sum = [(1.0, deliveries_states[f"{d},{w},{t}"]),
+                           (1.0, deliveries_states[f"{d},{w},{t + 1}"])]
                     for u in self.simulation.drones.keys():
-                        sum.append((-1.0,deliveries_movements[f"{d},{u},{t}"]))
-                    self.model.addConstr(gp.LinExpr(sum) <= 1, f"c{c}_{d},{e[0]},{e[1]},{t}")
+                        sum.append((1.0, deliveries_movements[f"{d},{u},{t}"]))
+                    self.model.addConstr(gp.LinExpr(sum) <= 2, f"c{c}_{d},{w},{t}")
 
-
-
+        #   for d, u, t < T , (i,j)  p(d,u,t) and x(d,i,t) and x(d,j,t+1) --> e(u,i,j,t)
+        c += 1
+        # for d, u, t < T , (i,j)  p(d,u,t) + x(d,i,t) + x(d,j,t+1) - e(u,i,j,t) <= 2
+        for d in self.simulation.deliveries.keys():
+            for u in self.simulation.drones.keys():
+                for t in self.simulation.T[:-1]:
+                    for e in edges:
+                        if e[0] != e[1]:
+                            self.model.addConstr(deliveries_movements[f"{d},{u},{t}"] +
+                                                 deliveries_states[f"{d},{e[0]},{t}"] +
+                                                 deliveries_states[f"{d},{e[1]},{t+1}"] -
+                                                 drones_movements[f"{u},{e[0]},{e[1]},{t}"]<= 2,
+                                                 f"c{c}_{d},{u},{t},{e[0]},{e[1]}")
         # Objective function
         o_func = gp.LinExpr(o_func_coeff)
         self.model.setObjective(o_func, GRB.MINIMIZE)

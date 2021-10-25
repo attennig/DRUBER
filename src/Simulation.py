@@ -1,8 +1,8 @@
 from WayStation import *
 from Delivery import *
 from Drone import *
-from CentralizeDeliveryAssignment import *
-from CentralizeDeliveryAssignment2 import *
+from CentralizedDeliveryAssignment import *
+from CentralizedDeliveryAssignment2 import *
 import json
 from math import sqrt
 
@@ -15,11 +15,11 @@ class Simulation:
         self.T = []
         self.phi = {1: 1.5}
         self.maxdist = max(self.phi.values())
-        self.OPT = CentralizedDeliveryAssignment2(self)
-        #if model == 1:
-            #self.OPT = CentralizedDeliveryAssignment(self)
-        #else:
-        #    self.OPT = CentralizedDeliveryAssignment2(self)
+
+        if model == 1:
+            self.OPT = CentralizedDeliveryAssignment(self)
+        else:
+            self.OPT = CentralizedDeliveryAssignment2(self)
 
     def showStatus(self):
         print(f"Horizon: {len(self.T)}")
