@@ -105,6 +105,19 @@ class CentralizedDeliveryAssignment2:
                 for e in edges:
                     sum.append((1.0, drones_movements[f"{u},{e[0]},{e[1]},{t}"]))
                 self.model.addConstr(gp.LinExpr(sum) == deltas[f"{t}"], f"c{c}_{u},{t}")
+        #   Drones move following linear and continuous paths
+        c += 1
+        # for u in U, i in WS t in [2,T-1] sum_(i,j) e(u,i,j,t) == sum_(k,i) e(u,k,i,t-1)
+        for u in self.simulation.drones.keys():
+            for i in self.simulation.wayStations.keys():
+                for t in self.simulation.T[1:-1]:
+                    sum = []
+                    for e in edges:
+                        if e[0] == i:
+                            sum.append((1.0, drones_movements[f"{u},{e[0]},{e[1]},{t}"]))
+                        elif e[1] == i:
+                            sum.append((-1.0, drones_movements[f"{u},{e[0]},{e[1]},{t-1}"]))
+                    self.model.addConstr(gp.LinExpr(sum) == 0, f"c{c}_{u},{i},{t}")
         #   d can be carried at most by one drone
         c += 1
         # for d, t < T sum_u p(d,u,t) >= 1
@@ -114,42 +127,49 @@ class CentralizedDeliveryAssignment2:
                 for u in self.simulation.drones.keys():
                     sum.append((1.0, deliveries_movements[f"{d},{u},{t}"]))
                 self.model.addConstr(gp.LinExpr(sum) <= 1, f"c{c}_{d},{t}")
-        #   If d change position then it is assigned to a drone
+        #   Linking x, p, e
         c += 1
-        # for d, (i,j) i!=j, t < T x(d,i,t) + x(d,j,t+1) - sum_u  p(d,u,t) <= 1
-        for d in self.simulation.drones.keys():
-            for e in edges:
-                if e[0] != e[1]:
-                    for t in self.simulation.T[:-1]:
-                        sum = [(1.0, deliveries_states[f"{d},{e[0]},{t}"]), (1.0, deliveries_states[f"{d},{e[1]},{t+1}"])]
-                        for u in self.simulation.drones.keys():
-                            sum.append((-1.0,deliveries_movements[f"{d},{u},{t}"]))
-                        self.model.addConstr(gp.LinExpr(sum) <= 1, f"c{c}_{d},{e[0]},{e[1]},{t}")
-        #   If d does not change position then is can't be assigned to a drone
-        c += 1
-        # for d, w, t < T x(d,i,t) + x(d,j,t+1) + sum_u  p(d,u,t) <= 2
-        for d in self.simulation.drones.keys():
-            for w in self.simulation.deliveries.keys():
-                for t in self.simulation.T[:-1]:
-                    sum = [(1.0, deliveries_states[f"{d},{w},{t}"]),
-                           (1.0, deliveries_states[f"{d},{w},{t + 1}"])]
-                    for u in self.simulation.drones.keys():
-                        sum.append((1.0, deliveries_movements[f"{d},{u},{t}"]))
-                    self.model.addConstr(gp.LinExpr(sum) <= 2, f"c{c}_{d},{w},{t}")
-
-        #   for d, u, t < T , (i,j)  p(d,u,t) and x(d,i,t) and x(d,j,t+1) --> e(u,i,j,t)
-        c += 1
-        # for d, u, t < T , (i,j)  p(d,u,t) + x(d,i,t) + x(d,j,t+1) - e(u,i,j,t) <= 2
+        # for d in D, t < T, (i,j) in E with i!=j
         for d in self.simulation.deliveries.keys():
-            for u in self.simulation.drones.keys():
+            for e in edges:
+                if e[0] == e[1]: continue
                 for t in self.simulation.T[:-1]:
-                    for e in edges:
-                        if e[0] != e[1]:
-                            self.model.addConstr(deliveries_movements[f"{d},{u},{t}"] +
-                                                 deliveries_states[f"{d},{e[0]},{t}"] +
-                                                 deliveries_states[f"{d},{e[1]},{t+1}"] -
-                                                 drones_movements[f"{u},{e[0]},{e[1]},{t}"]<= 2,
-                                                 f"c{c}_{d},{u},{t},{e[0]},{e[1]}")
+                    sum = [(1.0,deliveries_states[f"{d},{e[0]},{t}"]),
+                           (1.0,deliveries_states[f"{d},{e[1]},{t+1}"])]
+                    for u in self.simulation.drones.keys():
+                        sum.append((-1.0, deliveries_movements[f"{d},{u},{t}"]))
+                    # x(d, i, t) + x(d, j, t + 1) - sum_u p(d, u, t) <= 1
+                    self.model.addConstr(gp.LinExpr(sum) <= 1,
+                                         f"c{c}a_{d},{e[0]},{e[1]},{t}")
+                    for u in self.simulation.drones.keys():
+                        # p(d, u, t) + x(d, i, t) + x(d, j, t + 1) - e(u, i, j, t) <= 2
+                        self.model.addConstr(deliveries_movements[f"{d},{u},{t}"] +
+                                             deliveries_states[f"{d},{e[0]},{t}"] +
+                                             deliveries_states[f"{d},{e[1]},{t + 1}"] -
+                                             drones_movements[f"{u},{e[0]},{e[1]},{t}"] <= 2,
+                                             f"c{c}b_{d},{u},{e[0]},{e[1]},{t}")
+                        # e(u, i, j, t) + p(d, u, t) - x(d, i, t) <= 1
+                        self.model.addConstr(drones_movements[f"{u},{e[0]},{e[1]},{t}"] +
+                                             deliveries_movements[f"{d},{u},{t}"] -
+                                             deliveries_states[f"{d},{e[0]},{t}"] <= 1,
+                                             f"c{c}c_{d},{u},{e[0]},{e[1]},{t}")
+                        # e(u, i, j, t) + p(d, u, t) - x(d, j, t + 1) <= 1
+                        self.model.addConstr(drones_movements[f"{u},{e[0]},{e[1]},{t}"] +
+                                             deliveries_movements[f"{d},{u},{t}"] -
+                                             deliveries_states[f"{d},{e[1]},{t+1}"] <= 1,
+                                             f"c{c}d_{d},{u},{e[0]},{e[1]},{t}")
+        #   A parcel can't move from i to j between t and t+1 if (i,j) not in E
+        c += 1
+        # for d in D, t < T, i, j in WS such that (i, j) not in E
+        # x(d, i, t) + x(d, j, t + 1) <= 1
+        for d in self.simulation.deliveries.keys():
+            for t in self.simulation.T[:-1]:
+                for i in self.simulation.wayStations.keys():
+                    for j in self.simulation.wayStations.keys():
+                        if (i,j) not in edges:
+                            self.model.addConstr(deliveries_states[f"{d},{i},{t}"] +
+                                                 deliveries_states[f"{d},{j},{t+1}"] <= 1,
+                                                 f"c{c}_{d},{i},{j}{t}")
         # Objective function
         o_func = gp.LinExpr(o_func_coeff)
         self.model.setObjective(o_func, GRB.MINIMIZE)
