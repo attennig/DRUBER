@@ -7,14 +7,16 @@ class CentralizedDeliveryAssignment2:
         print("create OPT using model 2")
         self.model = gp.Model("pathplanner")
         self.simulation = sim
-        print(type(sim))
+
 
     def solveMILP(self):
         edges = set()
+        maxdist = 0 # between way stations
         for i in self.simulation.wayStations.keys():
             for j in self.simulation.wayStations.keys():
                 if self.simulation.dist2D(i,j) < self.simulation.maxdist:
                     edges.add((i,j))
+                    if self.simulation.dist2D(i,j) > maxdist: maxdist = self.simulation.dist2D(i,j)
 
         # Variables
         deltas = {} # f"delta_{t}"
@@ -94,17 +96,17 @@ class CentralizedDeliveryAssignment2:
                     sum1.append((1.0, drones_movements[f"{u},{e[0]},{e[1]},{t}"]))
                 else:
                     sum0.append((1.0, drones_movements[f"{u},{e[0]},{e[1]},{t}"]))
-            self.model.addConstr(gp.LinExpr(sum1) == 1, f"c{c}a_{u},{self.simulation.drones[u].homeWS.ID}")
+            self.model.addConstr(gp.LinExpr(sum1) <= 1, f"c{c}a_{u},{self.simulation.drones[u].homeWS.ID}")
             self.model.addConstr(gp.LinExpr(sum0) == 0, f"c{c}b_{u},{self.simulation.drones[u].homeWS.ID}")
-        #   One drone action per time slot until completion
+        #   One drone action per time slot
         c += 1
-        # for u,t sum_(i,j)in E e(u,i,j,t) = delta(t)
+        # for u,t sum_(i,j)in E e(u,i,j,t) = 1
         for u in self.simulation.drones.keys():
             for t in self.simulation.T[1:-1]:
                 sum = []
                 for e in edges:
                     sum.append((1.0, drones_movements[f"{u},{e[0]},{e[1]},{t}"]))
-                self.model.addConstr(gp.LinExpr(sum) == deltas[f"{t}"], f"c{c}_{u},{t}")
+                self.model.addConstr(gp.LinExpr(sum) == 1, f"c{c}_{u},{t}")
         #   Drones move following linear and continuous paths
         c += 1
         # for u in U, i in WS t in [2,T-1] sum_(i,j) e(u,i,j,t) == sum_(k,i) e(u,k,i,t-1)
@@ -115,12 +117,12 @@ class CentralizedDeliveryAssignment2:
                     for e in edges:
                         if e[0] == i:
                             sum.append((1.0, drones_movements[f"{u},{e[0]},{e[1]},{t}"]))
-                        elif e[1] == i:
+                        if e[1] == i:
                             sum.append((-1.0, drones_movements[f"{u},{e[0]},{e[1]},{t-1}"]))
                     self.model.addConstr(gp.LinExpr(sum) == 0, f"c{c}_{u},{i},{t}")
         #   d can be carried at most by one drone
         c += 1
-        # for d, t < T sum_u p(d,u,t) >= 1
+        # for d, t < T sum_u p(d,u,t) <= 1
         for d in self.simulation.deliveries.keys():
             for t in self.simulation.T[:-1]:
                 sum = []
@@ -170,6 +172,42 @@ class CentralizedDeliveryAssignment2:
                             self.model.addConstr(deliveries_states[f"{d},{i},{t}"] +
                                                  deliveries_states[f"{d},{j},{t+1}"] <= 1,
                                                  f"c{c}_{d},{i},{j}{t}")
+        # Let us assume at most one parcel at time can be carried by each drone (scenario 5)
+        c += 1
+        # for u in U, t in [T - 1] sum_{d in D} p(d, u, t) <= 1
+        for u in self.simulation.drones.keys():
+            for t in self.simulation.T[:-1]:
+                sum = []
+                for d in self.simulation.deliveries.keys():
+                    sum.append((1.0, deliveries_movements[f"{d},{u},{t}"]))
+                self.model.addConstr(gp.LinExpr(sum) <= 1, f"c{c}_{u},{t}")
+
+        #   Parcels' weight - dependent consumption of drones' battery
+        c += 1
+        # for u in U, d in D, (i, j) in E, t in [T - 1]  dist(i,j) - phi(d_w) <= maxdist * (2 - (p(d,u,t) + e(u,i,j,t)) )
+        for u in self.simulation.drones.keys():
+            for d in self.simulation.deliveries.keys():
+                for e in edges:
+                    dist_e = self.simulation.dist2D(e[0],e[1])
+                    for t in self.simulation.T[:-1]:
+                        self.model.addConstr(
+                            dist_e - self.simulation.phi[self.simulation.deliveries[d].weight] <=
+                            maxdist * (2 - (deliveries_movements[f"{d},{u},{t}"] + drones_movements[f"{u},{e[0]},{e[1]},{t}"])),
+                            f"c{c}_{u},{d},{e[0]},{e[1]},{t}")
+
+        #   Way station maximum capacity (scenario 6)
+        c += 1
+        # for t in [T-1], j in WS sum_{(i,j) \in E} \sum_{u in U} e(u,i,j,t) \le j_{cap}
+        for j in self.simulation.wayStations.keys():
+            for t in self.simulation.T[:-1]:
+                sum = []
+                for e in edges:
+                    if e[1] == j:
+                        for u in self.simulation.drones.keys():
+                            sum.append((1.0, drones_movements[f"{u},{e[0]},{e[1]},{t}"]))
+                self.model.addConstr(gp.LinExpr(sum) <= self.simulation.wayStations[j].capacity,
+                                     f"c{c}_{j},{t}")
+
         # Objective function
         o_func = gp.LinExpr(o_func_coeff)
         self.model.setObjective(o_func, GRB.MINIMIZE)
@@ -178,6 +216,3 @@ class CentralizedDeliveryAssignment2:
 
         # Optimize model
         self.model.optimize()
-        # Extract solution
-        for v in self.model.getVars():
-            print(f"{v.varName} = {v.x}")

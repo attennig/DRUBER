@@ -1,6 +1,6 @@
 {
   "Parameters": {
-    "H": 3
+    "H": 2
   },
   "Way-Stations": [
     {
@@ -27,7 +27,7 @@
   "Drones": [
     {
       "id": 1,
-      "home": 2
+      "home": 1
     }
   ]
 

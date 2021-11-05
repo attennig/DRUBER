@@ -8,19 +8,13 @@
       "x": 1,
       "y": 1,
       "capacity": 1
-    },
-    {
-      "id": 2,
-      "x": 2,
-      "y": 1,
-      "capacity": 1
     }
   ],
   "Deliveries" : [
     {
       "id": 1,
       "src": 1,
-      "dst": 2,
+      "dst": 1,
       "weight": 1
     }
   ],

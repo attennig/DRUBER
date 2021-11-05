@@ -167,6 +167,10 @@ class CentralizedDeliveryAssignment:
                             sum.append((-1.0, deliveries_movements[f"{d},{u},{e[0]},{e[1]},{t}"]))
                     self.model.addConstr(gp.LinExpr(sum) >= 0, f"c{c}_{d},{i},{t}")
 
+
+
+
+
         # Objective function
         o_func = gp.LinExpr(o_func_coeff)
         self.model.setObjective(o_func, GRB.MINIMIZE)

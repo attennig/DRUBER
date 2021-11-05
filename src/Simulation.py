@@ -13,7 +13,7 @@ class Simulation:
         self.deliveries = {}
         self.drones = {}
         self.T = []
-        self.phi = {1: 1.5}
+        self.phi = {1: 1.5, 2: 1}
         self.maxdist = max(self.phi.values())
 
         if model == 1:
@@ -55,3 +55,9 @@ class Simulation:
 
     def solve(self):
         self.OPT.solveMILP()
+    def saveSolution(self, DATAPATH):
+        solution = {}
+        for v in self.OPT.model.getVars():
+            solution[v.varName] = v.x
+        with open(DATAPATH, "w") as file_out:
+            json.dump(solution, file_out)
