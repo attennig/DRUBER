@@ -21,7 +21,7 @@ class Simulation:
         self.Bminus_fligth = lambda i,j: 0.5*self.dist2D(i,j)/self.maxdist
         # carrying a 5-kilo  parcel for one time-slot consumes 10% of the battery
         self.maxweigth = 5
-        self.Bminus_weight = lambda w: 0.1*w/self.maxweigth
+        self.Bminus_weight = lambda w: 0.5*w/self.maxweigth
 
         self.OPT = CentralizedDeliveryAssignment(self)
 
