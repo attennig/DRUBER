@@ -1,28 +1,29 @@
-from Simulation import *
+from src.simulation.Simulation import *
 import gurobipy as gp
 from gurobipy import GRB
 
-class CentralizedDeliveryAssignment2:
+class CentralizedDeliveryAssignment:
     def __init__(self, sim):
-        print("create OPT using model 2")
+        print("\tinitializing MILP Solver")
         self.model = gp.Model("pathplanner")
         self.simulation = sim
 
 
     def solveMILP(self):
         edges = set()
-        maxdist = 0 # between way stations
+        #maxdist = 0 # between way stations
         for i in self.simulation.wayStations.keys():
             for j in self.simulation.wayStations.keys():
                 if self.simulation.dist2D(i,j) < self.simulation.maxdist:
                     edges.add((i,j))
-                    if self.simulation.dist2D(i,j) > maxdist: maxdist = self.simulation.dist2D(i,j)
+                    #print(f"labda({i,j}) = {self.simulation.Bminus(i,j)}")
+                    #if self.simulation.dist2D(i,j) > maxdist: maxdist = self.simulation.dist2D(i,j)
 
         # Variables
         deltas = {} # f"delta_{t}"
         drones_movements = {} # f"e_{u},{e[0]},{e[1]},{t}"
         deliveries_states = {} # f"x_{d},{w},{t}"
-        deliveries_movements = {} # f"p_{d},{u},{t}")
+        deliveries_movements = {} # f"p_{d},{u},{t}"
         o_func_coeff = []
         for t in self.simulation.T:
             deltas[f"{t}"] = self.model.addVar(vtype=GRB.BINARY, name=f"delta_{t}")
@@ -46,6 +47,14 @@ class CentralizedDeliveryAssignment2:
                     # p(d,u,i,j,t)
                     deliveries_movements[f"{d},{u},{t}"] = self.model.addVar(vtype=GRB.BINARY, name=f"p_{d},{u},{t}")
 
+        # adding battery model
+        state_of_charge = {}  # f"soc_{u},{t}")
+        gamma = {} # f"gamma_{},{}"
+        for u in self.simulation.drones.keys():
+            for t in self.simulation.T:
+                state_of_charge[f"{u},{t}"] = self.model.addVar(lb=0.0, ub=1.0, vtype=GRB.CONTINUOUS, name=f"soc_{u},{t}")
+                if t < self.simulation.T[-1]:
+                    gamma[f"{u},{t}"] = self.model.addVar(vtype=GRB.BINARY, name=f"gamma_{u},{t}")
         # Constraints
         c = 1
         #   Parcels' initial state x(d,w,1)
@@ -172,7 +181,7 @@ class CentralizedDeliveryAssignment2:
                             self.model.addConstr(deliveries_states[f"{d},{i},{t}"] +
                                                  deliveries_states[f"{d},{j},{t+1}"] <= 1,
                                                  f"c{c}_{d},{i},{j}{t}")
-        # Let us assume at most one parcel at time can be carried by each drone (scenario 5)
+        #   At most one parcel at time can be carried by each drone
         c += 1
         # for u in U, t in [T - 1] sum_{d in D} p(d, u, t) <= 1
         for u in self.simulation.drones.keys():
@@ -182,7 +191,7 @@ class CentralizedDeliveryAssignment2:
                     sum.append((1.0, deliveries_movements[f"{d},{u},{t}"]))
                 self.model.addConstr(gp.LinExpr(sum) <= 1, f"c{c}_{u},{t}")
 
-        #   Parcels' weight - dependent consumption of drones' battery
+        '''#   Parcels' weight - dependent consumption of drones' battery
         c += 1
         # for u in U, d in D, (i, j) in E, t in [T - 1]  dist(i,j) - phi(d_w) <= maxdist * (2 - (p(d,u,t) + e(u,i,j,t)) )
         for u in self.simulation.drones.keys():
@@ -194,9 +203,20 @@ class CentralizedDeliveryAssignment2:
                             dist_e - self.simulation.phi[self.simulation.deliveries[d].weight] <=
                             maxdist * (2 - (deliveries_movements[f"{d},{u},{t}"] + drones_movements[f"{u},{e[0]},{e[1]},{t}"])),
                             f"c{c}_{u},{d},{e[0]},{e[1]},{t}")
-
+        '''
         #   Way station maximum capacity (scenario 6)
         c += 1
+        # t = 1, forall i in WS sum_{(i,j) \in E} \sum_{u in U} e(u,i,j,t) \le i_{cap}
+        t = 1
+        for i in self.simulation.wayStations.keys():
+            sum = []
+            for e in edges:
+                if e[0] == i:
+                    for u in self.simulation.drones.keys():
+                        sum.append((1.0, drones_movements[f"{u},{e[0]},{e[1]},{t}"]))
+            self.model.addConstr(gp.LinExpr(sum) <= self.simulation.wayStations[i].capacity,
+                                     f"c{c}_{i},{t}init")
+
         # for t in [T-1], j in WS sum_{(i,j) \in E} \sum_{u in U} e(u,i,j,t) \le j_{cap}
         for j in self.simulation.wayStations.keys():
             for t in self.simulation.T[:-1]:
@@ -208,6 +228,40 @@ class CentralizedDeliveryAssignment2:
                 self.model.addConstr(gp.LinExpr(sum) <= self.simulation.wayStations[j].capacity,
                                      f"c{c}_{j},{t}")
 
+
+
+        # adding battery model
+        #   Initial battery SoC
+        c += 1
+        # for u in U SoC(u,1) = u_soc
+        for u in self.simulation.drones.keys():
+            self.model.addConstr(state_of_charge[f"{u},{1}"] == self.simulation.drones[u].SoC,
+                                 f"c{c}_{u}")
+        #   Battery recharge only during waits
+        c += 1
+        # for u in U, t < T, gamma(u,t) < sum_{(i,i) in E} e(u,i,i,t)
+        for u in self.simulation.drones.keys():
+            for t in self.simulation.T[:-1]:
+                sum = [(1, drones_movements[f"{u},{e[0]},{e[1]},{t}"])
+                         for e in edges if e[0] == e[1]]
+                self.model.addConstr(gamma[f"{u},{t}"] <= gp.LinExpr(sum),
+                                     f"c{c}_{u},{t}")
+
+        #   Battery SoC update
+        c += 1
+        # for u in U, t in [2,T] SoC(u,t) = SoC(u,t-1) - E^{-} + E^{+}
+        for u in self.simulation.drones.keys():
+            for t in self.simulation.T[1:]:
+                Eplus = self.simulation.Bplus * gamma[f"{u},{t-1}"]
+                Eminus = gp.LinExpr([(self.simulation.Bminus_fligth(e[0], e[1]), drones_movements[f"{u},{e[0]},{e[1]},{t-1}"])
+                                        for e in edges if e[0] != e[1]] +
+                                    [(self.simulation.Bminus_weight(self.simulation.deliveries[d].weight), deliveries_movements[f"{d},{u},{t-1}"])
+                                        for d in self.simulation.deliveries.keys()])
+                self.model.addConstr(state_of_charge[f"{u},{t}"] ==
+                                     state_of_charge[f"{u},{t-1}"] +
+                                     Eplus - Eminus,
+                                     f"c{c}_{u},{t}")
+
         # Objective function
         o_func = gp.LinExpr(o_func_coeff)
         self.model.setObjective(o_func, GRB.MINIMIZE)
@@ -216,3 +270,4 @@ class CentralizedDeliveryAssignment2:
 
         # Optimize model
         self.model.optimize()
+

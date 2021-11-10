@@ -1,6 +1,7 @@
 {
   "Parameters": {
-    "H": 3
+    "H": 3,
+    "AoI_SIZE": 4
   },
   "Way-Stations": [
     {

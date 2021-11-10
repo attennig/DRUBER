@@ -1,6 +1,7 @@
-from WayStation import *
+from src.entities.WayStation import *
 class Delivery:
     def __init__(self, ID, ws_src, ws_dst, weight):
+        #print(f"{type(ws_src)},{type(ws_dst)}:{WayStation}")
         assert type(ID) is int
         assert type(ws_src) is WayStation
         assert type(ws_dst) is WayStation
