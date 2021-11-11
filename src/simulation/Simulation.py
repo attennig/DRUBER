@@ -2,19 +2,24 @@ from src.entities.Drone import *
 from src.entities.Delivery import *
 from src.entities.WayStation import *
 from src.routing.CentralizedDeliveryAssignment import *
-from src.drawing.draw import *
+from src.drawing.Draw import *
 import json
 from math import sqrt
+from typing import Callable
 
 class Simulation:
     def __init__(self, n):
+        # Simulation number
+        self.n = n
+        # Entities
         self.wayStations = {}
         self.deliveries = {}
         self.drones = {}
+        self.edges = set()
+        # Time slots
         self.T = []
-        self.n = n
-        #self.phi = {1: 1.5, 2: 1}
-        self.maxdist = 1.5#max(self.phi.values())
+        # Parameters and functions
+        self.maxdist = 1.5
         # the battery recharge 10% per each time slot
         self.Bplus = 0.1
         # flying 1.5m distance in one time slot consumes 50% of the battery
@@ -22,8 +27,15 @@ class Simulation:
         # carrying a 5-kilo  parcel for one time-slot consumes 10% of the battery
         self.maxweigth = 5
         self.Bminus_weight = lambda w: 0.5*w/self.maxweigth
-
+        # It provides the distance between two way stations given their IDs
+        self.dist2D : Callable[int, int] = lambda i, j: sqrt((self.wayStations[i].x - self.wayStations[j].x) ** 2 +
+                                                                 (self.wayStations[i].y-self.wayStations[j].y) ** 2)
+        # MILP solver
         self.OPT = CentralizedDeliveryAssignment(self)
+
+        self.solution = {}
+
+
 
     def showStatus(self):
         print(f"Horizon: {len(self.T)}")
@@ -37,7 +49,7 @@ class Simulation:
         for key in self.deliveries:
             self.deliveries[key].printInfo()
 
-    def loadScenario(self, DATAPATH):
+    def loadScenario(self, DATAPATH: str):
         print(f"\tloading data from {DATAPATH}")
         with open(DATAPATH) as file_in:
             data = json.load(file_in)
@@ -61,22 +73,49 @@ class Simulation:
                 home = self.wayStations[int(u["home"])]
                 self.drones[int(u["id"])] = Drone(int(u["id"]), home)
 
-    def dist2D(self, i, j):
-        assert type(i) == int and type(j) == int
-        #print(f"distance between {i} and {j} is {sqrt((self.wayStations[i].x-self.wayStations[j].x)**2 + (self.wayStations[i].y-self.wayStations[j].y)**2)}")
-        return sqrt((self.wayStations[i].x-self.wayStations[j].x)**2 + (self.wayStations[i].y-self.wayStations[j].y)**2)
+            for i in self.wayStations.keys():
+                for j in self.wayStations.keys():
+                    if self.dist2D(i, j) < self.maxdist:
+                        self.edges.add((i, j))
+
 
 
     def solve(self):
         print(f"\tsolving Constrained Optimization Problem")
         self.OPT.solveMILP()
-    def saveSolution(self, DATAPATH):
+    def saveSolution(self, DATAPATH: str):
         print(f"\tsaving results in {DATAPATH}")
-        solution = {}
-        for v in self.OPT.model.getVars():
-            solution[v.varName] = v.x
-        with open(DATAPATH, "w") as file_out:
-            json.dump(solution, file_out)
 
-    def drawEnvironment(self):
-        Draw(self)
+        for v in self.OPT.model.getVars():
+            self.solution[v.varName] = v.x
+        with open(DATAPATH, "w") as file_out:
+            json.dump(self.solution, file_out)
+
+    def drawSolution(self):
+        drawingObj = Draw(self)
+        for t in self.T:
+            #print(f"at time {t}")
+            for dID in self.deliveries.keys():
+                #print(f"delivery {dID}")
+                for wID in self.wayStations.keys():
+                    if self.solution[f"x_{dID},{wID},{t}"] == 1:
+                        #print(f"is in station {wID}")
+                        self.deliveries[dID].updateStation(self.wayStations[wID])
+            for uID in self.drones.keys():
+                #print(f"drone {uID}")
+
+                for e in self.edges:
+                    if t == self.T[-1] and self.solution[f"e_{uID},{e[0]},{e[1]},{t-1}"] == 1:
+                        #print(f"is in station {e[1]}")
+                        self.drones[uID].updateStation(self.wayStations[e[1]])
+                    elif t < self.T[-1] and self.solution[f"e_{uID},{e[0]},{e[1]},{t}"] == 1:
+                        #print(f"is in station {e[0]}")
+                        self.drones[uID].updateStation(self.wayStations[e[0]])
+                if t < self.T[-1]:
+                    if self.solution[f"gamma_{uID},{t}"]:
+                        #print(f"and it is recharging")
+                        self.drones[uID].isRecharging = True
+                    else:
+                        #print(f"and it is not recharging")
+                        self.drones[uID].isRecharging = False
+            drawingObj.drawEnvironment(self, t)
