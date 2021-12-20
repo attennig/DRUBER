@@ -1,13 +1,14 @@
 from src.simulation.Simulation import *
 import gurobipy as gp
 from gurobipy import GRB
-
+import time
 
 class CentralizedDeliveryAssignment:
     def __init__(self, sim):
         print("\tinitializing MILP Solver")
         self.model = gp.Model("pathplanner")
         self.simulation = sim
+        self.opt_time = 0
 
     def solveMILP(self):
 
@@ -183,7 +184,7 @@ class CentralizedDeliveryAssignment:
                         if (i, j) not in self.simulation.edges:
                             self.model.addConstr(deliveries_states[f"{d},{i},{t}"] +
                                                  deliveries_states[f"{d},{j},{t + 1}"] <= 1,
-                                                 f"c{c}_{d},{i},{j}{t}")
+                                                 f"c{c}_{d},{i},{j},{t}")
         #    i=j a parcel cannot be in charge of a drone that is not moving
         c += 1
         # forall  d in D, u in U, t < T
@@ -274,5 +275,9 @@ class CentralizedDeliveryAssignment:
         self.model.write("../out/model.lp")
 
         # Optimize model
+        start = time.time()
         self.model.optimize()
+        end = time.time()
+        self.opt_time = end - start
+
 

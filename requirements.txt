@@ -1,2 +1,1 @@
-gurobipy==9.1.2
-pygame==1.9.6
+gurobipy==9.5.0

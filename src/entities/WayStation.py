@@ -1,5 +1,5 @@
 class WayStation:
-    def __init__(self, ID, x, y, capacity=1):
+    def __init__(self, ID, x, y, capacity=2):
         assert type(ID) == int
         assert type(x) == float and type(x) == type(y)
         assert type(capacity) == int
