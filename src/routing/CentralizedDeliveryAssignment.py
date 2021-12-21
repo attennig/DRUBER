@@ -272,7 +272,7 @@ class CentralizedDeliveryAssignment:
         o_func = gp.LinExpr(o_func_coeff)
         self.model.setObjective(o_func, GRB.MINIMIZE)
         # Save model in model.lp
-        self.model.write("../out/model.lp")
+        self.model.write("./out/model.lp")
 
         # Optimize model
         start = time.time()

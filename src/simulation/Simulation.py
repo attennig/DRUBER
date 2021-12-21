@@ -9,9 +9,7 @@ from typing import Callable
 import random
 
 class Simulation:
-    def __init__(self, n):
-        # Simulation number
-        self.n = n
+    def __init__(self):
         # Entities
         self.wayStations = {}
         self.deliveries = {}
