@@ -1,20 +1,41 @@
 from src.simulation.Simulation import Simulation
+from src.simulation.RandomGenerator import RandomGenerator
+from src.routing.SchedulerMILP import SchedulerMILP
+from src.config import *
 import sys
-
+GENERATE =  False
 if __name__ == "__main__":
+    ns, nu, nd = [int(arg) for arg in sys.argv[1:]]
+    print(f"#############################################################\nStarting Simulation")
+    S = Simulation(f"Seed{SIMULATION_SEED}_S{ns}U{nu}D{nd}")
+    if GENERATE :
+        G = RandomGenerator(S)
+        try:
+            G.generateRandomInstance(ns, nu, nd)
+        except Exception as e:
+            print(e)
+        G.saveInstance()
+    else:
+        S.loadScenario()
+    #map = S.getMap() # seve as map.png
+    #map.savefig(f"{S.inFOLDER}/map.png") # img overlap
+    S.computeSchedule()
+    S.saveSolution()
 
-    print(f"#############################################################\nStarting random Simulation")
-    print(len(sys.argv))
-    N_stations, N_drones, N_deliveries, AoI_SIZE, H = sys.argv[1:]
-    print(f"Parameters: |S| = {N_stations}, |U| = {N_drones}, |D| = {N_deliveries}, AoI size = {AoI_SIZE}, H = {H}")
-    S = Simulation()
-    #N_stations, N_drones, N_deliveries, AoI_SIZE, H = 20,5,3,2,10
-    #N_stations, N_drones, N_deliveries, AoI_SIZE, H = 20,5,3,2,20
-    #N_stations, N_drones, N_deliveries, AoI_SIZE, H = 20,40,30,3,50
-    S.generateRandomInstance(int(N_stations), int(N_drones), int(N_deliveries), int(AoI_SIZE), int(H))
-    datapath_out = f"./out/random{[N_stations, N_drones, N_deliveries, AoI_SIZE, H]}.out"
-    S.showStatus()
-    S.solve()
     print(f"Closing Simulation")
-    S.saveSolution(datapath_out)
     print("#############################################################")
+
+    '''
+
+    #generateRandomInstances()
+    #print("hello")
+    generateRandomInstance(5,3,2)
+
+    assert len(sys.argv) == 2
+    simulation_name = sys.argv[1]
+    print(f"Simulation name: {simulation_name}")
+    S = Simulation(simulation_name)
+    #S.start()
+    S.loadScenario()
+    #'''
+

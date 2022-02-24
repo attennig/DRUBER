@@ -1,4 +1,17 @@
+######## SIMULATION PARAMETERS ###########
 SIMULATION_SEED = 1
-MIN_PARCEL_WEIGHT = 0.1
-MAX_PARCEL_WEIGHT = 2
-MAX_SINGLE_HOP_LENGTH = 2
+AoI_SIZE = 50*10**3 #[m] = 50 km
+HORIZON = 8*60**2
+SWAP_TIME = 60 #[s]
+DRONE_SPEED = 14 #[m/s]
+DRONE_MAX_PAYLOAD = 2 #[kg]
+MIN_DISTANCE = 5*10**3 #[m] = 5 km
+UNIT_CONSUMPTION = 0.00006 #[SoC/m] (SoC percentage consumed with no weight flying 1 meter)
+ALPHA = 0.00003 #[SoC/(m*kg)]
+CONSUMPTION_UPPER_BOUND = 100
+############# IN/OUT  #############
+OUT_FOLDER = "./out"
+IN_FOLDER = "./in"
+############# GUROBI OPT PARAMETERS #############
+OPT_TIME_LIMIT = 60 # [minutes]
+OPT_MEM_LIMIT = 4 # [GB]

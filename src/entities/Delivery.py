@@ -1,12 +1,12 @@
-from src.entities.WayStation import *
+from src.entities.Station import *
 class Delivery:
-    def __init__(self, ID: int, ws_src: WayStation, ws_dst: WayStation, weight: float):
+    def __init__(self, ID: int, ws_src: Station, ws_dst: Station, weight: float):
         self.src = ws_src
         self.dst = ws_dst
         self.weight = weight
         self.currentStation = ws_src
 
-    def updateStation(self, ws: WayStation):
+    def updateStation(self, ws: Station):
         self.currentStation = ws
 
     def printInfo(self):
@@ -14,3 +14,9 @@ class Delivery:
         print(f"Mission destination: {self.dst.ID}")
         print(f"Parcel weight: {self.weight}")
 
+    def getAsDict(self):
+        return {
+            "src" : self.src.ID,
+            "dst": self.dst.ID,
+            "weight": self.weight
+        }
