@@ -5,12 +5,13 @@ from src.routing.PathPlanner import *
 
 
 class SchedulerMILP(PathPlanner):
-    def __init__(self, sim):
+    def __init__(self, sim, method):
         print("\tinitializing MILP Solver")
         PathPlanner.__init__(self, sim)
         env = gp.Env(empty=True)
         env.setParam('TimeLimit', OPT_TIME_LIMIT * 60)
         env.setParam('MemLimit', OPT_MEM_LIMIT)
+        env.setParam('Method', MILP_METHODS[method])
         env.start()
         self.model = gp.Model(env=env)
 

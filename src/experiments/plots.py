@@ -2,6 +2,20 @@ from argparse import ArgumentParser
 import os
 import csv
 import matplotlib.pyplot as plt
+def plot_metric(metric, data):
+    plt.clf()
+    for alg in data.keys():
+        N, V = [], []
+        for key, value in sorted(data[alg].items()):
+            N.append(key)
+            V.append(value)
+        print(f"{N},{V}")
+        plt.plot(N,V)
+
+    plt.gca().legend(tuple(data.keys()))
+    plt.title(metric)
+    plt.savefig(f"{out_path_plots}/{metric}.png")
+
 
 if __name__ == "__main__":
 
@@ -25,36 +39,16 @@ if __name__ == "__main__":
         for row in csv_dict:
             points.append(row)
 
-    print(points)
+            features = list(row.keys())[2:]
+    print(features)
 
-    ct_MILP = {}
-    ct_GREEDY = {}
-    et_MILP = {}
-    et_GREEDY = {}
-    for point in points:
-        n = point["size"]
-        alg = point["algorithm"]
-        mct = point["mean completion time"]
-        met = point["mean execution time"]
-        if alg == "MILP":
-            ct_MILP[n] = float(mct)
-            et_MILP[n] = float(met)
-        if alg == "GREEDY":
-            ct_GREEDY[n] = float(mct)
-            et_GREEDY[n] = float(met)
+    for feature in features:
+        data = {}
+        for point in points:
+            n = int(point["size"])
+            alg = point["algorithm"]
+            value = point[feature]
+            if alg not in data.keys(): data[alg] = {}
+            data[alg][n] = float(value)
 
-
-
-    # blue squares and green triangles
-    plt.plot(list(ct_MILP.keys()), list(ct_MILP.values()), 'gs', list(ct_GREEDY.keys()), list(ct_GREEDY.values()), 'r^')
-    plt.gca().legend(('MILP', 'GREEDY'))
-    plt.title("Mean Completion Time")
-    plt.savefig(f"{out_path_plots}/mct.png")
-    plt.show()
-
-    plt.plot(list(et_MILP.keys()), list(et_MILP.values()), 'gs', list(et_GREEDY.keys()), list(et_GREEDY.values()), 'r^')
-    plt.gca().legend(('MILP', 'GREEDY'))
-    plt.title("Mean Execution Time")
-    plt.savefig(f"{out_path_plots}/met.png")
-    plt.show()
-
+        plot_metric(feature, data)

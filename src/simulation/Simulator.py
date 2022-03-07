@@ -103,12 +103,12 @@ class Simulator:
 
             self.computeEdges()
 
-    def run(self, algo):
+    def run(self, algo, method=None):
         self.outAlgoFOLDER = f"{self.outFOLDER}/{algo}"
         if not os.path.exists(self.outAlgoFOLDER): os.mkdir(self.outAlgoFOLDER)
         if algo == "MILP":
             # MILP Solver
-            OPT = SchedulerMILP(self)
+            OPT = SchedulerMILP(self, method)
         if algo == "GREEDY":
             OPT = Greedy(self)
         if algo == "GREEDYSWAPS":
@@ -118,6 +118,9 @@ class Simulator:
         if feasible:
             self.computeCompletionTime()
             self.execution_time = OPT.exec_time
+            if algo == "MILP":
+                self.num_variables = OPT.model.NumVars
+                self.num_constraints = OPT.model.NumConstrs
         return feasible
 
 
