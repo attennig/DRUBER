@@ -1,1 +1,0 @@
-{"entities": {"stations": {"1": {"x": 30595.8469974696, "y": 37339.83190859418, "capacity": 2}, "2": {"x": 20024.612743678943, "y": 25459.708962661192, "capacity": 2}}, "drones": {"1": {"home": 2}, "2": {"home": 1}}, "deliveries": {"1": {"src": 1, "dst": 2, "weight": 0.021822701692982706}}}, "parameters": {"num_activities": 3, "path_len": 1}}

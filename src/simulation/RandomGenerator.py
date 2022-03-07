@@ -2,15 +2,15 @@ from math import sqrt, cos, sin, radians
 import random
 import json
 import os
-from src.simulation.Simulation import Simulation
-from src.entities.Station import Station
-from src.entities.Drone import Drone
-from src.entities.Delivery import Delivery
+from src.simulation.Simulator import Simulator
+from src.entities.Station import *
+from src.entities.Drone import *
+from src.entities.Delivery import *
 from src.config import *
-
 class RandomGenerator:
-    def __init__(self, S: Simulation):
+    def __init__(self, S: Simulator):
         self.simulation = S
+        random.seed(self.simulation.seed)
 
     def generateRandomInstance(self, N_stations, N_Drones, N_Deliveries):
         print("Stations ")
@@ -39,6 +39,7 @@ class RandomGenerator:
                 j += 1
 
         self.simulation.computeEdges()
+
     def generateRandomDrones(self, N_Drones):
         S = [s for s in self.simulation.stations.keys()]
         for u in range(1, N_Drones + 1):
@@ -136,21 +137,10 @@ class RandomGenerator:
         return True
 
 
-    def computeDiameter(self):
-        import networkx as nx
-        G = nx.Graph()
-        E = [e for e in self.simulation.edges if self.simulation.cost(e[0], e[1], DRONE_MAX_PAYLOAD) < 1]
-        G.add_edges_from(E)
-        return nx.algorithms.diameter(G)
-
     def saveInstance(self):
-        if not os.path.exists(self.simulation.inFOLDER): os.mkdir(self.simulation.inFOLDER)
         map = self.simulation.getMap() # seve as map.png
-        map.savefig(f"{self.simulation.inFOLDER}/map.png") # img overlap
-        diameter = self.computeDiameter()
-        self.simulation.path_len = diameter
-        self.simulation.num_activities = 4 * diameter - 1
-        print(diameter)
+        map.savefig(f"{self.simulation.outFOLDER}/map_in.png") # img overlap
+
         stations = {}
         drones = {}
         deliveries = {}
@@ -165,16 +155,19 @@ class RandomGenerator:
                         'stations': stations,
                         'drones': drones,
                         'deliveries': deliveries
-                    },
-                'parameters':
-                    {
-                        'num_activities': self.simulation.num_activities,
-                        'path_len': self.simulation.path_len
                     }
+
                 }  # save as in.json
-        with open(f"{self.simulation.inFOLDER}/in.json", "w") as file_out:
+        '''parameters':
+        {
+            'num_activities': self.simulation.num_activities,
+            'path_len': self.simulation.path_len
+        }'''
+
+        with open(f"{self.simulation.outFOLDER}/in.json", "w") as file_out:
             json.dump(data, file_out)
-        config = {
+
+        '''config = {
                     'SIMULATION_SEED': SIMULATION_SEED,
                     'AoI_SIZE': AoI_SIZE,
                     'HORIZON': HORIZON,
@@ -186,5 +179,5 @@ class RandomGenerator:
                     'ALPHA': ALPHA,
                     'CONSUMPTION_UPPER_BOUND': CONSUMPTION_UPPER_BOUND
                   } # save as config.json
-        with open(f"{self.simulation.inFOLDER}/config.json", "w") as file_out:
-            json.dump(config, file_out)
+        with open(f"{self.simulation.dataFOLDER}/config.json", "w") as file_out:
+            json.dump(config, file_out)'''
