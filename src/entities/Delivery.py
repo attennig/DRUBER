@@ -6,7 +6,6 @@ class Delivery:
         self.dst = ws_dst
         self.weight = weight
         self.currentStation = ws_src
-        self.arrival_time = 0
 
     def updateStation(self, w: Station):
         self.currentStation = w

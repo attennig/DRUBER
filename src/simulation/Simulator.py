@@ -9,8 +9,8 @@ from src.entities.Delivery import Delivery
 from src.routing.SchedulerMILP import SchedulerMILP
 from src.routing.Greedy import Greedy
 from src.routing.GreedySWAP import GreedySWAP
-from src.routing.DroneAction import DroneAction
-
+from src.routing.LocalSearch import LocalSearch
+from src.routing.Schedule import Schedule
 class Simulator:
     def __init__(self, seed: int, size: int, out_path: str):
         print(f"Constructor : \n\tsimulation seed: {seed}\n\tsimulation size: {size}\n\toutput path: {out_path}")
@@ -54,7 +54,6 @@ class Simulator:
         from src.simulation.RandomGenerator import RandomGenerator
         G = RandomGenerator(self)
         try:
-
             nu = ceil(self.size * DRONES_RATE)
             nd = ceil(self.size * DELIVERIES_RATE)
             ns = self.size - nu - nd
@@ -111,39 +110,34 @@ class Simulator:
             OPT = SchedulerMILP(self, method)
         if algo == "GREEDY":
             OPT = Greedy(self)
-        if algo == "GREEDYSWAPS":
-            OPT = GreedySWAP(self)
+        #if algo == "GREEDYSWAPS":
+        #    OPT = GreedySWAP(self)
+        if algo == "LOCALSEARCH":
+            OPT = LocalSearch(self)
         OPT.setupProblem()
-        feasible = OPT.solveProblem()
-        if feasible:
-            self.computeCompletionTime()
+        solution = OPT.solveProblem()
+        if solution is not None:
+            self.completion_time = solution.getCompletionTime()
             self.execution_time = OPT.exec_time
             if algo == "MILP":
                 self.num_variables = OPT.model.NumVars
                 self.num_constraints = OPT.model.NumConstrs
-        return feasible
+        return solution
 
 
-    def computeCompletionTime(self):
-        self.completion_time = 0
-        for d in self.deliveries.keys():
-            print(self.deliveries[d].arrival_time)
-            if self.deliveries[d].arrival_time > self.completion_time:
-                self.completion_time = self.deliveries[d].arrival_time
-
-    def saveSolution(self):
+    def saveSolution(self, solution: Schedule):
         if not os.path.exists(self.outAlgoFOLDER): os.mkdir(self.outAlgoFOLDER)
         schedule_file = f"{self.outAlgoFOLDER}/schedule.json"
-        print(f"\t Saving solution in {schedule_file}")
+        print(f"\tSaving solution in {schedule_file}")
 
         schedule = {}
         for u in self.drones.keys():
-            schedule[u] = self.drones[u].getScheduleDICT()
+            schedule[u] = [action.getDICT() for action in solution.plan[u]]
         #schedule["Parameters"] = {"K": self.OPT.K, "P": self.OPT.P}
         with open(schedule_file, "w") as file_out:
             json.dump(schedule, file_out)
 
-        map = self.getSolutionMap()  # seve as map.png
+        map = self.getSolutionMap(solution)  # seve as map.png
         map.savefig(f"{self.outAlgoFOLDER}/map_out.png")
 
         metrics_file = f"{self.outAlgoFOLDER}/metrics.json"
@@ -155,11 +149,8 @@ class Simulator:
         #                   "NumConstrs": self.OPT.model.NumConstrs,
         #                   "RunTime": self.OPT.model.RunTime}
 
-        print(metrics)
         with open(metrics_file, "w") as file_out:
             json.dump(metrics, file_out)
-
-
 
     def getMap(self):
         plt.clf()
@@ -194,7 +185,7 @@ class Simulator:
         plt.figtext(0.03, 0.01, txt,  ha='left', fontsize=12)
         return plt
 
-    def getSolutionMap(self):
+    def getSolutionMap(self, solution: Schedule):
         plt.clf()
         plt.subplots_adjust(bottom=0.05*(ceil(len(self.drones)/6) + ceil(len(self.deliveries)/5)))
         plt.xlim(0,AoI_SIZE)
@@ -210,7 +201,7 @@ class Simulator:
             #plt.text(self.drones[u].home.x+0.3, self.drones[u].home.y-0.3, f"{u}", c="black")
             txt += f"u{u} in s{self.drones[u].home.ID}; "
             if u % 6 == 0: txt += "\n"
-            for action in self.drones[u].schedule:
+            for action in solution.plan[u]:
                 x_edges = [self.stations[action.x].x, self.stations[action.y].x]
                 y_edges = [self.stations[action.x].y, self.stations[action.y].y]
                 if action.a == 0: plt.plot(x_edges, y_edges, c="green", zorder=0)
@@ -223,5 +214,3 @@ class Simulator:
             if d % 5 == 0: txt += "\n"
         plt.figtext(0.03, 0.01, txt,  ha='left', fontsize=12)
         return plt
-
-

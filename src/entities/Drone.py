@@ -8,7 +8,6 @@ class Drone:
         self.SoC = initSoC
         self.currentStation = home
         self.isRecharging = False
-        self.schedule = []
 
     def updateStation(self, s : Station):
         self.currentStation = s
@@ -20,13 +19,3 @@ class Drone:
         return {
             "home" : self.home.ID
         }
-
-    def addAction(self, action: DroneAction):
-        #action = self.DroneAction(x, y, a, tau)
-        self.schedule.append(action)
-        #return action
-
-    def getScheduleDICT(self):
-        return [action.getDICT() for action in self.schedule]
-
-

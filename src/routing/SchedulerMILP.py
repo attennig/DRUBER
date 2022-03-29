@@ -354,8 +354,8 @@ class SchedulerMILP(PathPlanner):
         print(f"Gurobi status: {self.model.Status}")
         if self.model.Status == GRB.INFEASIBLE: return False
         self.exec_time = self.model.RunTime
-        self.extractSolution()
-        return True
+        solution = self.extractSolution()
+        return solution
 
     def printSolution(self):
         for u in self.simulation.drones.keys():
@@ -375,7 +375,7 @@ class SchedulerMILP(PathPlanner):
                 print(action)
 
     def extractSolution(self):
-
+        schedule = Schedule(self.simulation)
         DeliveryPaths = {}
         for u in self.simulation.drones.keys():
             for k in range(self.K):
@@ -387,7 +387,7 @@ class SchedulerMILP(PathPlanner):
                         x,y = i,j
                 if self.model.getVarByName(f"gamma_{u},{k}").x >= 0.5:
                     a = -1
-                    x = self.simulation.drones[u].schedule[-1].y
+                    x = schedule.plan[u][-1].y
                     y = x
                 else:
                     for d in self.simulation.deliveries.keys():
@@ -399,7 +399,7 @@ class SchedulerMILP(PathPlanner):
 
                 if a > -2:
                     action = DroneAction(x, y, a, tau)
-                    self.simulation.drones[u].addAction(action)
+                    schedule.plan[u].append(action)
                     if a in self.simulation.deliveries.keys():
                         if a not in DeliveryPaths.keys(): DeliveryPaths[a] = []
                         DeliveryPaths[a].append(action)
@@ -409,6 +409,7 @@ class SchedulerMILP(PathPlanner):
                 if i < len(DeliveryPaths[d])-1: DeliveryPaths[d][i].succ = DeliveryPaths[d][i+1]
                 if i > 0: DeliveryPaths[d][i].pred = DeliveryPaths[d][i - 1]
 
+        return schedule
 
     def getISSConstrs(self):
         for constr in self.model.getConstrs():

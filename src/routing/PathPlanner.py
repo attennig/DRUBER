@@ -1,5 +1,5 @@
 from src.routing.DroneAction import *
-
+from src.routing.Schedule import *
 import time
 class PathPlanner:
 
@@ -10,13 +10,7 @@ class PathPlanner:
     def setupProblem(self):
         pass
 
-    def solveProblem(self):
-        pass
-
-    def getSolution(self):
-        pass
-
-    def getCompletionTime(self):
+    def solveProblem(self): #-> Schedule
         pass
 
     def getRunTime(self):
