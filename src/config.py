@@ -1,17 +1,17 @@
 ######## SIMULATION PARAMETERS ###########
 AoI_SIZE = 50*10**3 #[m] = 50 km
-HORIZON = 3000
+HORIZON = 5000
 SWAP_TIME = 60 #[s]
 DRONE_SPEED = 14 #[m/s]
 DRONE_MAX_PAYLOAD = 2 #[kg]
 MIN_DISTANCE = 5*10**3 #[m] = 5 km
-UNIT_CONSUMPTION = 0.00006 #[SoC/m] (SoC percentage consumed with no weight flying 1 meter)
+UNIT_CONSUMPTION = 0.00006 #[SoC/m] (SoC percentage consumed with no payload flying 1 meter)
 ALPHA = 0.00003 #[SoC/(m*kg)]
 CONSUMPTION_UPPER_BOUND = 100
 
 STATIONS_RATE  = 0.5
-DRONES_RATE = 0.35
-DELIVERIES_RATE = 0.15
+DRONES_RATE = 0.3
+DELIVERIES_RATE = 0.2
 
 
 

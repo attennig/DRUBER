@@ -1,7 +1,7 @@
 from src.simulation.Simulator import *
 class DroneAction:
     def __init__(self, x: int, y: int, a: int, tau: float):
-        assert a != -1 or x == y #(if charge than don't move)
+        if a == -1: assert x == y #(if charge than don't move)
         self.x = x
         self.y = y
         self.a = a
@@ -13,7 +13,13 @@ class DroneAction:
         return isinstance(other, DroneAction) and self.x == other.x and self.y == other.y and self.a == other.a
 
     def __str__(self):
-        return f"'x': {self.x}, 'y': {self.y}, 'a': {self.a}, 'tau': {self.tau}"
+        id_pred = None
+        id_succ = None
+
+        if self.pred is not None: id_pred = id(self.pred)
+        if self.succ is not None: id_succ = id(self.succ)
+
+        return f"'id': {id(self)}'x': {self.x}, 'y': {self.y}, 'a': {self.a}, 'tau': {self.tau}, 'pred': {id_pred}, 'succ':{id_succ}"
 
     def getDICT(self):
         return {

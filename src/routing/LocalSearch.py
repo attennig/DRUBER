@@ -31,32 +31,35 @@ class LocalSearch(PathPlanner):
             Q += [n for n in neighbours if n not in V]
         return objstate
 
+    def exp(self):
+        state = self.stateInit()
+        for i in range(300):
+            neighbours = state.computeNeighbours()
+            print(f"visiting \n{state}\n\twith value {state.getCompletionTime()}")
+            state = sorted(neighbours, key=lambda state: state.getCompletionTime())[-1]
+
+
     def BFSwithTTL(self):
-        print("BFS with TTL")
+
         objstate = self.stateInit()
-        TTL_init = 2
-        Q = [(objstate, TTL_init)]
+
+        Q = [objstate]
 
         while len(Q) > 0:
-            state, currTTL = Q.pop()
-            for u in state.plan.keys(): assert state.plan[u][0].a != -1
-            print(f"visiting \n{state}\n\twith value {state.getCompletionTime()}")
-            print(f"To visit: {len(Q)}, currTTL: {currTTL}")
+            state = Q.pop()
+            for u in state.plan.keys(): 
+                if len(state.plan[u]) > 0: assert state.plan[u][0].a != -1
+            #print(f"visiting \n{state}\n\twith value {state.getCompletionTime()}")
+            #print(f"To visit: {len(Q)}, currTTL: {currTTL}")
             if state.getCompletionTime() < objstate.getCompletionTime():
                 objstate = state
-            if currTTL > 0:
-                neighbours = state.computeNeighbours()
-                for n in neighbours:
-                    if n.getCompletionTime() < objstate.getCompletionTime():
-                        newTTL = currTTL + 1
-                    elif n.getCompletionTime() < state.getCompletionTime():
-                        newTTL = currTTL
-                    else:
-                        newTTL = currTTL - 1
-                    Q += [(n, newTTL)]
+            neighbours = state.computeNeighbours(objstate.getCompletionTime())
+            for n in neighbours:
+                Q += [n]
         return objstate
 
-
+    def stochasticHillClimbing(self):
+        pass
     def stateInit(self):
         greedySolver = Greedy(self.simulation)
         solution = greedySolver.solveProblem()

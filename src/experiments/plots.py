@@ -49,6 +49,6 @@ if __name__ == "__main__":
             alg = point["algorithm"]
             value = point[feature]
             if alg not in data.keys(): data[alg] = {}
-            data[alg][n] = float(value)
+            if value is not None: data[alg][n] = float(value)
 
         plot_metric(feature, data)

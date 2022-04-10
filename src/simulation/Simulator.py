@@ -114,6 +114,7 @@ class Simulator:
         #    OPT = GreedySWAP(self)
         if algo == "LOCALSEARCH":
             OPT = LocalSearch(self)
+
         OPT.setupProblem()
         solution = OPT.solveProblem()
         if solution is not None:

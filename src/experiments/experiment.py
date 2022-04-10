@@ -20,12 +20,12 @@ def exec_simulation(size: int, seed: int, input_generation: bool, out_path: str,
         S.generateRandomScenario()
     else:
         S.loadScenario()
-    feasible = False
+    solution = None
     if algorithm != "NONE":
-        if algorithm == "MILP": feasible = S.run(algorithm, method)
-        else: feasible = S.run(algorithm)
-        if feasible:
-            S.saveSolution()
+        if algorithm == "MILP": solution = S.run(algorithm, method)
+        else: solution = S.run(algorithm)
+        if solution is not None:
+            S.saveSolution(solution)
             mean_completion_time += S.completion_time
             mean_execution_time += S.execution_time
             if algorithm == "MILP":
@@ -35,7 +35,7 @@ def exec_simulation(size: int, seed: int, input_generation: bool, out_path: str,
 
     print(f"Closing Simulation")
     print("#############################################################")
-    return feasible
+    return solution is not None
 
 
 if __name__ == "__main__":
@@ -48,8 +48,8 @@ if __name__ == "__main__":
     parser.add_argument("-alg", dest='algorithm', action="store", type=str,
                         choices=ALGORITHMS, help="the optimization algorithm to use")
 
-    parser.add_argument("-method", dest='method', action="store", type=str, default=-1,
-                        choices=list(MILP_METHODS.keys()), help="method used by MILP solver ")
+    #parser.add_argument("-method", dest='method', action="store", type=str, default=-1,
+    #                    choices=list(MILP_METHODS.keys()), help="method used by MILP solver ")
 
     parser.add_argument("-g", dest='input_generation', action="store_true",
                          help="generte input")
@@ -70,7 +70,8 @@ if __name__ == "__main__":
 
     number_of_entities = args.number_of_entities
     algorithm = args.algorithm
-    method = args.method
+    method = ""
+    if algorithm == "MILP": method = "concurrent" #args.method
     input_generation = args.input_generation
     out_path = args.out_path
     initial_seed = args.initial_seed
@@ -95,14 +96,15 @@ if __name__ == "__main__":
             count_feasible += 1
 
 
-    mean_completion_time = mean_completion_time / count_feasible
-    mean_execution_time = mean_execution_time / count_feasible
-    if algorithm == "MILP":
-        mean_num_variables = mean_num_variables / count_feasible
-        mean_num_constraints = mean_num_constraints / count_feasible
-    feasible_ratio = count_feasible / num_experiments
+
 
     if algorithm != "NONE":
+        mean_completion_time = mean_completion_time / count_feasible
+        mean_execution_time = mean_execution_time / count_feasible
+        if algorithm == "MILP":
+            mean_num_variables = mean_num_variables / count_feasible
+            mean_num_constraints = mean_num_constraints / count_feasible
+        feasible_ratio = count_feasible / num_experiments
         with open(f'{out_path}/results.csv', 'a') as fd:
                 fd.write(f"\n{number_of_entities},{algorithm}-{method},{mean_completion_time},{mean_execution_time},{feasible_ratio}")
                 if algorithm == "MILP": fd.write(f",{mean_num_variables},{mean_num_constraints}")

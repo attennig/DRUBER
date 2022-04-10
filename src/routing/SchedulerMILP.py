@@ -387,7 +387,10 @@ class SchedulerMILP(PathPlanner):
                         x,y = i,j
                 if self.model.getVarByName(f"gamma_{u},{k}").x >= 0.5:
                     a = -1
-                    x = schedule.plan[u][-1].y
+                    if len(schedule.plan[u])>0:
+                        x = schedule.plan[u][-1].y
+                    else:
+                        x = self.simulation.drones[u].home.ID
                     y = x
                 else:
                     for d in self.simulation.deliveries.keys():
