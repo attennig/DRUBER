@@ -352,7 +352,7 @@ class SchedulerMILP(PathPlanner):
         # Optimize model
         self.model.optimize()
         print(f"Gurobi status: {self.model.Status}")
-        if self.model.Status == GRB.INFEASIBLE: return False
+        if self.model.Status == GRB.INFEASIBLE: return None
         self.exec_time = self.model.RunTime
         solution = self.extractSolution()
         return solution
