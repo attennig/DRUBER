@@ -1,0 +1,521 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/giulio/DRUBER/src/experiments/experiment.py", line 94, in <module>
+    feasible = exec_simulation(number_of_entities, seed, input_generation, out_path, algorithm, method)
+  File "/home/giulio/DRUBER/src/experiments/experiment.py", line 25, in exec_simulation
+    if algorithm == "MILP": solution = S.run(algorithm, method)
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 125, in run
+    self.completion_time = solution.getCompletionTime()
+AttributeError: 'bool' object has no attribute 'getCompletionTime'
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/giulio/DRUBER/src/experiments/experiment.py", line 1, in <module>
+    from src.simulation.Simulator import Simulator
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 2, in <module>
+    import matplotlib.pyplot as plt
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/pyplot.py", line 57, in <module>
+    from matplotlib.figure import Figure, figaspect
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/figure.py", line 25, in <module>
+    from matplotlib import _blocking_input, docstring, projections
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/projections/__init__.py", line 58, in <module>
+    from mpl_toolkits.mplot3d import Axes3D
+  File "/home/giulio/.local/lib/python3.8/site-packages/mpl_toolkits/mplot3d/__init__.py", line 1, in <module>
+    from .axes3d import Axes3D
+  File "/home/giulio/.local/lib/python3.8/site-packages/mpl_toolkits/mplot3d/axes3d.py", line 39, in <module>
+    from . import art3d
+  File "/home/giulio/.local/lib/python3.8/site-packages/mpl_toolkits/mplot3d/art3d.py", line 677, in <module>
+    class Poly3DCollection(PolyCollection):
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/artist.py", line 119, in __init_subclass__
+    cls._update_set_signature_and_docstring()
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/artist.py", line 140, in _update_set_signature_and_docstring
+    for prop in ArtistInspector(cls).get_setters()
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/artist.py", line 1430, in get_setters
+    for name in dir(self.o):
+KeyboardInterrupt
+3 + 3 + 2
+Stations 
+positioning 2 as neighbour of 1
+positioning 3 as neighbour of 1
+Stations done
+Drones 
+Drones done
+Deliveries 
+Deliveries done
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 4
+	simulation size: 8
+	output path: ./out/smallC
+	data folder ./out/smallC/8/4
+8 = 3 + 3 + 2
+Stations 
+positioning 2 as neighbour of 1
+positioning 3 as neighbour of 1
+Stations done
+Drones 
+Drones done
+Deliveries 
+Deliveries done
+Closing Simulation
+#############################################################
+generate size: 10 
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 1
+	simulation size: 10
+	output path: ./out/smallC
+	data folder ./out/smallC/10/1
+10 = 5 + 3 + 2
+Stations 
+positioning 2 as neighbour of 1
+positioning 3 as neighbour of 1
+positioning 4 as neighbour of 2
+positioning 5 as neighbour of 1
+Stations done
+Drones 
+Drones done
+Deliveries 
+Deliveries done
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 2
+	simulation size: 10
+	output path: ./out/smallC
+	data folder ./out/smallC/10/2
+10 = 5 + 3 + 2
+Stations 
+positioning 2 as neighbour of 1
+positioning 3 as neighbour of 2
+positioning 4 as neighbour of 3
+positioning 5 as neighbour of 4
+Stations done
+Drones 
+Drones done
+Deliveries 
+Deliveries done
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 3
+	simulation size: 10
+	output path: ./out/smallC
+	data folder ./out/smallC/10/3
+10 = 5 + 3 + 2
+Stations 
+positioning 2 as neighbour of 1
+positioning 3 as neighbour of 1
+positioning 4 as neighbour of 2
+positioning 5 as neighbour of 4
+Stations done
+Drones 
+Drones done
+Deliveries 
+Deliveries done
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 4
+	simulation size: 10
+	output path: ./out/smallC
+	data folder ./out/smallC/10/4
+10 = 5 + 3 + 2
+Stations 
+positioning 2 as neighbour of 1
+positioning 3 as neighbour of 1
+positioning 4 as neighbour of 1
+positioning 5 as neighbour of 4
+Stations done
+Drones 
+Drones done
+Deliveries 
+Deliveries done
+Closing Simulation
+#############################################################
+generate size: 12 
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 1
+	simulation size: 12
+	output path: ./out/smallC
+	data folder ./out/smallC/12/1
+12 = 5 + 4 + 3
+Stations 
+positioning 2 as neighbour of 1
+positioning 3 as neighbour of 1
+positioning 4 as neighbour of 2
+positioning 5 as neighbour of 1
+Stations done
+Drones 
+Drones done
+Deliveries 
+Deliveries done
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 2
+	simulation size: 12
+	output path: ./out/smallC
+	data folder ./out/smallC/12/2
+12 = 5 + 4 + 3
+Stations 
+positioning 2 as neighbour of 1
+positioning 3 as neighbour of 2
+positioning 4 as neighbour of 3
+positioning 5 as neighbour of 4
+Stations done
+Drones 
+Drones done
+Deliveries 
+Deliveries done
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 3
+	simulation size: 12
+	output path: ./out/smallC
+	data folder ./out/smallC/12/3
+12 = 5 + 4 + 3
+Stations 
+positioning 2 as neighbour of 1
+positioning 3 as neighbour of 1
+positioning 4 as neighbour of 2
+positioning 5 as neighbour of 4
+Stations done
+Drones 
+Drones done
+Deliveries 
+Deliveries done
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 4
+	simulation size: 12
+	output path: ./out/smallC
+	data folder ./out/smallC/12/4
+12 = 5 + 4 + 3
+Stations 
+positioning 2 as neighbour of 1
+positioning 3 as neighbour of 1
+positioning 4 as neighbour of 1
+positioning 5 as neighbour of 4
+Stations done
+Drones 
+Drones done
+Deliveries 
+Deliveries done
+Closing Simulation
+#############################################################
+run: MILP - size: 6 
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 1
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/1
+	loading data from ./out/smallC/6/1
+	initializing MILP Solver
+Set parameter Username
+Set parameter TimeLimit to value 7200
+Set parameter MemLimit to value 8
+Set parameter Method to value 4
+Academic license - for non-commercial use only - expires 2022-10-05
+	 Setting up MILP
+	 Saving MILP in ./out/smallC/6/1/MILP/model.lp
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (linux64)
+Thread count: 12 physical cores, 24 logical processors, using up to 24 threads
+Optimize a model with 112 rows, 39 columns and 314 nonzeros
+Model fingerprint: 0xd517cd89
+Variable types: 11 continuous, 28 integer (28 binary)
+Coefficient statistics:
+  Matrix range     [4e-01, 5e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+03]
+Presolve removed 79 rows and 25 columns
+Presolve time: 0.00s
+Presolved: 33 rows, 14 columns, 84 nonzeros
+Variable types: 7 continuous, 7 integer (7 binary)
+Found heuristic solution: objective 835.7471551
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 24 (of 24 available processors)
+
+Solution count 1: 835.747 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.357471551140e+02, best bound 8.357471551140e+02, gap 0.0000%
+Gurobi status: 2
+	Saving solution in ./out/smallC/6/1/MILP/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 2
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/2
+	loading data from ./out/smallC/6/2
+	initializing MILP Solver
+Set parameter Username
+Set parameter TimeLimit to value 7200
+Set parameter MemLimit to value 8
+Set parameter Method to value 4
+Academic license - for non-commercial use only - expires 2022-10-05
+	 Setting up MILP
+	 Saving MILP in ./out/smallC/6/2/MILP/model.lp
+Gurobi Optimizer version 9.5.0 build v9.5.0rc5 (linux64)
+Thread count: 12 physical cores, 24 logical processors, using up to 24 threads
+Optimize a model with 112 rows, 39 columns and 314 nonzeros
+Model fingerprint: 0x204b5cc1
+Variable types: 11 continuous, 28 integer (28 binary)
+Coefficient statistics:
+  Matrix range     [4e-01, 5e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+03]
+Presolve removed 83 rows and 30 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 24 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+Gurobi status: 3
+run: GREEDY - size: 6 
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 1
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/1
+	loading data from ./out/smallC/6/1
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/1/GREEDY/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 2
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/2
+	loading data from ./out/smallC/6/2
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/2/GREEDY/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 3
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/3
+	loading data from ./out/smallC/6/3
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/3/GREEDY/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 4
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/4
+	loading data from ./out/smallC/6/4
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/4/GREEDY/schedule.json
+Closing Simulation
+#############################################################
+run: LOCALSEARCH-BFSOPT - size: 6 
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 1
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/1
+	loading data from ./out/smallC/6/1
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/1/LOCALSEARCH-BFSOPT/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 2
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/2
+	loading data from ./out/smallC/6/2
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/2/LOCALSEARCH-BFSOPT/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 3
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/3
+	loading data from ./out/smallC/6/3
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/3/LOCALSEARCH-BFSOPT/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 4
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/4
+	loading data from ./out/smallC/6/4
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/4/LOCALSEARCH-BFSOPT/schedule.json
+Closing Simulation
+#############################################################
+run: LOCALSEARCH-LB - size: 6 
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 1
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/1
+	loading data from ./out/smallC/6/1
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/1/LOCALSEARCH-LB/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 2
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/2
+	loading data from ./out/smallC/6/2
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/2/LOCALSEARCH-LB/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 3
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/3
+	loading data from ./out/smallC/6/3
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/3/LOCALSEARCH-LB/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 4
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/4
+	loading data from ./out/smallC/6/4
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/4/LOCALSEARCH-LB/schedule.json
+Closing Simulation
+#############################################################
+run: LOCALSEARCH-HC - size: 6 
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 1
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/1
+	loading data from ./out/smallC/6/1
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/1/LOCALSEARCH-HC/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 2
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/2
+	loading data from ./out/smallC/6/2
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/2/LOCALSEARCH-HC/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 3
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/3
+	loading data from ./out/smallC/6/3
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/3/LOCALSEARCH-HC/schedule.json
+Closing Simulation
+#############################################################
+#############################################################
+Starting Simulation
+Constructor : 
+	simulation seed: 4
+	simulation size: 6
+	output path: ./out/smallC
+	data folder ./out/smallC/6/4
+	loading data from ./out/smallC/6/4
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/smallC/6/4/LOCALSEARCH-HC/schedule.json
+Closing Simulation
+#############################################################
+run: MILP - size: 8 
