@@ -16,7 +16,7 @@ DELIVERIES_RATE = 0.2
 
 
 ############ ARGUMENT PARSER ###################
-ALGORITHMS = ["MILP", "GREEDY", "GREEDYSWAPS", "LOCALSEARCH", "NONE"]
+ALGORITHMS = ["MILP", "GREEDY", "GREEDYSWAPS", "LOCALSEARCH-HC", "LOCALSEARCH-LB", "LOCALSEARCH-BFSOPT", "NONE"]
 MILP_METHODS = {"primal": 0, "dual": 1, "barrier": 2, "concurrent": 4}
 DESCRIPTION_STR = "This framework has been designed to simulate drone parcel delivery."
 

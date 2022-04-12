@@ -112,8 +112,12 @@ class Simulator:
             OPT = Greedy(self)
         #if algo == "GREEDYSWAPS":
         #    OPT = GreedySWAP(self)
-        if algo == "LOCALSEARCH":
-            OPT = LocalSearch(self)
+        if algo == "LOCALSEARCH-HC":
+            OPT = LocalSearch(self, "HC")
+        if algo == "LOCALSEARCH-LB":
+            OPT = LocalSearch(self, "LB")
+        if algo == "LOCALSEARCH-BFSOPT":
+            OPT = LocalSearch(self, "BFSOPT")
 
         OPT.setupProblem()
         solution = OPT.solveProblem()
