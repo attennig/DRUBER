@@ -67,14 +67,18 @@ class LocalSearch(PathPlanner):
         state = self.stateInit()
         objstate = state
         while True:
+            print(f"visiting {state}")
+
             if state.getCompletionTime() < objstate.getCompletionTime():
                 objstate = state
             neighbours = state.computeNeighbours(state.getCompletionTime()) # empty if neighbours are not better than current state
+
             if len(neighbours) == 0: return objstate
             state = sorted(neighbours, key=lambda state: state.getCompletionTime())[0]
 
     def localBeam(self):
         objstate = self.stateInit()
+        #print(f"greedy {objstate}")
         k = 5
         # best k neighbours of initial state for the first round
         neighbours = objstate.computeNeighbours(objstate.getCompletionTime())
@@ -84,11 +88,14 @@ class LocalSearch(PathPlanner):
             # for each round
             new_neighbours = []
             for state in neighbours:
+
+                print(f"visiting {state}")
                 if state.getCompletionTime() < objstate.getCompletionTime():
                     objstate = state
                 new_neighbours += state.computeNeighbours(state.getCompletionTime())
             # we recompute the best k neigbours of states selected in the previous round
             neighbours = sorted(new_neighbours, key=lambda state: state.getCompletionTime())[:k]
+
 
             if len(neighbours) == 0: return objstate
 

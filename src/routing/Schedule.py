@@ -25,6 +25,7 @@ class Schedule:
         return plan_str
 
     def printplan(self, plan):
+        if plan is None: return
         plan_str = ""
         for u in plan:
             plan_str += f"\n{u}:\n"
@@ -135,24 +136,31 @@ class Schedule:
 
     def addBatterySwaps(self, plan_keys=[]):
         if plan_keys == []: plan_keys = self.plan.keys()
+
         for u in plan_keys:
             SOC = self.simulation.drones[u].SoC
             i = 0
+
+
             while i < len(self.plan[u]):
+                #print(i)
                 w = 0
                 if self.plan[u][i].a != -1:
                     if self.plan[u][i].a in self.simulation.deliveries.keys():
                         w = self.simulation.deliveries[self.plan[u][i].a].weight
 
                     consumption = self.simulation.cost(self.plan[u][i].x, self.plan[u][i].y, w)
+                    #print(f"{SOC}: {self.plan[u][i].x} -- {self.plan[u][i].a} --> {self.plan[u][i].y}; {consumption}")
 
                     if SOC - consumption < 0:
                         # need a battery swap before action [u][i]
                         # impossile if [u][i-1] is a swap
                         # print(f"drone{u} action {i} has consumption {consumption} and current SoC is {SOC}")
+
                         self.plan[u] = self.plan[u][:i] + \
                                        [DroneAction(self.plan[u][i].x, self.plan[u][i].x, -1, 0)] + \
                                        self.plan[u][i:]
+                        #print(f"just battery swap added {self}")
                         SOC = 1
                         i += 1
 
@@ -161,9 +169,9 @@ class Schedule:
                 else:
                     # we need to check if the swap is necessary
                     # to do so we need to check if the next action is doable before the battery swap
-                    if i == len(self.plan[u]):
+                    if i == len(self.plan[u]) - 1:
                         self.plan[u] = self.plan[u][:i]
-                    if i + 1 < len(self.plan[u]):
+                    else: # if i  < len(self.plan[u]) - 1:
                         if self.plan[u][i + 1].a in self.simulation.deliveries.keys():
                             w = self.simulation.deliveries[self.plan[u][i + 1].a].weight
                         #assert self.plan[u][i+1].x in self.simulation.stations.keys()
@@ -173,11 +181,14 @@ class Schedule:
                         if SOC - consumption > 0:
                             # battery does not need to be swapped
                             self.plan[u] = self.plan[u][:i] + self.plan[u][i + 1:]
+                            #i-=1 #
                         else:
                             SOC = 1
                             i += 1
+                        SOC = SOC - consumption
                 i += 1
             if len(self.plan[u]) > 0: self.updateTimes(u, 0)
+            #print("UPDATED")
 
     def getCompletionTime(self):
         CT = 0
@@ -212,12 +223,13 @@ class Schedule:
 
                 for u2 in self.plan.keys():
                     if u1 == u2: continue
-                    #print(f"\t\ttry {u2}")
+                    #print(f"\t\ttry u{u2}")
                     if len(self.plan[u2]) == 0:
-                        #print(f"\t\t\t at {0}")
+                        #print(f"\t\t\t at j={0} from empty schedule")
                         current_station = self.simulation.drones[u2].home.ID
                         if current_station == handover_station:
                             # handover
+                            ##print(f"\t\t\t {u2} home is in handover station {handover_station}")
                             new_plan = copy.deepcopy(self.plan)
                             new_plan[u1] = copy.deepcopy(self.plan[u1][:i])
                             new_plan[u2] = copy.deepcopy(self.plan[u1][i:])
@@ -226,22 +238,26 @@ class Schedule:
                             if new_schedule.updateTimes(u1, 0) and new_schedule.updateTimes(u2,0):
                                 if new_schedule.getScheduleTime() < H:
                                     #print(f"{new_schedule.getCompletionTime()} <= {HORIZON}")
+                                    #print(f"handover at {u1} {i} action {self.plan[u1][i].a} with {u2} {0}")
                                     self.isValid()
                                     new_schedule.isValid()
-
+                                    #print(new_schedule)
                                     #print(f"\t\t\t\tsuccessful handover resulting in \n{new_schedule}")
                                     N.append(new_schedule)
 
                         else:
-
+                            #print(f"\t\t\t {u2} home is not in handover station {handover_station}, we add a movement")
                             # add movement current_station -> handover_station, 0, 0
                             augmented_plan = self.addDroneMovement(u2, 0, handover_station)
-
+                            #if augmented_plan is not None:
+                                #print("augmented plan")
+                                #self.printplan(augmented_plan)
                             if augmented_plan is not None:
                                 new_plan = copy.deepcopy(augmented_plan)
                                 new_plan[u1] = copy.deepcopy(augmented_plan[u1][:i])
                                 new_plan[u2] = copy.deepcopy(augmented_plan[u2]) + copy.deepcopy(augmented_plan[u1][i:])
                                 new_schedule = Schedule(self.simulation, new_plan)
+                                #print(f"new schedule before adding swaps: {new_schedule}")
                                 new_schedule.addBatterySwaps([u1, u2])
                                 if new_schedule.updateTimes(u1, 0) and new_schedule.updateTimes(u2, 0):
                                     if new_schedule.getScheduleTime() < H:
@@ -249,6 +265,7 @@ class Schedule:
                                         #print(f"handover at {u1} {i} action {self.plan[u1][i].a} with {u2} {len(augmented_plan[u2])-1}")
                                         self.isValid()
                                         new_schedule.isValid()
+                                        #print(new_schedule)
                                         #print(f"\t\t\t\tsuccessful handover resulting in \n{new_schedule}")
                                         N.append(new_schedule)
 
@@ -257,11 +274,12 @@ class Schedule:
                         for j in range(len(self.plan[u2])):
 
                             if self.plan[u2][j].a == -1: continue
-
+                            #print(f"\t\t\t u{u2} at j={j}")
                             current_station = self.plan[u2][j].x
 
                             if current_station == handover_station:
-                                #print(f"\t\t\t at {j}")
+                                #print(f"\t\t\t {u2} {j}-th departing station is handover station {handover_station}")
+
                                 # handover
                                 new_plan = copy.deepcopy(self.plan)
                                 assert new_plan[u1][i].x == new_plan[u2][j].x
@@ -274,11 +292,16 @@ class Schedule:
                                         #rint(f"{new_schedule.getCompletionTime()} <= {HORIZON}")
                                         #print(f"self {self}")
                                         new_schedule.isValid()
+                                        #print(new_schedule)
                                         #print(f"\t\t\t\tsuccessful handover resulting in \n{new_schedule}")
                                         N.append(new_schedule)
                             else:
+                                #print(f"\t\t\t {u2} {j}-th departing station is not handover station {handover_station}, we add a movement")
+
                                 # add movement current_station -> handover_station, action, 0
                                 augmented_plan = self.addDroneMovement(u2, j, handover_station)
+                                #print("augmented plan")
+                                #self.printplan(augmented_plan)
                                 if augmented_plan is not None:
 
                                     new_plan = copy.deepcopy(augmented_plan)
@@ -297,6 +320,9 @@ class Schedule:
                                             #print(f"{new_schedule.getCompletionTime()} <= {HORIZON}")
                                             self.isValid()
                                             new_schedule.isValid()
+
+                                            #print(new_schedule)
+                                            #print(f"\t\t\t\tsuccessful handover resulting in \n{new_schedule}")
                                             N.append(new_schedule)
         return N
 

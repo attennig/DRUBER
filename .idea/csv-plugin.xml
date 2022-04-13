@@ -17,13 +17,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\out\localsearch\results.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\out\milpexp\results.csv">
           <value>
             <Attribute>

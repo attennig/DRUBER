@@ -2,10 +2,10 @@ from src.simulation.Simulator import Simulator
 
 out_path = "./out/smallC" #"./out/example"
 
-S = Simulator(3, 6, out_path)
+S = Simulator(2, 10, out_path)
 S.loadScenario()
 S.getMap().savefig(f"{S.outFOLDER}/map.png")
-solution = S.run("MILP", "concurrent")
+solution = S.run("LOCALSEARCH-LB")
 S.saveSolution(solution)
 
 
