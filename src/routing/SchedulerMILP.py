@@ -355,6 +355,7 @@ class SchedulerMILP(PathPlanner):
         if self.model.Status == GRB.INFEASIBLE: return None
         self.exec_time = self.model.RunTime
         solution = self.extractSolution()
+        self.printSolution()
         return solution
 
     def printSolution(self):

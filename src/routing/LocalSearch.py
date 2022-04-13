@@ -11,6 +11,7 @@ class LocalSearch(PathPlanner):
         pass
 
     def solveProblem(self):
+
         if self.algo == "HC":
             start_time = time.time()
             solution = self.hillClimbing()
@@ -40,6 +41,14 @@ class LocalSearch(PathPlanner):
             neighbours = state.computeNeighbours()
             Q += [n for n in neighbours if n not in V]
         return objstate
+
+    def copystates(self):
+        state = self.stateInit()
+        state_copy = copy.deepcopy(state)
+        state_copy.updateTimes(2,0)
+        #print(f"original state {state}")
+        #print(f"copied state {state}")
+        return state
 
     def exp(self):
         state = self.stateInit()

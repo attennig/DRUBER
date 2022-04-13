@@ -10,7 +10,7 @@ class DroneAction:
         self.succ = None
 
     def __eq__(self, other):
-        return isinstance(other, DroneAction) and self.x == other.x and self.y == other.y and self.a == other.a
+        return isinstance(other, DroneAction) and self.x == other.x and self.y == other.y and self.a == other.a # and self.pred == other.pred and self.succ == other.succ
 
     def __str__(self):
         id_pred = None

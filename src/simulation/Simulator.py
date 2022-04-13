@@ -48,6 +48,9 @@ class Simulator:
             for j in self.stations.keys():
                 if i == j: continue
                 if self.cost(i, j, 0) < 1:
+                    #print(f"cost {i}-{j} with no parcel is {self.cost(i, j, 0)} and takes {self.time(i,j)} seconds")
+                    #for d in self.deliveries.keys():
+                    #    print(f"cost {i}-{j} with parcel {d} ({self.deliveries[d].weight}kg) is {self.cost(i, j, self.deliveries[d].weight)}")
                     self.edges.add((i, j))
 
     def generateRandomScenario(self):

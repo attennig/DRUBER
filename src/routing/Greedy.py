@@ -15,7 +15,7 @@ class Greedy(PathPlanner):
         start_time = time.time()
         schedule = Schedule(self.simulation)
         while QUICKEST_PATHS:
-            min = HORIZON
+            min_v = HORIZON
             min_d, min_u = -1, -1
             for u in self.simulation.drones.keys():
                 if len(schedule.plan[u]) == 0:
@@ -31,12 +31,12 @@ class Greedy(PathPlanner):
                     time_path = sum([self.simulation.time(p.x, p.y) for p in QUICKEST_PATHS[d]])
                     compeltion_time = pick_up_time + time_path
 
-                    if compeltion_time < min or (min_u == -1 and min_d == -1):
-                        min = compeltion_time
+                    if compeltion_time < min_v or (min_u == -1 and min_d == -1):
+                        min_v = compeltion_time
                         min_u = u
                         min_d = d
 
-            update_time_pos = len(schedule.plan[min_u]) - 1
+            update_time_pos = min(0, abs(len(schedule.plan[min_u]) - 1))
             schedule.plan[min_u] += LINK_PATHS[f"{min_u},{min_d}"] + QUICKEST_PATHS[min_d]
             schedule.updateTimes(min_u, update_time_pos)
             #assert round(schedule.plan[min_u][-1].tau) == round(min)
