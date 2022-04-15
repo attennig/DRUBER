@@ -126,6 +126,9 @@ class Simulator:
         solution = OPT.solveProblem()
         if solution is not None:
             self.completion_time = solution.getCompletionTime()
+            self.mean_delivery_time = solution.getMeanDeliveryTime()
+            self.total_distance = solution.getTotalDistance()
+            self.consumed_energy = solution.getConsumedEnergy()
             self.execution_time = OPT.exec_time
             if algo == "MILP":
                 self.num_variables = OPT.model.NumVars
@@ -151,6 +154,9 @@ class Simulator:
         metrics_file = f"{self.outAlgoFOLDER}/metrics.json"
 
         metrics = {"completion_time": self.completion_time,
+                   "mean_delivery_time": self.mean_delivery_time,
+                   "total_distance": self.total_distance,
+                   "consumed_energy": self.consumed_energy,
                    "execution_time": self.execution_time}
 
         #metrics["MILP"] = {"NumVars": self.OPT.model.NumVars,

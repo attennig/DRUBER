@@ -7,12 +7,7 @@ class Schedule:
         if self.plan is None:
             self.plan = {u : [] for u in self.simulation.drones.keys()}
 
-        #self.isValid()
-
         self.arrival_times = {d: -1 for d in self.simulation.deliveries.keys()}
-
-
-
 
     def __eq__(self, other):
         return self.plan == other.plan
@@ -49,15 +44,12 @@ class Schedule:
                 if self.plan[u][i].succ is not None: assert self.plan[u][i].a == self.plan[u][i].succ.a
 
     def updateTimes(self, u, i):
-        #print(f"to update from u={u}, i={i}")
         if i >= len(self.plan[u]): return True
-        #print(f"updating times {u} {i} for {self}")
         toUpdate = [(u,i)]
         updated = []
         while len(toUpdate) > 0:
 
             curr_u, curr_i = toUpdate.pop(0)
-            #print(f"u{curr_u}, i{curr_i}: {toUpdate}")
             assert curr_i < len(self.plan[curr_u])
 
             if (curr_u, curr_i) in updated:
@@ -69,21 +61,16 @@ class Schedule:
             tau_prev = 0
             if curr_i > 0:
                 prev = self.plan[curr_u][curr_i - 1]
-                #print(f"previous: {prev}")
                 tau_prev = prev.tau
             pred = self.plan[curr_u][curr_i].pred
-            #print(f"predecessor: {pred}")
             tau_pred = tau_prev
             if pred is not None:
                 assert pred.a == curr.a
                 tau_pred = pred.tau
             curr.tau = max(tau_pred, tau_prev) + curr.getTime(self.simulation)
-            #print(f"current action: {curr}")
-            #print(f"predecessor:{tau_pred}, previous:{tau_prev}, curr:{curr.getTime(self.simulation)}->{curr.tau}")
             updated.append((curr_u, curr_i))
 
             next = None
-            #print(self.plan[curr_u])
             if curr_i + 1 < len(self.plan[curr_u]):
                 toUpdate.append((curr_u, curr_i+1)) # next to be updated
                 next = self.plan[curr_u][curr_i+1]
@@ -99,7 +86,6 @@ class Schedule:
                             if succ_i < len(self.plan[succ_u]):
                                 toUpdate.append((succ_u, succ_i))
                         break
-        #print(f"updated times {self}")
         return True
 
         '''
@@ -149,9 +135,7 @@ class Schedule:
             SOC = self.simulation.drones[u].SoC
             i = 0
 
-
             while i < len(self.plan[u]):
-                #print(i)
                 w = 0
                 if self.plan[u][i].a != -1:
                     if self.plan[u][i].a in self.simulation.deliveries.keys():
@@ -164,14 +148,11 @@ class Schedule:
                         # need a battery swap before action [u][i]
                         # impossile if [u][i-1] is a swap
                         # print(f"drone{u} action {i} has consumption {consumption} and current SoC is {SOC}")
-
                         self.plan[u] = self.plan[u][:i] + \
                                        [DroneAction(self.plan[u][i].x, self.plan[u][i].x, -1, 0)] + \
                                        self.plan[u][i:]
-                        #print(f"just battery swap added {self}")
                         SOC = 1
                         i += 1
-
                     SOC -= consumption
 
                 else:
@@ -196,7 +177,13 @@ class Schedule:
                         SOC = SOC - consumption
                 i += 1
             if len(self.plan[u]) > 0: self.updateTimes(u, 0)
-            #print("UPDATED")
+
+    def getScheduleTime(self):
+        CT = 0
+        for u in self.plan.keys():
+            for action in self.plan[u]:
+                if action.tau > CT: CT = action.tau
+        return CT
 
     def getCompletionTime(self):
         CT = 0
@@ -207,14 +194,36 @@ class Schedule:
                     if action.y == self.simulation.deliveries[action.a].dst.ID:
                         self.arrival_times[action.a] = action.tau
                         if action.tau > CT: CT = action.tau
-
         return CT
-    def getScheduleTime(self):
-        CT = 0
+
+    def getMeanDeliveryTime(self):
+        MDT = 0
         for u in self.plan.keys():
             for action in self.plan[u]:
-                if action.tau > CT: CT = action.tau
-        return CT
+                # if action.tau > CT: CT = action.tau
+                if action.a in self.arrival_times.keys():
+                    if action.y == self.simulation.deliveries[action.a].dst.ID:
+                        self.arrival_times[action.a] = action.tau
+                        MDT += self.arrival_times[action.a]
+        return MDT/len(self.arrival_times.keys())
+
+    def getTotalDistance(self):
+        DIST = 0
+        for u in self.plan.keys():
+            for action in self.plan[u]:
+                if action.a >= 0:
+                    DIST += self.simulation.dist2D(action.x, action.y)
+        return DIST
+
+    def getConsumedEnergy(self):
+        EN = 0
+        for u in self.plan.keys():
+            for action in self.plan[u]:
+                w = 0
+                if action.a in self.arrival_times.keys(): w = self.simulation.deliveries[action.a].weight
+                if action.a >= 0:
+                    EN += self.simulation.cost(action.x, action.y, w)
+        return EN
 
 
     def computeNeighbours(self, H):
