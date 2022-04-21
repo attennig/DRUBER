@@ -43,9 +43,10 @@ class Greedy(PathPlanner):
 
             X[min_u] = schedule.plan[min_u][-1].y
             QUICKEST_PATHS.pop(min_d)
+            print(f"{min_d} assigned to {min_u}")
 
         schedule.addBatterySwaps()
-        #print(schedule)
+        print(schedule)
 
         self.exec_time = time.time() - start_time
         return schedule

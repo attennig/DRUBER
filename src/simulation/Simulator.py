@@ -201,8 +201,9 @@ class Simulator:
         return plt
 
     def getSolutionMap(self, solution: Schedule):
+        PRINT_DETAILS = len(self.drones.keys()) + len(self.stations.keys()) + len(self.deliveries.keys()) < 100
         plt.clf()
-        plt.subplots_adjust(bottom=0.05*(ceil(len(self.drones)/6) + ceil(len(self.deliveries)/5)))
+        if PRINT_DETAILS: plt.subplots_adjust(bottom=0.05*(ceil(len(self.drones)/6) + ceil(len(self.deliveries)/5)))
         plt.xlim(0,AoI_SIZE)
         plt.xlabel('x')
         plt.ylim(0,AoI_SIZE)
@@ -227,5 +228,5 @@ class Simulator:
             #plt.text(self.deliveries[d].src.x-0.5, self.deliveries[d].src.y-0.5, f"{d}:{self.deliveries[d].src.ID}->{self.deliveries[d].dst.ID}", c="brown")
             txt += f"{d}:{self.deliveries[d].src.ID}->{self.deliveries[d].dst.ID}; "
             if d % 5 == 0: txt += "\n"
-        plt.figtext(0.03, 0.01, txt,  ha='left', fontsize=12)
+        if PRINT_DETAILS: plt.figtext(0.03, 0.01, txt,  ha='left', fontsize=12)
         return plt
