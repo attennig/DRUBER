@@ -45,7 +45,7 @@ class Greedy(PathPlanner):
             QUICKEST_PATHS.pop(min_d)
 
         schedule.addBatterySwaps()
-        print(schedule)
+        #print(schedule)
 
         self.exec_time = time.time() - start_time
         return schedule
