@@ -54,7 +54,7 @@ class LocalSearch(PathPlanner):
         state = self.stateInit()
         for i in range(300):
             neighbours = state.computeNeighbours()
-            print(f"visiting \n{state}\n\twith value {state.getCompletionTime()}")
+            #print(f"visiting \n{state}\n\twith value {state.getCompletionTime()}")
             state = sorted(neighbours, key=lambda state: state.getCompletionTime())[0]
 
 
@@ -76,7 +76,7 @@ class LocalSearch(PathPlanner):
         state = self.stateInit()
         objstate = state
         while True:
-            print(f"visiting {state}")
+            #print(f"visiting {state}")
 
             if state.getCompletionTime() < objstate.getCompletionTime():
                 objstate = state
@@ -98,7 +98,7 @@ class LocalSearch(PathPlanner):
             new_neighbours = []
             for state in neighbours:
 
-                print(f"visiting {state}")
+                #print(f"visiting {state}")
                 if state.getCompletionTime() < objstate.getCompletionTime():
                     objstate = state
                 new_neighbours += state.computeNeighbours(state.getCompletionTime())
