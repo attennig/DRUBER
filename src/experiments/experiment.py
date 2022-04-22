@@ -77,34 +77,6 @@ if __name__ == "__main__":
     initial_seed = args.initial_seed
     end_seed = args.end_seed
 
-    if not os.path.exists(out_path): os.makedirs(out_path)
-    if not os.path.isfile(f'{out_path}/results.csv'):
-        with open(f'{out_path}/results.csv', 'a') as fd:
-            fd.write("size,algorithm,mean completion time,mean execution time,feasible,num variables,num constraints")
-
-
-    mean_completion_time = 0
-    mean_execution_time = 0
-    mean_num_variables = 0
-    mean_num_constraints = 0
-    count_feasible = 0
-
     num_experiments = (end_seed-initial_seed)
     for seed in range(initial_seed, end_seed):
         feasible = exec_simulation(number_of_entities, seed, input_generation, out_path, algorithm, method)
-        if feasible:
-            count_feasible += 1
-
-
-
-
-    if algorithm != "NONE":
-        mean_completion_time = mean_completion_time / count_feasible
-        mean_execution_time = mean_execution_time / count_feasible
-        if algorithm == "MILP":
-            mean_num_variables = mean_num_variables / count_feasible
-            mean_num_constraints = mean_num_constraints / count_feasible
-        feasible_ratio = count_feasible / num_experiments
-        with open(f'{out_path}/results.csv', 'a') as fd:
-                fd.write(f"\n{number_of_entities},{algorithm}-{method},{mean_completion_time},{mean_execution_time},{feasible_ratio}")
-                if algorithm == "MILP": fd.write(f",{mean_num_variables},{mean_num_constraints}")

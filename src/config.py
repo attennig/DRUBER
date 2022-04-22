@@ -16,10 +16,11 @@ DELIVERIES_RATE = 0.2
 
 
 ############ ARGUMENT PARSER ###################
-ALGORITHMS = ["MILP", "GREEDY", "GREEDYSWAPS", "LOCALSEARCH-HC", "LOCALSEARCH-LB", "LOCALSEARCH-BFSOPT", "NONE"]
+ALGORITHMS = ["MILP", "GREEDY", "LOCALSEARCH"]
 MILP_METHODS = {"primal": 0, "dual": 1, "barrier": 2, "concurrent": 4}
+LOCAL_SEARCH_METHODS = ["HC", "LB", "BFSOPT"]
 DESCRIPTION_STR = "This framework has been designed to simulate drone parcel delivery."
 
 ############# GUROBI OPT PARAMETERS #############
-OPT_TIME_LIMIT = 2*60 # [minutes]
-OPT_MEM_LIMIT = 8 # [GB]
+OPT_TIME_LIMIT = 8*60 # [minutes]
+OPT_MEM_LIMIT = 16 # [GB]

@@ -12,7 +12,7 @@ class RandomGenerator:
         self.simulation = S
         random.seed(self.simulation.seed)
 
-    def generateRandomInstance(self, N_stations, N_Drones, N_Deliveries):
+    def generateRandomInstance(self, N_stations, N_Deliveries, N_Drones):
         print("Stations ")
         self.generateRandomStations(N_stations)
         print("Stations done")

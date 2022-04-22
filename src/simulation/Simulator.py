@@ -12,13 +12,14 @@ from src.routing.GreedySWAP import GreedySWAP
 from src.routing.LocalSearch import LocalSearch
 from src.routing.Schedule import Schedule
 class Simulator:
-    def __init__(self, seed: int, size: int, out_path: str):
-        print(f"Constructor : \n\tsimulation seed: {seed}\n\tsimulation size: {size}\n\toutput path: {out_path}")
+    def __init__(self, seed: int, n_stations: int, n_deliveries: int, n_drones:int, out_path: str):
+        print(f"Constructor : \n\tsimulation seed: {seed}\n\toutput path: {out_path}")
         self.seed = seed
-        self.size = size
-
+        self.n_stations = n_stations
+        self.n_deliveries = n_deliveries
+        self.n_drones = n_drones
         # Data folder
-        self.outFOLDER = f"{out_path}/{size}/{seed}"
+        self.outFOLDER = f"{out_path}/S{n_stations}D{n_deliveries}U{n_drones}/{seed}"
         print(f"\tdata folder {self.outFOLDER}")
 
         if not os.path.exists(self.outFOLDER):
@@ -57,12 +58,7 @@ class Simulator:
         from src.simulation.RandomGenerator import RandomGenerator
         G = RandomGenerator(self)
         try:
-            nu = ceil(self.size * DRONES_RATE)
-            nd = ceil(self.size * DELIVERIES_RATE)
-            ns = self.size - nu - nd
-            print(f"{self.size} = {ns} + {nu} + {nd}")
-            assert self.size == ns + nu + nd
-            G.generateRandomInstance(ns, nu, nd)
+            G.generateRandomInstance(self.n_stations, self.n_deliveries, self.n_drones)
         except Exception as e:
             print(e)
         G.saveInstance()
@@ -105,22 +101,18 @@ class Simulator:
 
             self.computeEdges()
 
-    def run(self, algo, method=None):
-        self.outAlgoFOLDER = f"{self.outFOLDER}/{algo}"
+    def run(self, algo, method):
+        if method != "":
+            self.outAlgoFOLDER = f"{self.outFOLDER}/{algo}-{method}"
+        else:
+            self.outAlgoFOLDER = f"{self.outFOLDER}/{algo}"
         if not os.path.exists(self.outAlgoFOLDER): os.mkdir(self.outAlgoFOLDER)
         if algo == "MILP":
-            # MILP Solver
             OPT = SchedulerMILP(self, method)
         if algo == "GREEDY":
             OPT = Greedy(self)
-        #if algo == "GREEDYSWAPS":
-        #    OPT = GreedySWAP(self)
-        if algo == "LOCALSEARCH-HC":
-            OPT = LocalSearch(self, "HC")
-        if algo == "LOCALSEARCH-LB":
-            OPT = LocalSearch(self, "LB")
-        if algo == "LOCALSEARCH-BFSOPT":
-            OPT = LocalSearch(self, "BFSOPT")
+        if algo == "LOCALSEARCH":
+            OPT = LocalSearch(self, method)
 
         OPT.setupProblem()
         solution = OPT.solveProblem()
@@ -130,9 +122,9 @@ class Simulator:
             self.total_distance = solution.getTotalDistance()
             self.consumed_energy = solution.getConsumedEnergy()
             self.execution_time = OPT.exec_time
-            if algo == "MILP":
-                self.num_variables = OPT.model.NumVars
-                self.num_constraints = OPT.model.NumConstrs
+            #if algo == "MILP":
+            #    self.num_variables = OPT.model.NumVars
+            #    self.num_constraints = OPT.model.NumConstrs
         return solution
 
 
