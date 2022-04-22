@@ -4,7 +4,7 @@ do
   do
     for nu in "2" "4" "6" ;
     do
-      python -m src.experiments.instancegenerator -ns ${ns} -nd ${nd} -nu ${nu} -i_s 1 -e_s 3 -out ./out &
+      python3 -m src.experiments.instancegenerator -ns ${ns} -nd ${nd} -nu ${nu} -i_s 1 -e_s 3 -out ./out &
       wait
     done;
   done;
