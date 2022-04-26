@@ -2,7 +2,7 @@ from argparse import ArgumentParser
 import os
 import csv
 import matplotlib.pyplot as plt
-def plot_metric(metric, data):
+def plot_metric(out_path_plots, metric, data):
     plt.clf()
     for alg in data.keys():
         N, V = [], []
@@ -18,19 +18,16 @@ def plot_metric(metric, data):
 
 
 if __name__ == "__main__":
+    S = 5
+    D = 4
+    out_path = "./out"
+    #sizes = {"stations": [5], "deliveries": [2, 4, 6], "drones": [2, 4, 6]}
+    #seeds = [1, 2]
+    #algorithms = ["MILP-concurrent", "GREEDY", "LOCALSEARCH-LB", "LOCALSEARCH-HC", "LOCALSEARCH-BFSOPT"]
 
-    parser = ArgumentParser()
-
-    # MANDATORY
-    parser.add_argument("-out", dest='out_path', action="store", type=str,
-                        help="path to output folder")
-
-    args = parser.parse_args()
-
-    out_path = args.out_path
 
     assert os.path.isfile(f'{out_path}/results.csv')
-    out_path_plots = f"{out_path}/plots"
+    out_path_plots = f"{out_path}/plots/S{S}D{D}"
     if not os.path.exists(out_path_plots): os.mkdir(out_path_plots)
 
     points = []
@@ -39,16 +36,21 @@ if __name__ == "__main__":
         for row in csv_dict:
             points.append(row)
 
-            features = list(row.keys())[2:]
+            features = list(row.keys())[4:]
     print(features)
+
 
     for feature in features:
         data = {}
         for point in points:
-            n = int(point["size"])
+            nstations = int(point["nstations"])
+            ndeliveries = int(point["ndeliveries"])
+            if nstations != S or ndeliveries != D: continue
+            ndrones = int(point["ndrones"])
             alg = point["algorithm"]
             value = point[feature]
             if alg not in data.keys(): data[alg] = {}
-            if value is not None: data[alg][n] = float(value)
+            if value is not None: data[alg][ndrones] = float(value)
 
-        plot_metric(feature, data)
+        print(f"{feature}\n{data}")
+        plot_metric(out_path_plots, feature, data)
