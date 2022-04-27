@@ -2,9 +2,11 @@ import json
 import os
 
 path = "./out"
-sizes = {"stations":[5], "deliveries":[2,4,6], "drones":[2,4,6]}
-seeds = [1,2]
-algorithms = ["MILP-concurrent", "GREEDY","LOCALSEARCH-LB","LOCALSEARCH-HC","LOCALSEARCH-BFSOPT"]
+#sizes = {"stations":[20], "deliveries":[5,10,15,20,25], "drones":[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30]}
+sizes = {"stations":[20], "deliveries":[5,10,15,20,25], "drones":[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30]}
+
+seeds = [1,2,3,4,5]
+algorithms = ["GREEDY","LOCALSEARCH-LB","LOCALSEARCH-HC","LOCALSEARCH-BFSOPT"] # "MILP-concurrent"
 
 print("\n------------------------------------------------------")
 out_file_name = f"{path}/results.csv"
