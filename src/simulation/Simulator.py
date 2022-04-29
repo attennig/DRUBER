@@ -40,6 +40,9 @@ class Simulator:
         self.swap_time = SWAP_TIME
         self.horizon = HORIZON
 
+        # UNIT_CONSUMPTION = 0.00006  # [SoC/m] (SoC percentage consumed with no payload flying 1 meter)
+        # ALPHA = 0.00003  # [SoC/(m*kg)]
+
         # Metrics
         self.completion_time = 0
         self.execution_time = 0
@@ -118,9 +121,15 @@ class Simulator:
         solution = OPT.solveProblem()
         if solution is not None:
             self.completion_time = solution.getCompletionTime()
+            self.mean_schedule_time = solution.getMeanScheduleTime()
+            self.mean_flight_time = solution.getMeanFlightTime()
+            self.mean_swap_time = solution.getMeanSwapTime()
+            self.mean_idle_time = solution.getMeanIdleTime()
             self.mean_delivery_time = solution.getMeanDeliveryTime()
-            self.total_distance = solution.getTotalDistance()
-            self.consumed_energy = solution.getConsumedEnergy()
+            self.mean_schedule_distance = solution.getMeanScheduleDistance()
+            self.mean_schedule_energy = solution.getMeanScheduleEnergy()
+            self.mean_number_swaps = solution.getMeanNumberSwaps()
+            self.drone_utilization = solution.getDroneUtilization()
             self.execution_time = OPT.exec_time
             #if algo == "MILP":
             #    self.num_variables = OPT.model.NumVars
@@ -145,11 +154,19 @@ class Simulator:
 
         metrics_file = f"{self.outAlgoFOLDER}/metrics.json"
 
-        metrics = {"completion_time": self.completion_time,
-                   "mean_delivery_time": self.mean_delivery_time,
-                   "total_distance": self.total_distance,
-                   "consumed_energy": self.consumed_energy,
-                   "execution_time": self.execution_time}
+        metrics = {
+                    "completion_time":  self.completion_time,
+                    "mean_schedule_time":  self.mean_schedule_time,
+                    "mean_flight_time":  self.mean_flight_time,
+                    "mean_swap_time":  self.mean_swap_time,
+                    "mean_idle_time":  self.mean_idle_time,
+                    "mean_delivery_time":  self.mean_delivery_time,
+                    "mean_schedule_distance":  self.mean_schedule_distance,
+                    "mean_schedule_energy":  self.mean_schedule_energy,
+                    "mean_number_swaps":  self.mean_number_swaps,
+                    "drone_utilization":  self.drone_utilization,
+                    "execution_time":  self.execution_time
+        }
 
         #metrics["MILP"] = {"NumVars": self.OPT.model.NumVars,
         #                   "NumConstrs": self.OPT.model.NumConstrs,

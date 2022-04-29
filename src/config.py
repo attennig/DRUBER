@@ -2,7 +2,7 @@
 AoI_SIZE = 100*10**3 #[m] = 300 km
 HORIZON = 10000
 SWAP_TIME = 60 #[s]
-DRONE_SPEED = 14 #[m/s]
+DRONE_SPEED = 7 #[m/s]
 DRONE_MAX_PAYLOAD = 2 #[kg]
 MIN_DISTANCE = 5*10**3 #[m] = 5 km
 UNIT_CONSUMPTION = 0.00006 #[SoC/m] (SoC percentage consumed with no payload flying 1 meter)

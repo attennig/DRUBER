@@ -3,10 +3,14 @@ import os
 
 path = "./out"
 #sizes = {"stations":[20], "deliveries":[5,10,15,20,25], "drones":[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30]}
-sizes = {"stations":[20], "deliveries":[5,10,15,20,25], "drones":[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30]}
+sizes = {"stations":[20], "drones":[5,10,15,20,25], "deliveries":[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30]}
+#sizes = {"stations":[5,10], "drones":[2,4,6], "deliveries":[2,4,6]}
 
 seeds = [1,2,3,4,5]
-algorithms = ["GREEDY","LOCALSEARCH-LB","LOCALSEARCH-HC","LOCALSEARCH-BFSOPT"] # "MILP-concurrent"
+#seeds = [1,2]
+
+algorithms = ["GREEDY","LOCALSEARCH-LB","LOCALSEARCH-HC","LOCALSEARCH-BFSOPT"]
+#algorithms = ["MILP-concurrent","GREEDY","LOCALSEARCH-LB","LOCALSEARCH-HC","LOCALSEARCH-BFSOPT"]
 
 print("\n------------------------------------------------------")
 out_file_name = f"{path}/results.csv"

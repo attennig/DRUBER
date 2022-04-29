@@ -3,6 +3,20 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\out\MILP\results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\out\OLD\L cloud\results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\out\OLD\U30D20\L\results.csv">
           <value>
             <Attribute>
@@ -24,6 +38,27 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\out\OLD\merged\M\results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\out\OLD\merged\smallC\results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\out\OLD\milpexp\results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\out\PROVA\results.csv">
           <value>
             <Attribute>
@@ -31,14 +66,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\out\results.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\out\resultsLS.csv">
+        <entry key="\out\S20 deliveryfixed\results.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

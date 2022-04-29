@@ -34,6 +34,7 @@ class Schedule:
         #print(self)
         for u in self.plan.keys():
             assert u in self.simulation.drones.keys()
+            #if len(self.plan[u]) > 0: assert self.plan[u][-1].a != 0
             for i in range(len(self.plan[u])):
                 #print(f"ACTOIN x{action.x}, y{action.y}")
                 assert self.plan[u][i].a in [-1,0] or self.plan[u][i].a in self.simulation.deliveries.keys()
@@ -127,7 +128,6 @@ class Schedule:
 
         print("returning")'''
 
-
     def addBatterySwaps(self, plan_keys=[]):
         if plan_keys == []: plan_keys = self.plan.keys()
 
@@ -194,7 +194,34 @@ class Schedule:
                     if action.y == self.simulation.deliveries[action.a].dst.ID:
                         self.arrival_times[action.a] = action.tau
                         if action.tau > CT: CT = action.tau
+        #assert max([self.plan[u][-1].tau for u in self.plan.keys() if len(self.plan[u])>0]) == CT
         return CT
+
+    def getMeanScheduleTime(self):
+        MST = 0
+        for u in self.plan.keys():
+            if len(self.plan[u]) > 0:
+                MST += self.plan[u][-1].tau
+        return MST/len(self.plan.keys())
+
+    def getMeanFlightTime(self):
+        MFT = 0
+        for u in self.plan.keys():
+            for action in self.plan[u]:
+                if action.a != -1:
+                    MFT += action.getTime(self.simulation)
+        return MFT/len(self.plan.keys())
+
+    def getMeanSwapTime(self):
+        MST = 0
+        for u in self.plan.keys():
+            for action in self.plan[u]:
+                if action.a == -1:
+                    MST += action.getTime(self.simulation)
+        return MST/len(self.plan.keys())
+
+    def getMeanIdleTime(self):
+        return self.getMeanScheduleTime() - (self.getMeanFlightTime() + self.getMeanSwapTime())
 
     def getMeanDeliveryTime(self):
         MDT = 0
@@ -207,24 +234,37 @@ class Schedule:
                         MDT += self.arrival_times[action.a]
         return MDT/len(self.arrival_times.keys())
 
-    def getTotalDistance(self):
-        DIST = 0
+    def getMeanScheduleDistance(self):
+        MSD = 0
         for u in self.plan.keys():
             for action in self.plan[u]:
                 if action.a >= 0:
-                    DIST += self.simulation.dist2D(action.x, action.y)
-        return DIST
+                    MSD += self.simulation.dist2D(action.x, action.y)
+        return MSD/len(self.plan.keys())
 
-    def getConsumedEnergy(self):
-        EN = 0
+    def getMeanScheduleEnergy(self):
+        MSE = 0
         for u in self.plan.keys():
             for action in self.plan[u]:
                 w = 0
                 if action.a in self.arrival_times.keys(): w = self.simulation.deliveries[action.a].weight
                 if action.a >= 0:
-                    EN += self.simulation.cost(action.x, action.y, w)
-        return EN
+                    MSE += self.simulation.cost(action.x, action.y, w)
+        return MSE/len(self.plan.keys())
 
+    def getMeanNumberSwaps(self):
+        MNS = 0
+        for u in self.plan.keys():
+            for action in self.plan[u]:
+                if action.a == -1:
+                    MNS += 1
+        return MNS / len(self.plan.keys())
+
+    def getDroneUtilization(self):
+        DU = 0
+        for u in self.plan.keys():
+            if len(self.plan[u]) > 0: DU += 1
+        return DU / len(self.plan.keys())
 
     def computeNeighbours(self, H):
         N = []
