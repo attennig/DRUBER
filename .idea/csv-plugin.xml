@@ -73,6 +73,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\out\S20 dronesfixed\results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
