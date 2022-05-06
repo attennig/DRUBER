@@ -1,11 +1,12 @@
 from src.simulation.Simulator import Simulator
 
-out_path = "./out/example" #"./out/example"
+out_path = "./out" #"./out/example"
 
-S = Simulator(1, 18, out_path)
+S = Simulator(1, 20, 5, 2, out_path)
 S.loadScenario()
-#S.getMap().savefig(f"{S.outFOLDER}/map.png")
-solution = S.run("LOCALSEARCH-HC")
-S.saveSolution(solution)
+sol = S.loadSolution("LOCALSEARCH", "BFSOPT")
+print(sol)
+S.saveSolution(sol, "LOCALSEARCH", "BFSOPT", True)
+
 
 

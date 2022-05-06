@@ -29,7 +29,6 @@ class Schedule:
                 plan_str += f"\t{action}\n"
         print(plan_str)
 
-
     def isValid(self):
         #print(self)
         for u in self.plan.keys():
@@ -265,6 +264,29 @@ class Schedule:
         for u in self.plan.keys():
             if len(self.plan[u]) > 0: DU += 1
         return DU / len(self.plan.keys())
+
+    def getTotalNumberParcelHandover(self):
+        TPH = 0
+        for d in self.simulation.deliveries.keys():
+            # count how many drones carry d
+            actions_dronect = []
+            for u in self.simulation.drones.keys():
+                for action in self.plan[u]:
+                    if action.a == d:
+                        actions_dronect.append((u, action.tau))
+            #sort actions_dronect
+            sorted_actions = sorted(actions_dronect, key=lambda tup: tup[1])
+            handover_count = 0
+            for i in range(len(sorted_actions)-1):
+                if sorted_actions[i][0] != sorted_actions[i+1][0]:
+                    # handover
+                    handover_count += 1
+            TPH += handover_count
+
+        return TPH
+
+    def getMeanNumberParceHandover(self):
+        return self.getTotalNumberParcelHandover()/len(self.arrival_times.keys())
 
     def computeNeighbours(self, H):
         N = []

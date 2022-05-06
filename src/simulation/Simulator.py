@@ -11,6 +11,7 @@ from src.routing.Greedy import Greedy
 from src.routing.GreedySWAP import GreedySWAP
 from src.routing.LocalSearch import LocalSearch
 from src.routing.Schedule import Schedule
+from src.routing.DroneAction import DroneAction
 class Simulator:
     def __init__(self, seed: int, n_stations: int, n_deliveries: int, n_drones:int, out_path: str):
         print(f"Constructor : \n\tsimulation seed: {seed}\n\toutput path: {out_path}")
@@ -69,15 +70,7 @@ class Simulator:
 
     def loadScenario(self):
         print(f"\tloading data from {self.outFOLDER}")
-
-        #config_file = self.outFOLDER + "/config.json"
         data_file = self.outFOLDER + "/in.json"
-        #with open(config_file) as file_in:
-        #    config = json.load(file_in)
-        #    assert config["AoI_SIZE"] == AoI_SIZE
-        #    assert config["DRONE_SPEED"] == DRONE_SPEED
-        #    assert config["DRONE_MAX_PAYLOAD"] == DRONE_MAX_PAYLOAD
-        #    assert config["MIN_DISTANCE"] == MIN_DISTANCE
         with open(data_file) as file_in:
             data = json.load(file_in)
             entities = data['entities']
@@ -95,65 +88,90 @@ class Simulator:
                 info = entities['drones'][u]
                 home = self.stations[int(info['home'])]
                 self.drones[int(u)] = Drone(int(u), home)
-
-            #parameters = out['parameters']
-
-            #self.num_activities = parameters["num_activities"]
-            #self.path_len = parameters["path_len"]
-
-
             self.computeEdges()
+    def loadSolution(self, algo, method=""):
+        '''
+        This method is used to load solutions and metrics previously computed.
+        :param algo: algorithm name used to compute the solution.
+        :param method: algorithm method, if applicable.
+        :return: Schedule object containing the solution
+        '''
+        print(f"\tloading data from {self.outFOLDER}")
+        if method != "":
+            data_path = f"{self.outFOLDER}/{algo}-{method}"
+        else:
+            data_path = f"{self.outFOLDER}/{algo}"
+        schedule_file = f"{data_path}/schedule.json"
+        metric_file = f"{data_path}/metrics.json"
+        with open(schedule_file) as file_in:
+            plan = json.load(file_in)
+        plan_o = {int(u) : [] for u in plan.keys()}
+        for u in plan.keys():
+            for action in plan[u]:
+                plan_o[int(u)].append(DroneAction(action['x'], action['y'], action['a'], action['tau']))
+        with open(metric_file) as file_in:
+            metrics = json.load(file_in)
+        self.execution_time = metrics["execution_time"]
+
+
+
+        return Schedule(self, plan_o)
 
     def run(self, algo, method):
-        if method != "":
-            self.outAlgoFOLDER = f"{self.outFOLDER}/{algo}-{method}"
-        else:
-            self.outAlgoFOLDER = f"{self.outFOLDER}/{algo}"
-        if not os.path.exists(self.outAlgoFOLDER): os.mkdir(self.outAlgoFOLDER)
         if algo == "MILP":
             OPT = SchedulerMILP(self, method)
         if algo == "GREEDY":
             OPT = Greedy(self)
         if algo == "LOCALSEARCH":
             OPT = LocalSearch(self, method)
-
         OPT.setupProblem()
         solution = OPT.solveProblem()
-        if solution is not None:
-            self.completion_time = solution.getCompletionTime()
-            self.mean_schedule_time = solution.getMeanScheduleTime()
-            self.mean_flight_time = solution.getMeanFlightTime()
-            self.mean_swap_time = solution.getMeanSwapTime()
-            self.mean_idle_time = solution.getMeanIdleTime()
-            self.mean_delivery_time = solution.getMeanDeliveryTime()
-            self.mean_schedule_distance = solution.getMeanScheduleDistance()
-            self.mean_schedule_energy = solution.getMeanScheduleEnergy()
-            self.mean_number_swaps = solution.getMeanNumberSwaps()
-            self.drone_utilization = solution.getDroneUtilization()
-            self.execution_time = OPT.exec_time
-            #if algo == "MILP":
-            #    self.num_variables = OPT.model.NumVars
-            #    self.num_constraints = OPT.model.NumConstrs
+        self.execution_time = OPT.exec_time
         return solution
 
+    def computeMetrics(self, solution):
+        self.completion_time = solution.getCompletionTime()
+        self.mean_schedule_time = solution.getMeanScheduleTime()
+        self.mean_flight_time = solution.getMeanFlightTime()
+        self.mean_swap_time = solution.getMeanSwapTime()
+        self.mean_idle_time = solution.getMeanIdleTime()
+        self.mean_delivery_time = solution.getMeanDeliveryTime()
+        self.mean_schedule_distance = solution.getMeanScheduleDistance()
+        self.mean_schedule_energy = solution.getMeanScheduleEnergy()
+        self.mean_number_swaps = solution.getMeanNumberSwaps()
+        self.drone_utilization = solution.getDroneUtilization()
+        self.total_number_parcel_handover = solution.getTotalNumberParcelHandover()
+        self.mean_number_parcel_handover = solution.getMeanNumberParceHandover()
 
-    def saveSolution(self, solution: Schedule):
+        # if algo == "MILP":
+        #    self.num_variables = OPT.model.NumVars
+        #    self.num_constraints = OPT.model.NumConstrs
+
+    def saveSolution(self, solution: Schedule, algo: str, method="", update_metrics=False):
+        if solution is None: return
+        if method != "":
+            self.outAlgoFOLDER = f"{self.outFOLDER}/{algo}-{method}"
+        else:
+            self.outAlgoFOLDER = f"{self.outFOLDER}/{algo}"
         if not os.path.exists(self.outAlgoFOLDER): os.mkdir(self.outAlgoFOLDER)
         schedule_file = f"{self.outAlgoFOLDER}/schedule.json"
         print(f"\tSaving solution in {schedule_file}")
 
-        schedule = {}
-        for u in self.drones.keys():
-            schedule[u] = [action.getDICT() for action in solution.plan[u]]
-        #schedule["Parameters"] = {"K": self.OPT.K, "P": self.OPT.P}
-        with open(schedule_file, "w") as file_out:
-            json.dump(schedule, file_out)
-
-        map = self.getSolutionMap(solution)  # seve as map.png
-        map.savefig(f"{self.outAlgoFOLDER}/map_out.png")
+        if not update_metrics:
+            print("saving schedule")
+            schedule = {}
+            for u in self.drones.keys():
+                schedule[u] = [action.getDICT() for action in solution.plan[u]]
+            #schedule["Parameters"] = {"K": self.OPT.K, "P": self.OPT.P}
+            with open(schedule_file, "w") as file_out:
+                json.dump(schedule, file_out)
+            print("saving map")
+            map = self.getSolutionMap(solution)  # seve as map.png
+            map.savefig(f"{self.outAlgoFOLDER}/map_out.png")
 
         metrics_file = f"{self.outAlgoFOLDER}/metrics.json"
 
+        self.computeMetrics(solution)
         metrics = {
                     "completion_time":  self.completion_time,
                     "mean_schedule_time":  self.mean_schedule_time,
@@ -165,6 +183,8 @@ class Simulator:
                     "mean_schedule_energy":  self.mean_schedule_energy,
                     "mean_number_swaps":  self.mean_number_swaps,
                     "drone_utilization":  self.drone_utilization,
+                    "total_number_parcel_handover": self.total_number_parcel_handover,
+                    "mean_number_parcel_handover": self.mean_number_parcel_handover,
                     "execution_time":  self.execution_time
         }
 

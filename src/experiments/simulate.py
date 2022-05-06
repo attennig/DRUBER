@@ -32,4 +32,4 @@ for seed in range(args.initial_seed, args.end_seed):
     solution = S.run(args.algorithm, args.method)
 
     if solution is not None:
-        S.saveSolution(solution)
+        S.saveSolution(solution, args.algorithm, args.method)
