@@ -2,17 +2,14 @@
 AoI_SIZE = 100*10**3 #[m] = 100 km
 HORIZON = 10800
 SWAP_TIME = 60 #[s]
+ALTITUDE = 5 #[m]
 DRONE_SPEED = 7 #[m/s]
-DRONE_MAX_PAYLOAD = 2 #[kg]
+DRONE_MAX_PAYLOAD = 15.5 #[kg]
 MIN_DISTANCE = 5*10**3 #[m] = 5 km
-UNIT_CONSUMPTION = 0.00006 #[SoC/m] (SoC percentage consumed with no payload flying 1 meter)
-ALPHA = 0.00003 #[SoC/(m*kg)]
+# matrice 600 dji battery TB48S
+UNIT_CONSUMPTION = 9.23112501 * 10**(-5)  #[SoC/sec] (SoC percentage consumed with no payload flying 1 meter)
+ALPHA = 0.00041367153091968886 #[SoC/(sec*kg)]
 CONSUMPTION_UPPER_BOUND = 100
-
-STATIONS_RATE  = 0.5
-DRONES_RATE = 0.3
-DELIVERIES_RATE = 0.2
-
 
 
 ############ ARGUMENT PARSER ###################

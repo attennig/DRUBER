@@ -34,8 +34,8 @@ class Simulator:
 
         # Drone flight behaviour
         # Euclidean distance between two stations given their IDs
-        self.dist2D = lambda i, j: sqrt((self.stations[i].x - self.stations[j].x) ** 2 + (self.stations[i].y - self.stations[j].y) ** 2)
-        self.cost = lambda i, j, w:  self.dist2D(i,j) * self.unitcost(w)
+        self.dist2D = lambda i, j: 2*ALTITUDE + sqrt((self.stations[i].x - self.stations[j].x) ** 2 + (self.stations[i].y - self.stations[j].y) ** 2)
+        self.cost = lambda i, j, w:  self.time(i,j) * self.unitcost(w)
         self.unitcost = lambda w: UNIT_CONSUMPTION + ALPHA*w
         self.time = lambda i,j: self.dist2D(i,j) / DRONE_SPEED
         self.swap_time = SWAP_TIME
