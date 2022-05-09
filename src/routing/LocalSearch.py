@@ -13,17 +13,17 @@ class LocalSearch(PathPlanner):
     def solveProblem(self):
 
         if self.algo == "HC":
-            start_time = time.time()
+            #start_time = time.time()
             solution = self.hillClimbing()
-            self.exec_time = time.time() - start_time
+            #self.exec_time = time.time() - start_time
         elif self.algo == "LB":
-            start_time = time.time()
+            #start_time = time.time()
             solution = self.localBeam()
-            self.exec_time = time.time() - start_time
+            #self.exec_time = time.time() - start_time
         elif self.algo == "BFSOPT":
-            start_time = time.time()
+            #start_time = time.time()
             solution = self.BFSOPT()
-            self.exec_time = time.time() - start_time
+            #self.exec_time = time.time() - start_time
         return solution
 
     def BFS(self):

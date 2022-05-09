@@ -10,7 +10,8 @@ from src.config import *
 class RandomGenerator:
     def __init__(self, S: Simulator):
         self.simulation = S
-        random.seed(self.simulation.seed)
+        self.seed = S.seed
+        random.seed(self.seed)
 
     def generateRandomInstance(self, N_stations, N_Deliveries, N_Drones):
         print("Stations ")
@@ -29,7 +30,8 @@ class RandomGenerator:
         j = 2
         while len(self.simulation.stations) < N_stations:
             i = random.randint(1, len(self.simulation.stations))
-            max_dist = 1 / self.simulation.unitcost(DRONE_MAX_PAYLOAD)
+            max_dist = floor(DRONE_SPEED / self.simulation.unitcost(DRONE_MAX_PAYLOAD))
+            print(f"[{MIN_DISTANCE}, {max_dist}]")
             d, theta = random.uniform(MIN_DISTANCE,max_dist), radians(random.uniform(0, 360))
             x = self.simulation.stations[i].x + d * cos(theta)
             y = self.simulation.stations[i].y + d * sin(theta)
@@ -139,7 +141,7 @@ class RandomGenerator:
 
     def saveInstance(self):
         map = self.simulation.getMap() # seve as map.png
-        map.savefig(f"{self.simulation.outFOLDER}/map_in.png") # img overlap
+        map.savefig(f"{self.simulation.inFOLDER}/map_in{self.seed}.png") # img overlap
 
         stations = {}
         drones = {}
@@ -164,20 +166,6 @@ class RandomGenerator:
             'path_len': self.simulation.path_len
         }'''
 
-        with open(f"{self.simulation.outFOLDER}/in.json", "w") as file_out:
+        with open(f"{self.simulation.inFOLDER}/in{self.simulation.seed}.json", "w") as file_out:
             json.dump(data, file_out)
 
-        '''config = {
-                    'SIMULATION_SEED': SIMULATION_SEED,
-                    'AoI_SIZE': AoI_SIZE,
-                    'HORIZON': HORIZON,
-                    'SWAP_TIME': SWAP_TIME,
-                    'DRONE_SPEED': DRONE_SPEED,
-                    'DRONE_MAX_PAYLOAD': DRONE_MAX_PAYLOAD,
-                    'MIN_DISTANCE': MIN_DISTANCE,
-                    'UNIT_CONSUMPTION': UNIT_CONSUMPTION,
-                    'ALPHA': ALPHA,
-                    'CONSUMPTION_UPPER_BOUND': CONSUMPTION_UPPER_BOUND
-                  } # save as config.json
-        with open(f"{self.simulation.dataFOLDER}/config.json", "w") as file_out:
-            json.dump(config, file_out)'''

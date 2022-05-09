@@ -1,6 +1,5 @@
 from src.routing.DroneAction import *
 from src.routing.Schedule import *
-import time
 class PathPlanner:
 
     def __init__(self, sim):

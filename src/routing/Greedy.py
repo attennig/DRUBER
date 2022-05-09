@@ -12,7 +12,7 @@ class Greedy(PathPlanner):
         QUICKEST_PATHS = {d: self.computeQuickestPath(self.simulation.deliveries[d].src.ID, self.simulation.deliveries[d].dst.ID, d, self.simulation.deliveries[d].weight) for d in self.simulation.deliveries.keys()}
         LINK_PATHS = {}
         X = {u: self.simulation.drones[u].home.ID for u in self.simulation.drones.keys()}
-        start_time = time.time()
+        #start_time = time.time()
         schedule = Schedule(self.simulation)
         while QUICKEST_PATHS:
             min_v = HORIZON
@@ -48,7 +48,7 @@ class Greedy(PathPlanner):
         schedule.addBatterySwaps()
         print(schedule)
 
-        self.exec_time = time.time() - start_time
+        #self.exec_time = time.time() - start_time
         return schedule
 
 

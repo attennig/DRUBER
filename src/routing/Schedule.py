@@ -219,7 +219,7 @@ class Schedule:
                     MST += action.getTime(self.simulation)
         return MST/len(self.plan.keys())
 
-    def getMeanIdleTime(self):
+    def getMeanWaitingTime(self):
         return self.getMeanScheduleTime() - (self.getMeanFlightTime() + self.getMeanSwapTime())
 
     def getMeanDeliveryTime(self):
@@ -259,11 +259,25 @@ class Schedule:
                     MNS += 1
         return MNS / len(self.plan.keys())
 
-    def getDroneUtilization(self):
-        DU = 0
+    def getDroneMeanUtilizationTime(self):
+        '''
+        This method computes the utilization time of drones in the system.
+        Computed as the time drones spend flying or swapping batteries / ndrones
+        :return: Drone utilization time metric
+        '''
+        utilization_time = 0
         for u in self.plan.keys():
-            if len(self.plan[u]) > 0: DU += 1
-        return DU / len(self.plan.keys())
+            for action in self.plan[u]:
+                    utilization_time += action.getTime(self.simulation)
+        return utilization_time / len(self.plan.keys()) #* self.getCompletionTime()
+
+    def getDroneUtilization(self):
+        '''
+        This method computes the utilization of drones in the system.
+        Computed as the drone mean utilization time / completion time
+        :return: Drone utilization metric
+        '''
+        return self.getDroneMeanUtilizationTime()/self.getCompletionTime()
 
     def getTotalNumberParcelHandover(self):
         TPH = 0
@@ -282,11 +296,27 @@ class Schedule:
                     # handover
                     handover_count += 1
             TPH += handover_count
-
         return TPH
+
 
     def getMeanNumberParceHandover(self):
         return self.getTotalNumberParcelHandover()/len(self.arrival_times.keys())
+
+    def computeAllMetrics(self):
+        self.completion_time = round(self.getCompletionTime(), 4)
+        self.mean_schedule_time = round(self.getMeanScheduleTime(), 4)
+        self.mean_flight_time = round(self.getMeanFlightTime(), 4)
+        self.mean_swap_time = round(self.getMeanSwapTime(), 4)
+        self.mean_waiting_time = round(self.getMeanWaitingTime(), 4)
+        self.mean_delivery_time = round(self.getMeanDeliveryTime(), 4)
+        self.mean_schedule_distance = round(self.getMeanScheduleDistance(), 4)
+        self.mean_schedule_energy = round(self.getMeanScheduleEnergy(), 4)
+        self.mean_number_swaps = round(self.getMeanNumberSwaps(), 4)
+        self.drone_utilization_time = round(self.getDroneMeanUtilizationTime(), 4)
+        self.drone_utilization = round(self.getDroneUtilization(), 4)
+        self.total_number_parcel_handover = round(self.getTotalNumberParcelHandover(), 4)
+        self.mean_number_parcel_handover = round(self.getMeanNumberParceHandover(), 4)
+
 
     def computeNeighbours(self, H):
         N = []
@@ -415,4 +445,6 @@ class Schedule:
                     return new_plan
 
         return None
+
+
 
