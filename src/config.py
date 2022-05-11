@@ -1,7 +1,9 @@
 ######## SIMULATION PARAMETERS ###########
 AoI_SIZE = 25*10**3 #[m] = 25 km^2
-HORIZON = 10800
+HORIZON = 20*10**3
 SWAP_TIME = 60 #[s]
+LOAD_TIME = 20 #[s]
+UNLOAD_TIME = 20 #[s]
 ALTITUDE = 5 #[m]
 DRONE_SPEED = 7 #[m/s]
 DRONE_MAX_PAYLOAD = 2 #[kg]

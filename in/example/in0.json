@@ -1,0 +1,14 @@
+{"entities":
+  {"stations":
+    {
+      "1": {"x": 1000, "y": 5000, "capacity": 2},
+      "2": {"x": 1000, "y": 10000, "capacity": 2}
+    },
+    "drones":
+    {"1": {"home": 1}},
+    "deliveries":
+    {
+      "1": {"src": 1, "dst": 2, "weight": 2}
+    }
+  }
+}

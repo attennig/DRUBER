@@ -8,6 +8,7 @@ from src.entities.Station import Station
 from src.entities.Drone import Drone
 from src.entities.Delivery import Delivery
 from src.routing.SchedulerMILP import SchedulerMILP
+from src.routing.MILPPlanner import MILPPlanner
 from src.routing.Greedy import Greedy
 from src.routing.LocalSearch import LocalSearch
 from src.routing.Schedule import Schedule
@@ -40,6 +41,8 @@ class Simulator:
         self.cost = lambda i, j, w:  self.time(i,j) * self.unitcost(w)
         self.unitcost = lambda w: UNIT_CONSUMPTION + ALPHA*w
         self.time = lambda i,j: self.dist2D(i,j) / DRONE_SPEED
+        self.load_time = LOAD_TIME
+        self.unload_time = UNLOAD_TIME
         self.swap_time = SWAP_TIME
         self.horizon = HORIZON
 
@@ -119,8 +122,12 @@ class Simulator:
         return Schedule(self, plan_o)
 
     def run(self, algo, method):
+        if not os.path.exists(self.outFOLDER): os.makedirs(self.outFOLDER)
+        if method is None: self.outAlgoFOLDER = f"{self.outFOLDER}/{algo}"
+        else: self.outAlgoFOLDER = f"{self.outFOLDER}/{algo}-{method}"
+        if not os.path.exists(self.outAlgoFOLDER): os.mkdir(self.outAlgoFOLDER)
         if algo == "MILP":
-            OPT = SchedulerMILP(self, method)
+            OPT = MILPPlanner(self, method)
         if algo == "GREEDY":
             OPT = Greedy(self)
         if algo == "LOCALSEARCH":
@@ -151,16 +158,21 @@ class Simulator:
         #    self.num_variables = OPT.model.NumVars
         #    self.num_constraints = OPT.model.NumConstrs'''
 
-    def saveSolution(self, solution: Schedule, algo: str, method="", update_metrics=False):
-        if not os.path.exists(self.outFOLDER): os.makedirs(self.outFOLDER)
-        if solution is None: return
-        if method is None != "": self.outAlgoFOLDER = f"{self.outFOLDER}/{algo}"
-        else: self.outAlgoFOLDER = f"{self.outFOLDER}/{algo}-{method}"
+    def saveSolution(self, solution: Schedule, update_metrics=False):
 
-        if not os.path.exists(self.outAlgoFOLDER): os.mkdir(self.outAlgoFOLDER)
+        if solution is None: return
         schedule_file = f"{self.outAlgoFOLDER}/schedule.json"
         print(f"\tSaving solution in {schedule_file}")
 
+        print("saving schedule")
+        schedule = {}
+        for u in self.drones.keys():
+            schedule[u] = [action.getDICT() for action in solution.plan[u]]
+        # schedule["Parameters"] = {"K": self.OPT.K, "P": self.OPT.P}
+        with open(schedule_file, "w") as file_out:
+            json.dump(schedule, file_out)
+
+        '''
         if not update_metrics:
             print("saving schedule")
             schedule = {}
@@ -201,7 +213,7 @@ class Simulator:
 
         with open(metrics_file, "w") as file_out:
             json.dump(metrics, file_out)
-
+        '''
     def getMap(self):
         PRINT_DETAILS = len(self.drones.keys()) + len(self.stations.keys()) + len(self.deliveries.keys()) < 100
         plt.clf()

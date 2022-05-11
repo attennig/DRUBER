@@ -380,7 +380,7 @@ class SchedulerMILP(PathPlanner):
         DeliveryPaths = {}
         for u in self.simulation.drones.keys():
             for k in range(self.K):
-                tau = self.model.getVarByName(f"C_{u},{k}").x
+                tau = self.model.getVarByName(f"CU_{u},{k}").x
                 a = -2
                 for (i,j) in self.simulation.edges:
                     if self.model.getVarByName(f'x_{u},{k},{i},{j}').x >= 0.5:

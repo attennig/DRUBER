@@ -1,0 +1,247 @@
+\ Model _copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+Minimize
+ 
+Subject To
+ oneSLoc_1,0: x_1,0,1 + x_1,0,2 + x_1,0,3 = 1
+ oneELoc_1,0: y_1,0,1 + y_1,0,2 + y_1,0,3 = 1
+ oneType_1,1: delta_1,1,move + delta_1,1,swap + delta_1,1,load
+   + delta_1,1,unload + delta_1,1,idle = 1
+ oneType_1,2: delta_1,2,move + delta_1,2,swap + delta_1,2,load
+   + delta_1,2,unload + delta_1,2,idle = 1
+ oneSLoc_1,2: x_1,2,1 + x_1,2,2 + x_1,2,3 = 1
+ oneELoc_1,2: y_1,2,1 + y_1,2,2 + y_1,2,3 = 1
+ oneType_1,3: delta_1,3,move + delta_1,3,swap + delta_1,3,load
+   + delta_1,3,unload + delta_1,3,idle = 1
+ oneSLoc_1,3: x_1,3,1 + x_1,3,2 + x_1,3,3 = 1
+ oneELoc_1,3: y_1,3,1 + y_1,3,2 + y_1,3,3 = 1
+ oneSLoc_1,4: x_1,4,1 + x_1,4,2 + x_1,4,3 = 1
+ oneELoc_1,4: y_1,4,1 + y_1,4,2 + y_1,4,3 = 1
+ eachActionOneParcel_1,0: seq_1,0,1,0 + seq_1,0,1,1 + seq_1,0,1,2
+   + seq_1,0,1,3 + seq_1,0,1,4 <= 1
+ eachActionOneParcel_1,3: seq_1,3,1,0 + seq_1,3,1,1 + seq_1,3,1,2
+   + seq_1,3,1,3 + seq_1,3,1,4 <= 1
+ eachParcelOneAction_1,1: seq_1,0,1,1 + seq_1,1,1,1 + seq_1,2,1,1
+   + seq_1,3,1,1 + seq_1,4,1,1 <= 1
+ notMove_1,0,1: delta_1,0,swap + delta_1,0,load + delta_1,0,unload
+   + delta_1,0,idle + x_1,0,1 - y_1,0,1 <= 1
+ notMove_1,1,1: delta_1,1,swap + delta_1,1,load + delta_1,1,unload
+   + delta_1,1,idle + x_1,1,1 - y_1,1,1 <= 1
+ notMove_1,2,1: delta_1,2,swap + delta_1,2,load + delta_1,2,unload
+   + delta_1,2,idle + x_1,2,1 - y_1,2,1 <= 1
+ notMove_1,2,2: delta_1,2,swap + delta_1,2,load + delta_1,2,unload
+   + delta_1,2,idle + x_1,2,2 - y_1,2,2 <= 1
+ notMove_1,3,1: delta_1,3,swap + delta_1,3,load + delta_1,3,unload
+   + delta_1,3,idle + x_1,3,1 - y_1,3,1 <= 1
+ notMove_1,3,2: delta_1,3,swap + delta_1,3,load + delta_1,3,unload
+   + delta_1,3,idle + x_1,3,2 - y_1,3,2 <= 1
+ notMove_1,4,1: delta_1,4,swap + delta_1,4,load + delta_1,4,unload
+   + delta_1,4,idle + x_1,4,1 - y_1,4,1 <= 1
+ notMove_1,4,2: delta_1,4,swap + delta_1,4,load + delta_1,4,unload
+   + delta_1,4,idle + x_1,4,2 - y_1,4,2 <= 1
+ movementConsistency_1,2,1: - y_1,1,1 + x_1,2,1 = 0
+ movementConsistency_1,2,3: - y_1,1,3 + x_1,2,3 = 0
+ movementConsistency_1,4,1: - y_1,3,1 + x_1,4,1 = 0
+ movementConsistency_1,4,2: - y_1,3,2 + x_1,4,2 = 0
+ eachParcelDeliveredOnce_1: delivered_1,0,1,0 + delivered_1,0,1,1
+   + delivered_1,0,1,2 + delivered_1,0,1,3 + delivered_1,0,1,4
+   + delivered_1,1,1,0 + delivered_1,1,1,1 + delivered_1,1,1,2
+   + delivered_1,1,1,3 + delivered_1,1,1,4 + delivered_1,2,1,0
+   + delivered_1,2,1,1 + delivered_1,2,1,2 + delivered_1,2,1,3
+   + delivered_1,2,1,4 + delivered_1,3,1,0 + delivered_1,3,1,1
+   + delivered_1,3,1,2 + delivered_1,3,1,3 + delivered_1,3,1,4
+   + delivered_1,4,1,0 + delivered_1,4,1,1 + delivered_1,4,1,2
+   + delivered_1,4,1,3 + delivered_1,4,1,4 = 1
+ deliveryDef>_1,1,0,0: - delta_1,0,unload - y_1,0,3 - seq_1,0,1,0
+   + 3 delivered_1,0,1,0 <= 0
+ deliveryDef>_1,1,0,1: - delta_1,0,unload - y_1,0,3 - seq_1,0,1,1
+   + 3 delivered_1,0,1,1 <= 0
+ deliveryDef>_1,1,0,2: - delta_1,0,unload - y_1,0,3 - seq_1,0,1,2
+   + 3 delivered_1,0,1,2 <= 0
+ deliveryDef>_1,1,0,3: - delta_1,0,unload - y_1,0,3 - seq_1,0,1,3
+   + 3 delivered_1,0,1,3 <= 0
+ deliveryDef>_1,1,0,4: - delta_1,0,unload - y_1,0,3 - seq_1,0,1,4
+   + 3 delivered_1,0,1,4 <= 0
+ deliveryDef>_1,1,1,0: - delta_1,1,unload - y_1,1,3 - seq_1,1,1,0
+   + 3 delivered_1,1,1,0 <= 0
+ deliveryDef>_1,1,1,1: - delta_1,1,unload - y_1,1,3 - seq_1,1,1,1
+   + 3 delivered_1,1,1,1 <= 0
+ deliveryDef>_1,1,1,2: - delta_1,1,unload - y_1,1,3 - seq_1,1,1,2
+   + 3 delivered_1,1,1,2 <= 0
+ deliveryDef>_1,1,1,3: - delta_1,1,unload - y_1,1,3 - seq_1,1,1,3
+   + 3 delivered_1,1,1,3 <= 0
+ deliveryDef>_1,1,1,4: - delta_1,1,unload - y_1,1,3 - seq_1,1,1,4
+   + 3 delivered_1,1,1,4 <= 0
+ deliveryDef>_1,1,2,0: - delta_1,2,unload - y_1,2,3 - seq_1,2,1,0
+   + 3 delivered_1,2,1,0 <= 0
+ deliveryDef>_1,1,2,1: - delta_1,2,unload - y_1,2,3 - seq_1,2,1,1
+   + 3 delivered_1,2,1,1 <= 0
+ deliveryDef>_1,1,2,2: - delta_1,2,unload - y_1,2,3 - seq_1,2,1,2
+   + 3 delivered_1,2,1,2 <= 0
+ deliveryDef>_1,1,2,3: - delta_1,2,unload - y_1,2,3 - seq_1,2,1,3
+   + 3 delivered_1,2,1,3 <= 0
+ deliveryDef>_1,1,2,4: - delta_1,2,unload - y_1,2,3 - seq_1,2,1,4
+   + 3 delivered_1,2,1,4 <= 0
+ deliveryDef>_1,1,3,0: - delta_1,3,unload - y_1,3,3 - seq_1,3,1,0
+   + 3 delivered_1,3,1,0 <= 0
+ deliveryDef>_1,1,3,1: - delta_1,3,unload - y_1,3,3 - seq_1,3,1,1
+   + 3 delivered_1,3,1,1 <= 0
+ deliveryDef>_1,1,3,2: - delta_1,3,unload - y_1,3,3 - seq_1,3,1,2
+   + 3 delivered_1,3,1,2 <= 0
+ deliveryDef>_1,1,3,3: - delta_1,3,unload - y_1,3,3 - seq_1,3,1,3
+   + 3 delivered_1,3,1,3 <= 0
+ deliveryDef>_1,1,3,4: - delta_1,3,unload - y_1,3,3 - seq_1,3,1,4
+   + 3 delivered_1,3,1,4 <= 0
+ deliveryDef>_1,1,4,0: - delta_1,4,unload - y_1,4,3 - seq_1,4,1,0
+   + 3 delivered_1,4,1,0 <= 0
+ deliveryDef>_1,1,4,1: - delta_1,4,unload - y_1,4,3 - seq_1,4,1,1
+   + 3 delivered_1,4,1,1 <= 0
+ deliveryDef>_1,1,4,2: - delta_1,4,unload - y_1,4,3 - seq_1,4,1,2
+   + 3 delivered_1,4,1,2 <= 0
+ deliveryDef>_1,1,4,3: - delta_1,4,unload - y_1,4,3 - seq_1,4,1,3
+   + 3 delivered_1,4,1,3 <= 0
+ deliveryDef>_1,1,4,4: - delta_1,4,unload - y_1,4,3 - seq_1,4,1,4
+   + 3 delivered_1,4,1,4 <= 0
+ firstLoad_1: seq_1,0,1,0 + seq_1,1,1,0 + seq_1,2,1,0 + seq_1,3,1,0
+   + seq_1,4,1,0 = 1
+ firstLoad_1,1,0: - delta_1,0,load - x_1,0,1 + 2 seq_1,0,1,0 <= 0
+ firstLoad_1,1,1: - delta_1,1,load - x_1,1,1 + 2 seq_1,1,1,0 <= 0
+ firstLoad_1,1,2: - delta_1,2,load - x_1,2,1 + 2 seq_1,2,1,0 <= 0
+ firstLoad_1,1,3: - delta_1,3,load - x_1,3,1 + 2 seq_1,3,1,0 <= 0
+ firstLoad_1,1,4: - delta_1,4,load - x_1,4,1 + 2 seq_1,4,1,0 <= 0
+ nextAction_1,0,1,0: - delta_1,0,unload + seq_1,0,1,0 - seq_1,1,1,1 <= 0
+ prevAction_1,0,1,1: - delta_1,0,load + seq_1,0,1,1 <= 0
+ nextAction_1,0,1,1: - delta_1,0,unload + seq_1,0,1,1 - seq_1,1,1,2 <= 0
+ prevAction_1,0,1,4: - delta_1,0,load + seq_1,0,1,4 <= 0
+ prevAction_1,1,1,1: - delta_1,1,load - seq_1,0,1,0 + seq_1,1,1,1 <= 0
+ nextAction_1,1,1,1: - delta_1,1,unload + seq_1,1,1,1 - seq_1,2,1,2 <= 0
+ nextAction_1,2,1,0: - delta_1,2,unload + seq_1,2,1,0 - seq_1,3,1,1 <= 0
+ prevAction_1,2,1,2: - delta_1,2,load - seq_1,1,1,1 + seq_1,2,1,2 <= 0
+ nextAction_1,2,1,2: - delta_1,2,unload + seq_1,2,1,2 - seq_1,3,1,3 <= 0
+ prevAction_1,3,1,1: - delta_1,3,load - seq_1,2,1,0 + seq_1,3,1,1 <= 0
+ nextAction_1,3,1,1: - delta_1,3,unload + seq_1,3,1,1 - seq_1,4,1,2 <= 0
+ prevAction_1,3,1,4: - delta_1,3,load - seq_1,2,1,3 + seq_1,3,1,4 <= 0
+ nextAction_1,4,1,0: - delta_1,4,unload + seq_1,4,1,0 <= 0
+ prevAction_1,4,1,2: - delta_1,4,load - seq_1,3,1,1 + seq_1,4,1,2 <= 0
+ nextAction_1,4,1,2: - delta_1,4,unload + seq_1,4,1,2 <= 0
+ prevAction_1,4,1,3: - delta_1,4,load - seq_1,3,1,2 + seq_1,4,1,3 <= 0
+ prevAction_1,4,1,4: - delta_1,4,load - seq_1,3,1,3 + seq_1,4,1,4 <= 0
+ 1,0,1,0,1,1,1: y_1,0,1 - x_1,1,1 + seq_1,0,1,0 + seq_1,1,1,1 <= 2
+ bis1,0,1,1,1,3,3: - y_1,1,3 + x_1,3,3 + seq_1,1,1,0 + seq_1,3,1,1 <= 2
+ bis1,0,1,1,1,4,3: - y_1,1,3 + x_1,4,3 + seq_1,1,1,0 + seq_1,4,1,1 <= 2
+ 1,0,1,2,1,3,1: y_1,2,1 - x_1,3,1 + seq_1,2,1,0 + seq_1,3,1,1 <= 2
+ 1,0,1,3,1,1,1: - x_1,1,1 + y_1,3,1 + seq_1,3,1,0 + seq_1,1,1,1 <= 2
+ bis1,1,1,1,1,2,2: - y_1,1,2 + x_1,2,2 + seq_1,1,1,1 + seq_1,2,1,2 <= 2
+ 1,1,1,1,1,3,1: y_1,1,1 - x_1,3,1 + seq_1,1,1,1 + seq_1,3,1,2 <= 2
+ 1,1,1,2,1,3,1: y_1,2,1 - x_1,3,1 + seq_1,2,1,1 + seq_1,3,1,2 <= 2
+ bis1,1,1,2,1,3,3: - y_1,2,3 + x_1,3,3 + seq_1,2,1,1 + seq_1,3,1,2 <= 2
+ 1,2,1,2,1,3,1: y_1,2,1 - x_1,3,1 + seq_1,2,1,2 + seq_1,3,1,3 <= 2
+ bis1,2,1,2,1,3,3: - y_1,2,3 + x_1,3,3 + seq_1,2,1,2 + seq_1,3,1,3 <= 2
+ bis1,2,1,4,1,0,2: x_1,0,2 - y_1,4,2 + seq_1,4,1,2 + seq_1,0,1,3 <= 2
+ bis1,2,1,4,1,0,3: x_1,0,3 - y_1,4,3 + seq_1,4,1,2 + seq_1,0,1,3 <= 2
+ 1,3,1,2,1,3,1: y_1,2,1 - x_1,3,1 + seq_1,2,1,3 + seq_1,3,1,4 <= 2
+ nogaps_1,2: - seq_1,0,1,1 - seq_1,1,1,1 - seq_1,2,1,1 - seq_1,3,1,1
+   - seq_1,4,1,1 + seq_1,0,1,2 + seq_1,1,1,2 + seq_1,2,1,2 + seq_1,3,1,2
+   + seq_1,4,1,2 <= 0
+ nogaps_1,3: - seq_1,0,1,2 - seq_1,1,1,2 - seq_1,2,1,2 - seq_1,3,1,2
+   - seq_1,4,1,2 + seq_1,0,1,3 + seq_1,1,1,3 + seq_1,2,1,3 + seq_1,3,1,3
+   + seq_1,4,1,3 <= 0
+ nogaps_1,4: - seq_1,0,1,3 - seq_1,1,1,3 - seq_1,2,1,3 - seq_1,3,1,3
+   - seq_1,4,1,3 + seq_1,0,1,4 + seq_1,1,1,4 + seq_1,2,1,4 + seq_1,3,1,4
+   + seq_1,4,1,4 <= 0
+ loadTime_1,1: - 50 delta_1,1,load - C_1,0 + C_1,1 >= 0
+ swapTime_1,2: - 60 delta_1,2,swap - C_1,1 + C_1,2 >= 0
+ loadTime_1,3: - 50 delta_1,3,load - C_1,2 + C_1,3 >= 0
+ unloadTime_1,3: - 40 delta_1,3,unload - C_1,2 + C_1,3 >= 0
+ moveTime_1,3,1,2: - 715.7142857142857 delta_1,3,move - 20000 x_1,3,1
+   - 20000 y_1,3,2 - C_1,2 + C_1,3 >= -40000
+ swapTime_1,4: - 60 delta_1,4,swap - C_1,3 + C_1,4 >= 0
+ deliveryPred_1,1,1,0,1,3: - 20000 seq_1,3,1,0 - 20000 seq_1,0,1,1 + C_1,0
+   - C_1,3 >= -40000
+ deliveryPred_1,1,1,2,1,3: - 20000 seq_1,3,1,0 - 20000 seq_1,2,1,1 + C_1,2
+   - C_1,3 >= -40000
+ deliveryPred_1,2,1,0,1,2: - 20000 seq_1,2,1,1 - 20000 seq_1,0,1,2 + C_1,0
+   - C_1,2 >= -40000
+ deliveryPred_1,2,1,0,1,3: - 20000 seq_1,3,1,1 - 20000 seq_1,0,1,2 + C_1,0
+   - C_1,3 >= -40000
+ deliveryPred_1,2,1,0,1,4: - 20000 seq_1,4,1,1 - 20000 seq_1,0,1,2 + C_1,0
+   - C_1,4 >= -40000
+ deliveryPred_1,2,1,1,1,3: - 20000 seq_1,3,1,1 - 20000 seq_1,1,1,2 + C_1,1
+   - C_1,3 >= -40000
+ deliveryPred_1,2,1,1,1,4: - 20000 seq_1,4,1,1 - 20000 seq_1,1,1,2 + C_1,1
+   - C_1,4 >= -40000
+ deliveryPred_1,3,1,0,1,2: - 20000 seq_1,2,1,2 - 20000 seq_1,0,1,3 + C_1,0
+   - C_1,2 >= -40000
+ deliveryPred_1,3,1,0,1,3: - 20000 seq_1,3,1,2 - 20000 seq_1,0,1,3 + C_1,0
+   - C_1,3 >= -40000
+ deliveryPred_1,3,1,0,1,4: - 20000 seq_1,4,1,2 - 20000 seq_1,0,1,3 + C_1,0
+   - C_1,4 >= -40000
+ noConsumption_1,0: 100 delta_1,0,load + 100 delta_1,0,unload
+   + 100 delta_1,0,idle - B_1,-1 + B_1,0 <= 100
+ batteryConsumptionWPayload_1,1,1,1,1: 0.00131379187419911 delta_1,1,move
+   + 100 x_1,1,1 + 100 y_1,1,1 + 100 seq_1,1,1,0 + 100 seq_1,1,1,1
+   + 100 seq_1,1,1,2 + 100 seq_1,1,1,3 + 100 seq_1,1,1,4 - B_1,0 + B_1,1
+   <= 300
+ batteryConsumptionWPayload_1,1,1,2,1: 0.6582097289737546 delta_1,1,move
+   + 100 x_1,1,1 + 100 y_1,1,2 + 100 seq_1,1,1,0 + 100 seq_1,1,1,1
+   + 100 seq_1,1,1,2 + 100 seq_1,1,1,3 + 100 seq_1,1,1,4 - B_1,0 + B_1,1
+   <= 300
+ batteryConsumptionWPayload_1,1,1,3,1: 1.31510566607331 delta_1,1,move
+   + 100 x_1,1,1 + 100 y_1,1,3 + 100 seq_1,1,1,0 + 100 seq_1,1,1,1
+   + 100 seq_1,1,1,2 + 100 seq_1,1,1,3 + 100 seq_1,1,1,4 - B_1,0 + B_1,1
+   <= 300
+ batteryConsumptionWPayload_1,2,1,2,1: 0.6582097289737546 delta_1,2,move
+   + 100 x_1,2,1 + 100 y_1,2,2 + 100 seq_1,2,1,0 + 100 seq_1,2,1,1
+   + 100 seq_1,2,1,2 + 100 seq_1,2,1,3 + 100 seq_1,2,1,4 - B_1,1 + B_1,2
+   <= 300
+ batteryConsumptionWPayload_1,2,1,3,1: 1.31510566607331 delta_1,2,move
+   + 100 x_1,2,1 + 100 y_1,2,3 + 100 seq_1,2,1,0 + 100 seq_1,2,1,1
+   + 100 seq_1,2,1,2 + 100 seq_1,2,1,3 + 100 seq_1,2,1,4 - B_1,1 + B_1,2
+   <= 300
+ batteryConsumptionWPayload_1,2,2,2,1: 0.00131379187419911 delta_1,2,move
+   + 100 x_1,2,2 + 100 y_1,2,2 + 100 seq_1,2,1,0 + 100 seq_1,2,1,1
+   + 100 seq_1,2,1,2 + 100 seq_1,2,1,3 + 100 seq_1,2,1,4 - B_1,1 + B_1,2
+   <= 300
+ batteryConsumptionWPayload_1,2,2,3,1: 0.6582097289737546 delta_1,2,move
+   + 100 x_1,2,2 + 100 y_1,2,3 + 100 seq_1,2,1,0 + 100 seq_1,2,1,1
+   + 100 seq_1,2,1,2 + 100 seq_1,2,1,3 + 100 seq_1,2,1,4 - B_1,1 + B_1,2
+   <= 300
+ batteryConsumptionWPayload_1,3,1,3,1: 1.31510566607331 delta_1,3,move
+   + 100 x_1,3,1 + 100 y_1,3,3 + 100 seq_1,3,1,0 + 100 seq_1,3,1,1
+   + 100 seq_1,3,1,2 + 100 seq_1,3,1,3 + 100 seq_1,3,1,4 - B_1,2 + B_1,3
+   <= 300
+ batteryConsumptionWPayload_1,3,2,3,1: 0.6582097289737546 delta_1,3,move
+   + 100 x_1,3,2 + 100 y_1,3,3 + 100 seq_1,3,1,0 + 100 seq_1,3,1,1
+   + 100 seq_1,3,1,2 + 100 seq_1,3,1,3 + 100 seq_1,3,1,4 - B_1,2 + B_1,3
+   <= 300
+Bounds
+ -infinity <= B_1,-1 <= 1
+ -infinity <= B_1,0 <= 1
+ B_1,2 <= 1
+ C_1,0 free
+ C_1,1 free
+ C_1,2 free
+ C_1,3 free
+ C_1,4 free
+Binaries
+ delta_1,0,swap delta_1,0,load delta_1,0,unload delta_1,0,idle
+ delta_1,1,move delta_1,1,swap delta_1,1,load delta_1,1,unload
+ delta_1,1,idle delta_1,2,move delta_1,2,swap delta_1,2,load
+ delta_1,2,unload delta_1,2,idle delta_1,3,move delta_1,3,swap
+ delta_1,3,load delta_1,3,unload delta_1,3,idle delta_1,4,swap
+ delta_1,4,load delta_1,4,unload delta_1,4,idle x_1,0,1 y_1,0,1 x_1,0,2
+ y_1,0,2 x_1,0,3 y_1,0,3 x_1,1,1 y_1,1,1 y_1,1,2 y_1,1,3 x_1,2,1 y_1,2,1
+ x_1,2,2 y_1,2,2 x_1,2,3 y_1,2,3 x_1,3,1 y_1,3,1 x_1,3,2 y_1,3,2 x_1,3,3
+ y_1,3,3 x_1,4,1 y_1,4,1 x_1,4,2 y_1,4,2 x_1,4,3 y_1,4,3 seq_1,0,1,0
+ seq_1,1,1,0 seq_1,2,1,0 seq_1,3,1,0 seq_1,4,1,0 seq_1,0,1,1 seq_1,1,1,1
+ seq_1,2,1,1 seq_1,3,1,1 seq_1,4,1,1 seq_1,0,1,2 seq_1,1,1,2 seq_1,2,1,2
+ seq_1,3,1,2 seq_1,4,1,2 seq_1,0,1,3 seq_1,1,1,3 seq_1,2,1,3 seq_1,3,1,3
+ seq_1,4,1,3 seq_1,0,1,4 seq_1,1,1,4 seq_1,2,1,4 seq_1,3,1,4 seq_1,4,1,4
+ delivered_1,0,1,0 delivered_1,0,1,1 delivered_1,0,1,2 delivered_1,0,1,3
+ delivered_1,0,1,4 delivered_1,1,1,0 delivered_1,1,1,1 delivered_1,1,1,2
+ delivered_1,1,1,3 delivered_1,1,1,4 delivered_1,2,1,0 delivered_1,2,1,1
+ delivered_1,2,1,2 delivered_1,2,1,3 delivered_1,2,1,4 delivered_1,3,1,0
+ delivered_1,3,1,1 delivered_1,3,1,2 delivered_1,3,1,3 delivered_1,3,1,4
+ delivered_1,4,1,0 delivered_1,4,1,1 delivered_1,4,1,2 delivered_1,4,1,3
+ delivered_1,4,1,4
+End
