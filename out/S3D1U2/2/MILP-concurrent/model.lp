@@ -374,423 +374,107 @@ Subject To
  movementConsistency_2,7,1: - y_2,6,1 + x_2,7,1 = 0
  movementConsistency_2,7,2: - y_2,6,2 + x_2,7,2 = 0
  movementConsistency_2,7,3: - y_2,6,3 + x_2,7,3 = 0
- eachParcelDeliveredOnce_1: delivered_1,0,1,0 + delivered_1,0,1,1
-   + delivered_1,0,1,2 + delivered_1,0,1,3 + delivered_1,0,1,4
-   + delivered_1,0,1,5 + delivered_1,1,1,0 + delivered_1,1,1,1
-   + delivered_1,1,1,2 + delivered_1,1,1,3 + delivered_1,1,1,4
-   + delivered_1,1,1,5 + delivered_1,2,1,0 + delivered_1,2,1,1
-   + delivered_1,2,1,2 + delivered_1,2,1,3 + delivered_1,2,1,4
-   + delivered_1,2,1,5 + delivered_1,3,1,0 + delivered_1,3,1,1
-   + delivered_1,3,1,2 + delivered_1,3,1,3 + delivered_1,3,1,4
-   + delivered_1,3,1,5 + delivered_1,4,1,0 + delivered_1,4,1,1
-   + delivered_1,4,1,2 + delivered_1,4,1,3 + delivered_1,4,1,4
-   + delivered_1,4,1,5 + delivered_1,5,1,0 + delivered_1,5,1,1
-   + delivered_1,5,1,2 + delivered_1,5,1,3 + delivered_1,5,1,4
-   + delivered_1,5,1,5 + delivered_1,6,1,0 + delivered_1,6,1,1
-   + delivered_1,6,1,2 + delivered_1,6,1,3 + delivered_1,6,1,4
-   + delivered_1,6,1,5 + delivered_1,7,1,0 + delivered_1,7,1,1
-   + delivered_1,7,1,2 + delivered_1,7,1,3 + delivered_1,7,1,4
-   + delivered_1,7,1,5 + delivered_2,0,1,0 + delivered_2,0,1,1
-   + delivered_2,0,1,2 + delivered_2,0,1,3 + delivered_2,0,1,4
-   + delivered_2,0,1,5 + delivered_2,1,1,0 + delivered_2,1,1,1
-   + delivered_2,1,1,2 + delivered_2,1,1,3 + delivered_2,1,1,4
-   + delivered_2,1,1,5 + delivered_2,2,1,0 + delivered_2,2,1,1
-   + delivered_2,2,1,2 + delivered_2,2,1,3 + delivered_2,2,1,4
-   + delivered_2,2,1,5 + delivered_2,3,1,0 + delivered_2,3,1,1
-   + delivered_2,3,1,2 + delivered_2,3,1,3 + delivered_2,3,1,4
-   + delivered_2,3,1,5 + delivered_2,4,1,0 + delivered_2,4,1,1
-   + delivered_2,4,1,2 + delivered_2,4,1,3 + delivered_2,4,1,4
-   + delivered_2,4,1,5 + delivered_2,5,1,0 + delivered_2,5,1,1
-   + delivered_2,5,1,2 + delivered_2,5,1,3 + delivered_2,5,1,4
-   + delivered_2,5,1,5 + delivered_2,6,1,0 + delivered_2,6,1,1
-   + delivered_2,6,1,2 + delivered_2,6,1,3 + delivered_2,6,1,4
-   + delivered_2,6,1,5 + delivered_2,7,1,0 + delivered_2,7,1,1
-   + delivered_2,7,1,2 + delivered_2,7,1,3 + delivered_2,7,1,4
-   + delivered_2,7,1,5 = 1
- deliveryDef<_1,1,0,0: delta_1,0,unload + y_1,0,3 + seq_1,0,1,0
-   - delivered_1,0,1,0 <= 2
- deliveryDef>_1,1,0,0: - delta_1,0,unload - y_1,0,3 - seq_1,0,1,0
-   + 3 delivered_1,0,1,0 <= 0
- deliveryDef<_1,1,0,1: delta_1,0,unload + y_1,0,3 + seq_1,0,1,1
-   - delivered_1,0,1,1 <= 2
- deliveryDef>_1,1,0,1: - delta_1,0,unload - y_1,0,3 - seq_1,0,1,1
-   + 3 delivered_1,0,1,1 <= 0
- deliveryDef<_1,1,0,2: delta_1,0,unload + y_1,0,3 + seq_1,0,1,2
-   - delivered_1,0,1,2 <= 2
- deliveryDef>_1,1,0,2: - delta_1,0,unload - y_1,0,3 - seq_1,0,1,2
-   + 3 delivered_1,0,1,2 <= 0
- deliveryDef<_1,1,0,3: delta_1,0,unload + y_1,0,3 + seq_1,0,1,3
-   - delivered_1,0,1,3 <= 2
- deliveryDef>_1,1,0,3: - delta_1,0,unload - y_1,0,3 - seq_1,0,1,3
-   + 3 delivered_1,0,1,3 <= 0
- deliveryDef<_1,1,0,4: delta_1,0,unload + y_1,0,3 + seq_1,0,1,4
-   - delivered_1,0,1,4 <= 2
- deliveryDef>_1,1,0,4: - delta_1,0,unload - y_1,0,3 - seq_1,0,1,4
-   + 3 delivered_1,0,1,4 <= 0
- deliveryDef<_1,1,0,5: delta_1,0,unload + y_1,0,3 + seq_1,0,1,5
-   - delivered_1,0,1,5 <= 2
- deliveryDef>_1,1,0,5: - delta_1,0,unload - y_1,0,3 - seq_1,0,1,5
-   + 3 delivered_1,0,1,5 <= 0
- deliveryDef<_1,1,1,0: delta_1,1,unload + y_1,1,3 + seq_1,1,1,0
-   - delivered_1,1,1,0 <= 2
- deliveryDef>_1,1,1,0: - delta_1,1,unload - y_1,1,3 - seq_1,1,1,0
-   + 3 delivered_1,1,1,0 <= 0
- deliveryDef<_1,1,1,1: delta_1,1,unload + y_1,1,3 + seq_1,1,1,1
-   - delivered_1,1,1,1 <= 2
- deliveryDef>_1,1,1,1: - delta_1,1,unload - y_1,1,3 - seq_1,1,1,1
-   + 3 delivered_1,1,1,1 <= 0
- deliveryDef<_1,1,1,2: delta_1,1,unload + y_1,1,3 + seq_1,1,1,2
-   - delivered_1,1,1,2 <= 2
- deliveryDef>_1,1,1,2: - delta_1,1,unload - y_1,1,3 - seq_1,1,1,2
-   + 3 delivered_1,1,1,2 <= 0
- deliveryDef<_1,1,1,3: delta_1,1,unload + y_1,1,3 + seq_1,1,1,3
-   - delivered_1,1,1,3 <= 2
- deliveryDef>_1,1,1,3: - delta_1,1,unload - y_1,1,3 - seq_1,1,1,3
-   + 3 delivered_1,1,1,3 <= 0
- deliveryDef<_1,1,1,4: delta_1,1,unload + y_1,1,3 + seq_1,1,1,4
-   - delivered_1,1,1,4 <= 2
- deliveryDef>_1,1,1,4: - delta_1,1,unload - y_1,1,3 - seq_1,1,1,4
-   + 3 delivered_1,1,1,4 <= 0
- deliveryDef<_1,1,1,5: delta_1,1,unload + y_1,1,3 + seq_1,1,1,5
-   - delivered_1,1,1,5 <= 2
- deliveryDef>_1,1,1,5: - delta_1,1,unload - y_1,1,3 - seq_1,1,1,5
-   + 3 delivered_1,1,1,5 <= 0
- deliveryDef<_1,1,2,0: delta_1,2,unload + y_1,2,3 + seq_1,2,1,0
-   - delivered_1,2,1,0 <= 2
- deliveryDef>_1,1,2,0: - delta_1,2,unload - y_1,2,3 - seq_1,2,1,0
-   + 3 delivered_1,2,1,0 <= 0
- deliveryDef<_1,1,2,1: delta_1,2,unload + y_1,2,3 + seq_1,2,1,1
-   - delivered_1,2,1,1 <= 2
- deliveryDef>_1,1,2,1: - delta_1,2,unload - y_1,2,3 - seq_1,2,1,1
-   + 3 delivered_1,2,1,1 <= 0
- deliveryDef<_1,1,2,2: delta_1,2,unload + y_1,2,3 + seq_1,2,1,2
-   - delivered_1,2,1,2 <= 2
- deliveryDef>_1,1,2,2: - delta_1,2,unload - y_1,2,3 - seq_1,2,1,2
-   + 3 delivered_1,2,1,2 <= 0
- deliveryDef<_1,1,2,3: delta_1,2,unload + y_1,2,3 + seq_1,2,1,3
-   - delivered_1,2,1,3 <= 2
- deliveryDef>_1,1,2,3: - delta_1,2,unload - y_1,2,3 - seq_1,2,1,3
-   + 3 delivered_1,2,1,3 <= 0
- deliveryDef<_1,1,2,4: delta_1,2,unload + y_1,2,3 + seq_1,2,1,4
-   - delivered_1,2,1,4 <= 2
- deliveryDef>_1,1,2,4: - delta_1,2,unload - y_1,2,3 - seq_1,2,1,4
-   + 3 delivered_1,2,1,4 <= 0
- deliveryDef<_1,1,2,5: delta_1,2,unload + y_1,2,3 + seq_1,2,1,5
-   - delivered_1,2,1,5 <= 2
- deliveryDef>_1,1,2,5: - delta_1,2,unload - y_1,2,3 - seq_1,2,1,5
-   + 3 delivered_1,2,1,5 <= 0
- deliveryDef<_1,1,3,0: delta_1,3,unload + y_1,3,3 + seq_1,3,1,0
-   - delivered_1,3,1,0 <= 2
- deliveryDef>_1,1,3,0: - delta_1,3,unload - y_1,3,3 - seq_1,3,1,0
-   + 3 delivered_1,3,1,0 <= 0
- deliveryDef<_1,1,3,1: delta_1,3,unload + y_1,3,3 + seq_1,3,1,1
-   - delivered_1,3,1,1 <= 2
- deliveryDef>_1,1,3,1: - delta_1,3,unload - y_1,3,3 - seq_1,3,1,1
-   + 3 delivered_1,3,1,1 <= 0
- deliveryDef<_1,1,3,2: delta_1,3,unload + y_1,3,3 + seq_1,3,1,2
-   - delivered_1,3,1,2 <= 2
- deliveryDef>_1,1,3,2: - delta_1,3,unload - y_1,3,3 - seq_1,3,1,2
-   + 3 delivered_1,3,1,2 <= 0
- deliveryDef<_1,1,3,3: delta_1,3,unload + y_1,3,3 + seq_1,3,1,3
-   - delivered_1,3,1,3 <= 2
- deliveryDef>_1,1,3,3: - delta_1,3,unload - y_1,3,3 - seq_1,3,1,3
-   + 3 delivered_1,3,1,3 <= 0
- deliveryDef<_1,1,3,4: delta_1,3,unload + y_1,3,3 + seq_1,3,1,4
-   - delivered_1,3,1,4 <= 2
- deliveryDef>_1,1,3,4: - delta_1,3,unload - y_1,3,3 - seq_1,3,1,4
-   + 3 delivered_1,3,1,4 <= 0
- deliveryDef<_1,1,3,5: delta_1,3,unload + y_1,3,3 + seq_1,3,1,5
-   - delivered_1,3,1,5 <= 2
- deliveryDef>_1,1,3,5: - delta_1,3,unload - y_1,3,3 - seq_1,3,1,5
-   + 3 delivered_1,3,1,5 <= 0
- deliveryDef<_1,1,4,0: delta_1,4,unload + y_1,4,3 + seq_1,4,1,0
-   - delivered_1,4,1,0 <= 2
- deliveryDef>_1,1,4,0: - delta_1,4,unload - y_1,4,3 - seq_1,4,1,0
-   + 3 delivered_1,4,1,0 <= 0
- deliveryDef<_1,1,4,1: delta_1,4,unload + y_1,4,3 + seq_1,4,1,1
-   - delivered_1,4,1,1 <= 2
- deliveryDef>_1,1,4,1: - delta_1,4,unload - y_1,4,3 - seq_1,4,1,1
-   + 3 delivered_1,4,1,1 <= 0
- deliveryDef<_1,1,4,2: delta_1,4,unload + y_1,4,3 + seq_1,4,1,2
-   - delivered_1,4,1,2 <= 2
- deliveryDef>_1,1,4,2: - delta_1,4,unload - y_1,4,3 - seq_1,4,1,2
-   + 3 delivered_1,4,1,2 <= 0
- deliveryDef<_1,1,4,3: delta_1,4,unload + y_1,4,3 + seq_1,4,1,3
-   - delivered_1,4,1,3 <= 2
- deliveryDef>_1,1,4,3: - delta_1,4,unload - y_1,4,3 - seq_1,4,1,3
-   + 3 delivered_1,4,1,3 <= 0
- deliveryDef<_1,1,4,4: delta_1,4,unload + y_1,4,3 + seq_1,4,1,4
-   - delivered_1,4,1,4 <= 2
- deliveryDef>_1,1,4,4: - delta_1,4,unload - y_1,4,3 - seq_1,4,1,4
-   + 3 delivered_1,4,1,4 <= 0
- deliveryDef<_1,1,4,5: delta_1,4,unload + y_1,4,3 + seq_1,4,1,5
-   - delivered_1,4,1,5 <= 2
- deliveryDef>_1,1,4,5: - delta_1,4,unload - y_1,4,3 - seq_1,4,1,5
-   + 3 delivered_1,4,1,5 <= 0
- deliveryDef<_1,1,5,0: delta_1,5,unload + y_1,5,3 + seq_1,5,1,0
-   - delivered_1,5,1,0 <= 2
- deliveryDef>_1,1,5,0: - delta_1,5,unload - y_1,5,3 - seq_1,5,1,0
-   + 3 delivered_1,5,1,0 <= 0
- deliveryDef<_1,1,5,1: delta_1,5,unload + y_1,5,3 + seq_1,5,1,1
-   - delivered_1,5,1,1 <= 2
- deliveryDef>_1,1,5,1: - delta_1,5,unload - y_1,5,3 - seq_1,5,1,1
-   + 3 delivered_1,5,1,1 <= 0
- deliveryDef<_1,1,5,2: delta_1,5,unload + y_1,5,3 + seq_1,5,1,2
-   - delivered_1,5,1,2 <= 2
- deliveryDef>_1,1,5,2: - delta_1,5,unload - y_1,5,3 - seq_1,5,1,2
-   + 3 delivered_1,5,1,2 <= 0
- deliveryDef<_1,1,5,3: delta_1,5,unload + y_1,5,3 + seq_1,5,1,3
-   - delivered_1,5,1,3 <= 2
- deliveryDef>_1,1,5,3: - delta_1,5,unload - y_1,5,3 - seq_1,5,1,3
-   + 3 delivered_1,5,1,3 <= 0
- deliveryDef<_1,1,5,4: delta_1,5,unload + y_1,5,3 + seq_1,5,1,4
-   - delivered_1,5,1,4 <= 2
- deliveryDef>_1,1,5,4: - delta_1,5,unload - y_1,5,3 - seq_1,5,1,4
-   + 3 delivered_1,5,1,4 <= 0
- deliveryDef<_1,1,5,5: delta_1,5,unload + y_1,5,3 + seq_1,5,1,5
-   - delivered_1,5,1,5 <= 2
- deliveryDef>_1,1,5,5: - delta_1,5,unload - y_1,5,3 - seq_1,5,1,5
-   + 3 delivered_1,5,1,5 <= 0
- deliveryDef<_1,1,6,0: delta_1,6,unload + y_1,6,3 + seq_1,6,1,0
-   - delivered_1,6,1,0 <= 2
- deliveryDef>_1,1,6,0: - delta_1,6,unload - y_1,6,3 - seq_1,6,1,0
-   + 3 delivered_1,6,1,0 <= 0
- deliveryDef<_1,1,6,1: delta_1,6,unload + y_1,6,3 + seq_1,6,1,1
-   - delivered_1,6,1,1 <= 2
- deliveryDef>_1,1,6,1: - delta_1,6,unload - y_1,6,3 - seq_1,6,1,1
-   + 3 delivered_1,6,1,1 <= 0
- deliveryDef<_1,1,6,2: delta_1,6,unload + y_1,6,3 + seq_1,6,1,2
-   - delivered_1,6,1,2 <= 2
- deliveryDef>_1,1,6,2: - delta_1,6,unload - y_1,6,3 - seq_1,6,1,2
-   + 3 delivered_1,6,1,2 <= 0
- deliveryDef<_1,1,6,3: delta_1,6,unload + y_1,6,3 + seq_1,6,1,3
-   - delivered_1,6,1,3 <= 2
- deliveryDef>_1,1,6,3: - delta_1,6,unload - y_1,6,3 - seq_1,6,1,3
-   + 3 delivered_1,6,1,3 <= 0
- deliveryDef<_1,1,6,4: delta_1,6,unload + y_1,6,3 + seq_1,6,1,4
-   - delivered_1,6,1,4 <= 2
- deliveryDef>_1,1,6,4: - delta_1,6,unload - y_1,6,3 - seq_1,6,1,4
-   + 3 delivered_1,6,1,4 <= 0
- deliveryDef<_1,1,6,5: delta_1,6,unload + y_1,6,3 + seq_1,6,1,5
-   - delivered_1,6,1,5 <= 2
- deliveryDef>_1,1,6,5: - delta_1,6,unload - y_1,6,3 - seq_1,6,1,5
-   + 3 delivered_1,6,1,5 <= 0
- deliveryDef<_1,1,7,0: delta_1,7,unload + y_1,7,3 + seq_1,7,1,0
-   - delivered_1,7,1,0 <= 2
- deliveryDef>_1,1,7,0: - delta_1,7,unload - y_1,7,3 - seq_1,7,1,0
-   + 3 delivered_1,7,1,0 <= 0
- deliveryDef<_1,1,7,1: delta_1,7,unload + y_1,7,3 + seq_1,7,1,1
-   - delivered_1,7,1,1 <= 2
- deliveryDef>_1,1,7,1: - delta_1,7,unload - y_1,7,3 - seq_1,7,1,1
-   + 3 delivered_1,7,1,1 <= 0
- deliveryDef<_1,1,7,2: delta_1,7,unload + y_1,7,3 + seq_1,7,1,2
-   - delivered_1,7,1,2 <= 2
- deliveryDef>_1,1,7,2: - delta_1,7,unload - y_1,7,3 - seq_1,7,1,2
-   + 3 delivered_1,7,1,2 <= 0
- deliveryDef<_1,1,7,3: delta_1,7,unload + y_1,7,3 + seq_1,7,1,3
-   - delivered_1,7,1,3 <= 2
- deliveryDef>_1,1,7,3: - delta_1,7,unload - y_1,7,3 - seq_1,7,1,3
-   + 3 delivered_1,7,1,3 <= 0
- deliveryDef<_1,1,7,4: delta_1,7,unload + y_1,7,3 + seq_1,7,1,4
-   - delivered_1,7,1,4 <= 2
- deliveryDef>_1,1,7,4: - delta_1,7,unload - y_1,7,3 - seq_1,7,1,4
-   + 3 delivered_1,7,1,4 <= 0
- deliveryDef<_1,1,7,5: delta_1,7,unload + y_1,7,3 + seq_1,7,1,5
-   - delivered_1,7,1,5 <= 2
- deliveryDef>_1,1,7,5: - delta_1,7,unload - y_1,7,3 - seq_1,7,1,5
-   + 3 delivered_1,7,1,5 <= 0
- deliveryDef<_1,2,0,0: delta_2,0,unload + y_2,0,3 + seq_2,0,1,0
-   - delivered_2,0,1,0 <= 2
- deliveryDef>_1,2,0,0: - delta_2,0,unload - y_2,0,3 - seq_2,0,1,0
-   + 3 delivered_2,0,1,0 <= 0
- deliveryDef<_1,2,0,1: delta_2,0,unload + y_2,0,3 + seq_2,0,1,1
-   - delivered_2,0,1,1 <= 2
- deliveryDef>_1,2,0,1: - delta_2,0,unload - y_2,0,3 - seq_2,0,1,1
-   + 3 delivered_2,0,1,1 <= 0
- deliveryDef<_1,2,0,2: delta_2,0,unload + y_2,0,3 + seq_2,0,1,2
-   - delivered_2,0,1,2 <= 2
- deliveryDef>_1,2,0,2: - delta_2,0,unload - y_2,0,3 - seq_2,0,1,2
-   + 3 delivered_2,0,1,2 <= 0
- deliveryDef<_1,2,0,3: delta_2,0,unload + y_2,0,3 + seq_2,0,1,3
-   - delivered_2,0,1,3 <= 2
- deliveryDef>_1,2,0,3: - delta_2,0,unload - y_2,0,3 - seq_2,0,1,3
-   + 3 delivered_2,0,1,3 <= 0
- deliveryDef<_1,2,0,4: delta_2,0,unload + y_2,0,3 + seq_2,0,1,4
-   - delivered_2,0,1,4 <= 2
- deliveryDef>_1,2,0,4: - delta_2,0,unload - y_2,0,3 - seq_2,0,1,4
-   + 3 delivered_2,0,1,4 <= 0
- deliveryDef<_1,2,0,5: delta_2,0,unload + y_2,0,3 + seq_2,0,1,5
-   - delivered_2,0,1,5 <= 2
- deliveryDef>_1,2,0,5: - delta_2,0,unload - y_2,0,3 - seq_2,0,1,5
-   + 3 delivered_2,0,1,5 <= 0
- deliveryDef<_1,2,1,0: delta_2,1,unload + y_2,1,3 + seq_2,1,1,0
-   - delivered_2,1,1,0 <= 2
- deliveryDef>_1,2,1,0: - delta_2,1,unload - y_2,1,3 - seq_2,1,1,0
-   + 3 delivered_2,1,1,0 <= 0
- deliveryDef<_1,2,1,1: delta_2,1,unload + y_2,1,3 + seq_2,1,1,1
-   - delivered_2,1,1,1 <= 2
- deliveryDef>_1,2,1,1: - delta_2,1,unload - y_2,1,3 - seq_2,1,1,1
-   + 3 delivered_2,1,1,1 <= 0
- deliveryDef<_1,2,1,2: delta_2,1,unload + y_2,1,3 + seq_2,1,1,2
-   - delivered_2,1,1,2 <= 2
- deliveryDef>_1,2,1,2: - delta_2,1,unload - y_2,1,3 - seq_2,1,1,2
-   + 3 delivered_2,1,1,2 <= 0
- deliveryDef<_1,2,1,3: delta_2,1,unload + y_2,1,3 + seq_2,1,1,3
-   - delivered_2,1,1,3 <= 2
- deliveryDef>_1,2,1,3: - delta_2,1,unload - y_2,1,3 - seq_2,1,1,3
-   + 3 delivered_2,1,1,3 <= 0
- deliveryDef<_1,2,1,4: delta_2,1,unload + y_2,1,3 + seq_2,1,1,4
-   - delivered_2,1,1,4 <= 2
- deliveryDef>_1,2,1,4: - delta_2,1,unload - y_2,1,3 - seq_2,1,1,4
-   + 3 delivered_2,1,1,4 <= 0
- deliveryDef<_1,2,1,5: delta_2,1,unload + y_2,1,3 + seq_2,1,1,5
-   - delivered_2,1,1,5 <= 2
- deliveryDef>_1,2,1,5: - delta_2,1,unload - y_2,1,3 - seq_2,1,1,5
-   + 3 delivered_2,1,1,5 <= 0
- deliveryDef<_1,2,2,0: delta_2,2,unload + y_2,2,3 + seq_2,2,1,0
-   - delivered_2,2,1,0 <= 2
- deliveryDef>_1,2,2,0: - delta_2,2,unload - y_2,2,3 - seq_2,2,1,0
-   + 3 delivered_2,2,1,0 <= 0
- deliveryDef<_1,2,2,1: delta_2,2,unload + y_2,2,3 + seq_2,2,1,1
-   - delivered_2,2,1,1 <= 2
- deliveryDef>_1,2,2,1: - delta_2,2,unload - y_2,2,3 - seq_2,2,1,1
-   + 3 delivered_2,2,1,1 <= 0
- deliveryDef<_1,2,2,2: delta_2,2,unload + y_2,2,3 + seq_2,2,1,2
-   - delivered_2,2,1,2 <= 2
- deliveryDef>_1,2,2,2: - delta_2,2,unload - y_2,2,3 - seq_2,2,1,2
-   + 3 delivered_2,2,1,2 <= 0
- deliveryDef<_1,2,2,3: delta_2,2,unload + y_2,2,3 + seq_2,2,1,3
-   - delivered_2,2,1,3 <= 2
- deliveryDef>_1,2,2,3: - delta_2,2,unload - y_2,2,3 - seq_2,2,1,3
-   + 3 delivered_2,2,1,3 <= 0
- deliveryDef<_1,2,2,4: delta_2,2,unload + y_2,2,3 + seq_2,2,1,4
-   - delivered_2,2,1,4 <= 2
- deliveryDef>_1,2,2,4: - delta_2,2,unload - y_2,2,3 - seq_2,2,1,4
-   + 3 delivered_2,2,1,4 <= 0
- deliveryDef<_1,2,2,5: delta_2,2,unload + y_2,2,3 + seq_2,2,1,5
-   - delivered_2,2,1,5 <= 2
- deliveryDef>_1,2,2,5: - delta_2,2,unload - y_2,2,3 - seq_2,2,1,5
-   + 3 delivered_2,2,1,5 <= 0
- deliveryDef<_1,2,3,0: delta_2,3,unload + y_2,3,3 + seq_2,3,1,0
-   - delivered_2,3,1,0 <= 2
- deliveryDef>_1,2,3,0: - delta_2,3,unload - y_2,3,3 - seq_2,3,1,0
-   + 3 delivered_2,3,1,0 <= 0
- deliveryDef<_1,2,3,1: delta_2,3,unload + y_2,3,3 + seq_2,3,1,1
-   - delivered_2,3,1,1 <= 2
- deliveryDef>_1,2,3,1: - delta_2,3,unload - y_2,3,3 - seq_2,3,1,1
-   + 3 delivered_2,3,1,1 <= 0
- deliveryDef<_1,2,3,2: delta_2,3,unload + y_2,3,3 + seq_2,3,1,2
-   - delivered_2,3,1,2 <= 2
- deliveryDef>_1,2,3,2: - delta_2,3,unload - y_2,3,3 - seq_2,3,1,2
-   + 3 delivered_2,3,1,2 <= 0
- deliveryDef<_1,2,3,3: delta_2,3,unload + y_2,3,3 + seq_2,3,1,3
-   - delivered_2,3,1,3 <= 2
- deliveryDef>_1,2,3,3: - delta_2,3,unload - y_2,3,3 - seq_2,3,1,3
-   + 3 delivered_2,3,1,3 <= 0
- deliveryDef<_1,2,3,4: delta_2,3,unload + y_2,3,3 + seq_2,3,1,4
-   - delivered_2,3,1,4 <= 2
- deliveryDef>_1,2,3,4: - delta_2,3,unload - y_2,3,3 - seq_2,3,1,4
-   + 3 delivered_2,3,1,4 <= 0
- deliveryDef<_1,2,3,5: delta_2,3,unload + y_2,3,3 + seq_2,3,1,5
-   - delivered_2,3,1,5 <= 2
- deliveryDef>_1,2,3,5: - delta_2,3,unload - y_2,3,3 - seq_2,3,1,5
-   + 3 delivered_2,3,1,5 <= 0
- deliveryDef<_1,2,4,0: delta_2,4,unload + y_2,4,3 + seq_2,4,1,0
-   - delivered_2,4,1,0 <= 2
- deliveryDef>_1,2,4,0: - delta_2,4,unload - y_2,4,3 - seq_2,4,1,0
-   + 3 delivered_2,4,1,0 <= 0
- deliveryDef<_1,2,4,1: delta_2,4,unload + y_2,4,3 + seq_2,4,1,1
-   - delivered_2,4,1,1 <= 2
- deliveryDef>_1,2,4,1: - delta_2,4,unload - y_2,4,3 - seq_2,4,1,1
-   + 3 delivered_2,4,1,1 <= 0
- deliveryDef<_1,2,4,2: delta_2,4,unload + y_2,4,3 + seq_2,4,1,2
-   - delivered_2,4,1,2 <= 2
- deliveryDef>_1,2,4,2: - delta_2,4,unload - y_2,4,3 - seq_2,4,1,2
-   + 3 delivered_2,4,1,2 <= 0
- deliveryDef<_1,2,4,3: delta_2,4,unload + y_2,4,3 + seq_2,4,1,3
-   - delivered_2,4,1,3 <= 2
- deliveryDef>_1,2,4,3: - delta_2,4,unload - y_2,4,3 - seq_2,4,1,3
-   + 3 delivered_2,4,1,3 <= 0
- deliveryDef<_1,2,4,4: delta_2,4,unload + y_2,4,3 + seq_2,4,1,4
-   - delivered_2,4,1,4 <= 2
- deliveryDef>_1,2,4,4: - delta_2,4,unload - y_2,4,3 - seq_2,4,1,4
-   + 3 delivered_2,4,1,4 <= 0
- deliveryDef<_1,2,4,5: delta_2,4,unload + y_2,4,3 + seq_2,4,1,5
-   - delivered_2,4,1,5 <= 2
- deliveryDef>_1,2,4,5: - delta_2,4,unload - y_2,4,3 - seq_2,4,1,5
-   + 3 delivered_2,4,1,5 <= 0
- deliveryDef<_1,2,5,0: delta_2,5,unload + y_2,5,3 + seq_2,5,1,0
-   - delivered_2,5,1,0 <= 2
- deliveryDef>_1,2,5,0: - delta_2,5,unload - y_2,5,3 - seq_2,5,1,0
-   + 3 delivered_2,5,1,0 <= 0
- deliveryDef<_1,2,5,1: delta_2,5,unload + y_2,5,3 + seq_2,5,1,1
-   - delivered_2,5,1,1 <= 2
- deliveryDef>_1,2,5,1: - delta_2,5,unload - y_2,5,3 - seq_2,5,1,1
-   + 3 delivered_2,5,1,1 <= 0
- deliveryDef<_1,2,5,2: delta_2,5,unload + y_2,5,3 + seq_2,5,1,2
-   - delivered_2,5,1,2 <= 2
- deliveryDef>_1,2,5,2: - delta_2,5,unload - y_2,5,3 - seq_2,5,1,2
-   + 3 delivered_2,5,1,2 <= 0
- deliveryDef<_1,2,5,3: delta_2,5,unload + y_2,5,3 + seq_2,5,1,3
-   - delivered_2,5,1,3 <= 2
- deliveryDef>_1,2,5,3: - delta_2,5,unload - y_2,5,3 - seq_2,5,1,3
-   + 3 delivered_2,5,1,3 <= 0
- deliveryDef<_1,2,5,4: delta_2,5,unload + y_2,5,3 + seq_2,5,1,4
-   - delivered_2,5,1,4 <= 2
- deliveryDef>_1,2,5,4: - delta_2,5,unload - y_2,5,3 - seq_2,5,1,4
-   + 3 delivered_2,5,1,4 <= 0
- deliveryDef<_1,2,5,5: delta_2,5,unload + y_2,5,3 + seq_2,5,1,5
-   - delivered_2,5,1,5 <= 2
- deliveryDef>_1,2,5,5: - delta_2,5,unload - y_2,5,3 - seq_2,5,1,5
-   + 3 delivered_2,5,1,5 <= 0
- deliveryDef<_1,2,6,0: delta_2,6,unload + y_2,6,3 + seq_2,6,1,0
-   - delivered_2,6,1,0 <= 2
- deliveryDef>_1,2,6,0: - delta_2,6,unload - y_2,6,3 - seq_2,6,1,0
-   + 3 delivered_2,6,1,0 <= 0
- deliveryDef<_1,2,6,1: delta_2,6,unload + y_2,6,3 + seq_2,6,1,1
-   - delivered_2,6,1,1 <= 2
- deliveryDef>_1,2,6,1: - delta_2,6,unload - y_2,6,3 - seq_2,6,1,1
-   + 3 delivered_2,6,1,1 <= 0
- deliveryDef<_1,2,6,2: delta_2,6,unload + y_2,6,3 + seq_2,6,1,2
-   - delivered_2,6,1,2 <= 2
- deliveryDef>_1,2,6,2: - delta_2,6,unload - y_2,6,3 - seq_2,6,1,2
-   + 3 delivered_2,6,1,2 <= 0
- deliveryDef<_1,2,6,3: delta_2,6,unload + y_2,6,3 + seq_2,6,1,3
-   - delivered_2,6,1,3 <= 2
- deliveryDef>_1,2,6,3: - delta_2,6,unload - y_2,6,3 - seq_2,6,1,3
-   + 3 delivered_2,6,1,3 <= 0
- deliveryDef<_1,2,6,4: delta_2,6,unload + y_2,6,3 + seq_2,6,1,4
-   - delivered_2,6,1,4 <= 2
- deliveryDef>_1,2,6,4: - delta_2,6,unload - y_2,6,3 - seq_2,6,1,4
-   + 3 delivered_2,6,1,4 <= 0
- deliveryDef<_1,2,6,5: delta_2,6,unload + y_2,6,3 + seq_2,6,1,5
-   - delivered_2,6,1,5 <= 2
- deliveryDef>_1,2,6,5: - delta_2,6,unload - y_2,6,3 - seq_2,6,1,5
-   + 3 delivered_2,6,1,5 <= 0
- deliveryDef<_1,2,7,0: delta_2,7,unload + y_2,7,3 + seq_2,7,1,0
-   - delivered_2,7,1,0 <= 2
- deliveryDef>_1,2,7,0: - delta_2,7,unload - y_2,7,3 - seq_2,7,1,0
-   + 3 delivered_2,7,1,0 <= 0
- deliveryDef<_1,2,7,1: delta_2,7,unload + y_2,7,3 + seq_2,7,1,1
-   - delivered_2,7,1,1 <= 2
- deliveryDef>_1,2,7,1: - delta_2,7,unload - y_2,7,3 - seq_2,7,1,1
-   + 3 delivered_2,7,1,1 <= 0
- deliveryDef<_1,2,7,2: delta_2,7,unload + y_2,7,3 + seq_2,7,1,2
-   - delivered_2,7,1,2 <= 2
- deliveryDef>_1,2,7,2: - delta_2,7,unload - y_2,7,3 - seq_2,7,1,2
-   + 3 delivered_2,7,1,2 <= 0
- deliveryDef<_1,2,7,3: delta_2,7,unload + y_2,7,3 + seq_2,7,1,3
-   - delivered_2,7,1,3 <= 2
- deliveryDef>_1,2,7,3: - delta_2,7,unload - y_2,7,3 - seq_2,7,1,3
-   + 3 delivered_2,7,1,3 <= 0
- deliveryDef<_1,2,7,4: delta_2,7,unload + y_2,7,3 + seq_2,7,1,4
-   - delivered_2,7,1,4 <= 2
- deliveryDef>_1,2,7,4: - delta_2,7,unload - y_2,7,3 - seq_2,7,1,4
-   + 3 delivered_2,7,1,4 <= 0
- deliveryDef<_1,2,7,5: delta_2,7,unload + y_2,7,3 + seq_2,7,1,5
-   - delivered_2,7,1,5 <= 2
- deliveryDef>_1,2,7,5: - delta_2,7,unload - y_2,7,3 - seq_2,7,1,5
-   + 3 delivered_2,7,1,5 <= 0
+ eachParcelDeliveredOnce_1: delivered_1,0,1 + delivered_1,1,1
+   + delivered_1,2,1 + delivered_1,3,1 + delivered_1,4,1 + delivered_1,5,1
+   + delivered_1,6,1 + delivered_1,7,1 + delivered_2,0,1 + delivered_2,1,1
+   + delivered_2,2,1 + delivered_2,3,1 + delivered_2,4,1 + delivered_2,5,1
+   + delivered_2,6,1 + delivered_2,7,1 = 1
+ deliveryDef<_1,1,0: delta_1,0,unload + y_1,0,3 + seq_1,0,1,0 + seq_1,0,1,1
+   + seq_1,0,1,2 + seq_1,0,1,3 + seq_1,0,1,4 + seq_1,0,1,5
+   - delivered_1,0,1 <= 2
+ deliveryDef>_1,1,0: - delta_1,0,unload - y_1,0,3 - seq_1,0,1,0
+   - seq_1,0,1,1 - seq_1,0,1,2 - seq_1,0,1,3 - seq_1,0,1,4 - seq_1,0,1,5
+   + 3 delivered_1,0,1 <= 0
+ deliveryDef<_1,1,1: delta_1,1,unload + y_1,1,3 + seq_1,1,1,0 + seq_1,1,1,1
+   + seq_1,1,1,2 + seq_1,1,1,3 + seq_1,1,1,4 + seq_1,1,1,5
+   - delivered_1,1,1 <= 2
+ deliveryDef>_1,1,1: - delta_1,1,unload - y_1,1,3 - seq_1,1,1,0
+   - seq_1,1,1,1 - seq_1,1,1,2 - seq_1,1,1,3 - seq_1,1,1,4 - seq_1,1,1,5
+   + 3 delivered_1,1,1 <= 0
+ deliveryDef<_1,1,2: delta_1,2,unload + y_1,2,3 + seq_1,2,1,0 + seq_1,2,1,1
+   + seq_1,2,1,2 + seq_1,2,1,3 + seq_1,2,1,4 + seq_1,2,1,5
+   - delivered_1,2,1 <= 2
+ deliveryDef>_1,1,2: - delta_1,2,unload - y_1,2,3 - seq_1,2,1,0
+   - seq_1,2,1,1 - seq_1,2,1,2 - seq_1,2,1,3 - seq_1,2,1,4 - seq_1,2,1,5
+   + 3 delivered_1,2,1 <= 0
+ deliveryDef<_1,1,3: delta_1,3,unload + y_1,3,3 + seq_1,3,1,0 + seq_1,3,1,1
+   + seq_1,3,1,2 + seq_1,3,1,3 + seq_1,3,1,4 + seq_1,3,1,5
+   - delivered_1,3,1 <= 2
+ deliveryDef>_1,1,3: - delta_1,3,unload - y_1,3,3 - seq_1,3,1,0
+   - seq_1,3,1,1 - seq_1,3,1,2 - seq_1,3,1,3 - seq_1,3,1,4 - seq_1,3,1,5
+   + 3 delivered_1,3,1 <= 0
+ deliveryDef<_1,1,4: delta_1,4,unload + y_1,4,3 + seq_1,4,1,0 + seq_1,4,1,1
+   + seq_1,4,1,2 + seq_1,4,1,3 + seq_1,4,1,4 + seq_1,4,1,5
+   - delivered_1,4,1 <= 2
+ deliveryDef>_1,1,4: - delta_1,4,unload - y_1,4,3 - seq_1,4,1,0
+   - seq_1,4,1,1 - seq_1,4,1,2 - seq_1,4,1,3 - seq_1,4,1,4 - seq_1,4,1,5
+   + 3 delivered_1,4,1 <= 0
+ deliveryDef<_1,1,5: delta_1,5,unload + y_1,5,3 + seq_1,5,1,0 + seq_1,5,1,1
+   + seq_1,5,1,2 + seq_1,5,1,3 + seq_1,5,1,4 + seq_1,5,1,5
+   - delivered_1,5,1 <= 2
+ deliveryDef>_1,1,5: - delta_1,5,unload - y_1,5,3 - seq_1,5,1,0
+   - seq_1,5,1,1 - seq_1,5,1,2 - seq_1,5,1,3 - seq_1,5,1,4 - seq_1,5,1,5
+   + 3 delivered_1,5,1 <= 0
+ deliveryDef<_1,1,6: delta_1,6,unload + y_1,6,3 + seq_1,6,1,0 + seq_1,6,1,1
+   + seq_1,6,1,2 + seq_1,6,1,3 + seq_1,6,1,4 + seq_1,6,1,5
+   - delivered_1,6,1 <= 2
+ deliveryDef>_1,1,6: - delta_1,6,unload - y_1,6,3 - seq_1,6,1,0
+   - seq_1,6,1,1 - seq_1,6,1,2 - seq_1,6,1,3 - seq_1,6,1,4 - seq_1,6,1,5
+   + 3 delivered_1,6,1 <= 0
+ deliveryDef<_1,1,7: delta_1,7,unload + y_1,7,3 + seq_1,7,1,0 + seq_1,7,1,1
+   + seq_1,7,1,2 + seq_1,7,1,3 + seq_1,7,1,4 + seq_1,7,1,5
+   - delivered_1,7,1 <= 2
+ deliveryDef>_1,1,7: - delta_1,7,unload - y_1,7,3 - seq_1,7,1,0
+   - seq_1,7,1,1 - seq_1,7,1,2 - seq_1,7,1,3 - seq_1,7,1,4 - seq_1,7,1,5
+   + 3 delivered_1,7,1 <= 0
+ deliveryDef<_1,2,0: delta_2,0,unload + y_2,0,3 + seq_2,0,1,0 + seq_2,0,1,1
+   + seq_2,0,1,2 + seq_2,0,1,3 + seq_2,0,1,4 + seq_2,0,1,5
+   - delivered_2,0,1 <= 2
+ deliveryDef>_1,2,0: - delta_2,0,unload - y_2,0,3 - seq_2,0,1,0
+   - seq_2,0,1,1 - seq_2,0,1,2 - seq_2,0,1,3 - seq_2,0,1,4 - seq_2,0,1,5
+   + 3 delivered_2,0,1 <= 0
+ deliveryDef<_1,2,1: delta_2,1,unload + y_2,1,3 + seq_2,1,1,0 + seq_2,1,1,1
+   + seq_2,1,1,2 + seq_2,1,1,3 + seq_2,1,1,4 + seq_2,1,1,5
+   - delivered_2,1,1 <= 2
+ deliveryDef>_1,2,1: - delta_2,1,unload - y_2,1,3 - seq_2,1,1,0
+   - seq_2,1,1,1 - seq_2,1,1,2 - seq_2,1,1,3 - seq_2,1,1,4 - seq_2,1,1,5
+   + 3 delivered_2,1,1 <= 0
+ deliveryDef<_1,2,2: delta_2,2,unload + y_2,2,3 + seq_2,2,1,0 + seq_2,2,1,1
+   + seq_2,2,1,2 + seq_2,2,1,3 + seq_2,2,1,4 + seq_2,2,1,5
+   - delivered_2,2,1 <= 2
+ deliveryDef>_1,2,2: - delta_2,2,unload - y_2,2,3 - seq_2,2,1,0
+   - seq_2,2,1,1 - seq_2,2,1,2 - seq_2,2,1,3 - seq_2,2,1,4 - seq_2,2,1,5
+   + 3 delivered_2,2,1 <= 0
+ deliveryDef<_1,2,3: delta_2,3,unload + y_2,3,3 + seq_2,3,1,0 + seq_2,3,1,1
+   + seq_2,3,1,2 + seq_2,3,1,3 + seq_2,3,1,4 + seq_2,3,1,5
+   - delivered_2,3,1 <= 2
+ deliveryDef>_1,2,3: - delta_2,3,unload - y_2,3,3 - seq_2,3,1,0
+   - seq_2,3,1,1 - seq_2,3,1,2 - seq_2,3,1,3 - seq_2,3,1,4 - seq_2,3,1,5
+   + 3 delivered_2,3,1 <= 0
+ deliveryDef<_1,2,4: delta_2,4,unload + y_2,4,3 + seq_2,4,1,0 + seq_2,4,1,1
+   + seq_2,4,1,2 + seq_2,4,1,3 + seq_2,4,1,4 + seq_2,4,1,5
+   - delivered_2,4,1 <= 2
+ deliveryDef>_1,2,4: - delta_2,4,unload - y_2,4,3 - seq_2,4,1,0
+   - seq_2,4,1,1 - seq_2,4,1,2 - seq_2,4,1,3 - seq_2,4,1,4 - seq_2,4,1,5
+   + 3 delivered_2,4,1 <= 0
+ deliveryDef<_1,2,5: delta_2,5,unload + y_2,5,3 + seq_2,5,1,0 + seq_2,5,1,1
+   + seq_2,5,1,2 + seq_2,5,1,3 + seq_2,5,1,4 + seq_2,5,1,5
+   - delivered_2,5,1 <= 2
+ deliveryDef>_1,2,5: - delta_2,5,unload - y_2,5,3 - seq_2,5,1,0
+   - seq_2,5,1,1 - seq_2,5,1,2 - seq_2,5,1,3 - seq_2,5,1,4 - seq_2,5,1,5
+   + 3 delivered_2,5,1 <= 0
+ deliveryDef<_1,2,6: delta_2,6,unload + y_2,6,3 + seq_2,6,1,0 + seq_2,6,1,1
+   + seq_2,6,1,2 + seq_2,6,1,3 + seq_2,6,1,4 + seq_2,6,1,5
+   - delivered_2,6,1 <= 2
+ deliveryDef>_1,2,6: - delta_2,6,unload - y_2,6,3 - seq_2,6,1,0
+   - seq_2,6,1,1 - seq_2,6,1,2 - seq_2,6,1,3 - seq_2,6,1,4 - seq_2,6,1,5
+   + 3 delivered_2,6,1 <= 0
+ deliveryDef<_1,2,7: delta_2,7,unload + y_2,7,3 + seq_2,7,1,0 + seq_2,7,1,1
+   + seq_2,7,1,2 + seq_2,7,1,3 + seq_2,7,1,4 + seq_2,7,1,5
+   - delivered_2,7,1 <= 2
+ deliveryDef>_1,2,7: - delta_2,7,unload - y_2,7,3 - seq_2,7,1,0
+   - seq_2,7,1,1 - seq_2,7,1,2 - seq_2,7,1,3 - seq_2,7,1,4 - seq_2,7,1,5
+   + 3 delivered_2,7,1 <= 0
  firstLoad_1: seq_1,0,1,0 + seq_1,1,1,0 + seq_1,2,1,0 + seq_1,3,1,0
    + seq_1,4,1,0 + seq_1,5,1,0 + seq_1,6,1,0 + seq_1,7,1,0 + seq_2,0,1,0
    + seq_2,1,1,0 + seq_2,2,1,0 + seq_2,3,1,0 + seq_2,4,1,0 + seq_2,5,1,0
@@ -12418,29 +12102,9 @@ Binaries
  seq_2,2,1,4 seq_2,3,1,4 seq_2,4,1,4 seq_2,5,1,4 seq_2,6,1,4 seq_2,7,1,4
  seq_1,0,1,5 seq_1,1,1,5 seq_1,2,1,5 seq_1,3,1,5 seq_1,4,1,5 seq_1,5,1,5
  seq_1,6,1,5 seq_1,7,1,5 seq_2,0,1,5 seq_2,1,1,5 seq_2,2,1,5 seq_2,3,1,5
- seq_2,4,1,5 seq_2,5,1,5 seq_2,6,1,5 seq_2,7,1,5 delivered_1,0,1,0
- delivered_1,0,1,1 delivered_1,0,1,2 delivered_1,0,1,3 delivered_1,0,1,4
- delivered_1,0,1,5 delivered_1,1,1,0 delivered_1,1,1,1 delivered_1,1,1,2
- delivered_1,1,1,3 delivered_1,1,1,4 delivered_1,1,1,5 delivered_1,2,1,0
- delivered_1,2,1,1 delivered_1,2,1,2 delivered_1,2,1,3 delivered_1,2,1,4
- delivered_1,2,1,5 delivered_1,3,1,0 delivered_1,3,1,1 delivered_1,3,1,2
- delivered_1,3,1,3 delivered_1,3,1,4 delivered_1,3,1,5 delivered_1,4,1,0
- delivered_1,4,1,1 delivered_1,4,1,2 delivered_1,4,1,3 delivered_1,4,1,4
- delivered_1,4,1,5 delivered_1,5,1,0 delivered_1,5,1,1 delivered_1,5,1,2
- delivered_1,5,1,3 delivered_1,5,1,4 delivered_1,5,1,5 delivered_1,6,1,0
- delivered_1,6,1,1 delivered_1,6,1,2 delivered_1,6,1,3 delivered_1,6,1,4
- delivered_1,6,1,5 delivered_1,7,1,0 delivered_1,7,1,1 delivered_1,7,1,2
- delivered_1,7,1,3 delivered_1,7,1,4 delivered_1,7,1,5 delivered_2,0,1,0
- delivered_2,0,1,1 delivered_2,0,1,2 delivered_2,0,1,3 delivered_2,0,1,4
- delivered_2,0,1,5 delivered_2,1,1,0 delivered_2,1,1,1 delivered_2,1,1,2
- delivered_2,1,1,3 delivered_2,1,1,4 delivered_2,1,1,5 delivered_2,2,1,0
- delivered_2,2,1,1 delivered_2,2,1,2 delivered_2,2,1,3 delivered_2,2,1,4
- delivered_2,2,1,5 delivered_2,3,1,0 delivered_2,3,1,1 delivered_2,3,1,2
- delivered_2,3,1,3 delivered_2,3,1,4 delivered_2,3,1,5 delivered_2,4,1,0
- delivered_2,4,1,1 delivered_2,4,1,2 delivered_2,4,1,3 delivered_2,4,1,4
- delivered_2,4,1,5 delivered_2,5,1,0 delivered_2,5,1,1 delivered_2,5,1,2
- delivered_2,5,1,3 delivered_2,5,1,4 delivered_2,5,1,5 delivered_2,6,1,0
- delivered_2,6,1,1 delivered_2,6,1,2 delivered_2,6,1,3 delivered_2,6,1,4
- delivered_2,6,1,5 delivered_2,7,1,0 delivered_2,7,1,1 delivered_2,7,1,2
- delivered_2,7,1,3 delivered_2,7,1,4 delivered_2,7,1,5
+ seq_2,4,1,5 seq_2,5,1,5 seq_2,6,1,5 seq_2,7,1,5 delivered_1,0,1
+ delivered_1,1,1 delivered_1,2,1 delivered_1,3,1 delivered_1,4,1
+ delivered_1,5,1 delivered_1,6,1 delivered_1,7,1 delivered_2,0,1
+ delivered_2,1,1 delivered_2,2,1 delivered_2,3,1 delivered_2,4,1
+ delivered_2,5,1 delivered_2,6,1 delivered_2,7,1
 End

@@ -31,20 +31,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\out\IGNORE\S20 deliveryfixed\newresults.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\out\results.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>

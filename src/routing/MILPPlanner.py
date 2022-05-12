@@ -33,8 +33,8 @@ class MILPPlanner(PathPlanner):
         print(f"\t Setting up MILP")
 
         diameter = self.computeDiameter()
-        self.K = 9#4 * diameter
-        self.P = 9#3 * diameter
+        self.K = 4 * diameter
+        self.P = 3 * diameter
         print(f"{self.K}, {self.P}")
         TYPES = ["move", "swap", "load", "unload", "idle"]
 
@@ -84,8 +84,11 @@ class MILPPlanner(PathPlanner):
         for u in self.simulation.drones.keys():
             for k in range(self.K):
                 for d in self.simulation.deliveries.keys():
-                    for p in range(self.P):
-                        delivered[f"{u},{k},{d},{p}"] = self.model.addVar(vtype=GRB.BINARY, name=f"delivered_{u},{k},{d},{p}")
+                    delivered[f"{u},{k},{d}"] = self.model.addVar(vtype=GRB.BINARY,
+                                                                      name=f"delivered_{u},{k},{d}")
+
+                    #for p in range(self.P):
+                        #delivered[f"{u},{k},{d},{p}"] = self.model.addVar(vtype=GRB.BINARY, name=f"delivered_{u},{k},{d},{p}")
 
         # CONTINUOUS : B^{u,k} = u's battery State of Charge at the end of $k$-th activity.
         # all u, k
@@ -110,6 +113,7 @@ class MILPPlanner(PathPlanner):
         ############ Constraints #############
 
         # Actions
+
 
         # Each action must have exactly one type, one s_loc, one e_loc
         for u in self.simulation.drones.keys():
@@ -143,14 +147,15 @@ class MILPPlanner(PathPlanner):
                     gp.LinExpr([(1.0, seq[f"{u},{k},{d},{p}"]) for u in self.simulation.drones.keys() for k in range(self.K)]) <= 1,
                     f"eachParcelOneAction_{d},{p}")
 
-        # Swap, load, unload and idle do not change station
+        # not move does not change station, move does change station
         for u in self.simulation.drones.keys():
             for k in range(self.K):
                 for s in self.simulation.stations.keys():
-                    # x^{u,k}_{s} + sum_{t in Types-{move}} delta{u,k}_{t} - y^{u,k}_{s} <= 1
+                    # x^{u,k}_{s} + (1-delta{u,k}_{t}) - y^{u,k}_{s} <= 1
                     self.model.addConstr(
-                         x[f"{u},{k},{s}"] + gp.LinExpr([(1.0, delta[f"{u},{k},{t}"]) for t in TYPES if t != "move"]) - y[f"{u},{k},{s}"] <= 1,
+                         x[f"{u},{k},{s}"] + (1-delta[f"{u},{k},move"])  - y[f"{u},{k},{s}"] <= 1,
                         f"notMove_{u},{k},{s}")
+
                     # x^{u,k}_{s} + y^{u,k}_{s} + delta{u,k}_{move}  <= 2
                     self.model.addConstr(
                         x[f"{u},{k},{s}"] + y[f"{u},{k},{s}"] + delta[f"{u},{k},move"] <= 2,
@@ -190,11 +195,17 @@ class MILPPlanner(PathPlanner):
         # 	Each parcel is delivered exactly once
         for d in self.simulation.deliveries.keys():
             # sum_{u,k} delivered_{d,u,k} = 1
-            self.model.addConstr(
+            '''self.model.addConstr(
                 gp.LinExpr(
                     [(1.0, delivered[f"{u},{k},{d},{p}"])
                      for u in self.simulation.drones.keys()
                      for k in range(self.K) for p in range(self.P)] ) == 1,
+                f"eachParcelDeliveredOnce_{d}")'''
+            self.model.addConstr(
+                gp.LinExpr(
+                    [(1.0, delivered[f"{u},{k},{d}"])
+                     for u in self.simulation.drones.keys()
+                     for k in range(self.K)]) == 1,
                 f"eachParcelDeliveredOnce_{d}")
 
         # 	Delivery accomplishment definition
@@ -202,7 +213,16 @@ class MILPPlanner(PathPlanner):
             dst_d = self.simulation.deliveries[d].dst.ID
             for u in self.simulation.drones.keys():
                 for k in range(self.K):
-                    for p in range(self.P):
+                    self.model.addConstr(
+                        gp.LinExpr([(1.0,seq[f"{u},{k},{d},{p}"]) for p in range(self.P)])
+                        + y[f"{u},{k},{dst_d}"] + delta[f"{u},{k},unload"]
+                        - delivered[f"{u},{k},{d}"] <= 2,
+                        f"deliveryDef<_{d},{u},{k}")
+                    self.model.addConstr(
+                        3 * delivered[f"{u},{k},{d}"]
+                        - (gp.LinExpr([(1.0,seq[f"{u},{k},{d},{p}"]) for p in range(self.P)])  + y[f"{u},{k},{dst_d}"] + delta[f"{u},{k},unload"]) <= 0,
+                        f"deliveryDef>_{d},{u},{k}")
+                    '''for p in range(self.P):
                         # seq^{u,k}_{d,p} + y^{u,k}_{dst_d} + delta{u,k}_{unload} - delivered_{d,u,k,p} <= 2
                         self.model.addConstr(
                             seq[f"{u},{k},{d},{p}"] + y[f"{u},{k},{dst_d}"] + delta[f"{u},{k},unload"]
@@ -211,7 +231,7 @@ class MILPPlanner(PathPlanner):
                         self.model.addConstr(
                             3 * delivered[f"{u},{k},{d},{p}"]
                             - (seq[f"{u},{k},{d},{p}"] + y[f"{u},{k},{dst_d}"] + delta[f"{u},{k},unload"]) <= 0,
-                            f"deliveryDef>_{d},{u},{k},{p}")
+                            f"deliveryDef>_{d},{u},{k},{p}")'''
 
         # 	Each parcel is first loaded in its source station
         for d in self.simulation.deliveries.keys():
@@ -366,7 +386,7 @@ class MILPPlanner(PathPlanner):
             for k in range(self.K):
                 for i in self.simulation.stations.keys():
                     for j in self.simulation.stations.keys():
-                        if i==j: continue
+                        if i == j: continue
                         self.model.addConstr(B[f"{u},{k}"] <=  B[f"{u},{k-1}"] - self.simulation.cost(i,j,0)
                                              + CONSUMPTION_UPPER_BOUND * (4 - (
                                                         x[f"{u},{k},{i}"] + y[f"{u},{k},{j}"] + delta[f"{u},{k},move"]
@@ -378,7 +398,7 @@ class MILPPlanner(PathPlanner):
             for k in range(self.K):
                 for i in self.simulation.stations.keys():
                     for j in self.simulation.stations.keys():
-                        if i==j: continue
+                        if i == j: continue
                         for d in self.simulation.deliveries.keys():
                             w_d = self.simulation.deliveries[d].weight
                             self.model.addConstr(B[f"{u},{k}"] <= B[f"{u},{k-1}"] - self.simulation.cost(i,j,w_d)
