@@ -101,7 +101,7 @@ class MILPPlanner(PathPlanner):
         # all u, k
         C = {} # f"C_{u},{k}"
         for u in self.simulation.drones.keys():
-            for k in range(self.K):
+            for k in range(-1,self.K):
                 C[f"{u},{k}"] = self.model.addVar(vtype=GRB.CONTINUOUS, name=f"C_{u},{k}")
 
         # CONTINUOUS : C = completion time
@@ -164,6 +164,7 @@ class MILPPlanner(PathPlanner):
         #   If a parcel is loaded/unloaded then it is assigned consistently
         for u in self.simulation.drones.keys():
             for k in range(self.K):
+                # delta^{u,k}_{(un)load} - sum_{d,p} seq^{u,k}_{d,p} <= 0
                 self.model.addConstr(
                     delta[f"{u},{k},load"]
                     - gp.LinExpr([(1.0, seq[f"{u},{k},{d},{p}"]) for d in self.simulation.deliveries.keys() for p in range(self.P) ])
@@ -213,11 +214,13 @@ class MILPPlanner(PathPlanner):
             dst_d = self.simulation.deliveries[d].dst.ID
             for u in self.simulation.drones.keys():
                 for k in range(self.K):
+                    # sum_{p} seq^{u,k}_{d,p} + y^{u,k}_{dst_d} + delta^{u,k}_{unload}  - delivered^{u,k}_{d}<= 2
                     self.model.addConstr(
                         gp.LinExpr([(1.0,seq[f"{u},{k},{d},{p}"]) for p in range(self.P)])
                         + y[f"{u},{k},{dst_d}"] + delta[f"{u},{k},unload"]
                         - delivered[f"{u},{k},{d}"] <= 2,
                         f"deliveryDef<_{d},{u},{k}")
+                    # 3* delivered^{u,k}_{d} - (y^{u,k}_{dst_d} + delta^{u,k}_{unload} + sum_{p} seq^{u,k}_{d,p}) <= 0
                     self.model.addConstr(
                         3 * delivered[f"{u},{k},{d}"]
                         - (gp.LinExpr([(1.0,seq[f"{u},{k},{d},{p}"]) for p in range(self.P)])  + y[f"{u},{k},{dst_d}"] + delta[f"{u},{k},unload"]) <= 0,
@@ -312,30 +315,30 @@ class MILPPlanner(PathPlanner):
 
 
         # Time
+
+        #   init
+        for u in self.simulation.drones.keys():
+            self.model.addConstr(C[f"{u},{-1}"] == 0, f"socInit_{u}")
         for u in self.simulation.drones.keys():
             for k in range(self.K):
-                if k == 0:
-                    term = 0
-                else:
-                    term = C[f"{u},{k-1}"]
                 # C^{u,k} >= C^{u,k-1} + delta{u,k}_{load} \Delta_{t}^{load}
-                self.model.addConstr(C[f"{u},{k}"] - term - self.simulation.load_time * delta[f"{u},{k},load"] >= 0,
+                self.model.addConstr(C[f"{u},{k}"] - C[f"{u},{k-1}"] - self.simulation.load_time * delta[f"{u},{k},load"] >= 0,
                                      f"loadTime_{u},{k}")
                 # C^{u,k} >= C^{u,k-1} + delta{u,k}_{unload} \Delta_{t}^{unload}
-                self.model.addConstr(C[f"{u},{k}"] - term - self.simulation.unload_time * delta[f"{u},{k},unload"] >= 0,
+
+                self.model.addConstr(C[f"{u},{k}"] - C[f"{u},{k-1}"] - self.simulation.unload_time * delta[f"{u},{k},unload"] >= 0,
                                      f"unloadTime_{u},{k}")
 
                 # C^{u,k} >= C^{u,k-1} + delta{u,k}_{swap} \Delta_{t}^{swap}
-                self.model.addConstr(C[f"{u},{k}"] - term - self.simulation.swap_time * delta[f"{u},{k},swap"] >= 0,
+                self.model.addConstr(C[f"{u},{k}"] - C[f"{u},{k-1}"] - self.simulation.swap_time * delta[f"{u},{k},swap"] >= 0,
                                      f"swapTime_{u},{k}")
 
                 # C^{u,k} >= C^{u,k-1} + delta{u,k}_{move} \Delta_{t}^{move}(i,j) - H (2 - (x^{u,k}_{i} + y^{u,k}_{j}))
                 # - H2 + Hx^{u,k}_{i} + Hy^{u,k}_{j}
                 # all (i,j) in E
                 for (i, j) in self.simulation.edges:
-                    self.model.addConstr(C[f"{u},{k}"] - term - self.simulation.time(i, j) * delta[
-                        f"{u},{k},move"] - self.simulation.horizon * x[f"{u},{k},{i}"] - self.simulation.horizon * y[
-                                             f"{u},{k},{j}"] >= -2 * self.simulation.horizon,
+                    self.model.addConstr(C[f"{u},{k}"] >=  C[f"{u},{k-1}"] + self.simulation.time(i, j)
+                                         - self.simulation.horizon *(3 - (delta[f"{u},{k},move"] + x[f"{u},{k},{i}"] + y[f"{u},{k},{j}"])),
                                          f"moveTime_{u},{k},{i},{j}")
 
         for d in self.simulation.deliveries.keys():
