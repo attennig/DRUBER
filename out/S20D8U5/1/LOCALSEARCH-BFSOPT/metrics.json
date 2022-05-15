@@ -1,0 +1,1 @@
+{"completion_time": 8436.118588022075, "mean_schedule_time": 7882.084533209189, "mean_flight_time": 7558.084533209189, "mean_swap_time": 324.0, "mean_idle_time": 0.0, "mean_delivery_time": 6069.758577402929, "mean_schedule_distance": 52906.59173246432, "mean_schedule_energy": 4.652925753997, "mean_number_swaps": 5.4, "drone_utilization": 1.0, "execution_time": 319.99175477027893}
