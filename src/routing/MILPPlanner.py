@@ -429,9 +429,9 @@ class MILPPlanner(PathPlanner):
         self.model.optimize()
         print(f"Gurobi status: {self.model.Status}")
 
-        if self.model.Status == GRB.INFEASIBLE:
-            self.getISSConstrs()
-            return None
+        #if self.model.Status == GRB.INFEASIBLE:
+        #    self.getISSConstrs()
+        #    return None
         #self.exec_time = self.model.RunTime
         solution = self.extractSolution()
 
@@ -441,13 +441,13 @@ class MILPPlanner(PathPlanner):
     def printVars(self):
         for var in self.model.getVars():
             print(f"{var.VarName} = {var.x}")
-    def extractSolution(self):
-        self.printVars()
-        schedule = Schedule(self.simulation)
 
+    def extractSolution(self):
+        #self.printVars()
+        schedule = Schedule(self.simulation)
+        DeliveryPaths = {}
         for u in self.simulation.drones.keys():
             for k in range(self.K):
-
                 if self.model.getVarByName(f"delta_{u},{k},move").x >= 0.5: t = "move"
                 if self.model.getVarByName(f"delta_{u},{k},load").x >= 0.5: t = "load"
                 if self.model.getVarByName(f"delta_{u},{k},unload").x >= 0.5: t = "unload"
@@ -456,21 +456,33 @@ class MILPPlanner(PathPlanner):
                 for s in self.simulation.stations.keys():
                     if self.model.getVarByName(f"x_{u},{k},{s}").x >= 0.5: x = s
                     if self.model.getVarByName(f"y_{u},{k},{s}").x >= 0.5: y = s
-                delivery = 0
-                seq = 0
+                delivery = None
+                seq = None
                 for d in self.simulation.deliveries.keys():
                     for p in range(self.P):
                         if self.model.getVarByName(f"seq_{u},{k},{d},{p}").x >= 0.5:
                             delivery = d
                             seq = p
 
+
                 tau = self.model.getVarByName(f"C_{u},{k}").x
 
-
                 action = DroneAction(t, x, y, delivery, seq, tau)
+
+                #if len(schedule.plan[u]) > 0:
+                    #action.prev = schedule.plan[u][-1]
+                    #schedule.plan[u][-1].next = action
                 schedule.plan[u].append(action)
 
+                if delivery in self.simulation.deliveries:
+                    if delivery not in DeliveryPaths.keys(): DeliveryPaths[delivery] = []
+                    DeliveryPaths[delivery].append(action)
 
+            for d in self.simulation.deliveries.keys():
+                for i in range(len(DeliveryPaths[d])):
+                    if i < len(DeliveryPaths[d]) - 1: DeliveryPaths[d][i].succ = DeliveryPaths[d][i + 1]
+                    if i > 0: DeliveryPaths[d][i].pred = DeliveryPaths[d][i - 1]
+        print(schedule)
         return schedule
 
     def getISSConstrs(self):
@@ -486,6 +498,3 @@ class MILPPlanner(PathPlanner):
         E = [e for e in self.simulation.edges if self.simulation.cost(e[0], e[1], DRONE_MAX_PAYLOAD) < 1]
         G.add_edges_from(E)
         return nx.algorithms.diameter(G)
-
-
-

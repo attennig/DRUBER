@@ -1,4 +1,4 @@
-from math import sqrt, ceil, floor
+from math import sqrt, ceil
 import matplotlib.pyplot as plt
 import json
 import os
@@ -7,7 +7,6 @@ from src.config import *
 from src.entities.Station import Station
 from src.entities.Drone import Drone
 from src.entities.Delivery import Delivery
-from src.routing.SchedulerMILP import SchedulerMILP
 from src.routing.MILPPlanner import MILPPlanner
 from src.routing.Greedy import Greedy
 from src.routing.LocalSearch import LocalSearch
@@ -172,8 +171,7 @@ class Simulator:
         with open(schedule_file, "w") as file_out:
             json.dump(schedule, file_out)
 
-        '''
-        if not update_metrics:
+        '''if not update_metrics:
             print("saving schedule")
             schedule = {}
             for u in self.drones.keys():
@@ -184,17 +182,18 @@ class Simulator:
             if MAP_FLAG:
                 print("saving map")
                 map = self.getSolutionMap(solution)  # seve as map.png
-                map.savefig(f"{self.outAlgoFOLDER}/map_out.png")
+                map.savefig(f"{self.outAlgoFOLDER}/map_out.png")'''
 
         print("saving metrics")
+
         metrics_file = f"{self.outAlgoFOLDER}/metrics.json"
-        #self.computeMetrics(solution)
         solution.computeAllMetrics()
         metrics = {
                     "completion_time":  solution.completion_time,
                     "mean_schedule_time":  solution.mean_schedule_time,
                     "mean_flight_time":  solution.mean_flight_time,
                     "mean_swap_time":  solution.mean_swap_time,
+                    "mean_load_unload_time": solution.mean_load_unload_time,
                     "mean_waiting_time":  solution.mean_waiting_time,
                     "mean_delivery_time":  solution.mean_delivery_time,
                     "mean_schedule_distance":  solution.mean_schedule_distance,
@@ -206,14 +205,9 @@ class Simulator:
                     "mean_number_parcel_handover": solution.mean_number_parcel_handover,
                     "execution_time":  self.execution_time
         }
-
-        #metrics["MILP"] = {"NumVars": self.OPT.model.NumVars,
-        #                   "NumConstrs": self.OPT.model.NumConstrs,
-        #                   "RunTime": self.OPT.model.RunTime}
-
         with open(metrics_file, "w") as file_out:
             json.dump(metrics, file_out)
-        '''
+
     def getMap(self):
         PRINT_DETAILS = len(self.drones.keys()) + len(self.stations.keys()) + len(self.deliveries.keys()) < 100
         plt.clf()

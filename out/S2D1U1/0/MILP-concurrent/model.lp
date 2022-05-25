@@ -28,29 +28,21 @@ Subject To
    + seq_1,3,1,1 <= 1
  eachParcelOneAction_1,2: seq_1,0,1,2 + seq_1,1,1,2 + seq_1,2,1,2
    + seq_1,3,1,2 <= 1
- notMove_1,0,1: delta_1,0,swap + delta_1,0,load + delta_1,0,unload
-   + delta_1,0,idle + x_1,0,1 - y_1,0,1 <= 1
+ notMove_1,0,1: - delta_1,0,move + x_1,0,1 - y_1,0,1 <= 0
  move_1,0,1: delta_1,0,move + x_1,0,1 + y_1,0,1 <= 2
- notMove_1,0,2: delta_1,0,swap + delta_1,0,load + delta_1,0,unload
-   + delta_1,0,idle + x_1,0,2 - y_1,0,2 <= 1
+ notMove_1,0,2: - delta_1,0,move + x_1,0,2 - y_1,0,2 <= 0
  move_1,0,2: delta_1,0,move + x_1,0,2 + y_1,0,2 <= 2
- notMove_1,1,1: delta_1,1,swap + delta_1,1,load + delta_1,1,unload
-   + delta_1,1,idle + x_1,1,1 - y_1,1,1 <= 1
+ notMove_1,1,1: - delta_1,1,move + x_1,1,1 - y_1,1,1 <= 0
  move_1,1,1: delta_1,1,move + x_1,1,1 + y_1,1,1 <= 2
- notMove_1,1,2: delta_1,1,swap + delta_1,1,load + delta_1,1,unload
-   + delta_1,1,idle + x_1,1,2 - y_1,1,2 <= 1
+ notMove_1,1,2: - delta_1,1,move + x_1,1,2 - y_1,1,2 <= 0
  move_1,1,2: delta_1,1,move + x_1,1,2 + y_1,1,2 <= 2
- notMove_1,2,1: delta_1,2,swap + delta_1,2,load + delta_1,2,unload
-   + delta_1,2,idle + x_1,2,1 - y_1,2,1 <= 1
+ notMove_1,2,1: - delta_1,2,move + x_1,2,1 - y_1,2,1 <= 0
  move_1,2,1: delta_1,2,move + x_1,2,1 + y_1,2,1 <= 2
- notMove_1,2,2: delta_1,2,swap + delta_1,2,load + delta_1,2,unload
-   + delta_1,2,idle + x_1,2,2 - y_1,2,2 <= 1
+ notMove_1,2,2: - delta_1,2,move + x_1,2,2 - y_1,2,2 <= 0
  move_1,2,2: delta_1,2,move + x_1,2,2 + y_1,2,2 <= 2
- notMove_1,3,1: delta_1,3,swap + delta_1,3,load + delta_1,3,unload
-   + delta_1,3,idle + x_1,3,1 - y_1,3,1 <= 1
+ notMove_1,3,1: - delta_1,3,move + x_1,3,1 - y_1,3,1 <= 0
  move_1,3,1: delta_1,3,move + x_1,3,1 + y_1,3,1 <= 2
- notMove_1,3,2: delta_1,3,swap + delta_1,3,load + delta_1,3,unload
-   + delta_1,3,idle + x_1,3,2 - y_1,3,2 <= 1
+ notMove_1,3,2: - delta_1,3,move + x_1,3,2 - y_1,3,2 <= 0
  move_1,3,2: delta_1,3,move + x_1,3,2 + y_1,3,2 <= 2
  loadAssignment_1,0: delta_1,0,load - seq_1,0,1,0 - seq_1,0,1,1
    - seq_1,0,1,2 <= 0
@@ -254,34 +246,35 @@ Subject To
    + seq_1,0,1,1 + seq_1,1,1,1 + seq_1,2,1,1 + seq_1,3,1,1 <= 0
  nogaps_1,2: - seq_1,0,1,1 - seq_1,1,1,1 - seq_1,2,1,1 - seq_1,3,1,1
    + seq_1,0,1,2 + seq_1,1,1,2 + seq_1,2,1,2 + seq_1,3,1,2 <= 0
- loadTime_1,0: - 20 delta_1,0,load + C_1,0 >= 0
- unloadTime_1,0: - 20 delta_1,0,unload + C_1,0 >= 0
- swapTime_1,0: - 60 delta_1,0,swap + C_1,0 >= 0
- moveTime_1,0,1,2: - 715.7142857142857 delta_1,0,move - 20000 x_1,0,1
-   - 20000 y_1,0,2 + C_1,0 >= -40000
- moveTime_1,0,2,1: - 715.7142857142857 delta_1,0,move - 20000 y_1,0,1
-   - 20000 x_1,0,2 + C_1,0 >= -40000
+ socInit_1: C_1,-1 = 0
+ loadTime_1,0: - 20 delta_1,0,load - C_1,-1 + C_1,0 >= 0
+ unloadTime_1,0: - 20 delta_1,0,unload - C_1,-1 + C_1,0 >= 0
+ swapTime_1,0: - 60 delta_1,0,swap - C_1,-1 + C_1,0 >= 0
+ moveTime_1,0,1,2: - 20000 delta_1,0,move - 20000 x_1,0,1 - 20000 y_1,0,2
+   - C_1,-1 + C_1,0 >= -59284.28571428572
+ moveTime_1,0,2,1: - 20000 delta_1,0,move - 20000 y_1,0,1 - 20000 x_1,0,2
+   - C_1,-1 + C_1,0 >= -59284.28571428572
  loadTime_1,1: - 20 delta_1,1,load - C_1,0 + C_1,1 >= 0
  unloadTime_1,1: - 20 delta_1,1,unload - C_1,0 + C_1,1 >= 0
  swapTime_1,1: - 60 delta_1,1,swap - C_1,0 + C_1,1 >= 0
- moveTime_1,1,1,2: - 715.7142857142857 delta_1,1,move - 20000 x_1,1,1
-   - 20000 y_1,1,2 - C_1,0 + C_1,1 >= -40000
- moveTime_1,1,2,1: - 715.7142857142857 delta_1,1,move - 20000 y_1,1,1
-   - 20000 x_1,1,2 - C_1,0 + C_1,1 >= -40000
+ moveTime_1,1,1,2: - 20000 delta_1,1,move - 20000 x_1,1,1 - 20000 y_1,1,2
+   - C_1,0 + C_1,1 >= -59284.28571428572
+ moveTime_1,1,2,1: - 20000 delta_1,1,move - 20000 y_1,1,1 - 20000 x_1,1,2
+   - C_1,0 + C_1,1 >= -59284.28571428572
  loadTime_1,2: - 20 delta_1,2,load - C_1,1 + C_1,2 >= 0
  unloadTime_1,2: - 20 delta_1,2,unload - C_1,1 + C_1,2 >= 0
  swapTime_1,2: - 60 delta_1,2,swap - C_1,1 + C_1,2 >= 0
- moveTime_1,2,1,2: - 715.7142857142857 delta_1,2,move - 20000 x_1,2,1
-   - 20000 y_1,2,2 - C_1,1 + C_1,2 >= -40000
- moveTime_1,2,2,1: - 715.7142857142857 delta_1,2,move - 20000 y_1,2,1
-   - 20000 x_1,2,2 - C_1,1 + C_1,2 >= -40000
+ moveTime_1,2,1,2: - 20000 delta_1,2,move - 20000 x_1,2,1 - 20000 y_1,2,2
+   - C_1,1 + C_1,2 >= -59284.28571428572
+ moveTime_1,2,2,1: - 20000 delta_1,2,move - 20000 y_1,2,1 - 20000 x_1,2,2
+   - C_1,1 + C_1,2 >= -59284.28571428572
  loadTime_1,3: - 20 delta_1,3,load - C_1,2 + C_1,3 >= 0
  unloadTime_1,3: - 20 delta_1,3,unload - C_1,2 + C_1,3 >= 0
  swapTime_1,3: - 60 delta_1,3,swap - C_1,2 + C_1,3 >= 0
- moveTime_1,3,1,2: - 715.7142857142857 delta_1,3,move - 20000 x_1,3,1
-   - 20000 y_1,3,2 - C_1,2 + C_1,3 >= -40000
- moveTime_1,3,2,1: - 715.7142857142857 delta_1,3,move - 20000 y_1,3,1
-   - 20000 x_1,3,2 - C_1,2 + C_1,3 >= -40000
+ moveTime_1,3,1,2: - 20000 delta_1,3,move - 20000 x_1,3,1 - 20000 y_1,3,2
+   - C_1,2 + C_1,3 >= -59284.28571428572
+ moveTime_1,3,2,1: - 20000 delta_1,3,move - 20000 y_1,3,1 - 20000 x_1,3,2
+   - C_1,2 + C_1,3 >= -59284.28571428572
  deliveryPred_1,1,1,0,1,0: - 20000 seq_1,0,1,0 - 20000 seq_1,0,1,1
    >= -40000
  deliveryPred_1,1,1,0,1,1: - 20000 seq_1,1,1,0 - 20000 seq_1,0,1,1 + C_1,0

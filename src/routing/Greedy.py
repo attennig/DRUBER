@@ -9,71 +9,71 @@ class Greedy(PathPlanner):
 
 
     def solveProblem(self):
-        QUICKEST_PATHS = {d: self.computeQuickestPath(self.simulation.deliveries[d].src.ID, self.simulation.deliveries[d].dst.ID, d, self.simulation.deliveries[d].weight) for d in self.simulation.deliveries.keys()}
-        LINK_PATHS = {}
-        X = {u: self.simulation.drones[u].home.ID for u in self.simulation.drones.keys()}
-        #start_time = time.time()
-        schedule = Schedule(self.simulation)
+        '''
+        This method implements the greedy algorithm computing a feasible plan
+        :return:
+        '''
+
+        P_sol = Schedule(self.simulation)
+        QUICKEST_PATHS = {
+            d: self.computeQuickestPath(
+                d,
+                self.simulation.deliveries[d].src.ID,
+                self.simulation.deliveries[d].dst.ID,
+                self.simulation.deliveries[d].weight
+            ) for d in self.simulation.deliveries.keys()}
+
+
         while QUICKEST_PATHS:
-            min_v = HORIZON
-            min_d, min_u = -1, -1
+            P_min = copy.deepcopy(P_sol)
+            T_min = HORIZON
+            u_min = None
+            d_min = None
+            print(f"deliveries to assing : {len(QUICKEST_PATHS)}/{len(self.simulation.deliveries)}")
             for u in self.simulation.drones.keys():
-                if len(schedule.plan[u]) == 0:
-                    tau_u = 0
-                else:
-                    tau_u = schedule.plan[u][-1].tau
-
                 for d in QUICKEST_PATHS.keys():
-                    LINK_PATHS[f"{u},{d}"] = self.computeQuickestPath(X[u], self.simulation.deliveries[d].src.ID, 0, 0)
-                    time_link = sum([self.simulation.time(p.x, p.y) for p in LINK_PATHS[f"{u},{d}"]])
+                    #print(f"computing augmented schedule for assignment {d} -> {u}")
 
-                    pick_up_time = tau_u + time_link
-                    time_path = sum([self.simulation.time(p.x, p.y) for p in QUICKEST_PATHS[d]])
-                    compeltion_time = pick_up_time + time_path
-
-                    if compeltion_time < min_v or (min_u == -1 and min_d == -1):
-                        min_v = compeltion_time
-                        min_u = u
-                        min_d = d
-
-            update_time_pos = min(0, abs(len(schedule.plan[min_u]) - 1))
-            schedule.plan[min_u] += LINK_PATHS[f"{min_u},{min_d}"] + QUICKEST_PATHS[min_d]
-            schedule.updateTimes(min_u, update_time_pos)
-            #assert round(schedule.plan[min_u][-1].tau) == round(min)
-
-            X[min_u] = schedule.plan[min_u][-1].y
-            QUICKEST_PATHS.pop(min_d)
-            print(f"{min_d} assigned to {min_u}")
-
-        schedule.addBatterySwaps()
-        print(schedule)
-
-        #self.exec_time = time.time() - start_time
-        return schedule
-
-
+                    if len(P_sol.plan[u]) == 0:
+                        last_station_u = self.simulation.drones[u].home.ID
+                    else:
+                        last_station_u = P_sol.plan[u][-1].y
+                    L_aug = self.computeQuickestPath(None,
+                                                     last_station_u,
+                                                     self.simulation.deliveries[d].src.ID,
+                                                     0)
+                    P_aug = P_sol.augment(u, d, 0, L_aug, QUICKEST_PATHS[d])
+                    T_aug = P_aug.arrival_times[d]
+                    if T_aug < T_min:
+                        T_min = T_aug
+                        P_min = P_aug
+                        u_min = u
+                        d_min = d
+            print(f"{d_min} assigned to {u_min} with completion time {T_min}")
+            P_sol = P_min
+            QUICKEST_PATHS.pop(d_min)
+        print(P_sol)
+        return P_sol
 
 
     def updateGraphWeights(self, w):
         self.G = nx.Graph()
-        #max_dist = floor(1 / self.simulation.unitcost(w))
-        e = [(i, j, {'weight': self.simulation.time(i, j)}) for (i, j) in self.simulation.edges if
-             self.simulation.cost(i, j, w) < 1]
+        e = [(i, j, {'weight': self.simulation.time(i, j)}) for (i, j) in self.simulation.edges
+             if self.simulation.cost(i, j, w) < 1]
         self.G.add_edges_from(e)
 
-    def computeQuickestPath(self, src: int, dst: int, a: int, w:float):
+    def computeQuickestPath(self,d: int, src: int, dst: int, w:float):
         self.updateGraphWeights(w)
         path = nx.shortest_path(self.G, source=src, target=dst, weight='weight')
         schedule = []
+        delivery = None
+        if d in self.simulation.deliveries.keys(): delivery = d
+        if delivery is not None: schedule = [DroneAction("load", src, src, delivery, None, None)]
         for i in range(len(path)-1):
             x = path[i]
             y = path[i+1]
-            action = DroneAction(x,y,a,0)
-            schedule.append(action)
-        if a == 0: return schedule
+            schedule.append(DroneAction("move", x, y, delivery, None, None))
 
-        for i in range(len(schedule)):
-            if i > 0: schedule[i].pred = schedule[i-1]
-            if i + 1 < len(schedule): schedule[i].succ = schedule[i+1]
+        if delivery is not None: schedule.append(DroneAction("unload", dst, dst, delivery, None, None))
         return schedule
 

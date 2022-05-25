@@ -9,7 +9,7 @@
     {"1": {"home": 1}},
     "deliveries":
     {
-      "1": {"src": 1, "dst": 3, "weight": 2}
+      "1": {"src": 1, "dst": 3, "weight": 3}
     }
   }
 }
