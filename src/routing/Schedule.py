@@ -79,7 +79,7 @@ class Schedule:
 
     def updateTimes(self, u: int, i: int):
         '''
-        This method updates the completion time of the actions composing the plan starting from a given action
+        This method updates the completion time of the actions composing the plan starting from a given action (plan[u][i])
         :param action: it is the action from which the completion time recomputation starts
         :return: void
         '''
@@ -88,7 +88,7 @@ class Schedule:
         toUpdate = [(u, i)]
         updated = []
         while len(toUpdate) > 0:
-            curr_u, curr_i = toUpdate.pop(0)
+            curr_u, curr_i = toUpdate.pop(0) # pop the least recent added action
             assert curr_i < len(self.plan[curr_u])
 
             curr = self.plan[curr_u][curr_i]
