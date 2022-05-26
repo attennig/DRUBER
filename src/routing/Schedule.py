@@ -466,7 +466,7 @@ class Schedule:
                             new_schedule.adjustSequenceNumbers(HA_from_u1)
                             if HA_from_u2.d is not None: new_schedule.adjustSequenceNumbers(HA_from_u2)
 
-                            new_schedule.check()
+                            #new_schedule.check()
                             if len(new_schedule.plan[u1]) > 0: new_schedule.updateTimes(u1, 0)
                             if len(new_schedule.plan[u2]) > 0: new_schedule.updateTimes(u2, 0)
                             if new_schedule.getScheduleTime() < H:
