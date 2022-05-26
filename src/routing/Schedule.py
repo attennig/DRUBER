@@ -418,8 +418,7 @@ class Schedule:
                             assert HA_from_u1.x == HS
 
 
-                            if self.containSuccessors(part1_u1, HA_from_u2): continue
-                            if self.containSuccessors(part1_u2, HA_from_u1): continue
+
 
                             # define part_add_u* adding load, unload actions
 
@@ -457,8 +456,11 @@ class Schedule:
                                 assert HA_from_u2.type == "load" or HA_from_u2.d is None
                                 # no need to add load and unload of the parcel carried by u2
 
+                            if self.containSuccessors(part1_u1, part_add_u1 + part2_u2): continue
+                            if self.containSuccessors(part1_u2, part_add_u2 + part2_u1): continue
                             new_plan[u1] = part1_u1 + part_add_u1 + part2_u2
                             new_plan[u2] = part1_u2 + part_add_u2 + part2_u1
+
 
                             new_schedule = Schedule(self.simulation, new_plan)
 
@@ -466,7 +468,7 @@ class Schedule:
                             new_schedule.adjustSequenceNumbers(HA_from_u1)
                             if HA_from_u2.d is not None: new_schedule.adjustSequenceNumbers(HA_from_u2)
 
-                            #new_schedule.check()
+                            new_schedule.check()
                             if len(new_schedule.plan[u1]) > 0: new_schedule.updateTimes(u1, 0)
                             if len(new_schedule.plan[u2]) > 0: new_schedule.updateTimes(u2, 0)
                             if new_schedule.getScheduleTime() < H:
@@ -489,10 +491,11 @@ class Schedule:
             assert curr_action.d == action.d
         curr_action.p = idx
 
-    def containSuccessors(self, part, action):
-        while action.succ is not None:
-            action = action.succ
-            if action in part: return True
+    def containSuccessors(self, part1, part2):
+        for action in part2:
+            while action.succ is not None:
+                action = action.succ
+                if action in part1: return True
         return False
 
 
