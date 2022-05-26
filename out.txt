@@ -1,0 +1,235 @@
+Constructor : 
+	simulation seed: 1
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U2/1
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+deliveries to assing : 15/15
+14 assigned to 1 with completion time 798.012702191403
+deliveries to assing : 14/15
+2 assigned to 2 with completion time 1322.2124063169729
+deliveries to assing : 13/15
+6 assigned to 2 with completion time 3202.6496407118975
+deliveries to assing : 12/15
+1 assigned to 1 with completion time 3831.6766085353484
+deliveries to assing : 11/15
+11 assigned to 2 with completion time 6330.883747972675
+deliveries to assing : 10/15
+10 assigned to 1 with completion time 7088.032782404516
+deliveries to assing : 9/15
+12 assigned to 2 with completion time 7816.680307263901
+deliveries to assing : 8/15
+9 assigned to 2 with completion time 9912.247898184203
+deliveries to assing : 7/15
+7 assigned to 1 with completion time 10854.288785246768
+deliveries to assing : 6/15
+3 assigned to 1 with completion time 11678.152890947606
+deliveries to assing : 5/15
+15 assigned to 2 with completion time 12638.255056222908
+deliveries to assing : 4/15
+5 assigned to 1 with completion time 15202.917589174485
+deliveries to assing : 3/15
+13 assigned to 2 with completion time 17498.26908113104
+deliveries to assing : 2/15
+None assigned to None with completion time 20000
+Constructor : 
+	simulation seed: 1
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U2/1
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+deliveries to assing : 15/15
+14 assigned to 1 with completion time 798.012702191403
+deliveries to assing : 14/15
+2 assigned to 2 with completion time 1322.2124063169729
+deliveries to assing : 13/15
+6 assigned to 2 with completion time 3202.6496407118975
+deliveries to assing : 12/15
+1 assigned to 1 with completion time 3831.6766085353484
+deliveries to assing : 11/15
+11 assigned to 2 with completion time 6330.883747972675
+deliveries to assing : 10/15
+10 assigned to 1 with completion time 7088.032782404516
+deliveries to assing : 9/15
+12 assigned to 2 with completion time 7816.680307263901
+deliveries to assing : 8/15
+9 assigned to 2 with completion time 9912.247898184203
+deliveries to assing : 7/15
+7 assigned to 1 with completion time 10854.288785246768
+deliveries to assing : 6/15
+3 assigned to 1 with completion time 11678.152890947606
+deliveries to assing : 5/15
+15 assigned to 2 with completion time 12638.255056222908
+deliveries to assing : 4/15
+5 assigned to 1 with completion time 15202.917589174485
+deliveries to assing : 3/15
+13 assigned to 2 with completion time 17498.26908113104
+deliveries to assing : 2/15
+None assigned to None with completion time 20000
+Constructor : 
+	simulation seed: 1
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U2/1
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+deliveries to assing : 15/15
+14 assigned to 1 with completion time 798.012702191403
+deliveries to assing : 14/15
+2 assigned to 2 with completion time 1322.2124063169729
+deliveries to assing : 13/15
+6 assigned to 2 with completion time 3202.6496407118975
+deliveries to assing : 12/15
+1 assigned to 1 with completion time 3831.6766085353484
+deliveries to assing : 11/15
+11 assigned to 2 with completion time 6330.883747972675
+deliveries to assing : 10/15
+10 assigned to 1 with completion time 7088.032782404516
+deliveries to assing : 9/15
+12 assigned to 2 with completion time 7816.680307263901
+deliveries to assing : 8/15
+9 assigned to 2 with completion time 9912.247898184203
+deliveries to assing : 7/15
+7 assigned to 1 with completion time 10854.288785246768
+deliveries to assing : 6/15
+3 assigned to 1 with completion time 11678.152890947606
+deliveries to assing : 5/15
+15 assigned to 2 with completion time 12638.255056222908
+deliveries to assing : 4/15
+5 assigned to 1 with completion time 15202.917589174485
+deliveries to assing : 3/15
+13 assigned to 2 with completion time 17498.26908113104
+deliveries to assing : 2/15
+None assigned to None with completion time 20000
+Constructor : 
+	simulation seed: 1
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U4/1
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+deliveries to assing : 15/15
+14 assigned to 1 with completion time 798.012702191403
+deliveries to assing : 14/15
+2 assigned to 2 with completion time 1322.2124063169729
+deliveries to assing : 13/15
+1 assigned to 4 with completion time 2481.9601254513755
+deliveries to assing : 12/15
+11 assigned to 3 with completion time 2761.3518812974676
+deliveries to assing : 11/15
+6 assigned to 2 with completion time 3202.6496407118975
+deliveries to assing : 10/15
+Constructor : 
+	simulation seed: 1
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U2/1
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+deliveries to assing : 15/15
+14 assigned to 1 with completion time 798.012702191403
+deliveries to assing : 14/15
+2 assigned to 2 with completion time 1322.2124063169729
+deliveries to assing : 13/15
+6 assigned to 2 with completion time 3202.6496407118975
+deliveries to assing : 12/15
+1 assigned to 1 with completion time 3831.6766085353484
+deliveries to assing : 11/15
+11 assigned to 2 with completion time 6330.883747972675
+deliveries to assing : 10/15
+10 assigned to 1 with completion time 7088.032782404516
+deliveries to assing : 9/15
+12 assigned to 2 with completion time 7816.680307263901
+deliveries to assing : 8/15
+9 assigned to 2 with completion time 9912.247898184203
+deliveries to assing : 7/15
+7 assigned to 1 with completion time 10854.288785246768
+deliveries to assing : 6/15
+3 assigned to 1 with completion time 11678.152890947606
+deliveries to assing : 5/15
+15 assigned to 2 with completion time 12638.255056222908
+deliveries to assing : 4/15
+5 assigned to 1 with completion time 15202.917589174485
+deliveries to assing : 3/15
+13 assigned to 2 with completion time 17498.26908113104
+deliveries to assing : 2/15
+None assigned to None with completion time 20000
+Constructor : 
+	simulation seed: 1
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U2/1
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+deliveries to assing : 15/15
+14 assigned to 1 with completion time 798.012702191403
+deliveries to assing : 14/15
+2 assigned to 2 with completion time 1322.2124063169729
+deliveries to assing : 13/15
+6 assigned to 2 with completion time 3202.6496407118975
+deliveries to assing : 12/15
+1 assigned to 1 with completion time 3831.6766085353484
+deliveries to assing : 11/15
+11 assigned to 2 with completion time 6330.883747972675
+deliveries to assing : 10/15
+10 assigned to 1 with completion time 7088.032782404516
+deliveries to assing : 9/15
+12 assigned to 2 with completion time 7816.680307263901
+deliveries to assing : 8/15
+9 assigned to 2 with completion time 9912.247898184203
+deliveries to assing : 7/15
+7 assigned to 1 with completion time 10854.288785246768
+deliveries to assing : 6/15
+3 assigned to 1 with completion time 11678.152890947606
+deliveries to assing : 5/15
+15 assigned to 2 with completion time 12638.255056222908
+deliveries to assing : 4/15
+5 assigned to 1 with completion time 15202.917589174485
+deliveries to assing : 3/15
+13 assigned to 2 with completion time 17498.26908113104
+deliveries to assing : 2/15
+None assigned to None with completion time 20000
+Constructor : 
+	simulation seed: 1
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U2/1
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+deliveries to assing : 15/15
+14 assigned to 1 with completion time 798.012702191403
+deliveries to assing : 14/15
+2 assigned to 2 with completion time 1322.2124063169729
+deliveries to assing : 13/15
+6 assigned to 2 with completion time 3202.6496407118975
+deliveries to assing : 12/15
+1 assigned to 1 with completion time 3831.6766085353484
+deliveries to assing : 11/15
+11 assigned to 2 with completion time 6330.883747972675
+deliveries to assing : 10/15
+10 assigned to 1 with completion time 7088.032782404516
+deliveries to assing : 9/15
+12 assigned to 2 with completion time 7816.680307263901
+deliveries to assing : 8/15
+9 assigned to 2 with completion time 9912.247898184203
+deliveries to assing : 7/15
+7 assigned to 1 with completion time 10854.288785246768
+deliveries to assing : 6/15
+3 assigned to 1 with completion time 11678.152890947606
+deliveries to assing : 5/15
+15 assigned to 2 with completion time 12638.255056222908
+deliveries to assing : 4/15
+5 assigned to 1 with completion time 15202.917589174485
+deliveries to assing : 3/15
+13 assigned to 2 with completion time 17498.26908113104
+deliveries to assing : 2/15
+None assigned to None with completion time 20000

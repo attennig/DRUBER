@@ -1,0 +1,202 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/giulio/DRUBER/src/experiments/simulate.py", line 1, in <module>
+    from src.simulation.Simulator import Simulator
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 2, in <module>
+    import matplotlib.pyplot as plt
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/__init__.py", line 104, in <module>
+    import numpy
+  File "/home/giulio/.local/lib/python3.8/site-packages/numpy/__init__.py", line 144, in <module>
+    from . import core
+  File "/home/giulio/.local/lib/python3.8/site-packages/numpy/core/__init__.py", line 71, in <module>
+    from . import numerictypes as nt
+  File "/home/giulio/.local/lib/python3.8/site-packages/numpy/core/numerictypes.py", line 510, in <module>
+    cast[key] = lambda x, k=key: array(x, copy=False).astype(k)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/giulio/DRUBER/src/experiments/simulate.py", line 34, in <module>
+    solution = S.run(args.algorithm, args.method)
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 136, in run
+    solution = OPT.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 17, in solveProblem
+    solution = self.hillClimbing()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 76, in hillClimbing
+    state = self.stateInit()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 113, in stateInit
+    solution = greedySolver.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/Greedy.py", line 54, in solveProblem
+    QUICKEST_PATHS.pop(d_min)
+KeyError: None
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/giulio/DRUBER/src/experiments/simulate.py", line 34, in <module>
+    solution = S.run(args.algorithm, args.method)
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 136, in run
+    solution = OPT.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 21, in solveProblem
+    solution = self.localBeam()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 89, in localBeam
+    objstate = self.stateInit()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 113, in stateInit
+    solution = greedySolver.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/Greedy.py", line 54, in solveProblem
+    QUICKEST_PATHS.pop(d_min)
+KeyError: None
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/giulio/DRUBER/src/experiments/simulate.py", line 34, in <module>
+    solution = S.run(args.algorithm, args.method)
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 136, in run
+    solution = OPT.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 25, in solveProblem
+    solution = self.BFSOPT()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 62, in BFSOPT
+    objstate = self.stateInit()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 113, in stateInit
+    solution = greedySolver.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/Greedy.py", line 54, in solveProblem
+    QUICKEST_PATHS.pop(d_min)
+KeyError: None
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/giulio/DRUBER/src/experiments/simulate.py", line 34, in <module>
+    solution = S.run(args.algorithm, args.method)
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 136, in run
+    solution = OPT.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 17, in solveProblem
+    solution = self.hillClimbing()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 76, in hillClimbing
+    state = self.stateInit()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 113, in stateInit
+    solution = greedySolver.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/Greedy.py", line 41, in solveProblem
+    L_aug = self.computeQuickestPath(None,
+  File "/home/giulio/DRUBER/src/routing/Greedy.py", line 66, in computeQuickestPath
+    self.updateGraphWeights(w)
+  File "/home/giulio/DRUBER/src/routing/Greedy.py", line 61, in updateGraphWeights
+    e = [(i, j, {'weight': self.simulation.time(i, j)}) for (i, j) in self.simulation.edges
+  File "/home/giulio/DRUBER/src/routing/Greedy.py", line 62, in <listcomp>
+    if self.simulation.cost(i, j, w) < 1]
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 40, in <lambda>
+    self.cost = lambda i, j, w:  self.time(i,j) * self.unitcost(w)
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 42, in <lambda>
+    self.time = lambda i,j: self.dist2D(i,j) / DRONE_SPEED
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 39, in <lambda>
+    self.dist2D = lambda i, j: 2*ALTITUDE + sqrt((self.stations[i].x - self.stations[j].x) ** 2 + (self.stations[i].y - self.stations[j].y) ** 2)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/giulio/DRUBER/src/experiments/simulate.py", line 34, in <module>
+    solution = S.run(args.algorithm, args.method)
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 136, in run
+    solution = OPT.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 17, in solveProblem
+    solution = self.hillClimbing()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 76, in hillClimbing
+    state = self.stateInit()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 113, in stateInit
+    solution = greedySolver.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/Greedy.py", line 54, in solveProblem
+    QUICKEST_PATHS.pop(d_min)
+KeyError: None
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/giulio/DRUBER/src/experiments/simulate.py", line 34, in <module>
+    solution = S.run(args.algorithm, args.method)
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 136, in run
+    solution = OPT.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 21, in solveProblem
+    solution = self.localBeam()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 89, in localBeam
+    objstate = self.stateInit()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 113, in stateInit
+    solution = greedySolver.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/Greedy.py", line 54, in solveProblem
+    QUICKEST_PATHS.pop(d_min)
+KeyError: None
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/giulio/DRUBER/src/experiments/simulate.py", line 34, in <module>
+    solution = S.run(args.algorithm, args.method)
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 136, in run
+    solution = OPT.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 25, in solveProblem
+    solution = self.BFSOPT()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 62, in BFSOPT
+    objstate = self.stateInit()
+  File "/home/giulio/DRUBER/src/routing/LocalSearch.py", line 113, in stateInit
+    solution = greedySolver.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/Greedy.py", line 54, in solveProblem
+    QUICKEST_PATHS.pop(d_min)
+KeyError: None
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/giulio/DRUBER/src/experiments/simulate.py", line 1, in <module>
+    from src.simulation.Simulator import Simulator
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 2, in <module>
+    import matplotlib.pyplot as plt
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/pyplot.py", line 57, in <module>
+    from matplotlib.figure import Figure, figaspect
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/figure.py", line 25, in <module>
+    from matplotlib import _blocking_input, docstring, projections
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/projections/__init__.py", line 55, in <module>
+    from .. import axes, docstring
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/axes/__init__.py", line 1, in <module>
+    from ._subplots import *
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/axes/_subplots.py", line 3, in <module>
+    from matplotlib.axes._axes import Axes
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/axes/_axes.py", line 47, in <module>
+    class Axes(_AxesBase):
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/axes/_axes.py", line 2684, in Axes
+    def broken_barh(self, xranges, yrange, **kwargs):
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/docstring.py", line 84, in __call__
+    super().__call__(obj)
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/docstring.py", line 38, in __call__
+    func.__doc__ = inspect.cleandoc(func.__doc__) % self.params
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/docstring.py", line 65, in __missing__
+    return self.setdefault(key, kwdoc(cls))
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/artist.py", line 1749, in kwdoc
+    'Properties:\n' + '\n'.join(ai.pprint_setters(leadingspace=4)))
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/artist.py", line 1509, in pprint_setters
+    for prop in sorted(self.get_setters()):
+  File "/home/giulio/.local/lib/python3.8/site-packages/matplotlib/artist.py", line 1435, in get_setters
+    or len(inspect.signature(func).parameters) < 2
+  File "/usr/lib/python3.8/inspect.py", line 3105, in signature
+    return Signature.from_callable(obj, follow_wrapped=follow_wrapped)
+  File "/usr/lib/python3.8/inspect.py", line 2854, in from_callable
+    return _signature_from_callable(obj, sigcls=cls,
+  File "/usr/lib/python3.8/inspect.py", line 2304, in _signature_from_callable
+    return _signature_from_function(sigcls, obj,
+  File "/usr/lib/python3.8/inspect.py", line 2168, in _signature_from_function
+    parameters.append(Parameter(name, annotation=annotation,
+  File "/usr/lib/python3.8/inspect.py", line 2491, in __init__
+    self._kind = _ParameterKind(kind)
+KeyboardInterrupt
