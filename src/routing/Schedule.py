@@ -77,7 +77,7 @@ class Schedule:
 
         return new_schedule
 
-    def updateTimes(self, u: int, i: int):
+    def updateTimes(self, u: int, i: int, print_f=False):
         '''
         This method updates the completion time of the actions composing the plan starting from a given action (plan[u][i])
         :param action: it is the action from which the completion time recomputation starts
@@ -88,7 +88,9 @@ class Schedule:
         toUpdate = [(u, i)]
         updated = []
         while len(toUpdate) > 0:
-
+            if print_f:
+                print(f"updated:{updated}")
+                print(f"to update:{toUpdate}")
             curr_u, curr_i = toUpdate.pop(0) # pop the least recent added action
             assert curr_i < len(self.plan[curr_u])
             if updated.count((curr_u, curr_i)) > 2: #running 3:
@@ -114,6 +116,7 @@ class Schedule:
                 next = self.plan[curr_u][curr_i + 1]
                 next_t = (curr_u, curr_i + 1)
             succ = curr.succ
+            if print_f: print(f"curr: {curr}\nnext: {next}\nsucc: {succ}")
             succ_t = None
             if succ is not None and succ != next:
                 assert succ.d == curr.d
@@ -122,12 +125,15 @@ class Schedule:
                     if succ in self.plan[u_]:
                         succ_u = u_
                         succ_i = self.plan[u_].index(succ)
-                        if succ_u != curr_u:
-                            if succ_i < len(self.plan[succ_u]):
-                                toUpdate.append((succ_u, succ_i))
-                                succ_t = (succ_u, succ_i)
-                        break
-            #print(f"{(curr_u,curr_i)} adds {next_t} and {(succ_t)}")
+                        #if succ_u != curr_u:
+                        if succ_i < len(self.plan[succ_u]):
+                            toUpdate.append((succ_u, succ_i))
+                            succ_t = (succ_u, succ_i)
+                            if print_f: print(succ_t)
+                            break
+                if succ_t is None: print(self)
+                assert succ_t is not None
+            if print_f: print(f"{(curr_u,curr_i)} adds {next_t} and {succ_t}")
         return True
 
     def addBatterySwaps(self, plan_keys=[]):
@@ -517,7 +523,7 @@ class Schedule:
                             if len(new_schedule.plan[u1]) > 0: feasible = new_schedule.updateTimes(u1, 0)
                             if len(new_schedule.plan[u2]) > 0: feasible = feasible and new_schedule.updateTimes(u2, 0)
                             if feasible and new_schedule.getScheduleTime() < H:
-                                new_schedule.check()
+                                new_schedule.check(self)
                                 #print(f"{self} generates :{new_schedule}")
                                 N.append(new_schedule)
 
@@ -547,7 +553,7 @@ class Schedule:
         return False
 
 
-    def check(self):
+    def check(self, gen = None):
         for d in self.simulation.deliveries.keys():
             for u in self.plan.keys():
                 pos = []
@@ -555,10 +561,14 @@ class Schedule:
                     if self.plan[u][i].d is not None and self.plan[u][i].d == d:
                         assert self.plan[u][i].p is not None
                         pos.append(self.plan[u][i].p)
+
                 for j in range(len(pos)-1):
                     if pos[j] >= pos[j+1]:
 
+                        print(f"{gen} generates:")
                         print(self)
+                        print(f"{d}, {u}, {pos[j]},{pos[j+1]}, ")
+                        print(self.updateTimes(u,0, True))
                         assert pos[j] < pos[j+1]
 
 
