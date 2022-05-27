@@ -88,9 +88,11 @@ class Schedule:
         toUpdate = [(u, i)]
         updated = []
         while len(toUpdate) > 0:
+
             curr_u, curr_i = toUpdate.pop(0) # pop the least recent added action
             assert curr_i < len(self.plan[curr_u])
-
+            if updated.count((curr_u, curr_i)) > 2: #running 3:
+                return False
             curr = self.plan[curr_u][curr_i]
             tau_prev = 0
 
@@ -100,17 +102,19 @@ class Schedule:
             pred = self.plan[curr_u][curr_i].pred
             tau_pred = tau_prev
             if pred is not None and pred.tau is not None:
-                # assert pred.a == curr.a
                 tau_pred = pred.tau
             curr.tau = max(tau_pred, tau_prev) + curr.getTime(self.simulation)
 
             updated.append((curr_u, curr_i))
 
             next = None
+            next_t = None
             if curr_i + 1 < len(self.plan[curr_u]):
                 toUpdate.append((curr_u, curr_i + 1))  # next to be updated
                 next = self.plan[curr_u][curr_i + 1]
+                next_t = (curr_u, curr_i + 1)
             succ = curr.succ
+            succ_t = None
             if succ is not None and succ != next:
                 assert succ.d == curr.d
                 # need to find indices of succ
@@ -121,7 +125,10 @@ class Schedule:
                         if succ_u != curr_u:
                             if succ_i < len(self.plan[succ_u]):
                                 toUpdate.append((succ_u, succ_i))
+                                succ_t = (succ_u, succ_i)
                         break
+            #print(f"{(curr_u,curr_i)} adds {next_t} and {(succ_t)}")
+        return True
 
     def addBatterySwaps(self, plan_keys=[]):
         if plan_keys == []: plan_keys = self.plan.keys()
@@ -327,35 +334,49 @@ class Schedule:
         N = []
         for u1 in self.plan.keys():
             for i in range(len(self.plan[u1])):
-                if self.plan[u1][i].d is None or self.plan[u1][i].type in ["unload", "swap"]: continue
-                assert self.plan[u1][i].d in self.simulation.deliveries.keys()
-                assert self.plan[u1][i].type in ["move", "load"]
+                if self.plan[u1][i].d is None: continue
+                if self.plan[u1][i].type != "move": continue
+                #print(f"evaluating u{u1} {i}th action: {self.plan[u1][i]}")
+                crossover_i = i
+                if self.plan[u1][i-1].type == "load": crossover_i = i - 1
+                if self.plan[u1][i-1].type == "swap" and i - 2 > 0 and self.plan[u1][i-2].type == "load": crossover_i = i - 2
 
-                # handover station
-                HS = self.plan[u1][i].x
+                HS = self.plan[u1][crossover_i].x
+                #print(f"crossover action {self.plan[u1][crossover_i]}")
+
+                #print(self)
                 for u2 in self.plan.keys():
                     if u1 == u2: continue
+                    #print(f"u{u2}")
                     if len(self.plan[u2]) == 0:
+                        #print(f"- no action")
                         CS = self.simulation.drones[u2].home.ID
-                        if CS != HS and self.simulation.cost(CS,HS,0) > 1: continue
+                        if CS != HS and self.simulation.cost(CS, HS, 0) > 1: continue
 
                         new_plan = copy.deepcopy(self.plan)
-                        part1_u1 = copy.copy(new_plan[u1][:i])
-                        part2_u1 = copy.copy(new_plan[u1][i:])
+                        #self.printplan(new_plan)
+                        part1_u1 = copy.copy(new_plan[u1][:crossover_i])
+                        part2_u1 = copy.copy(new_plan[u1][crossover_i:])
+                        #print(f"part1_u1: {[f'{action}' for action in part1_u1]}\npart2_u1: {[f'{action}' for action in part2_u1]}")
                         HA = part2_u1[0]
-                        part1_u2 = [] #copy.copy(new_plan[u2][:j])
-                        part2_u2 = [] #copy.copy(new_plan[u2][j:])
+                        #print(f"handover action {HA}")
+                        part1_u2 = []  # copy.copy(new_plan[u2][:j])
+                        part2_u2 = []  # copy.copy(new_plan[u2][j:])
                         part_add_u1 = []
                         part_add_u2 = []
+
                         if CS != HS:
                             assert self.simulation.cost(CS, HS, 0) <= 1
                             movement_action = DroneAction("move", CS, HS, None, None, None)
                             part1_u2 = [movement_action]
+
                         if HA.type == "move":
                             load_action = DroneAction("load", HS, HS, HA.d, None, None)
-                            unload_action = DroneAction("unload", HS, HS, HA.d, None, None)
                             part_add_u2 += [load_action]
+
+                            unload_action = DroneAction("unload", HS, HS, HA.d, None, None)
                             part_add_u1 += [unload_action]
+                            assert HA.pred.type != "load"
 
                             part1_u1[-1].succ = unload_action
                             unload_action.pred = part1_u1[-1]
@@ -371,61 +392,83 @@ class Schedule:
 
                         new_schedule.addBatterySwaps([u1, u2])
                         new_schedule.adjustSequenceNumbers(HA)
-                        if len(new_schedule.plan[u1]) > 0: new_schedule.updateTimes(u1, 0)
-                        if len(new_schedule.plan[u2]) > 0: new_schedule.updateTimes(u2, 0)
-                        if new_schedule.getScheduleTime() < H:
+                        feasible = True
+                        if len(new_schedule.plan[u1]) > 0: feasible = new_schedule.updateTimes(u1, 0)
+                        if len(new_schedule.plan[u2]) > 0: feasible = feasible and new_schedule.updateTimes(u2, 0)
+                        if feasible and new_schedule.getScheduleTime() < H:
+                            new_schedule.check()
                             N.append(new_schedule)
+
                     else:
                         for j in range(len(self.plan[u2])):
-                            if self.plan[u2][j].type in ["unload", "swap"]: continue
-
-                            if self.plan[u2][j].d: w = self.simulation.deliveries[self.plan[u2][j].d].weight
-                            else: w = 0
-
+                            #print(f"- action{j}")
                             if self.plan[u1][i].d == self.plan[u2][j].d: continue
+                            if self.plan[u2][j].type != "move": continue
+                            #print(f"evaluating u{u2} {j}th action: {self.plan[u2][j]}")
+
+                            if self.plan[u2][j].d:
+                                w = self.simulation.deliveries[self.plan[u2][j].d].weight
+                            else:
+                                w = 0
 
                             CS = self.plan[u2][j].x
                             AS = self.plan[u2][j].y
 
-                            if CS != HS  and (AS == HS or self.simulation.cost(CS, HS, w) > 1 or self.simulation.cost(HS, AS, w) > 1 or self.plan[u2][j].type != "move"): continue
+                            if CS != HS and (AS == HS or self.simulation.cost(CS, HS, w) > 1 or self.simulation.cost(HS, AS,w) > 1): continue
 
                             new_plan = copy.deepcopy(self.plan)
-                            part1_u1 = copy.copy(new_plan[u1][:i])
-                            part2_u1 = copy.copy(new_plan[u1][i:])
+                            if CS != HS:
+                                #print("starting plan")
+                                #self.printplan(new_plan)
+                                assert self.simulation.cost(CS, HS, w) <= 1
+                                movement_action1 = DroneAction("move", CS, HS, new_plan[u2][j].d, None, None)
+                                movement_action2 = DroneAction("move", HS, AS, new_plan[u2][j].d, None, None)
+                                if self.plan[u2][j].d:
+                                    if new_plan[u2][j].pred: new_plan[u2][j].pred.succ = movement_action1
+                                    movement_action1.pred = new_plan[u2][j].pred
+                                    movement_action1.succ = movement_action2
+                                    movement_action2.pred = movement_action1
+                                    movement_action2.succ = new_plan[u2][j].succ
+                                    if new_plan[u2][j].succ: new_plan[u2][j].succ.pred = movement_action2
+
+                                new_plan[u2] = new_plan[u2][:j] + [movement_action1, movement_action2] + new_plan[u2][j+1:]
+                                crossover_j = j+1
+                                #print("modified plan")
+                                #self.printplan(new_plan)
+
+                            else:
+                                crossover_j = j
+                                if new_plan[u2][crossover_j - 1].type == "load": crossover_j = j - 1
+                                if new_plan[u2][j - 1].type == "swap" and j - 2 > 0 and new_plan[u2][j - 2].type == "load": crossover_j = j - 2
+                            #print(f"crossover action: {new_plan[u2][crossover_j]}")
+
+                            #self.printplan(new_plan)
+
+                            part1_u1 = copy.copy(new_plan[u1][:crossover_i])
+                            part2_u1 = copy.copy(new_plan[u1][crossover_i:])
                             HA_from_u1 = part2_u1[0]
-                            part1_u2 = copy.copy(new_plan[u2][:j])
-                            part2_u2 = copy.copy(new_plan[u2][j:])
+                            assert HA_from_u1.type in ["load", "move"]
+                            
+                            part1_u2 = copy.copy(new_plan[u2][:crossover_j])
+                            part2_u2 = copy.copy(new_plan[u2][crossover_j:])
+                            HA_from_u2 = part2_u2[0]
+                            assert HA_from_u2.type in ["load", "move"]
+
+                            assert HA_from_u2.x == HS
+                            assert HA_from_u1.x == HS
 
                             part_add_u1 = []
                             part_add_u2 = []
 
-                            if CS != HS:
-                                assert self.simulation.cost(CS, HS, w) <= 1
-                                assert self.plan[u2][j].type == "move"
-                                movement_action1 = DroneAction("move", CS, HS, part2_u2[0].d, None, None)
-                                movement_action2 = DroneAction("move", HS, AS, part2_u2[0].d, None, None)
-                                if part2_u2[0].d:
-                                    if part2_u2[0].pred: part2_u2[0].pred.succ = movement_action1
-                                    movement_action1.pred = part2_u2[0].pred
-                                    movement_action1.succ = movement_action2
-                                    movement_action2.pred = movement_action1
-                                    movement_action2.succ = part2_u2[0].succ
-                                    if part2_u2[0].succ: part2_u2[0].succ.pred = movement_action2
-                                part1_u2 = part1_u2 + [movement_action1]
-                                part2_u2 = [movement_action2] + part2_u2[1:]
-                            HA_from_u2 = part2_u2[0]
-                            assert HA_from_u2.x == HS
-                            assert HA_from_u1.x == HS
-
-
-
 
                             # define part_add_u* adding load, unload actions
-
                             if HA_from_u1.type == "move":
                                 # need to add load and unload for the parcel carried by u1
                                 unload_u1 = DroneAction("unload", HS, HS, HA_from_u1.d, None, None)
                                 part_add_u1 = [unload_u1]
+
+                                assert HA_from_u1.pred.type != "load"
+
                                 load_u2 = DroneAction("load", HS, HS, HA_from_u1.d, None, None)
                                 part_add_u2 = [load_u2]
 
@@ -437,11 +480,12 @@ class Schedule:
                                 HA_from_u1.pred = load_u2
 
 
+
                             if HA_from_u2.d and HA_from_u2.type == "move":
-                                assert HA_from_u2.type == "move"
                                 # need to add load and unload for the parcel carried by u2
                                 unload_u2 = DroneAction("unload", HS, HS, HA_from_u2.d, None, None)
                                 part_add_u2 = [unload_u2] + part_add_u2
+
                                 load_u1 = DroneAction("load", HS, HS, HA_from_u2.d, None, None)
                                 part_add_u1 = part_add_u1 + [load_u1]
 
@@ -452,30 +496,34 @@ class Schedule:
                                 load_u1.pred = unload_u2
                                 load_u1.succ = HA_from_u2
                                 HA_from_u2.pred = load_u1
+
                             else:
                                 assert HA_from_u2.type == "load" or HA_from_u2.d is None
                                 # no need to add load and unload of the parcel carried by u2
 
-                            if self.containSuccessors(part1_u1, part_add_u1 + part2_u2): continue
-                            if self.containSuccessors(part1_u2, part_add_u2 + part2_u1): continue
+                            # if self.containSuccessors(part1_u1, part_add_u1 + part2_u2): continue
+                            # if self.containSuccessors(part1_u2, part_add_u2 + part2_u1): continue
+                            # if self.containSuccessors(part1_u1, part_add_u2 + part2_u1): continue
+                            # if self.containSuccessors(part1_u2, part_add_u1 + part2_u2): continue
                             new_plan[u1] = part1_u1 + part_add_u1 + part2_u2
                             new_plan[u2] = part1_u2 + part_add_u2 + part2_u1
-
 
                             new_schedule = Schedule(self.simulation, new_plan)
 
                             new_schedule.addBatterySwaps([u1, u2])
                             new_schedule.adjustSequenceNumbers(HA_from_u1)
                             if HA_from_u2.d is not None: new_schedule.adjustSequenceNumbers(HA_from_u2)
-
-                            new_schedule.check()
-                            if len(new_schedule.plan[u1]) > 0: new_schedule.updateTimes(u1, 0)
-                            if len(new_schedule.plan[u2]) > 0: new_schedule.updateTimes(u2, 0)
-                            if new_schedule.getScheduleTime() < H:
+                            feasible = True
+                            if len(new_schedule.plan[u1]) > 0: feasible = new_schedule.updateTimes(u1, 0)
+                            if len(new_schedule.plan[u2]) > 0: feasible = feasible and new_schedule.updateTimes(u2, 0)
+                            if feasible and new_schedule.getScheduleTime() < H:
+                                new_schedule.check()
+                                print(f"{self} generates :{new_schedule}")
                                 N.append(new_schedule)
 
-        print(N)
+                    print(N)
         return N
+
 
     def adjustSequenceNumbers(self, action):
         curr_action = action
