@@ -29,7 +29,7 @@ class Greedy(PathPlanner):
             T_min = HORIZON
             u_min = None
             d_min = None
-            print(f"deliveries to assing : {len(QUICKEST_PATHS)}/{len(self.simulation.deliveries)}")
+            #print(f"deliveries to assing : {len(QUICKEST_PATHS)}/{len(self.simulation.deliveries)}")
             for u in self.simulation.drones.keys():
                 for d in QUICKEST_PATHS.keys():
                     #print(f"computing augmented schedule for assignment {d} -> {u}")
@@ -49,10 +49,10 @@ class Greedy(PathPlanner):
                         P_min = P_aug
                         u_min = u
                         d_min = d
-            print(f"{d_min} assigned to {u_min} with completion time {T_min}")
+            #print(f"{d_min} assigned to {u_min} with completion time {T_min}")
             P_sol = P_min
             QUICKEST_PATHS.pop(d_min)
-        print(P_sol)
+        #print(P_sol)
         return P_sol
 
 
