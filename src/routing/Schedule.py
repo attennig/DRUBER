@@ -518,10 +518,10 @@ class Schedule:
                             if len(new_schedule.plan[u2]) > 0: feasible = feasible and new_schedule.updateTimes(u2, 0)
                             if feasible and new_schedule.getScheduleTime() < H:
                                 new_schedule.check()
-                                print(f"{self} generates :{new_schedule}")
+                                #print(f"{self} generates :{new_schedule}")
                                 N.append(new_schedule)
 
-                    print(N)
+        #print(N)
         return N
 
 
