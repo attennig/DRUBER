@@ -1,0 +1,550 @@
+Constructor : 
+	simulation seed: 1
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/1
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/1/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 2
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/2
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/2/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 3
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/3
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/3/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 4
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/4
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/4/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 5
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/5
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/5/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 6
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/6
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/6/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 7
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/7
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/7/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 8
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/8
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/8/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 9
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/9
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/9/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 10
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/10
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/10/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 11
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/11
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/11/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 12
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/12
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/12/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 13
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/13
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/13/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 14
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/14
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/14/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 15
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/15
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/15/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 16
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/16
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/16/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 17
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/17
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/17/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 18
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/18
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/18/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 19
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/19
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/19/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 20
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/20
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/20/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 21
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/21
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/21/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 22
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/22
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/22/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 23
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/23
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/23/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 24
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/24
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/24/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 25
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/25
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/25/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 26
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/26
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/26/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 27
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/27
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/27/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 28
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/28
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/28/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 29
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/29
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/29/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 30
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/30
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/30/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 31
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/31
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/31/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 32
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/32
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/32/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 33
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/33
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/33/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 34
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/34
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/34/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 35
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/35
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/35/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 36
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/36
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/36/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 37
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/37
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/37/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 38
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/38
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/38/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 39
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/39
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/39/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 40
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/40
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/40/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 41
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/41
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/41/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 42
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/42
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/42/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 43
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/43
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/43/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 44
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/44
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/44/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 45
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/45
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/45/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 46
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/46
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/46/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 47
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/47
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/47/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 48
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/48
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/48/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 49
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/49
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/49/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 50
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U16/50
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U16/50/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics

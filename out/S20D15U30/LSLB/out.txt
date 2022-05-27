@@ -1,0 +1,421 @@
+Constructor : 
+	simulation seed: 1
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/1
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/1/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 2
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/2
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/2/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 3
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/3
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/3/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 4
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/4
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/4/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 5
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/5
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/5/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 6
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/6
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/6/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 7
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/7
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/7/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 8
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/8
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/8/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 9
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/9
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/9/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 10
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/10
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/10/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 11
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/11
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/11/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 12
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/12
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/12/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 13
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/13
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/13/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 14
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/14
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/14/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 15
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/15
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/15/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 16
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/16
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/16/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 17
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/17
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/17/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 18
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/18
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/18/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 19
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/19
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/19/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 20
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/20
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/20/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 21
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/21
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/21/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 22
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/22
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/22/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 23
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/23
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/23/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 24
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/24
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S20D15U30/24/LOCALSEARCH-LB/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 25
+	output path: ./out
+	input data folder ./in/S20
+	output data folder ./out/S20D15U30/25
+	loading data from ./in/S20
+	initializing Local Search Solver
+	initializing Greedy Solver
+------------------------------
+1:
+	'id': 140134541326272, 'type':load, 'x': 2, 'y': 2, 'd': 12, 'p': 6, 'tau': 3295.0742108474155, 'pred': 140134540185120, 'succ':140134540385776
+	'id': 140134540385776, 'type':move, 'x': 2, 'y': 4, 'd': 12, 'p': 7, 'tau': 4023.739072651777, 'pred': 140134541326272, 'succ':140134540383808
+	'id': 140134540383808, 'type':swap, 'x': 4, 'y': 4, 'd': 12, 'p': 8, 'tau': 4083.739072651777, 'pred': 140134540385776, 'succ':140134540385968
+	'id': 140134540385968, 'type':move, 'x': 4, 'y': 8, 'd': 12, 'p': 9, 'tau': 4931.202487763074, 'pred': 140134540383808, 'succ':140134540386112
+	'id': 140134540386112, 'type':swap, 'x': 8, 'y': 8, 'd': 12, 'p': 10, 'tau': 4991.202487763074, 'pred': 140134540385968, 'succ':140134540383040
+	'id': 140134540383040, 'type':move, 'x': 8, 'y': 14, 'd': 12, 'p': 11, 'tau': 6007.373254543543, 'pred': 140134540386112, 'succ':140134540384048
+	'id': 140134540384048, 'type':swap, 'x': 14, 'y': 14, 'd': 12, 'p': 12, 'tau': 6067.373254543543, 'pred': 140134540383040, 'succ':140134540384384
+	'id': 140134540384384, 'type':move, 'x': 14, 'y': 15, 'd': 12, 'p': 13, 'tau': 7020.778287867924, 'pred': 140134540384048, 'succ':140134540386016
+	'id': 140134540386016, 'type':unload, 'x': 15, 'y': 15, 'd': 12, 'p': 14, 'tau': 7040.778287867924, 'pred': 140134540384384, 'succ':None
+
+2:
+
+3:
+	'id': 140134540012944, 'type':move, 'x': 9, 'y': 11, 'd': None, 'p': None, 'tau': 1231.9944936115862, 'pred': None, 'succ':None
+	'id': 140134540013040, 'type':load, 'x': 11, 'y': 11, 'd': 1, 'p': 0, 'tau': 1251.9944936115862, 'pred': None, 'succ':140134540384624
+	'id': 140134540384624, 'type':move, 'x': 11, 'y': 16, 'd': 1, 'p': 1, 'tau': 5329.247533784195, 'pred': 140134540013040, 'succ':140134540382656
+	'id': 140134540382656, 'type':unload, 'x': 16, 'y': 16, 'd': 1, 'p': 2, 'tau': 5349.247533784195, 'pred': 140134540384624, 'succ':None
+
+4:
+	'id': 140134540013232, 'type':move, 'x': 14, 'y': 15, 'd': None, 'p': None, 'tau': 953.4050333243804, 'pred': None, 'succ':None
+	'id': 140134540383088, 'type':load, 'x': 15, 'y': 15, 'd': 6, 'p': 0, 'tau': 973.4050333243804, 'pred': None, 'succ':140134540383664
+	'id': 140134540383664, 'type':move, 'x': 15, 'y': 5, 'd': 6, 'p': 1, 'tau': 3262.3352360422896, 'pred': 140134540383088, 'succ':140134540385680
+	'id': 140134540385680, 'type':unload, 'x': 5, 'y': 5, 'd': 6, 'p': 2, 'tau': 3282.3352360422896, 'pred': 140134540383664, 'succ':None
+
+5:
+
+6:
+	'id': 140134540386160, 'type':load, 'x': 1, 'y': 1, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140134540383856
+	'id': 140134540383856, 'type':move, 'x': 1, 'y': 9, 'd': 3, 'p': 1, 'tau': 1649.3547326133757, 'pred': 140134540386160, 'succ':140134540382560
+	'id': 140134540382560, 'type':unload, 'x': 9, 'y': 9, 'd': 3, 'p': 2, 'tau': 1669.3547326133757, 'pred': 140134540383856, 'succ':None
+
+7:
+	'id': 140134540382416, 'type':move, 'x': 7, 'y': 12, 'd': None, 'p': None, 'tau': 721.6750283157551, 'pred': None, 'succ':None
+	'id': 140134540385344, 'type':load, 'x': 12, 'y': 12, 'd': 9, 'p': 0, 'tau': 741.6750283157551, 'pred': None, 'succ':140134540383568
+	'id': 140134540383568, 'type':move, 'x': 12, 'y': 17, 'd': 9, 'p': 1, 'tau': 2053.239787425548, 'pred': 140134540385344, 'succ':140134540383136
+	'id': 140134540383136, 'type':swap, 'x': 17, 'y': 17, 'd': 9, 'p': 2, 'tau': 2113.239787425548, 'pred': 140134540383568, 'succ':140134540384912
+	'id': 140134540384912, 'type':move, 'x': 17, 'y': 14, 'd': 9, 'p': 3, 'tau': 3547.1631442612197, 'pred': 140134540383136, 'succ':140134540383952
+	'id': 140134540383952, 'type':unload, 'x': 14, 'y': 14, 'd': 9, 'p': 4, 'tau': 3567.1631442612197, 'pred': 140134540384912, 'succ':None
+
+8:
+
+9:
+	'id': 140134540383472, 'type':move, 'x': 19, 'y': 10, 'd': None, 'p': None, 'tau': 1676.1259524238885, 'pred': None, 'succ':None
+	'id': 140134540384480, 'type':load, 'x': 10, 'y': 10, 'd': 12, 'p': 3, 'tau': 2347.2918467408563, 'pred': 140134540383904, 'succ':140134540382752
+	'id': 140134540382752, 'type':move, 'x': 10, 'y': 2, 'd': 12, 'p': 4, 'tau': 3255.0742108474155, 'pred': 140134540384480, 'succ':140134540185120
+	'id': 140134540185120, 'type':unload, 'x': 2, 'y': 2, 'd': 12, 'p': 5, 'tau': 3275.0742108474155, 'pred': 140134540382752, 'succ':140134541326272
+	'id': 140134540434448, 'type':swap, 'x': 2, 'y': 2, 'd': None, 'p': None, 'tau': 3335.0742108474155, 'pred': None, 'succ':None
+	'id': 140134540013280, 'type':move, 'x': 2, 'y': 20, 'd': None, 'p': None, 'tau': 4901.919931301723, 'pred': None, 'succ':None
+	'id': 140134540388816, 'type':load, 'x': 20, 'y': 20, 'd': 12, 'p': 0, 'tau': 4921.919931301723, 'pred': None, 'succ':140134540384768
+	'id': 140134540384768, 'type':move, 'x': 20, 'y': 10, 'd': 12, 'p': 1, 'tau': 5642.366057588271, 'pred': 140134540388816, 'succ':140134540383904
+	'id': 140134540383904, 'type':unload, 'x': 10, 'y': 10, 'd': 12, 'p': 2, 'tau': 5662.366057588271, 'pred': 140134540384768, 'succ':140134540384480
+
+10:
+	'id': 140134540382320, 'type':load, 'x': 12, 'y': 12, 'd': 5, 'p': 0, 'tau': 20, 'pred': None, 'succ':140134540384096
+	'id': 140134540384096, 'type':move, 'x': 12, 'y': 6, 'd': 5, 'p': 1, 'tau': 1036.1272376265094, 'pred': 140134540382320, 'succ':140134540385056
+	'id': 140134540385056, 'type':swap, 'x': 6, 'y': 6, 'd': 5, 'p': 2, 'tau': 1096.1272376265094, 'pred': 140134540384096, 'succ':140134540386208
+	'id': 140134540386208, 'type':move, 'x': 6, 'y': 19, 'd': 5, 'p': 3, 'tau': 1892.9769916888686, 'pred': 140134540385056, 'succ':140134540383424
+	'id': 140134540383424, 'type':unload, 'x': 19, 'y': 19, 'd': 5, 'p': 4, 'tau': 1912.9769916888686, 'pred': 140134540386208, 'succ':None
+
+11:
+
+12:
+
+13:
+
+14:
+	'id': 140134540385200, 'type':move, 'x': 17, 'y': 18, 'd': None, 'p': None, 'tau': 968.8506785579796, 'pred': None, 'succ':None
+	'id': 140134540385008, 'type':load, 'x': 18, 'y': 18, 'd': 7, 'p': 0, 'tau': 988.8506785579796, 'pred': None, 'succ':140134540385488
+	'id': 140134540385488, 'type':move, 'x': 18, 'y': 11, 'd': 7, 'p': 1, 'tau': 4483.106455397195, 'pred': 140134540385008, 'succ':140134540382848
+	'id': 140134540382848, 'type':unload, 'x': 11, 'y': 11, 'd': 7, 'p': 2, 'tau': 4503.106455397195, 'pred': 140134540385488, 'succ':None
+
+15:
+	'id': 140134540383376, 'type':load, 'x': 6, 'y': 6, 'd': 8, 'p': 0, 'tau': 20, 'pred': None, 'succ':140134540382512
+	'id': 140134540382512, 'type':move, 'x': 6, 'y': 12, 'd': 8, 'p': 1, 'tau': 1036.1272376265094, 'pred': 140134540383376, 'succ':140134540385872
+	'id': 140134540385872, 'type':unload, 'x': 12, 'y': 12, 'd': 8, 'p': 2, 'tau': 1056.1272376265094, 'pred': 140134540382512, 'succ':None
+
+16:
+	'id': 140134540385824, 'type':load, 'x': 11, 'y': 11, 'd': 4, 'p': 0, 'tau': 20, 'pred': None, 'succ':140134540383232
+	'id': 140134540383232, 'type':move, 'x': 11, 'y': 1, 'd': 4, 'p': 1, 'tau': 1041.6085206360206, 'pred': 140134540385824, 'succ':140134540385440
+	'id': 140134540385440, 'type':swap, 'x': 1, 'y': 1, 'd': 4, 'p': 2, 'tau': 1101.6085206360206, 'pred': 140134540383232, 'succ':140134539184208
+	'id': 140134539184208, 'type':move, 'x': 1, 'y': 10, 'd': 4, 'p': 3, 'tau': 2287.745490606203, 'pred': 140134540385440, 'succ':140134540216496
+	'id': 140134540216496, 'type':swap, 'x': 10, 'y': 10, 'd': 4, 'p': 4, 'tau': 2347.745490606203, 'pred': 140134539184208, 'succ':140134540218272
+	'id': 140134540218272, 'type':move, 'x': 10, 'y': 13, 'd': 4, 'p': 5, 'tau': 3365.992996452044, 'pred': 140134540216496, 'succ':140134540217264
+	'id': 140134540217264, 'type':unload, 'x': 13, 'y': 13, 'd': 4, 'p': 6, 'tau': 3385.992996452044, 'pred': 140134540218272, 'succ':None
+
+17:
+	'id': 140134540385536, 'type':load, 'x': 1, 'y': 1, 'd': 13, 'p': 0, 'tau': 20, 'pred': None, 'succ':140134540384000
+	'id': 140134540384000, 'type':move, 'x': 1, 'y': 19, 'd': 13, 'p': 1, 'tau': 2511.0511037523283, 'pred': 140134540385536, 'succ':140134540385152
+	'id': 140134540385152, 'type':unload, 'x': 19, 'y': 19, 'd': 13, 'p': 2, 'tau': 2531.0511037523283, 'pred': 140134540384000, 'succ':None
+
+18:
+
+19:
+	'id': 140134540385584, 'type':move, 'x': 10, 'y': 20, 'd': None, 'p': None, 'tau': 720.4461262865482, 'pred': None, 'succ':None
+	'id': 140134540384816, 'type':load, 'x': 20, 'y': 20, 'd': 2, 'p': 0, 'tau': 740.4461262865482, 'pred': None, 'succ':140134540384576
+	'id': 140134540384576, 'type':move, 'x': 20, 'y': 15, 'd': 2, 'p': 1, 'tau': 5007.729547986956, 'pred': 140134540384816, 'succ':140134540217888
+	'id': 140134540217888, 'type':unload, 'x': 15, 'y': 15, 'd': 2, 'p': 2, 'tau': 5027.729547986956, 'pred': 140134540384576, 'succ':None
+
+20:
+
+21:
+	'id': 140134540384864, 'type':load, 'x': 20, 'y': 20, 'd': 15, 'p': 0, 'tau': 20, 'pred': None, 'succ':140134539182192
+	'id': 140134539182192, 'type':move, 'x': 20, 'y': 13, 'd': 15, 'p': 1, 'tau': 747.9689983954148, 'pred': 140134540384864, 'succ':140134540218320
+	'id': 140134540218320, 'type':swap, 'x': 13, 'y': 13, 'd': 15, 'p': 2, 'tau': 807.9689983954148, 'pred': 140134539182192, 'succ':140134540218080
+	'id': 140134540218080, 'type':move, 'x': 13, 'y': 19, 'd': 15, 'p': 3, 'tau': 1675.418539134545, 'pred': 140134540218320, 'succ':140134540217696
+	'id': 140134540217696, 'type':swap, 'x': 19, 'y': 19, 'd': 15, 'p': 4, 'tau': 1735.418539134545, 'pred': 140134540218080, 'succ':140134540217408
+	'id': 140134540217408, 'type':move, 'x': 19, 'y': 16, 'd': 15, 'p': 5, 'tau': 3119.575089743372, 'pred': 140134540217696, 'succ':140134540214720
+	'id': 140134540214720, 'type':unload, 'x': 16, 'y': 16, 'd': 15, 'p': 6, 'tau': 3139.575089743372, 'pred': 140134540217408, 'succ':None
+
+22:
+
+23:
+
+24:
+
+25:
+
+26:
+	'id': 140134540384192, 'type':load, 'x': 6, 'y': 6, 'd': 14, 'p': 0, 'tau': 20, 'pred': None, 'succ':140134540218224
+	'id': 140134540218224, 'type':move, 'x': 6, 'y': 7, 'd': 14, 'p': 1, 'tau': 772.3525060394383, 'pred': 140134540384192, 'succ':140134540217360
+	'id': 140134540217360, 'type':swap, 'x': 7, 'y': 7, 'd': 14, 'p': 2, 'tau': 832.3525060394383, 'pred': 140134540218224, 'succ':140134540215200
+	'id': 140134540215200, 'type':move, 'x': 7, 'y': 18, 'd': 14, 'p': 3, 'tau': 1843.1508700420652, 'pred': 140134540217360, 'succ':140134540217120
+	'id': 140134540217120, 'type':unload, 'x': 18, 'y': 18, 'd': 14, 'p': 4, 'tau': 1863.1508700420652, 'pred': 140134540215200, 'succ':None
+
+27:
+
+28:
+
+29:
+	'id': 140134540384672, 'type':load, 'x': 1, 'y': 1, 'd': 11, 'p': 0, 'tau': 20, 'pred': None, 'succ':140134540216976
+	'id': 140134540216976, 'type':move, 'x': 1, 'y': 2, 'd': 11, 'p': 1, 'tau': 815.5533579063979, 'pred': 140134540384672, 'succ':140134540217936
+	'id': 140134540217936, 'type':swap, 'x': 2, 'y': 2, 'd': 11, 'p': 2, 'tau': 875.5533579063979, 'pred': 140134540216976, 'succ':140134540218128
+	'id': 140134540218128, 'type':move, 'x': 2, 'y': 5, 'd': 11, 'p': 3, 'tau': 1782.3626494412176, 'pred': 140134540217936, 'succ':140134540218176
+	'id': 140134540218176, 'type':swap, 'x': 5, 'y': 5, 'd': 11, 'p': 4, 'tau': 1842.3626494412176, 'pred': 140134540218128, 'succ':140134539919856
+	'id': 140134539919856, 'type':move, 'x': 5, 'y': 7, 'd': 11, 'p': 5, 'tau': 2627.7373991527743, 'pred': 140134540218176, 'succ':140134539921632
+	'id': 140134539921632, 'type':unload, 'x': 7, 'y': 7, 'd': 11, 'p': 6, 'tau': 2647.7373991527743, 'pred': 140134539919856, 'succ':None
+
+30:
+	'id': 140134542079456, 'type':load, 'x': 12, 'y': 12, 'd': 10, 'p': 0, 'tau': 20, 'pred': None, 'succ':140134540217744
+	'id': 140134540217744, 'type':move, 'x': 12, 'y': 7, 'd': 10, 'p': 1, 'tau': 741.6750283157551, 'pred': 140134542079456, 'succ':140134540216400
+	'id': 140134540216400, 'type':swap, 'x': 7, 'y': 7, 'd': 10, 'p': 2, 'tau': 801.6750283157551, 'pred': 140134540217744, 'succ':140134540217024
+	'id': 140134540217024, 'type':move, 'x': 7, 'y': 5, 'd': 10, 'p': 3, 'tau': 1587.0497780273117, 'pred': 140134540216400, 'succ':140134539919664
+	'id': 140134539919664, 'type':swap, 'x': 5, 'y': 5, 'd': 10, 'p': 4, 'tau': 1647.0497780273117, 'pred': 140134540217024, 'succ':140134539922448
+	'id': 140134539922448, 'type':move, 'x': 5, 'y': 4, 'd': 10, 'p': 5, 'tau': 2735.340704021613, 'pred': 140134539919664, 'succ':140134539922112
+	'id': 140134539922112, 'type':unload, 'x': 4, 'y': 4, 'd': 10, 'p': 6, 'tau': 2755.340704021613, 'pred': 140134539922448, 'succ':None
+------------------------------
+
