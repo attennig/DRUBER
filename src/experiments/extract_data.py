@@ -6,7 +6,7 @@ sizes = {"stations":[20], "deliveries":[15], "drones":[2,4,6,8,10,12,14,16,18,20
 #sizes = {"stations":[20], "drones":[5,10,15,20,25], "deliveries":[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30]}
 #sizes = {"stations":[5,10], "drones":[2,4,6], "deliveries":[2,4,6]}
 
-seeds = range(1,21)
+seeds = range(1,51)
 #seeds = [1,2]
 
 algorithms = ["GREEDY","LOCALSEARCH-LB","LOCALSEARCH-HC","LOCALSEARCH-BFSOPT"]
