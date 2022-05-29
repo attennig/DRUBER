@@ -31,13 +31,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\out\res10u.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\out\results.csv">
           <value>
             <Attribute>
