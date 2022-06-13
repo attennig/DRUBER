@@ -58,6 +58,8 @@ class Simulator:
                     #for d in self.deliveries.keys():
                     #    print(f"cost {i}-{j} with parcel {d} ({self.deliveries[d].weight}kg) is {self.cost(i, j, self.deliveries[d].weight)}")
                     self.edges.add((i, j))
+                    print(f"from {i} to {j}: {self.cost(i,j,0.5)} [SoC]")
+                    print(f"from {i} to {j}: {self.cost(i, j, 2)} [SoC]")
 
     def generateRandomScenario(self):
         from src.simulation.RandomGenerator import RandomGenerator
@@ -135,7 +137,7 @@ class Simulator:
         t_start = process_time()
         solution = OPT.solveProblem()
         t_stop = process_time()
-        self.execution_time = t_stop - t_start #OPT.exec_time
+        self.execution_time = t_stop - t_start # OPT.exec_time
         return solution
 
     '''def computeMetrics(self, solution):
