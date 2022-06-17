@@ -1,0 +1,11 @@
+Constructor : 
+	simulation seed: 10
+	output path: ./out/Small
+	input data folder ./in/MILPexp
+	output data folder ./out/Small/S5D2U3/10
+	loading data from ./in/MILPexp
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/Small/S5D2U3/10/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
