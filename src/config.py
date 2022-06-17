@@ -21,7 +21,7 @@ LOCAL_SEARCH_METHODS = ["HC", "LB", "BFSOPT"]
 DESCRIPTION_STR = "This framework has been designed to simulate drone parcel delivery."
 
 ############# GUROBI OPT PARAMETERS #############
-OPT_TIME_LIMIT = 8*60 # [minutes]
+OPT_TIME_LIMIT = 24*60 # [minutes]
 OPT_MEM_LIMIT = 64# [GB]
 
 
