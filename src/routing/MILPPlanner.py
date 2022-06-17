@@ -33,8 +33,8 @@ class MILPPlanner(PathPlanner):
         print(f"\t Setting up MILP")
 
         diameter = self.computeDiameter()
-        self.K = 4 * diameter
-        self.P = 3 * diameter
+        self.K = 3 * diameter # actions
+        self.P = 3 * diameter # involvements
         print(f"{self.K}, {self.P}")
         TYPES = ["move", "swap", "load", "unload", "idle"]
 
