@@ -445,7 +445,7 @@ class MILPPlanner(PathPlanner):
     def extractSolution(self):
         #self.printVars()
         schedule = Schedule(self.simulation)
-        DeliveryPaths = {}
+        DeliveryPaths = { d : [] for d in self.simulation.deliveries.keys()}
         for u in self.simulation.drones.keys():
             for k in range(self.K):
                 if self.model.getVarByName(f"delta_{u},{k},move").x >= 0.5: t = "move"
@@ -474,8 +474,7 @@ class MILPPlanner(PathPlanner):
                     #schedule.plan[u][-1].next = action
                 schedule.plan[u].append(action)
 
-                if delivery in self.simulation.deliveries:
-                    if delivery not in DeliveryPaths.keys(): DeliveryPaths[delivery] = []
+                if delivery in self.simulation.deliveries.keys():
                     DeliveryPaths[delivery].append(action)
 
             for d in self.simulation.deliveries.keys():
