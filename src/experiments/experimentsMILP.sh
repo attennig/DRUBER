@@ -1,8 +1,8 @@
 for ns in "5";
 do
-  for nd in "3";
+  for nd in "2";
   do
-    for nu in "1" "2" "3" "4";
+    for nu in "2" "3" "4";
     do
       mkdir ./out/S${ns}D${nd}U${nu}
 

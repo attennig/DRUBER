@@ -22,7 +22,7 @@ DESCRIPTION_STR = "This framework has been designed to simulate drone parcel del
 
 ############# GUROBI OPT PARAMETERS #############
 OPT_TIME_LIMIT = 8*60 # [minutes]
-OPT_MEM_LIMIT = 16 # [GB]
+OPT_MEM_LIMIT = 64# [GB]
 
 
 

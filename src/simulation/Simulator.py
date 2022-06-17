@@ -58,8 +58,11 @@ class Simulator:
                     #for d in self.deliveries.keys():
                     #    print(f"cost {i}-{j} with parcel {d} ({self.deliveries[d].weight}kg) is {self.cost(i, j, self.deliveries[d].weight)}")
                     self.edges.add((i, j))
-                    print(f"from {i} to {j}: {self.cost(i,j,0.5)} [SoC]")
-                    print(f"from {i} to {j}: {self.cost(i, j, 2)} [SoC]")
+                    #print(f"from {i} to {j} 0: {self.cost(i, j, 0)} [%]")
+                    #print(f"from {i} to {j} 0.5: {self.cost(i,j,0.5)} [%]")
+                    #print(f"from {i} to {j} 2: {self.cost(i, j, 2)} [%]")
+                    #print(f"from {i} to {j} 2.5: {self.cost(i, j, 2.5)} [%]")
+                    #print("____________________________________________")
 
     def generateRandomScenario(self):
         from src.simulation.RandomGenerator import RandomGenerator
