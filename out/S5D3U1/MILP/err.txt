@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/giulio/DRUBER/src/experiments/simulate.py", line 34, in <module>
+    solution = S.run(args.algorithm, args.method)
+  File "/home/giulio/DRUBER/src/simulation/Simulator.py", line 138, in run
+    solution = OPT.solveProblem()
+  File "/home/giulio/DRUBER/src/routing/MILPPlanner.py", line 436, in solveProblem
+    solution = self.extractSolution()
+  File "/home/giulio/DRUBER/src/routing/MILPPlanner.py", line 451, in extractSolution
+    if self.model.getVarByName(f"delta_{u},{k},move").x >= 0.5: t = "move"
+  File "src/gurobipy/var.pxi", line 125, in gurobipy.Var.__getattr__
+  File "src/gurobipy/var.pxi", line 153, in gurobipy.Var.getAttr
+  File "src/gurobipy/attrutil.pxi", line 100, in gurobipy.__getattr
+AttributeError: Unable to retrieve attribute 'x'

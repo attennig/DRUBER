@@ -1,0 +1,204 @@
+Constructor : 
+	simulation seed: 1
+	output path: ./out
+	input data folder ./in/S5
+	output data folder ./out/S5D3U1/1
+	loading data from ./in/S5
+from 1 to 2: 0.2245768176588912 [SoC]
+from 1 to 2: 0.690406482361532 [SoC]
+from 1 to 3: 0.3275863482629853 [SoC]
+from 1 to 3: 1.0070840825495744 [SoC]
+from 1 to 4: 0.441648216080305 [SoC]
+from 1 to 4: 1.3577393895054033 [SoC]
+from 1 to 5: 0.7249963510427903 [SoC]
+from 1 to 5: 2.2288239083014827 [SoC]
+from 2 to 1: 0.2245768176588912 [SoC]
+from 2 to 1: 0.690406482361532 [SoC]
+from 2 to 3: 0.2623927369100245 [SoC]
+from 2 to 3: 0.8066622742977174 [SoC]
+from 2 to 4: 0.21751707905965595 [SoC]
+from 2 to 4: 0.6687030432287665 [SoC]
+from 2 to 5: 0.5126798391096834 [SoC]
+from 2 to 5: 1.5761087363657336 [SoC]
+from 3 to 1: 0.3275863482629853 [SoC]
+from 3 to 1: 1.0070840825495744 [SoC]
+from 3 to 2: 0.2623927369100245 [SoC]
+from 3 to 2: 0.8066622742977174 [SoC]
+from 3 to 4: 0.3541956389353106 [SoC]
+from 3 to 4: 1.0888878366624302 [SoC]
+from 3 to 5: 0.5048086481545936 [SoC]
+from 3 to 5: 1.551910685489647 [SoC]
+from 4 to 1: 0.441648216080305 [SoC]
+from 4 to 1: 1.3577393895054033 [SoC]
+from 4 to 2: 0.21751707905965595 [SoC]
+from 4 to 2: 0.6687030432287665 [SoC]
+from 4 to 3: 0.3541956389353106 [SoC]
+from 4 to 3: 1.0888878366624302 [SoC]
+from 4 to 5: 0.32035697797262075 [SoC]
+from 4 to 5: 0.9848591522834385 [SoC]
+from 5 to 1: 0.7249963510427903 [SoC]
+from 5 to 1: 2.2288239083014827 [SoC]
+from 5 to 2: 0.5126798391096834 [SoC]
+from 5 to 2: 1.5761087363657336 [SoC]
+from 5 to 3: 0.5048086481545936 [SoC]
+from 5 to 3: 1.551910685489647 [SoC]
+from 5 to 4: 0.32035697797262075 [SoC]
+from 5 to 4: 0.9848591522834385 [SoC]
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S5D3U1/1/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 2
+	output path: ./out
+	input data folder ./in/S5
+	output data folder ./out/S5D3U1/2
+	loading data from ./in/S5
+from 1 to 2: 0.296224675777729 [SoC]
+from 1 to 2: 0.9106702932402616 [SoC]
+from 1 to 3: 0.5305056295097892 [SoC]
+from 1 to 3: 1.630909767806762 [SoC]
+from 1 to 4: 0.7114218053445731 [SoC]
+from 1 to 4: 2.187092288614018 [SoC]
+from 1 to 5: 0.7847098902441327 [SoC]
+from 1 to 5: 2.412398575442662 [SoC]
+from 2 to 1: 0.296224675777729 [SoC]
+from 2 to 1: 0.9106702932402616 [SoC]
+from 2 to 3: 0.2853455972172901 [SoC]
+from 2 to 3: 0.8772252278121113 [SoC]
+from 2 to 4: 0.4157272819725467 [SoC]
+from 2 to 4: 1.2780518192413852 [SoC]
+from 2 to 5: 0.5137821073098222 [SoC]
+from 2 to 5: 1.5794973902731582 [SoC]
+from 3 to 1: 0.5305056295097892 [SoC]
+from 3 to 1: 1.630909767806762 [SoC]
+from 3 to 2: 0.2853455972172901 [SoC]
+from 3 to 2: 0.8772252278121113 [SoC]
+from 3 to 4: 0.3200390833059521 [SoC]
+from 3 to 4: 0.9838818629048456 [SoC]
+from 3 to 5: 0.26022668011793076 [SoC]
+from 3 to 5: 0.800003262624054 [SoC]
+from 4 to 1: 0.7114218053445731 [SoC]
+from 4 to 1: 2.187092288614018 [SoC]
+from 4 to 2: 0.4157272819725467 [SoC]
+from 4 to 2: 1.2780518192413852 [SoC]
+from 4 to 3: 0.3200390833059521 [SoC]
+from 4 to 3: 0.9838818629048456 [SoC]
+from 4 to 5: 0.2701253832327968 [SoC]
+from 4 to 5: 0.8304344035971891 [SoC]
+from 5 to 1: 0.7847098902441327 [SoC]
+from 5 to 1: 2.412398575442662 [SoC]
+from 5 to 2: 0.5137821073098222 [SoC]
+from 5 to 2: 1.5794973902731582 [SoC]
+from 5 to 3: 0.26022668011793076 [SoC]
+from 5 to 3: 0.800003262624054 [SoC]
+from 5 to 4: 0.2701253832327968 [SoC]
+from 5 to 4: 0.8304344035971891 [SoC]
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S5D3U1/2/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 3
+	output path: ./out
+	input data folder ./in/S5
+	output data folder ./out/S5D3U1/3
+	loading data from ./in/S5
+from 1 to 2: 0.281677700505452 [SoC]
+from 1 to 2: 0.8659491767357624 [SoC]
+from 1 to 3: 0.27541112354500236 [SoC]
+from 1 to 3: 0.8466841190115794 [SoC]
+from 1 to 4: 0.533610802692731 [SoC]
+from 1 to 4: 1.6404558630658657 [SoC]
+from 1 to 5: 0.8223644669814864 [SoC]
+from 1 to 5: 2.5281583592932613 [SoC]
+from 2 to 1: 0.281677700505452 [SoC]
+from 2 to 1: 0.8659491767357624 [SoC]
+from 2 to 3: 0.2430429898661382 [SoC]
+from 2 to 3: 0.7471762109968908 [SoC]
+from 2 to 4: 0.25841679812817475 [SoC]
+from 2 to 4: 0.7944392232407242 [SoC]
+from 2 to 5: 0.5420269910370747 [SoC]
+from 2 to 5: 1.666329375079631 [SoC]
+from 3 to 1: 0.27541112354500236 [SoC]
+from 3 to 1: 0.8466841190115794 [SoC]
+from 3 to 2: 0.2430429898661382 [SoC]
+from 3 to 2: 0.7471762109968908 [SoC]
+from 3 to 4: 0.4619402791102779 [SoC]
+from 3 to 4: 1.4201223727644388 [SoC]
+from 3 to 5: 0.7038791208860773 [SoC]
+from 3 to 5: 2.163904150591407 [SoC]
+from 4 to 1: 0.533610802692731 [SoC]
+from 4 to 1: 1.6404558630658657 [SoC]
+from 4 to 2: 0.25841679812817475 [SoC]
+from 4 to 2: 0.7944392232407242 [SoC]
+from 4 to 3: 0.4619402791102779 [SoC]
+from 4 to 3: 1.4201223727644388 [SoC]
+from 4 to 5: 0.29378767206207723 [SoC]
+from 4 to 5: 0.9031783215382638 [SoC]
+from 5 to 1: 0.8223644669814864 [SoC]
+from 5 to 1: 2.5281583592932613 [SoC]
+from 5 to 2: 0.5420269910370747 [SoC]
+from 5 to 2: 1.666329375079631 [SoC]
+from 5 to 3: 0.7038791208860773 [SoC]
+from 5 to 3: 2.163904150591407 [SoC]
+from 5 to 4: 0.29378767206207723 [SoC]
+from 5 to 4: 0.9031783215382638 [SoC]
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S5D3U1/3/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics
+Constructor : 
+	simulation seed: 4
+	output path: ./out
+	input data folder ./in/S5
+	output data folder ./out/S5D3U1/4
+	loading data from ./in/S5
+from 1 to 2: 0.2675379234762489 [SoC]
+from 1 to 2: 0.8224798916070708 [SoC]
+from 1 to 3: 0.23886694604702138 [SoC]
+from 1 to 3: 0.7343379859592412 [SoC]
+from 1 to 4: 0.4409248200491783 [SoC]
+from 1 to 4: 1.3555154853891598 [SoC]
+from 1 to 5: 0.262658080869852 [SoC]
+from 1 to 5: 0.8074780093848475 [SoC]
+from 2 to 1: 0.2675379234762489 [SoC]
+from 2 to 1: 0.8224798916070708 [SoC]
+from 2 to 3: 0.49889778139334184 [SoC]
+from 2 to 3: 1.533739171747111 [SoC]
+from 2 to 4: 0.23802698664366387 [SoC]
+from 2 to 4: 0.7317557362727246 [SoC]
+from 2 to 5: 0.36299526011002703 [SoC]
+from 2 to 5: 1.1159401191049476 [SoC]
+from 3 to 1: 0.23886694604702138 [SoC]
+from 3 to 1: 0.7343379859592412 [SoC]
+from 3 to 2: 0.49889778139334184 [SoC]
+from 3 to 2: 1.533739171747111 [SoC]
+from 3 to 4: 0.6777948377371389 [SoC]
+from 3 to 4: 2.083714403664214 [SoC]
+from 3 to 5: 0.3034192326552477 [SoC]
+from 3 to 5: 0.9327881981858301 [SoC]
+from 4 to 1: 0.4409248200491783 [SoC]
+from 4 to 1: 1.3555154853891598 [SoC]
+from 4 to 2: 0.23802698664366387 [SoC]
+from 4 to 2: 0.7317557362727246 [SoC]
+from 4 to 3: 0.6777948377371389 [SoC]
+from 4 to 3: 2.083714403664214 [SoC]
+from 4 to 5: 0.5972720937103587 [SoC]
+from 4 to 5: 1.8361669273344536 [SoC]
+from 5 to 1: 0.262658080869852 [SoC]
+from 5 to 1: 0.8074780093848475 [SoC]
+from 5 to 2: 0.36299526011002703 [SoC]
+from 5 to 2: 1.1159401191049476 [SoC]
+from 5 to 3: 0.3034192326552477 [SoC]
+from 5 to 3: 0.9327881981858301 [SoC]
+from 5 to 4: 0.5972720937103587 [SoC]
+from 5 to 4: 1.8361669273344536 [SoC]
+	initializing Local Search Solver
+	initializing Greedy Solver
+	Saving solution in ./out/S5D3U1/4/LOCALSEARCH-BFSOPT/schedule.json
+saving schedule
+saving metrics

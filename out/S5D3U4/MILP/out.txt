@@ -1,0 +1,157 @@
+Constructor : 
+	simulation seed: 1
+	output path: ./out
+	input data folder ./in/S5
+	output data folder ./out/S5D3U4/1
+	loading data from ./in/S5
+from 1 to 2: 0.2245768176588912 [SoC]
+from 1 to 2: 0.690406482361532 [SoC]
+from 1 to 3: 0.3275863482629853 [SoC]
+from 1 to 3: 1.0070840825495744 [SoC]
+from 1 to 4: 0.441648216080305 [SoC]
+from 1 to 4: 1.3577393895054033 [SoC]
+from 1 to 5: 0.7249963510427903 [SoC]
+from 1 to 5: 2.2288239083014827 [SoC]
+from 2 to 1: 0.2245768176588912 [SoC]
+from 2 to 1: 0.690406482361532 [SoC]
+from 2 to 3: 0.2623927369100245 [SoC]
+from 2 to 3: 0.8066622742977174 [SoC]
+from 2 to 4: 0.21751707905965595 [SoC]
+from 2 to 4: 0.6687030432287665 [SoC]
+from 2 to 5: 0.5126798391096834 [SoC]
+from 2 to 5: 1.5761087363657336 [SoC]
+from 3 to 1: 0.3275863482629853 [SoC]
+from 3 to 1: 1.0070840825495744 [SoC]
+from 3 to 2: 0.2623927369100245 [SoC]
+from 3 to 2: 0.8066622742977174 [SoC]
+from 3 to 4: 0.3541956389353106 [SoC]
+from 3 to 4: 1.0888878366624302 [SoC]
+from 3 to 5: 0.5048086481545936 [SoC]
+from 3 to 5: 1.551910685489647 [SoC]
+from 4 to 1: 0.441648216080305 [SoC]
+from 4 to 1: 1.3577393895054033 [SoC]
+from 4 to 2: 0.21751707905965595 [SoC]
+from 4 to 2: 0.6687030432287665 [SoC]
+from 4 to 3: 0.3541956389353106 [SoC]
+from 4 to 3: 1.0888878366624302 [SoC]
+from 4 to 5: 0.32035697797262075 [SoC]
+from 4 to 5: 0.9848591522834385 [SoC]
+from 5 to 1: 0.7249963510427903 [SoC]
+from 5 to 1: 2.2288239083014827 [SoC]
+from 5 to 2: 0.5126798391096834 [SoC]
+from 5 to 2: 1.5761087363657336 [SoC]
+from 5 to 3: 0.5048086481545936 [SoC]
+from 5 to 3: 1.551910685489647 [SoC]
+from 5 to 4: 0.32035697797262075 [SoC]
+from 5 to 4: 0.9848591522834385 [SoC]
+	initializing MILP Solver
+Set parameter Username
+Set parameter TimeLimit to value 28800
+Set parameter MemLimit to value 16
+Set parameter Method to value 4
+Academic license - for non-commercial use only - expires 2023-04-21
+	 Setting up MILP
+12, 9
+	 Saving MILP in ./out/S5D3U4/1/MILP-concurrent/model.lp
+Warning: linear constraint 557033 and linear constraint 613485 have the same name "socInit_1"
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (linux64)
+Thread count: 24 physical cores, 48 logical processors, using up to 24 threads
+Optimize a model with 617425 rows, 2265 columns and 2529092 nonzeros
+Model fingerprint: 0xd3b6c7c0
+Variable types: 105 continuous, 2160 integer (2160 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+05]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 6e+05]
+Presolve removed 50874 rows and 273 columns (presolve time = 5s) ...
+Presolve removed 50959 rows and 295 columns (presolve time = 10s) ...
+Presolve removed 51840 rows and 226 columns
+Presolve time: 13.77s
+Presolved: 565585 rows, 2039 columns, 2270831 nonzeros
+Variable types: 93 continuous, 1946 integer (1946 binary)
+
+Deterministic concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Root barrier log...
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Free vars  : 163
+ AA' NZ     : 4.882e+05
+ Factor NZ  : 1.367e+06 (roughly 240 MB of memory)
+ Factor Ops : 1.386e+09 (less than 1 second per iteration)
+ Threads    : 21
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0  -9.08522245e+07 -0.00000000e+00  1.59e+02 5.12e+02  2.77e+02    23s
+   1  -4.60983590e+07  6.72281821e+02  8.02e+01 3.74e+02  1.41e+02    23s
+   2  -1.05783980e+07  7.64850965e+02  1.65e+01 3.20e+02  3.22e+01    23s
+   3  -3.79660279e+06  7.88942402e+02  1.11e+00 2.21e+02  1.12e+01    24s
+   4  -5.34090780e+05  3.50162333e+02  1.08e-06 4.72e+01  1.15e+00    24s
+   5  -8.08822144e+04  3.20653202e+02  4.30e-07 2.89e+01  1.98e-01    24s
+   6  -4.06062472e+04  2.60403463e+02  1.20e-06 1.50e+01  9.52e-02    24s
+   7  -2.36925203e+04  1.63740344e+02  1.54e-06 6.17e+00  5.01e-02    24s
+   8  -1.68017059e+04  1.62714822e+02  1.36e-06 4.48e+00  3.52e-02    25s
+   9  -4.61170110e+03  1.85784712e+02  7.45e-07 2.53e+00  1.06e-02    25s
+  10  -1.07446072e+03  1.20509438e+02  7.73e-07 8.60e-01  2.60e-03    25s
+  11  -5.69495815e+02  5.78047162e+01  4.98e-07 2.62e-01  1.22e-03    25s
+  12  -2.62565107e+02  3.05945887e+01  7.09e-07 1.19e-01  5.53e-04    25s
+  13  -1.50953359e+02  1.81113949e+01  1.04e-06 6.14e-02  3.13e-04    25s
+  14  -1.46769683e+02  1.68058089e+01  1.05e-06 5.20e-02  3.01e-04    26s
+  15  -1.24941143e+02  1.64656150e+01  1.06e-06 4.90e-02  2.60e-04    26s
+  16  -2.81440468e+01  1.82917385e+01  3.92e-07 7.43e-03  8.30e-05    26s
+  17  -2.77352965e+01  1.79345933e+01  6.11e-07 6.79e-03  8.16e-05    26s
+
+Barrier performed 17 iterations in 25.95 seconds (12.97 work units)
+Barrier solve interrupted - model solved by another algorithm
+
+Concurrent spin time: 0.09s
+
+Solved with primal simplex
+
+Root relaxation: objective 1.500000e+01, 2345 iterations, 9.34 seconds (3.76 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.00000    0  227          -   15.00000      -     -   44s
+     0     0   15.00000    0  202          -   15.00000      -     -   57s
+     0     0   15.00000    0  202          -   15.00000      -     -   60s
+     0     0   15.00000    0  180          -   15.00000      -     -   84s
+     0     0   15.00000    0  165          -   15.00000      -     -   87s
+     0     0   15.00000    0  191          -   15.00000      -     -  112s
+     0     0   15.00000    0  175          -   15.00000      -     -  115s
+     0     0   15.00000    0  194          -   15.00000      -     -  146s
+     0     0   15.00000    0  176          -   15.00000      -     -  149s
+     0     0   15.00000    0  234          -   15.00000      -     -  191s
+     0     0   15.00000    0  199          -   15.00000      -     -  203s
+     0     0   15.00000    0  187          -   15.00000      -     -  256s
+     0     0   15.00000    0  165          -   15.00000      -     -  260s
+     0     0   15.00000    0  235          -   15.00000      -     -  287s
+     0     0   15.00000    0  235          -   15.00000      -     -  310s
+     0     2   15.00000    0  235          -   15.00000      -     -  431s
+     3     8   15.00000    2  223          -   15.00000      -   751  444s
+     7    16   15.00000    3  217          -   15.00000      -   636  459s
+
+Cutting planes:
+  Gomory: 8
+  Cover: 64
+  Implied bound: 78
+  Clique: 48
+  MIR: 45
+  StrongCG: 2
+  GUB cover: 61
+  Zero half: 33
+  RLT: 124
+
+Explored 15 nodes (25215 simplex iterations) in 493.13 seconds (558.06 work units)
+Thread count was 24 (of 48 available processors)
+
+Solution count 0
+
+Solve interrupted (error code 10001)
+Best objective -, best bound 1.500000000000e+01, gap -
