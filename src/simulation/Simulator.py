@@ -163,7 +163,6 @@ class Simulator:
         #    self.num_constraints = OPT.model.NumConstrs'''
 
     def saveSolution(self, solution: Schedule, update_metrics=False):
-
         if solution is None: return
         schedule_file = f"{self.outAlgoFOLDER}/schedule.json"
         print(f"\tSaving solution in {schedule_file}")
