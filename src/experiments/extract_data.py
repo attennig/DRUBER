@@ -20,6 +20,7 @@ with open(out_file_name, 'w') as fd:
     for ns in sizes["stations"]:
         for nd in sizes["deliveries"]:
             for nu in sizes["drones"]:
+
                 for seed in seeds:
                     for algo in algorithms:
                         in_file = f"{path}/S{ns}D{nd}U{nu}/{seed}/{algo}/metrics.json"

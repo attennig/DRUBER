@@ -83,7 +83,8 @@ class Schedule:
         :param action: it is the action from which the completion time recomputation starts
         :return: void
         '''
-        #print(f"updating u{u}'s plan from {i}th action")
+        print(self)
+        print(f"updating u{u}'s plan from {i}th action")
         assert i < len(self.plan[u])
         toUpdate = [(u, i)]
         updated = []
@@ -106,6 +107,7 @@ class Schedule:
             if pred is not None and pred.tau is not None:
                 tau_pred = pred.tau
             curr.tau = max(tau_pred, tau_prev) + curr.getTime(self.simulation)
+            print(f"tau_pred {tau_pred}, tau_prev {tau_prev}, {curr.getTime(self.simulation)} ---> {curr.tau}")
 
             updated.append((curr_u, curr_i))
 

@@ -347,12 +347,26 @@ class MILPPlanner(PathPlanner):
                     for k in range(self.K):
                         for u2 in self.simulation.drones.keys():
                             for k2 in range(self.K):
-                                # C^{u,k} >= C^{u2,k2} - H (2-(seq^{u,k}_{d,p} + seq^{u2,k2}_{d,p-1}))
+                                self.model.addConstr(
+                                    C[f"{u},{k}"] >=
+                                    C[f"{u2},{k2}"] + self.simulation.load_time * delta[f"{u},{k},load"]
+                                    + self.simulation.unload_time * delta[f"{u},{k},unload"] + self.simulation.swap_time * delta[f"{u},{k},swap"]
+                                    - self.simulation.horizon * (2 - (seq[f"{u},{k},{d},{p}"] + seq[f"{u2},{k2},{d},{p - 1}"])),
+                                    f"deliveryPred_{d},{p},{u},{k},{u2},{k2}")
+                                for (i, j) in self.simulation.edges:
+                                    self.model.addConstr(
+                                        C[f"{u},{k}"] >=
+                                        C[f"{u2},{k2}"] + self.simulation.time(i, j)
+                                        - self.simulation.horizon * (5 - (delta[f"{u},{k},move"] + x[f"{u},{k},{i}"] + y[f"{u},{k},{j}"] + seq[f"{u},{k},{d},{p}"] + seq[f"{u2},{k2},{d},{p - 1}"])),
+                                        f"deliveryPred_{d},{p},{u},{k},{u2},{k2},{i},{j}")
+                                '''# C^{u,k} >= C^{u2,k2} - H (2-(seq^{u,k}_{d,p} + seq^{u2,k2}_{d,p-1}))
+                                # C^{u,k} >= C^{u2,k2} - H (2-seq^{u,k}_{d,p} - seq^{u2,k2}_{d,p-1}))
                                 # -2H + H*seq^{u,k}_{d,p} + H*seq^{u2,k2}_{d,p-1}
+                                
                                 self.model.addConstr(
                                     C[f"{u},{k}"] - C[f"{u2},{k2}"] - self.simulation.horizon * seq[f"{u},{k},{d},{p}"]
                                     - self.simulation.horizon * seq[f"{u2},{k2},{d},{p-1}"] >= -2 * self.simulation.horizon,
-                                    f"deliveryPred_{d},{p},{u},{k},{u2},{k2}")
+                                    f"deliveryPred_{d},{p},{u},{k},{u2},{k2}")'''
 
         # CT >= C^{u,k}
         # Completion time

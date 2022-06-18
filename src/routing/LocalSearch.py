@@ -76,12 +76,14 @@ class LocalSearch(PathPlanner):
         state = self.stateInit()
         objstate = state
         while True:
-            #print(f"visiting {state}")
+            print(f"visiting {state}")
 
             if state.getCompletionTime() < objstate.getCompletionTime():
                 objstate = state
             neighbours = state.computeNeighbours(state.getCompletionTime()) # empty if neighbours are not better than current state
-
+            print(f"neighbours: ")
+            for n in neighbours:
+                print(f"neighbour: {n}")
             if len(neighbours) == 0: return objstate
             state = sorted(neighbours, key=lambda state: state.getCompletionTime())[0]
 
