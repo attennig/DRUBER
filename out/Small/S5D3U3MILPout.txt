@@ -156,3 +156,65 @@ Root relaxation: objective 2.000000e+01, 2150 iterations, 0.36 seconds (0.26 wor
  12993   967 1446.58456   35  106 1531.42857  720.71429  52.9%   336 1051s
  13412   957 infeasible   30      1531.42857  723.25747  52.8%   340 1080s
  13709   933  752.05563   33  153 1531.42857  731.20724  52.3%   344 1109s
+ 14080   963 infeasible   36      1531.42857  735.71429  52.0%   351 1138s
+ 14469   964  829.68099   28  143 1531.42857  749.04762  51.1%   357 1167s
+ 14801   931 infeasible   26      1531.42857  752.33502  50.9%   364 1200s
+ 15128   937 infeasible   28      1531.42857  755.71429  50.7%   372 1230s
+ 15526   869 infeasible   33      1531.42857  755.71429  50.7%   378 1265s
+ 15937   757 1439.59184   31   96 1531.42857  870.74481  43.1%   386 1305s
+ 16470   620 infeasible   39      1531.42857  974.28571  36.4%   391 1340s
+ 16730   336 infeasible   23      1531.42857 1011.58112  33.9%   394 1378s
+ 17457    37 infeasible   27      1531.42857 1430.00000  6.62%   394 1412s
+ 18406     0 infeasible   32      1531.42857 1451.42857  5.22%   389 1417s
+
+Cutting planes:
+  Gomory: 32
+  Cover: 243
+  Implied bound: 186
+  Clique: 16
+  MIR: 75
+  StrongCG: 5
+  Flow cover: 253
+  GUB cover: 38
+  Inf proof: 31
+  Zero half: 38
+  RLT: 173
+  Relax-and-lift: 10
+
+Explored 18557 nodes (7197057 simplex iterations) in 1417.92 seconds (1290.78 work units)
+Thread count was 24 (of 48 available processors)
+
+Solution count 1: 1531.43 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.531428571429e+03, best bound 1.531428571429e+03, gap 0.0000%
+Gurobi status: 2
+------------------------------
+1:
+	'id': 139904326990864, 'type':idle, 'x': 1, 'y': 1, 'd': None, 'p': None, 'tau': 0.0, 'pred': None, 'succ':None
+	'id': 139904326990816, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20.0, 'pred': None, 'succ':139904326990768
+	'id': 139904326990768, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.714285714319, 'pred': 139904326990816, 'succ':139904326991296
+	'id': 139904326991296, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.714285714319, 'pred': 139904326990768, 'succ':139904326991248
+	'id': 139904326991248, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.428571428638, 'pred': 139904326991296, 'succ':139904327196576
+	'id': 139904327196576, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.428571428638, 'pred': 139904326991248, 'succ':None
+
+2:
+	'id': 139904326533184, 'type':idle, 'x': 2, 'y': 2, 'd': None, 'p': None, 'tau': 0.0, 'pred': None, 'succ':None
+	'id': 139904317251104, 'type':idle, 'x': 2, 'y': 2, 'd': None, 'p': None, 'tau': 0.0, 'pred': None, 'succ':None
+	'id': 139904326990912, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20.0, 'pred': None, 'succ':139904316884448
+	'id': 139904316884448, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1511.428571428638, 'pred': 139904326990912, 'succ':139904316884496
+	'id': 139904316884496, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1531.428571428638, 'pred': 139904316884448, 'succ':None
+	'id': 139904316884544, 'type':idle, 'x': 4, 'y': 4, 'd': None, 'p': None, 'tau': 1531.428571428638, 'pred': None, 'succ':None
+
+3:
+	'id': 139904326990960, 'type':idle, 'x': 3, 'y': 3, 'd': None, 'p': None, 'tau': 0.0, 'pred': None, 'succ':None
+	'id': 139904316884640, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20.0, 'pred': None, 'succ':139904316884688
+	'id': 139904316884688, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.714285714319, 'pred': 139904316884640, 'succ':139904316884736
+	'id': 139904316884736, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857143191, 'pred': 139904316884688, 'succ':139904316884784
+	'id': 139904316884784, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714305354, 'pred': 139904316884736, 'succ':139904316884832
+	'id': 139904316884832, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.428571428638, 'pred': 139904316884784, 'succ':None
+------------------------------
+
+	Saving solution in ./out/Small/S5D3U3/11/MILP-primal/schedule.json
+saving schedule
+saving metrics
