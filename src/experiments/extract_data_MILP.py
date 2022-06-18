@@ -11,7 +11,7 @@ instances = [
     (6,3,4,13)
 ]
 
-algorithms = ["MILP-concurrent","GREEDY","LOCALSEARCH-LB","LOCALSEARCH-HC","LOCALSEARCH-BFSOPT"]
+algorithms = ["MILP-primal","GREEDY","LOCALSEARCH-LB","LOCALSEARCH-HC","LOCALSEARCH-BFSOPT"]
 
 print("\n------------------------------------------------------")
 out_file_name = f"{path}/results.csv"

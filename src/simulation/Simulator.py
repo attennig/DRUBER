@@ -2,7 +2,7 @@ from math import sqrt, ceil
 import matplotlib.pyplot as plt
 import json
 import os
-from time import process_time
+from time import time
 from src.config import *
 from src.entities.Station import Station
 from src.entities.Drone import Drone
@@ -137,9 +137,9 @@ class Simulator:
         if algo == "LOCALSEARCH":
             OPT = LocalSearch(self, method)
         OPT.setupProblem()
-        t_start = process_time()
+        t_start = time()
         solution = OPT.solveProblem()
-        t_stop = process_time()
+        t_stop = time()
         self.execution_time = t_stop - t_start # OPT.exec_time
         return solution
 
