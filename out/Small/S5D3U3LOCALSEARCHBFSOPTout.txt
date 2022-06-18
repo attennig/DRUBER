@@ -8,11 +8,11 @@ Constructor :
 	initializing Greedy Solver
 ------------------------------
 1:
-	'id': 140341485923824, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485991200, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485923392, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485991296, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485991344, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734128160, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734195536, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734127728, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734195632, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734195680, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': None, 'pred': None, 'succ':None
 
 2:
 
@@ -27,10 +27,10 @@ tau_pred 795.7142857142857, tau_prev 795.7142857142857, 715.7142857142857 ---> 1
 tau_pred 1511.4285714285713, tau_prev 1511.4285714285713, 20 ---> 1531.4285714285713
 ------------------------------
 1:
-	'id': 140341485924112, 'type':move, 'x': 1, 'y': 2, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485923920, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485990960, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485989952, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734128496, 'type':move, 'x': 1, 'y': 2, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734128304, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734195344, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734194288, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': None, 'pred': None, 'succ':None
 
 2:
 
@@ -44,12 +44,12 @@ tau_pred 1031.5811159807822, tau_prev 1031.5811159807822, 1430.0 ---> 2461.58111
 tau_pred 2461.581115980782, tau_prev 2461.581115980782, 20 ---> 2481.581115980782
 ------------------------------
 1:
-	'id': 140341485990528, 'type':move, 'x': 1, 'y': 3, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486002816, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486002960, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485923728, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486003056, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486003104, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734194864, 'type':move, 'x': 1, 'y': 3, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734207152, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734207296, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734128064, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734207392, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734207440, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
 
 2:
 
@@ -67,12 +67,12 @@ tau_pred 2941.4285714285716, tau_prev 2941.4285714285716, 20 ---> 2961.428571428
 1:
 
 2:
-	'id': 140341485993408, 'type':move, 'x': 2, 'y': 1, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485990144, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485993936, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485991680, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485993840, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485993648, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734197744, 'type':move, 'x': 2, 'y': 1, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734194480, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734198128, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734196016, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734197984, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734198032, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': None, 'pred': None, 'succ':None
 
 3:
 ------------------------------
@@ -88,9 +88,9 @@ tau_pred 2523.009687409354, tau_prev 2523.009687409354, 20 ---> 2543.00968740935
 1:
 
 2:
-	'id': 140341486256768, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486257632, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486258640, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734461632, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734462640, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734463648, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': None, 'pred': None, 'succ':None
 
 3:
 ------------------------------
@@ -103,12 +103,12 @@ tau_pred 1450.0, tau_prev 1450.0, 20 ---> 1470.0
 1:
 
 2:
-	'id': 140341485991584, 'type':move, 'x': 2, 'y': 3, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485993264, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485992208, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486388800, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485993072, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485993120, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734195824, 'type':move, 'x': 2, 'y': 3, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734197552, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734196496, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734125280, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734196592, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734197408, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
 
 3:
 ------------------------------
@@ -126,12 +126,12 @@ tau_pred 2523.009687409354, tau_prev 2523.009687409354, 20 ---> 2543.00968740935
 2:
 
 3:
-	'id': 140341486003872, 'type':move, 'x': 3, 'y': 1, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486005792, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486005936, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485992016, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486006032, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486006080, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734208208, 'type':move, 'x': 3, 'y': 1, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734210128, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734210272, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734196304, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734210368, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734210416, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': None, 'pred': None, 'succ':None
 ------------------------------
 
 updating u3's plan from 0th action
@@ -147,10 +147,10 @@ tau_pred 2941.4285714285716, tau_prev 2941.4285714285716, 20 ---> 2961.428571428
 2:
 
 3:
-	'id': 140341485991776, 'type':move, 'x': 3, 'y': 2, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485993408, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485992400, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485992688, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734197840, 'type':move, 'x': 3, 'y': 2, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734197744, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734196688, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734196976, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': None, 'pred': None, 'succ':None
 ------------------------------
 
 updating u3's plan from 0th action
@@ -164,11 +164,11 @@ tau_pred 2461.581115980782, tau_prev 2461.581115980782, 20 ---> 2481.58111598078
 2:
 
 3:
-	'id': 140341486006224, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486002624, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485923968, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486018672, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486020304, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734210512, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734207008, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175882361440, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734223008, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734224640, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
 ------------------------------
 
 updating u3's plan from 0th action
@@ -179,16 +179,16 @@ tau_pred 795.7142857142857, tau_prev 795.7142857142857, 715.7142857142857 ---> 1
 tau_pred 1511.4285714285713, tau_prev 1511.4285714285713, 20 ---> 1531.4285714285713
 ------------------------------
 1:
-	'id': 140341486010720, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486010864, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486006128, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486011104, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486011152, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734219152, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734219296, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734210464, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734219536, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734219584, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': None, 'pred': None, 'succ':None
 
 2:
-	'id': 140341486013168, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486013360
-	'id': 140341486013360, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486013168, 'succ':140341486013552
-	'id': 140341486013552, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486013360, 'succ':None
+	'id': 140175734221600, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734221792
+	'id': 140175734221792, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734221600, 'succ':140175734221984
+	'id': 140175734221984, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734221792, 'succ':None
 
 3:
 ------------------------------
@@ -201,17 +201,17 @@ tau_pred 795.7142857142857, tau_prev 795.7142857142857, 715.7142857142857 ---> 1
 tau_pred 1511.4285714285713, tau_prev 1511.4285714285713, 20 ---> 1531.4285714285713
 ------------------------------
 1:
-	'id': 140341486021408, 'type':move, 'x': 1, 'y': 3, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486018768, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486022608, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486006176, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486022464, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486020544, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734223056, 'type':move, 'x': 1, 'y': 3, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734225552, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734224544, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734208880, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734224880, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734223536, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
 
 2:
-	'id': 140341486013456, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486013696
-	'id': 140341486013696, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486013456, 'succ':140341486013888
-	'id': 140341486013888, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486013696, 'succ':None
+	'id': 140175734221888, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734222128
+	'id': 140175734222128, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734221888, 'succ':140175734222320
+	'id': 140175734222320, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734222128, 'succ':None
 
 3:
 ------------------------------
@@ -227,16 +227,16 @@ tau_pred 2941.4285714285716, tau_prev 2941.4285714285716, 20 ---> 2961.428571428
 1:
 
 2:
-	'id': 140341486032640, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486032832
-	'id': 140341486032832, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486032640, 'succ':140341486033024
-	'id': 140341486033024, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486032832, 'succ':None
-	'id': 140341486013408, 'type':move, 'x': 4, 'y': 1, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486013744, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485991776, 'type':swap, 'x': 1, 'y': 1, 'd': 1, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486014032, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486014272, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486014128, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 4, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486014176, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 5, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734236976, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734237168
+	'id': 140175734237168, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734236976, 'succ':140175734237360
+	'id': 140175734237360, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734237168, 'succ':None
+	'id': 140175734221840, 'type':move, 'x': 4, 'y': 1, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734222176, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734197456, 'type':swap, 'x': 1, 'y': 1, 'd': 1, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734222464, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734222704, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734222560, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734222608, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 5, 'tau': None, 'pred': None, 'succ':None
 
 3:
 ------------------------------
@@ -253,16 +253,16 @@ tau_pred 4053.009687409354, tau_prev 4053.009687409354, 20 ---> 4073.00968740935
 1:
 
 2:
-	'id': 140341486034128, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486034320
-	'id': 140341486034320, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486034128, 'succ':140341486034512
-	'id': 140341486034512, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486034320, 'succ':None
-	'id': 140341486021072, 'type':move, 'x': 4, 'y': 3, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486019200, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485922576, 'type':swap, 'x': 3, 'y': 3, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486020784, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486021648, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486022176, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486022224, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 5, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734238464, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734238656
+	'id': 140175734238656, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734238464, 'succ':140175734238848
+	'id': 140175734238848, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734238656, 'succ':None
+	'id': 140175734225456, 'type':move, 'x': 4, 'y': 3, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734224976, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734127056, 'type':swap, 'x': 3, 'y': 3, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734225408, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734223824, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734226560, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734223248, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 5, 'tau': None, 'pred': None, 'succ':None
 
 3:
 ------------------------------
@@ -279,17 +279,17 @@ tau_pred 4053.009687409354, tau_prev 4053.009687409354, 20 ---> 4073.00968740935
 1:
 
 2:
-	'id': 140341486039776, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486039968
-	'id': 140341486039968, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486039776, 'succ':140341486040160
-	'id': 140341486040160, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486039968, 'succ':None
+	'id': 140175734244112, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734244304
+	'id': 140175734244304, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734244112, 'succ':140175734244496
+	'id': 140175734244496, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734244304, 'succ':None
 
 3:
-	'id': 140341486014416, 'type':move, 'x': 3, 'y': 1, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486032496, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486031440, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486010480, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486031536, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486032352, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734219680, 'type':move, 'x': 3, 'y': 1, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734236832, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734235776, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734218960, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734235872, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734236688, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': None, 'pred': None, 'succ':None
 ------------------------------
 
 updating u3's plan from 0th action
@@ -303,16 +303,16 @@ tau_pred 2941.4285714285716, tau_prev 2941.4285714285716, 20 ---> 2961.428571428
 1:
 
 2:
-	'id': 140341486041072, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486041264
-	'id': 140341486041264, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486041072, 'succ':140341486041456
-	'id': 140341486041456, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486041264, 'succ':None
+	'id': 140175734245408, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734245600
+	'id': 140175734245600, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734245408, 'succ':140175734245792
+	'id': 140175734245792, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734245600, 'succ':None
 
 3:
-	'id': 140341486019344, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486020016, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486004544, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486013264, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486033984, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734226656, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734226224, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734208352, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734221696, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734238320, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
 ------------------------------
 
 updating u3's plan from 0th action
@@ -323,22 +323,22 @@ tau_pred 795.7142857142857, tau_prev 795.7142857142857, 715.7142857142857 ---> 1
 tau_pred 1511.4285714285713, tau_prev 1511.4285714285713, 20 ---> 1531.4285714285713
 ------------------------------
 1:
-	'id': 140341486043680, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486043872
-	'id': 140341486043872, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486043680, 'succ':140341486044064
-	'id': 140341486044064, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486043872, 'succ':140341486044256
-	'id': 140341486044256, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486044064, 'succ':140341486044448
-	'id': 140341486044448, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486044256, 'succ':None
-	'id': 140341486032736, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486260128, 'type':swap, 'x': 3, 'y': 3, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486039104, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486041696, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486041552, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486041600, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 5, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734248016, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734248208
+	'id': 140175734248208, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734248016, 'succ':140175734248400
+	'id': 140175734248400, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734248208, 'succ':140175734248592
+	'id': 140175734248592, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734248400, 'succ':140175734248784
+	'id': 140175734248784, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734248592, 'succ':None
+	'id': 140175734243968, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734464464, 'type':swap, 'x': 3, 'y': 3, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734243440, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734246032, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734245888, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734245936, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 5, 'tau': None, 'pred': None, 'succ':None
 
 2:
-	'id': 140341486043728, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486044112
-	'id': 140341486044112, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486043728, 'succ':140341486044544
-	'id': 140341486044544, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486044112, 'succ':None
+	'id': 140175734248064, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734248448
+	'id': 140175734248448, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734248064, 'succ':140175734248880
+	'id': 140175734248880, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734248448, 'succ':None
 
 3:
 ------------------------------
@@ -352,23 +352,23 @@ tau_pred 2387.142857142857, tau_prev 2387.142857142857, 715.7142857142857 ---> 3
 tau_pred 3102.8571428571427, tau_prev 3102.8571428571427, 20 ---> 3122.8571428571427
 ------------------------------
 1:
-	'id': 140341486044352, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486044736
-	'id': 140341486044736, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486044352, 'succ':140341486044928
-	'id': 140341486044928, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486044736, 'succ':140341486045120
-	'id': 140341486045120, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486044928, 'succ':140341486045312
-	'id': 140341486045312, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486045120, 'succ':None
+	'id': 140175734248688, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734249072
+	'id': 140175734249072, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734248688, 'succ':140175734249264
+	'id': 140175734249264, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734249072, 'succ':140175734249456
+	'id': 140175734249456, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734249264, 'succ':140175734249648
+	'id': 140175734249648, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734249456, 'succ':None
 
 2:
-	'id': 140341486044592, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486044976
-	'id': 140341486044976, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486044592, 'succ':140341486045408
-	'id': 140341486045408, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486044976, 'succ':None
-	'id': 140341486014416, 'type':move, 'x': 4, 'y': 3, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486005504, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341485920704, 'type':swap, 'x': 3, 'y': 3, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486005648, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486005216, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486003536, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486004880, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 5, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734248928, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734249312
+	'id': 140175734249312, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734248928, 'succ':140175734249744
+	'id': 140175734249744, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734249312, 'succ':None
+	'id': 140175734219680, 'type':move, 'x': 4, 'y': 3, 'd': None, 'p': None, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734209840, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734125184, 'type':swap, 'x': 3, 'y': 3, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734209984, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734209552, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734207872, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734209216, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 5, 'tau': None, 'pred': None, 'succ':None
 
 3:
 ------------------------------
@@ -383,23 +383,23 @@ tau_pred 3337.295401695068, tau_prev 3337.295401695068, 715.7142857142857 ---> 4
 tau_pred 4053.009687409354, tau_prev 4053.009687409354, 20 ---> 4073.009687409354
 ------------------------------
 1:
-	'id': 140341486059968, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486060160
-	'id': 140341486060160, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486059968, 'succ':140341486060352
-	'id': 140341486060352, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486060160, 'succ':140341486060544
-	'id': 140341486060544, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486060352, 'succ':140341486060736
-	'id': 140341486060736, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486060544, 'succ':None
+	'id': 140175734260208, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734260400
+	'id': 140175734260400, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734260208, 'succ':140175734260592
+	'id': 140175734260592, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734260400, 'succ':140175734260784
+	'id': 140175734260784, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734260592, 'succ':140175734260976
+	'id': 140175734260976, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734260784, 'succ':None
 
 2:
-	'id': 140341486060016, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486060400
-	'id': 140341486060400, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486060016, 'succ':140341486060832
-	'id': 140341486060832, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486060400, 'succ':None
+	'id': 140175734260256, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734260640
+	'id': 140175734260640, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734260256, 'succ':140175734261072
+	'id': 140175734261072, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734260640, 'succ':None
 
 3:
-	'id': 140341486044832, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486045456, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486005024, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486045552, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
-	'id': 140341486045600, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734249168, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734249792, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734209360, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734249888, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': None, 'pred': None, 'succ':None
+	'id': 140175734249936, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': None, 'pred': None, 'succ':None
 ------------------------------
 
 updating u3's plan from 0th action
@@ -410,26 +410,26 @@ tau_pred 795.7142857142857, tau_prev 795.7142857142857, 715.7142857142857 ---> 1
 tau_pred 1511.4285714285713, tau_prev 1511.4285714285713, 20 ---> 1531.4285714285713
 ------------------------------
 1:
-	'id': 140341486011968, 'type':load, 'x': 1, 'y': 1, 'd': 2, 'p': 3, 'tau': None, 'pred': 140341485923152, 'succ':140341485921472
-	'id': 140341485921472, 'type':move, 'x': 1, 'y': 4, 'd': 2, 'p': 4, 'tau': None, 'pred': 140341486011968, 'succ':140341486011584
-	'id': 140341486011584, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1470.0, 'pred': 140341485921472, 'succ':None
+	'id': 140175734220400, 'type':load, 'x': 1, 'y': 1, 'd': 2, 'p': 3, 'tau': None, 'pred': 140175734127488, 'succ':140175734125760
+	'id': 140175734125760, 'type':move, 'x': 1, 'y': 4, 'd': 2, 'p': 4, 'tau': None, 'pred': 140175734220400, 'succ':140175734220016
+	'id': 140175734220016, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1470.0, 'pred': 140175734125760, 'succ':None
 
 2:
-	'id': 140341485923008, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486004928
-	'id': 140341486004928, 'type':move, 'x': 2, 'y': 1, 'd': 2, 'p': 1, 'tau': None, 'pred': 140341485923008, 'succ':140341485923152
-	'id': 140341485923152, 'type':unload, 'x': 1, 'y': 1, 'd': 2, 'p': 2, 'tau': None, 'pred': 140341486004928, 'succ':140341486011968
-	'id': 140341485923296, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486011296
-	'id': 140341486011296, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341485923296, 'succ':140341486011920
-	'id': 140341486011920, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486011296, 'succ':140341486012880
-	'id': 140341486012880, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486011920, 'succ':140341486012736
-	'id': 140341486012736, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486012880, 'succ':None
+	'id': 140175734127344, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734209264
+	'id': 140175734209264, 'type':move, 'x': 2, 'y': 1, 'd': 2, 'p': 1, 'tau': None, 'pred': 140175734127344, 'succ':140175734127488
+	'id': 140175734127488, 'type':unload, 'x': 1, 'y': 1, 'd': 2, 'p': 2, 'tau': None, 'pred': 140175734209264, 'succ':140175734220400
+	'id': 140175734127632, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734219728
+	'id': 140175734219728, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734127632, 'succ':140175734220352
+	'id': 140175734220352, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734219728, 'succ':140175734221312
+	'id': 140175734221312, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734220352, 'succ':140175734221168
+	'id': 140175734221168, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734221312, 'succ':None
 
 3:
-	'id': 140341486011776, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486012592
-	'id': 140341486012592, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486011776, 'succ':140341486012304
-	'id': 140341486012304, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486012592, 'succ':140341486014416
-	'id': 140341486014416, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486012304, 'succ':140341486042368
-	'id': 140341486042368, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486014416, 'succ':None
+	'id': 140175734220208, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734221024
+	'id': 140175734221024, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734220208, 'succ':140175734220736
+	'id': 140175734220736, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734221024, 'succ':140175734219680
+	'id': 140175734219680, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734220736, 'succ':140175734246704
+	'id': 140175734246704, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734219680, 'succ':None
 ------------------------------
 
 updating u1's plan from 0th action
@@ -438,26 +438,26 @@ tau_pred 20, tau_prev 20, 1011.5811159807821 ---> 1031.5811159807822
 tau_pred 1031.5811159807822, tau_prev 1031.5811159807822, 20 ---> 1051.5811159807822
 ------------------------------
 1:
-	'id': 140341486011968, 'type':load, 'x': 1, 'y': 1, 'd': 2, 'p': 3, 'tau': 20, 'pred': 140341485923152, 'succ':140341485921472
-	'id': 140341485921472, 'type':move, 'x': 1, 'y': 4, 'd': 2, 'p': 4, 'tau': 1031.5811159807822, 'pred': 140341486011968, 'succ':140341486011584
-	'id': 140341486011584, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1051.5811159807822, 'pred': 140341485921472, 'succ':None
+	'id': 140175734220400, 'type':load, 'x': 1, 'y': 1, 'd': 2, 'p': 3, 'tau': 20, 'pred': 140175734127488, 'succ':140175734125760
+	'id': 140175734125760, 'type':move, 'x': 1, 'y': 4, 'd': 2, 'p': 4, 'tau': 1031.5811159807822, 'pred': 140175734220400, 'succ':140175734220016
+	'id': 140175734220016, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1051.5811159807822, 'pred': 140175734125760, 'succ':None
 
 2:
-	'id': 140341485923008, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486004928
-	'id': 140341486004928, 'type':move, 'x': 2, 'y': 1, 'd': 2, 'p': 1, 'tau': None, 'pred': 140341485923008, 'succ':140341485923152
-	'id': 140341485923152, 'type':unload, 'x': 1, 'y': 1, 'd': 2, 'p': 2, 'tau': None, 'pred': 140341486004928, 'succ':140341486011968
-	'id': 140341485923296, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486011296
-	'id': 140341486011296, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341485923296, 'succ':140341486011920
-	'id': 140341486011920, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486011296, 'succ':140341486012880
-	'id': 140341486012880, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486011920, 'succ':140341486012736
-	'id': 140341486012736, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486012880, 'succ':None
+	'id': 140175734127344, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734209264
+	'id': 140175734209264, 'type':move, 'x': 2, 'y': 1, 'd': 2, 'p': 1, 'tau': None, 'pred': 140175734127344, 'succ':140175734127488
+	'id': 140175734127488, 'type':unload, 'x': 1, 'y': 1, 'd': 2, 'p': 2, 'tau': None, 'pred': 140175734209264, 'succ':140175734220400
+	'id': 140175734127632, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734219728
+	'id': 140175734219728, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734127632, 'succ':140175734220352
+	'id': 140175734220352, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734219728, 'succ':140175734221312
+	'id': 140175734221312, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734220352, 'succ':140175734221168
+	'id': 140175734221168, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734221312, 'succ':None
 
 3:
-	'id': 140341486011776, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486012592
-	'id': 140341486012592, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486011776, 'succ':140341486012304
-	'id': 140341486012304, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486012592, 'succ':140341486014416
-	'id': 140341486014416, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486012304, 'succ':140341486042368
-	'id': 140341486042368, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486014416, 'succ':None
+	'id': 140175734220208, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734221024
+	'id': 140175734221024, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734220208, 'succ':140175734220736
+	'id': 140175734220736, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734221024, 'succ':140175734219680
+	'id': 140175734219680, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734220736, 'succ':140175734246704
+	'id': 140175734246704, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734219680, 'succ':None
 ------------------------------
 
 updating u2's plan from 0th action
@@ -474,27 +474,27 @@ tau_pred 1847.295401695068, tau_prev 1847.295401695068, 715.7142857142857 ---> 2
 tau_pred 2563.009687409354, tau_prev 2563.009687409354, 20 ---> 2583.009687409354
 ------------------------------
 1:
-	'id': 140341486041648, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486042224
-	'id': 140341486042224, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486041648, 'succ':140341486012016
-	'id': 140341486012016, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': 140341486042224, 'succ':140341486012160
-	'id': 140341486043088, 'type':load, 'x': 5, 'y': 5, 'd': 2, 'p': 3, 'tau': None, 'pred': 140341486042896, 'succ':140341486012352
-	'id': 140341486012352, 'type':move, 'x': 5, 'y': 4, 'd': 2, 'p': 4, 'tau': None, 'pred': 140341486043088, 'succ':140341486040208
-	'id': 140341486040208, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1470.0, 'pred': 140341486012352, 'succ':None
+	'id': 140175734245984, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734246560
+	'id': 140175734246560, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734245984, 'succ':140175734220448
+	'id': 140175734220448, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': 140175734246560, 'succ':140175734220592
+	'id': 140175734247232, 'type':load, 'x': 5, 'y': 5, 'd': 2, 'p': 3, 'tau': None, 'pred': 140175734247280, 'succ':140175734220784
+	'id': 140175734220784, 'type':move, 'x': 5, 'y': 4, 'd': 2, 'p': 4, 'tau': None, 'pred': 140175734247232, 'succ':140175734244592
+	'id': 140175734244592, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1470.0, 'pred': 140175734220784, 'succ':None
 
 2:
-	'id': 140341486042416, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341485921520
-	'id': 140341485921520, 'type':move, 'x': 2, 'y': 5, 'd': 2, 'p': 1, 'tau': None, 'pred': 140341486042416, 'succ':140341486042896
-	'id': 140341486042896, 'type':unload, 'x': 5, 'y': 5, 'd': 2, 'p': 2, 'tau': None, 'pred': 140341485921520, 'succ':140341486043088
-	'id': 140341486012160, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': None, 'pred': 140341486012016, 'succ':140341486042752
-	'id': 140341486042752, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 4, 'tau': 1511.4285714285713, 'pred': 140341486012160, 'succ':140341486040064
-	'id': 140341486040064, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 5, 'tau': 1531.4285714285713, 'pred': 140341486042752, 'succ':None
+	'id': 140175734246752, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734126576
+	'id': 140175734126576, 'type':move, 'x': 2, 'y': 5, 'd': 2, 'p': 1, 'tau': None, 'pred': 140175734246752, 'succ':140175734247280
+	'id': 140175734247280, 'type':unload, 'x': 5, 'y': 5, 'd': 2, 'p': 2, 'tau': None, 'pred': 140175734126576, 'succ':140175734247232
+	'id': 140175734220592, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': None, 'pred': 140175734220448, 'succ':140175734247136
+	'id': 140175734247136, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 4, 'tau': 1511.4285714285713, 'pred': 140175734220592, 'succ':140175734246224
+	'id': 140175734246224, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 5, 'tau': 1531.4285714285713, 'pred': 140175734247136, 'succ':None
 
 3:
-	'id': 140341486042608, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486040544
-	'id': 140341486040544, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486042608, 'succ':140341486040976
-	'id': 140341486040976, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486040544, 'succ':140341486033168
-	'id': 140341486033168, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486040976, 'succ':140341486032688
-	'id': 140341486032688, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486033168, 'succ':None
+	'id': 140175734246992, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734244688
+	'id': 140175734244688, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734246992, 'succ':140175734245120
+	'id': 140175734245120, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734244688, 'succ':140175734235392
+	'id': 140175734235392, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734245120, 'succ':140175734237216
+	'id': 140175734237216, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734235392, 'succ':None
 ------------------------------
 
 updating u1's plan from 0th action
@@ -509,27 +509,27 @@ tau_pred 1491.4285714285713, tau_prev 1491.4285714285713, 20 ---> 1511.428571428
 tau_pred 1491.4285714285713, tau_prev 1491.4285714285713, 20 ---> 1511.4285714285713
 ------------------------------
 1:
-	'id': 140341486041648, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486042224
-	'id': 140341486042224, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486041648, 'succ':140341486012016
-	'id': 140341486012016, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 755.7142857142857, 'pred': 140341486042224, 'succ':140341486012160
-	'id': 140341486043088, 'type':load, 'x': 5, 'y': 5, 'd': 2, 'p': 3, 'tau': 775.7142857142857, 'pred': 140341486042896, 'succ':140341486012352
-	'id': 140341486012352, 'type':move, 'x': 5, 'y': 4, 'd': 2, 'p': 4, 'tau': 1491.4285714285713, 'pred': 140341486043088, 'succ':140341486040208
-	'id': 140341486040208, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140341486012352, 'succ':None
+	'id': 140175734245984, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734246560
+	'id': 140175734246560, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734245984, 'succ':140175734220448
+	'id': 140175734220448, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 755.7142857142857, 'pred': 140175734246560, 'succ':140175734220592
+	'id': 140175734247232, 'type':load, 'x': 5, 'y': 5, 'd': 2, 'p': 3, 'tau': 775.7142857142857, 'pred': 140175734247280, 'succ':140175734220784
+	'id': 140175734220784, 'type':move, 'x': 5, 'y': 4, 'd': 2, 'p': 4, 'tau': 1491.4285714285713, 'pred': 140175734247232, 'succ':140175734244592
+	'id': 140175734244592, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140175734220784, 'succ':None
 
 2:
-	'id': 140341486042416, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341485921520
-	'id': 140341485921520, 'type':move, 'x': 2, 'y': 5, 'd': 2, 'p': 1, 'tau': None, 'pred': 140341486042416, 'succ':140341486042896
-	'id': 140341486042896, 'type':unload, 'x': 5, 'y': 5, 'd': 2, 'p': 2, 'tau': None, 'pred': 140341485921520, 'succ':140341486043088
-	'id': 140341486012160, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': 775.7142857142857, 'pred': 140341486012016, 'succ':140341486042752
-	'id': 140341486042752, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 4, 'tau': 1491.4285714285713, 'pred': 140341486012160, 'succ':140341486040064
-	'id': 140341486040064, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140341486042752, 'succ':None
+	'id': 140175734246752, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734126576
+	'id': 140175734126576, 'type':move, 'x': 2, 'y': 5, 'd': 2, 'p': 1, 'tau': None, 'pred': 140175734246752, 'succ':140175734247280
+	'id': 140175734247280, 'type':unload, 'x': 5, 'y': 5, 'd': 2, 'p': 2, 'tau': None, 'pred': 140175734126576, 'succ':140175734247232
+	'id': 140175734220592, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': 775.7142857142857, 'pred': 140175734220448, 'succ':140175734247136
+	'id': 140175734247136, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 4, 'tau': 1491.4285714285713, 'pred': 140175734220592, 'succ':140175734246224
+	'id': 140175734246224, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140175734247136, 'succ':None
 
 3:
-	'id': 140341486042608, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486040544
-	'id': 140341486040544, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486042608, 'succ':140341486040976
-	'id': 140341486040976, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486040544, 'succ':140341486033168
-	'id': 140341486033168, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486040976, 'succ':140341486032688
-	'id': 140341486032688, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486033168, 'succ':None
+	'id': 140175734246992, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734244688
+	'id': 140175734244688, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734246992, 'succ':140175734245120
+	'id': 140175734245120, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734244688, 'succ':140175734235392
+	'id': 140175734235392, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734245120, 'succ':140175734237216
+	'id': 140175734237216, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734235392, 'succ':None
 ------------------------------
 
 updating u2's plan from 0th action
@@ -544,27 +544,27 @@ tau_pred 1491.4285714285713, tau_prev 1491.4285714285713, 20 ---> 1511.428571428
 tau_pred 1491.4285714285713, tau_prev 1491.4285714285713, 20 ---> 1511.4285714285713
 ------------------------------
 1:
-	'id': 140341486031056, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486033744
-	'id': 140341486033744, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486031056, 'succ':140341486012640
-	'id': 140341486012640, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': 140341486033744, 'succ':140341486034368
-	'id': 140341486040784, 'type':load, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': None, 'pred': 140341486043040, 'succ':140341486042800
-	'id': 140341486042800, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 4, 'tau': None, 'pred': 140341486040784, 'succ':140341486061216
-	'id': 140341486061216, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140341486042800, 'succ':140341486061408
-	'id': 140341486061408, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 6, 'tau': 1531.4285714285713, 'pred': 140341486061216, 'succ':None
+	'id': 140175734235584, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734237888
+	'id': 140175734237888, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734235584, 'succ':140175734247376
+	'id': 140175734247376, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': 140175734237888, 'succ':140175734221072
+	'id': 140175734236256, 'type':load, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': None, 'pred': 140175734238704, 'succ':140175734246944
+	'id': 140175734246944, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 4, 'tau': None, 'pred': 140175734236256, 'succ':140175734261456
+	'id': 140175734261456, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140175734246944, 'succ':140175734261648
+	'id': 140175734261648, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 6, 'tau': 1531.4285714285713, 'pred': 140175734261456, 'succ':None
 
 2:
-	'id': 140341486032880, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486043440
-	'id': 140341486043440, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486032880, 'succ':140341486060256
-	'id': 140341486060256, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486043440, 'succ':None
+	'id': 140175734238512, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734247584
+	'id': 140175734247584, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734238512, 'succ':140175734260496
+	'id': 140175734260496, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734247584, 'succ':None
 
 3:
-	'id': 140341486043968, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486060640
-	'id': 140341486060640, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486043968, 'succ':140341486043040
-	'id': 140341486043040, 'type':unload, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': 140341486060640, 'succ':140341486040784
-	'id': 140341486034368, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': None, 'pred': 140341486012640, 'succ':140341486012448
-	'id': 140341486012448, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 4, 'tau': None, 'pred': 140341486034368, 'succ':140341486043296
-	'id': 140341486043296, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140341486012448, 'succ':140341486045696
-	'id': 140341486045696, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 6, 'tau': 1531.4285714285713, 'pred': 140341486043296, 'succ':None
+	'id': 140175734248304, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734260880
+	'id': 140175734260880, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734248304, 'succ':140175734238704
+	'id': 140175734238704, 'type':unload, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': 140175734260880, 'succ':140175734236256
+	'id': 140175734221072, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': None, 'pred': 140175734247376, 'succ':140175734220880
+	'id': 140175734220880, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 4, 'tau': None, 'pred': 140175734221072, 'succ':140175734247488
+	'id': 140175734247488, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140175734220880, 'succ':140175734250032
+	'id': 140175734250032, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 6, 'tau': 1531.4285714285713, 'pred': 140175734247488, 'succ':None
 ------------------------------
 
 updating u1's plan from 0th action
@@ -581,27 +581,27 @@ tau_pred 1551.4285714285713, tau_prev 1551.4285714285713, 20 ---> 1571.428571428
 tau_pred 1551.4285714285713, tau_prev 1551.4285714285713, 20 ---> 1571.4285714285713
 ------------------------------
 1:
-	'id': 140341486031056, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486033744
-	'id': 140341486033744, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486031056, 'succ':140341486012640
-	'id': 140341486012640, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 755.7142857142857, 'pred': 140341486033744, 'succ':140341486034368
-	'id': 140341486040784, 'type':load, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': 775.7142857142857, 'pred': 140341486043040, 'succ':140341486042800
-	'id': 140341486042800, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 4, 'tau': 835.7142857142857, 'pred': 140341486040784, 'succ':140341486061216
-	'id': 140341486061216, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 5, 'tau': 1551.4285714285713, 'pred': 140341486042800, 'succ':140341486061408
-	'id': 140341486061408, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 6, 'tau': 1571.4285714285713, 'pred': 140341486061216, 'succ':None
+	'id': 140175734235584, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734237888
+	'id': 140175734237888, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734235584, 'succ':140175734247376
+	'id': 140175734247376, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 755.7142857142857, 'pred': 140175734237888, 'succ':140175734221072
+	'id': 140175734236256, 'type':load, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': 775.7142857142857, 'pred': 140175734238704, 'succ':140175734246944
+	'id': 140175734246944, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 4, 'tau': 835.7142857142857, 'pred': 140175734236256, 'succ':140175734261456
+	'id': 140175734261456, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 5, 'tau': 1551.4285714285713, 'pred': 140175734246944, 'succ':140175734261648
+	'id': 140175734261648, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 6, 'tau': 1571.4285714285713, 'pred': 140175734261456, 'succ':None
 
 2:
-	'id': 140341486032880, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486043440
-	'id': 140341486043440, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486032880, 'succ':140341486060256
-	'id': 140341486060256, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486043440, 'succ':None
+	'id': 140175734238512, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734247584
+	'id': 140175734247584, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734238512, 'succ':140175734260496
+	'id': 140175734260496, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734247584, 'succ':None
 
 3:
-	'id': 140341486043968, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486060640
-	'id': 140341486060640, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486043968, 'succ':140341486043040
-	'id': 140341486043040, 'type':unload, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': 140341486060640, 'succ':140341486040784
-	'id': 140341486034368, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': 775.7142857142857, 'pred': 140341486012640, 'succ':140341486012448
-	'id': 140341486012448, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 4, 'tau': 835.7142857142857, 'pred': 140341486034368, 'succ':140341486043296
-	'id': 140341486043296, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 5, 'tau': 1551.4285714285713, 'pred': 140341486012448, 'succ':140341486045696
-	'id': 140341486045696, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 6, 'tau': 1571.4285714285713, 'pred': 140341486043296, 'succ':None
+	'id': 140175734248304, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734260880
+	'id': 140175734260880, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734248304, 'succ':140175734238704
+	'id': 140175734238704, 'type':unload, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': 140175734260880, 'succ':140175734236256
+	'id': 140175734221072, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': 775.7142857142857, 'pred': 140175734247376, 'succ':140175734220880
+	'id': 140175734220880, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 4, 'tau': 835.7142857142857, 'pred': 140175734221072, 'succ':140175734247488
+	'id': 140175734247488, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 5, 'tau': 1551.4285714285713, 'pred': 140175734220880, 'succ':140175734250032
+	'id': 140175734250032, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 6, 'tau': 1571.4285714285713, 'pred': 140175734247488, 'succ':None
 ------------------------------
 
 updating u3's plan from 0th action
@@ -618,27 +618,27 @@ tau_pred 1551.4285714285713, tau_prev 1551.4285714285713, 20 ---> 1571.428571428
 tau_pred 1551.4285714285713, tau_prev 1551.4285714285713, 20 ---> 1571.4285714285713
 ------------------------------
 1:
-	'id': 140341486061120, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341485921424
-	'id': 140341485921424, 'type':move, 'x': 1, 'y': 2, 'd': 1, 'p': 1, 'tau': None, 'pred': 140341486061120, 'succ':140341486043584
-	'id': 140341486043584, 'type':unload, 'x': 2, 'y': 2, 'd': 1, 'p': 2, 'tau': None, 'pred': 140341485921424, 'succ':140341486061024
-	'id': 140341486061072, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486043920
-	'id': 140341486043920, 'type':swap, 'x': 2, 'y': 2, 'd': 2, 'p': 1, 'tau': None, 'pred': 140341486061072, 'succ':140341486061744
-	'id': 140341486061744, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 2, 'tau': 1450.0, 'pred': 140341486043920, 'succ':140341486062128
-	'id': 140341486062128, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 3, 'tau': 1470.0, 'pred': 140341486061744, 'succ':None
+	'id': 140175734261360, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734125808
+	'id': 140175734125808, 'type':move, 'x': 1, 'y': 2, 'd': 1, 'p': 1, 'tau': None, 'pred': 140175734261360, 'succ':140175734247728
+	'id': 140175734247728, 'type':unload, 'x': 2, 'y': 2, 'd': 1, 'p': 2, 'tau': None, 'pred': 140175734125808, 'succ':140175734261264
+	'id': 140175734261312, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734248256
+	'id': 140175734248256, 'type':swap, 'x': 2, 'y': 2, 'd': 2, 'p': 1, 'tau': None, 'pred': 140175734261312, 'succ':140175734261984
+	'id': 140175734261984, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 2, 'tau': 1450.0, 'pred': 140175734248256, 'succ':140175734262368
+	'id': 140175734262368, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 3, 'tau': 1470.0, 'pred': 140175734261984, 'succ':None
 
 2:
-	'id': 140341486061024, 'type':load, 'x': 2, 'y': 2, 'd': 1, 'p': 3, 'tau': None, 'pred': 140341486043584, 'succ':140341486040352
-	'id': 140341486040352, 'type':move, 'x': 2, 'y': 5, 'd': 1, 'p': 4, 'tau': None, 'pred': 140341486061024, 'succ':140341486061648
-	'id': 140341486061648, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 5, 'tau': 795.7142857142857, 'pred': 140341486040352, 'succ':140341486061840
-	'id': 140341486061840, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 6, 'tau': 1511.4285714285713, 'pred': 140341486061648, 'succ':140341486062032
-	'id': 140341486062032, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 7, 'tau': 1531.4285714285713, 'pred': 140341486061840, 'succ':None
+	'id': 140175734261264, 'type':load, 'x': 2, 'y': 2, 'd': 1, 'p': 3, 'tau': None, 'pred': 140175734247728, 'succ':140175734244976
+	'id': 140175734244976, 'type':move, 'x': 2, 'y': 5, 'd': 1, 'p': 4, 'tau': None, 'pred': 140175734261264, 'succ':140175734261888
+	'id': 140175734261888, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 5, 'tau': 795.7142857142857, 'pred': 140175734244976, 'succ':140175734262080
+	'id': 140175734262080, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 6, 'tau': 1511.4285714285713, 'pred': 140175734261888, 'succ':140175734262272
+	'id': 140175734262272, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 7, 'tau': 1531.4285714285713, 'pred': 140175734262080, 'succ':None
 
 3:
-	'id': 140341486061936, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486062224
-	'id': 140341486062224, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486061936, 'succ':140341486062416
-	'id': 140341486062416, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486062224, 'succ':140341486062608
-	'id': 140341486062608, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486062416, 'succ':140341486062800
-	'id': 140341486062800, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486062608, 'succ':None
+	'id': 140175734262176, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734262464
+	'id': 140175734262464, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734262176, 'succ':140175734262656
+	'id': 140175734262656, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734262464, 'succ':140175734262848
+	'id': 140175734262848, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734262656, 'succ':140175734263040
+	'id': 140175734263040, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734262848, 'succ':None
 ------------------------------
 
 updating u2's plan from 0th action
@@ -649,27 +649,27 @@ tau_pred 795.7142857142857, tau_prev 795.7142857142857, 715.7142857142857 ---> 1
 tau_pred 1511.4285714285713, tau_prev 1511.4285714285713, 20 ---> 1531.4285714285713
 ------------------------------
 1:
-	'id': 140341486061120, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341485921424
-	'id': 140341485921424, 'type':move, 'x': 1, 'y': 2, 'd': 1, 'p': 1, 'tau': None, 'pred': 140341486061120, 'succ':140341486043584
-	'id': 140341486043584, 'type':unload, 'x': 2, 'y': 2, 'd': 1, 'p': 2, 'tau': None, 'pred': 140341485921424, 'succ':140341486061024
-	'id': 140341486061072, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486043920
-	'id': 140341486043920, 'type':swap, 'x': 2, 'y': 2, 'd': 2, 'p': 1, 'tau': None, 'pred': 140341486061072, 'succ':140341486061744
-	'id': 140341486061744, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 2, 'tau': 1450.0, 'pred': 140341486043920, 'succ':140341486062128
-	'id': 140341486062128, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 3, 'tau': 1470.0, 'pred': 140341486061744, 'succ':None
+	'id': 140175734261360, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734125808
+	'id': 140175734125808, 'type':move, 'x': 1, 'y': 2, 'd': 1, 'p': 1, 'tau': None, 'pred': 140175734261360, 'succ':140175734247728
+	'id': 140175734247728, 'type':unload, 'x': 2, 'y': 2, 'd': 1, 'p': 2, 'tau': None, 'pred': 140175734125808, 'succ':140175734261264
+	'id': 140175734261312, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734248256
+	'id': 140175734248256, 'type':swap, 'x': 2, 'y': 2, 'd': 2, 'p': 1, 'tau': None, 'pred': 140175734261312, 'succ':140175734261984
+	'id': 140175734261984, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 2, 'tau': 1450.0, 'pred': 140175734248256, 'succ':140175734262368
+	'id': 140175734262368, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 3, 'tau': 1470.0, 'pred': 140175734261984, 'succ':None
 
 2:
-	'id': 140341486061024, 'type':load, 'x': 2, 'y': 2, 'd': 1, 'p': 3, 'tau': 20, 'pred': 140341486043584, 'succ':140341486040352
-	'id': 140341486040352, 'type':move, 'x': 2, 'y': 5, 'd': 1, 'p': 4, 'tau': 735.7142857142857, 'pred': 140341486061024, 'succ':140341486061648
-	'id': 140341486061648, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 5, 'tau': 795.7142857142857, 'pred': 140341486040352, 'succ':140341486061840
-	'id': 140341486061840, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 6, 'tau': 1511.4285714285713, 'pred': 140341486061648, 'succ':140341486062032
-	'id': 140341486062032, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 7, 'tau': 1531.4285714285713, 'pred': 140341486061840, 'succ':None
+	'id': 140175734261264, 'type':load, 'x': 2, 'y': 2, 'd': 1, 'p': 3, 'tau': 20, 'pred': 140175734247728, 'succ':140175734244976
+	'id': 140175734244976, 'type':move, 'x': 2, 'y': 5, 'd': 1, 'p': 4, 'tau': 735.7142857142857, 'pred': 140175734261264, 'succ':140175734261888
+	'id': 140175734261888, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 5, 'tau': 795.7142857142857, 'pred': 140175734244976, 'succ':140175734262080
+	'id': 140175734262080, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 6, 'tau': 1511.4285714285713, 'pred': 140175734261888, 'succ':140175734262272
+	'id': 140175734262272, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 7, 'tau': 1531.4285714285713, 'pred': 140175734262080, 'succ':None
 
 3:
-	'id': 140341486061936, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486062224
-	'id': 140341486062224, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486061936, 'succ':140341486062416
-	'id': 140341486062416, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486062224, 'succ':140341486062608
-	'id': 140341486062608, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486062416, 'succ':140341486062800
-	'id': 140341486062800, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486062608, 'succ':None
+	'id': 140175734262176, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734262464
+	'id': 140175734262464, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734262176, 'succ':140175734262656
+	'id': 140175734262656, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734262464, 'succ':140175734262848
+	'id': 140175734262848, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734262656, 'succ':140175734263040
+	'id': 140175734263040, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734262848, 'succ':None
 ------------------------------
 
 updating u1's plan from 0th action
@@ -687,27 +687,27 @@ tau_pred 1847.295401695068, tau_prev 1847.295401695068, 715.7142857142857 ---> 2
 tau_pred 2563.009687409354, tau_prev 2563.009687409354, 20 ---> 2583.009687409354
 ------------------------------
 1:
-	'id': 140341486062512, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486062848
-	'id': 140341486062848, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486062512, 'succ':140341486063040
-	'id': 140341486063040, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486062848, 'succ':140341486043392
-	'id': 140341486043392, 'type':move, 'x': 5, 'y': 2, 'd': 1, 'p': 3, 'tau': None, 'pred': 140341486063040, 'succ':140341486043440
-	'id': 140341486043440, 'type':unload, 'x': 2, 'y': 2, 'd': 1, 'p': 4, 'tau': None, 'pred': 140341486043392, 'succ':140341486044976
-	'id': 140341486044928, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486040784
-	'id': 140341486040784, 'type':swap, 'x': 2, 'y': 2, 'd': 2, 'p': 1, 'tau': None, 'pred': 140341486044928, 'succ':140341486044544
-	'id': 140341486044544, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 2, 'tau': 1450.0, 'pred': 140341486040784, 'succ':140341486044064
-	'id': 140341486044064, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 3, 'tau': 1470.0, 'pred': 140341486044544, 'succ':None
+	'id': 140175734262752, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734263088
+	'id': 140175734263088, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734262752, 'succ':140175734263280
+	'id': 140175734263280, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734263088, 'succ':140175734247776
+	'id': 140175734247776, 'type':move, 'x': 5, 'y': 2, 'd': 1, 'p': 3, 'tau': None, 'pred': 140175734263280, 'succ':140175734247584
+	'id': 140175734247584, 'type':unload, 'x': 2, 'y': 2, 'd': 1, 'p': 4, 'tau': None, 'pred': 140175734247776, 'succ':140175734249312
+	'id': 140175734249264, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734246944
+	'id': 140175734246944, 'type':swap, 'x': 2, 'y': 2, 'd': 2, 'p': 1, 'tau': None, 'pred': 140175734249264, 'succ':140175734248880
+	'id': 140175734248880, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 2, 'tau': 1450.0, 'pred': 140175734246944, 'succ':140175734248400
+	'id': 140175734248400, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 3, 'tau': 1470.0, 'pred': 140175734248880, 'succ':None
 
 2:
-	'id': 140341486044976, 'type':load, 'x': 2, 'y': 2, 'd': 1, 'p': 5, 'tau': None, 'pred': 140341486043440, 'succ':140341486045408
-	'id': 140341486045408, 'type':move, 'x': 2, 'y': 3, 'd': 1, 'p': 6, 'tau': None, 'pred': 140341486044976, 'succ':140341486045120
-	'id': 140341486045120, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 7, 'tau': 1531.4285714285713, 'pred': 140341486045408, 'succ':None
+	'id': 140175734249312, 'type':load, 'x': 2, 'y': 2, 'd': 1, 'p': 5, 'tau': None, 'pred': 140175734247584, 'succ':140175734249744
+	'id': 140175734249744, 'type':move, 'x': 2, 'y': 3, 'd': 1, 'p': 6, 'tau': None, 'pred': 140175734249312, 'succ':140175734249456
+	'id': 140175734249456, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 7, 'tau': 1531.4285714285713, 'pred': 140175734249744, 'succ':None
 
 3:
-	'id': 140341486044736, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486043680
-	'id': 140341486043680, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486044736, 'succ':140341486042896
-	'id': 140341486042896, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486043680, 'succ':140341486040208
-	'id': 140341486040208, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486042896, 'succ':140341486042608
-	'id': 140341486042608, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486040208, 'succ':None
+	'id': 140175734249072, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734248016
+	'id': 140175734248016, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734249072, 'succ':140175734247136
+	'id': 140175734247136, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734248016, 'succ':140175734245120
+	'id': 140175734245120, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734247136, 'succ':140175734245984
+	'id': 140175734245984, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734245120, 'succ':None
 ------------------------------
 
 updating u2's plan from 0th action
@@ -716,27 +716,27 @@ tau_pred 20, tau_prev 20, 1011.5811159807821 ---> 1031.5811159807822
 tau_pred 1031.5811159807822, tau_prev 1031.5811159807822, 20 ---> 1051.5811159807822
 ------------------------------
 1:
-	'id': 140341486062512, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486062848
-	'id': 140341486062848, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486062512, 'succ':140341486063040
-	'id': 140341486063040, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486062848, 'succ':140341486043392
-	'id': 140341486043392, 'type':move, 'x': 5, 'y': 2, 'd': 1, 'p': 3, 'tau': None, 'pred': 140341486063040, 'succ':140341486043440
-	'id': 140341486043440, 'type':unload, 'x': 2, 'y': 2, 'd': 1, 'p': 4, 'tau': None, 'pred': 140341486043392, 'succ':140341486044976
-	'id': 140341486044928, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486040784
-	'id': 140341486040784, 'type':swap, 'x': 2, 'y': 2, 'd': 2, 'p': 1, 'tau': None, 'pred': 140341486044928, 'succ':140341486044544
-	'id': 140341486044544, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 2, 'tau': 1450.0, 'pred': 140341486040784, 'succ':140341486044064
-	'id': 140341486044064, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 3, 'tau': 1470.0, 'pred': 140341486044544, 'succ':None
+	'id': 140175734262752, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734263088
+	'id': 140175734263088, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734262752, 'succ':140175734263280
+	'id': 140175734263280, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734263088, 'succ':140175734247776
+	'id': 140175734247776, 'type':move, 'x': 5, 'y': 2, 'd': 1, 'p': 3, 'tau': None, 'pred': 140175734263280, 'succ':140175734247584
+	'id': 140175734247584, 'type':unload, 'x': 2, 'y': 2, 'd': 1, 'p': 4, 'tau': None, 'pred': 140175734247776, 'succ':140175734249312
+	'id': 140175734249264, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734246944
+	'id': 140175734246944, 'type':swap, 'x': 2, 'y': 2, 'd': 2, 'p': 1, 'tau': None, 'pred': 140175734249264, 'succ':140175734248880
+	'id': 140175734248880, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 2, 'tau': 1450.0, 'pred': 140175734246944, 'succ':140175734248400
+	'id': 140175734248400, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 3, 'tau': 1470.0, 'pred': 140175734248880, 'succ':None
 
 2:
-	'id': 140341486044976, 'type':load, 'x': 2, 'y': 2, 'd': 1, 'p': 5, 'tau': 20, 'pred': 140341486043440, 'succ':140341486045408
-	'id': 140341486045408, 'type':move, 'x': 2, 'y': 3, 'd': 1, 'p': 6, 'tau': 1031.5811159807822, 'pred': 140341486044976, 'succ':140341486045120
-	'id': 140341486045120, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 7, 'tau': 1051.5811159807822, 'pred': 140341486045408, 'succ':None
+	'id': 140175734249312, 'type':load, 'x': 2, 'y': 2, 'd': 1, 'p': 5, 'tau': 20, 'pred': 140175734247584, 'succ':140175734249744
+	'id': 140175734249744, 'type':move, 'x': 2, 'y': 3, 'd': 1, 'p': 6, 'tau': 1031.5811159807822, 'pred': 140175734249312, 'succ':140175734249456
+	'id': 140175734249456, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 7, 'tau': 1051.5811159807822, 'pred': 140175734249744, 'succ':None
 
 3:
-	'id': 140341486044736, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486043680
-	'id': 140341486043680, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486044736, 'succ':140341486042896
-	'id': 140341486042896, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486043680, 'succ':140341486040208
-	'id': 140341486040208, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486042896, 'succ':140341486042608
-	'id': 140341486042608, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486040208, 'succ':None
+	'id': 140175734249072, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734248016
+	'id': 140175734248016, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734249072, 'succ':140175734247136
+	'id': 140175734247136, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734248016, 'succ':140175734245120
+	'id': 140175734245120, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734247136, 'succ':140175734245984
+	'id': 140175734245984, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734245120, 'succ':None
 ------------------------------
 
 updating u1's plan from 0th action
@@ -754,27 +754,27 @@ tau_pred 2563.0096874093533, tau_prev 2563.0096874093533, 20 ---> 2583.009687409
 tau_pred 3041.4285714285716, tau_prev 3041.4285714285716, 20 ---> 3061.4285714285716
 ------------------------------
 1:
-	'id': 140341486040064, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486041600
-	'id': 140341486041600, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486040064, 'succ':140341486041312
-	'id': 140341486041312, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486041600, 'succ':140341486041264
-	'id': 140341486041264, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486041312, 'succ':140341486040160
-	'id': 140341486040160, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486041264, 'succ':None
+	'id': 140175734246704, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734243440
+	'id': 140175734243440, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734246704, 'succ':140175734243584
+	'id': 140175734243584, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734243440, 'succ':140175734245792
+	'id': 140175734245792, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734243584, 'succ':140175734244112
+	'id': 140175734244112, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734245792, 'succ':None
 
 2:
-	'id': 140341486041648, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486042752
-	'id': 140341486042752, 'type':move, 'x': 2, 'y': 3, 'd': 2, 'p': 1, 'tau': None, 'pred': 140341486041648, 'succ':140341486041120
-	'id': 140341486041120, 'type':unload, 'x': 3, 'y': 3, 'd': 2, 'p': 2, 'tau': None, 'pred': 140341486042752, 'succ':140341486039200
-	'id': 140341486041072, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486044256
-	'id': 140341486044256, 'type':swap, 'x': 3, 'y': 3, 'd': 3, 'p': 1, 'tau': None, 'pred': 140341486041072, 'succ':140341486032688
-	'id': 140341486032688, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 2, 'tau': 735.7142857142857, 'pred': 140341486044256, 'succ':140341486034752
-	'id': 140341486034752, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': 795.7142857142857, 'pred': 140341486032688, 'succ':140341486031440
-	'id': 140341486031440, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 4, 'tau': 1511.4285714285713, 'pred': 140341486034752, 'succ':140341486034128
-	'id': 140341486034128, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 5, 'tau': 1531.4285714285713, 'pred': 140341486031440, 'succ':None
+	'id': 140175734245888, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734244592
+	'id': 140175734244592, 'type':move, 'x': 2, 'y': 3, 'd': 2, 'p': 1, 'tau': None, 'pred': 140175734245888, 'succ':140175734243872
+	'id': 140175734243872, 'type':unload, 'x': 3, 'y': 3, 'd': 2, 'p': 2, 'tau': None, 'pred': 140175734244592, 'succ':140175734245456
+	'id': 140175734244304, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734248592
+	'id': 140175734248592, 'type':swap, 'x': 3, 'y': 3, 'd': 3, 'p': 1, 'tau': None, 'pred': 140175734244304, 'succ':140175734235392
+	'id': 140175734235392, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 2, 'tau': 735.7142857142857, 'pred': 140175734248592, 'succ':140175734239136
+	'id': 140175734239136, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': 795.7142857142857, 'pred': 140175734235392, 'succ':140175734235776
+	'id': 140175734235776, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 4, 'tau': 1511.4285714285713, 'pred': 140175734239136, 'succ':140175734238464
+	'id': 140175734238464, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 5, 'tau': 1531.4285714285713, 'pred': 140175734235776, 'succ':None
 
 3:
-	'id': 140341486039200, 'type':load, 'x': 3, 'y': 3, 'd': 2, 'p': 3, 'tau': None, 'pred': 140341486041120, 'succ':140341486040976
-	'id': 140341486040976, 'type':move, 'x': 3, 'y': 4, 'd': 2, 'p': 4, 'tau': None, 'pred': 140341486039200, 'succ':140341486032880
-	'id': 140341486032880, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1470.0, 'pred': 140341486040976, 'succ':None
+	'id': 140175734245456, 'type':load, 'x': 3, 'y': 3, 'd': 2, 'p': 3, 'tau': None, 'pred': 140175734243872, 'succ':140175734246992
+	'id': 140175734246992, 'type':move, 'x': 3, 'y': 4, 'd': 2, 'p': 4, 'tau': None, 'pred': 140175734245456, 'succ':140175734238704
+	'id': 140175734238704, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1470.0, 'pred': 140175734246992, 'succ':None
 ------------------------------
 
 updating u3's plan from 0th action
@@ -783,27 +783,27 @@ tau_pred 20, tau_prev 20, 1011.5811159807821 ---> 1031.5811159807822
 tau_pred 1031.5811159807822, tau_prev 1031.5811159807822, 20 ---> 1051.5811159807822
 ------------------------------
 1:
-	'id': 140341486040064, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486041600
-	'id': 140341486041600, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486040064, 'succ':140341486041312
-	'id': 140341486041312, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486041600, 'succ':140341486041264
-	'id': 140341486041264, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486041312, 'succ':140341486040160
-	'id': 140341486040160, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486041264, 'succ':None
+	'id': 140175734246704, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734243440
+	'id': 140175734243440, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734246704, 'succ':140175734243584
+	'id': 140175734243584, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734243440, 'succ':140175734245792
+	'id': 140175734245792, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734243584, 'succ':140175734244112
+	'id': 140175734244112, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734245792, 'succ':None
 
 2:
-	'id': 140341486041648, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486042752
-	'id': 140341486042752, 'type':move, 'x': 2, 'y': 3, 'd': 2, 'p': 1, 'tau': None, 'pred': 140341486041648, 'succ':140341486041120
-	'id': 140341486041120, 'type':unload, 'x': 3, 'y': 3, 'd': 2, 'p': 2, 'tau': None, 'pred': 140341486042752, 'succ':140341486039200
-	'id': 140341486041072, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486044256
-	'id': 140341486044256, 'type':swap, 'x': 3, 'y': 3, 'd': 3, 'p': 1, 'tau': None, 'pred': 140341486041072, 'succ':140341486032688
-	'id': 140341486032688, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 2, 'tau': 735.7142857142857, 'pred': 140341486044256, 'succ':140341486034752
-	'id': 140341486034752, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': 795.7142857142857, 'pred': 140341486032688, 'succ':140341486031440
-	'id': 140341486031440, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 4, 'tau': 1511.4285714285713, 'pred': 140341486034752, 'succ':140341486034128
-	'id': 140341486034128, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 5, 'tau': 1531.4285714285713, 'pred': 140341486031440, 'succ':None
+	'id': 140175734245888, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734244592
+	'id': 140175734244592, 'type':move, 'x': 2, 'y': 3, 'd': 2, 'p': 1, 'tau': None, 'pred': 140175734245888, 'succ':140175734243872
+	'id': 140175734243872, 'type':unload, 'x': 3, 'y': 3, 'd': 2, 'p': 2, 'tau': None, 'pred': 140175734244592, 'succ':140175734245456
+	'id': 140175734244304, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734248592
+	'id': 140175734248592, 'type':swap, 'x': 3, 'y': 3, 'd': 3, 'p': 1, 'tau': None, 'pred': 140175734244304, 'succ':140175734235392
+	'id': 140175734235392, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 2, 'tau': 735.7142857142857, 'pred': 140175734248592, 'succ':140175734239136
+	'id': 140175734239136, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': 795.7142857142857, 'pred': 140175734235392, 'succ':140175734235776
+	'id': 140175734235776, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 4, 'tau': 1511.4285714285713, 'pred': 140175734239136, 'succ':140175734238464
+	'id': 140175734238464, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 5, 'tau': 1531.4285714285713, 'pred': 140175734235776, 'succ':None
 
 3:
-	'id': 140341486039200, 'type':load, 'x': 3, 'y': 3, 'd': 2, 'p': 3, 'tau': 20, 'pred': 140341486041120, 'succ':140341486040976
-	'id': 140341486040976, 'type':move, 'x': 3, 'y': 4, 'd': 2, 'p': 4, 'tau': 1031.5811159807822, 'pred': 140341486039200, 'succ':140341486032880
-	'id': 140341486032880, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1051.5811159807822, 'pred': 140341486040976, 'succ':None
+	'id': 140175734245456, 'type':load, 'x': 3, 'y': 3, 'd': 2, 'p': 3, 'tau': 20, 'pred': 140175734243872, 'succ':140175734246992
+	'id': 140175734246992, 'type':move, 'x': 3, 'y': 4, 'd': 2, 'p': 4, 'tau': 1031.5811159807822, 'pred': 140175734245456, 'succ':140175734238704
+	'id': 140175734238704, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1051.5811159807822, 'pred': 140175734246992, 'succ':None
 ------------------------------
 
 updating u2's plan from 0th action
@@ -821,27 +821,27 @@ tau_pred 1907.295401695068, tau_prev 1907.295401695068, 715.7142857142857 ---> 2
 tau_pred 2623.009687409354, tau_prev 2623.009687409354, 20 ---> 2643.009687409354
 ------------------------------
 1:
-	'id': 140341486034320, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486032640
-	'id': 140341486032640, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486034320, 'succ':140341486031536
-	'id': 140341486031536, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': 140341486032640, 'succ':140341486032736
-	'id': 140341486042800, 'type':load, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': None, 'pred': 140341486043088, 'succ':140341486014128
-	'id': 140341486014128, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 4, 'tau': None, 'pred': 140341486042800, 'succ':140341486013456
-	'id': 140341486013456, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140341486014128, 'succ':140341486011104
-	'id': 140341486011104, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 6, 'tau': 1531.4285714285713, 'pred': 140341486013456, 'succ':None
+	'id': 140175734238656, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734236976
+	'id': 140175734236976, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734238656, 'succ':140175734235872
+	'id': 140175734235872, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': 140175734236976, 'succ':140175734237216
+	'id': 140175734247280, 'type':load, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': None, 'pred': 140175734246560, 'succ':140175734222560
+	'id': 140175734222560, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 4, 'tau': None, 'pred': 140175734247280, 'succ':140175734221888
+	'id': 140175734221888, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140175734222560, 'succ':140175734219536
+	'id': 140175734219536, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 6, 'tau': 1531.4285714285713, 'pred': 140175734221888, 'succ':None
 
 2:
-	'id': 140341486032496, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486011584
-	'id': 140341486011584, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486032496, 'succ':140341486011296
-	'id': 140341486011296, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486011584, 'succ':None
+	'id': 140175734236832, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734220016
+	'id': 140175734220016, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734236832, 'succ':140175734219728
+	'id': 140175734219728, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734220016, 'succ':None
 
 3:
-	'id': 140341486011776, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486010480
-	'id': 140341486010480, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486011776, 'succ':140341486043088
-	'id': 140341486043088, 'type':unload, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': 140341486010480, 'succ':140341486042800
-	'id': 140341486032736, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': None, 'pred': 140341486031536, 'succ':140341486014176
-	'id': 140341486014176, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 4, 'tau': None, 'pred': 140341486032736, 'succ':140341486012304
-	'id': 140341486012304, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140341486014176, 'succ':140341486012736
-	'id': 140341486012736, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 6, 'tau': 1531.4285714285713, 'pred': 140341486012304, 'succ':None
+	'id': 140175734220208, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734218960
+	'id': 140175734218960, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734220208, 'succ':140175734246560
+	'id': 140175734246560, 'type':unload, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': 140175734218960, 'succ':140175734247280
+	'id': 140175734237216, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': None, 'pred': 140175734235872, 'succ':140175734222608
+	'id': 140175734222608, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 4, 'tau': None, 'pred': 140175734237216, 'succ':140175734220736
+	'id': 140175734220736, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140175734222608, 'succ':140175734221168
+	'id': 140175734221168, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 6, 'tau': 1531.4285714285713, 'pred': 140175734220736, 'succ':None
 ------------------------------
 
 updating u3's plan from 0th action
@@ -858,27 +858,27 @@ tau_pred 1551.4285714285713, tau_prev 1551.4285714285713, 20 ---> 1571.428571428
 tau_pred 1551.4285714285713, tau_prev 1551.4285714285713, 20 ---> 1571.4285714285713
 ------------------------------
 1:
-	'id': 140341486034320, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486032640
-	'id': 140341486032640, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486034320, 'succ':140341486031536
-	'id': 140341486031536, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': 140341486032640, 'succ':140341486032736
-	'id': 140341486042800, 'type':load, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': 775.7142857142857, 'pred': 140341486043088, 'succ':140341486014128
-	'id': 140341486014128, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 4, 'tau': 835.7142857142857, 'pred': 140341486042800, 'succ':140341486013456
-	'id': 140341486013456, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 5, 'tau': 1551.4285714285713, 'pred': 140341486014128, 'succ':140341486011104
-	'id': 140341486011104, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 6, 'tau': 1571.4285714285713, 'pred': 140341486013456, 'succ':None
+	'id': 140175734238656, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734236976
+	'id': 140175734236976, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734238656, 'succ':140175734235872
+	'id': 140175734235872, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': None, 'pred': 140175734236976, 'succ':140175734237216
+	'id': 140175734247280, 'type':load, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': 775.7142857142857, 'pred': 140175734246560, 'succ':140175734222560
+	'id': 140175734222560, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 4, 'tau': 835.7142857142857, 'pred': 140175734247280, 'succ':140175734221888
+	'id': 140175734221888, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 5, 'tau': 1551.4285714285713, 'pred': 140175734222560, 'succ':140175734219536
+	'id': 140175734219536, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 6, 'tau': 1571.4285714285713, 'pred': 140175734221888, 'succ':None
 
 2:
-	'id': 140341486032496, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486011584
-	'id': 140341486011584, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140341486032496, 'succ':140341486011296
-	'id': 140341486011296, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140341486011584, 'succ':None
+	'id': 140175734236832, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734220016
+	'id': 140175734220016, 'type':move, 'x': 2, 'y': 4, 'd': 2, 'p': 1, 'tau': 1450.0, 'pred': 140175734236832, 'succ':140175734219728
+	'id': 140175734219728, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 2, 'tau': 1470.0, 'pred': 140175734220016, 'succ':None
 
 3:
-	'id': 140341486011776, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486010480
-	'id': 140341486010480, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486011776, 'succ':140341486043088
-	'id': 140341486043088, 'type':unload, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 755.7142857142857, 'pred': 140341486010480, 'succ':140341486042800
-	'id': 140341486032736, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': 775.7142857142857, 'pred': 140341486031536, 'succ':140341486014176
-	'id': 140341486014176, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 4, 'tau': 835.7142857142857, 'pred': 140341486032736, 'succ':140341486012304
-	'id': 140341486012304, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 5, 'tau': 1551.4285714285713, 'pred': 140341486014176, 'succ':140341486012736
-	'id': 140341486012736, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 6, 'tau': 1571.4285714285713, 'pred': 140341486012304, 'succ':None
+	'id': 140175734220208, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734218960
+	'id': 140175734218960, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734220208, 'succ':140175734246560
+	'id': 140175734246560, 'type':unload, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 755.7142857142857, 'pred': 140175734218960, 'succ':140175734247280
+	'id': 140175734237216, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': 775.7142857142857, 'pred': 140175734235872, 'succ':140175734222608
+	'id': 140175734222608, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 4, 'tau': 835.7142857142857, 'pred': 140175734237216, 'succ':140175734220736
+	'id': 140175734220736, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 5, 'tau': 1551.4285714285713, 'pred': 140175734222608, 'succ':140175734221168
+	'id': 140175734221168, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 6, 'tau': 1571.4285714285713, 'pred': 140175734220736, 'succ':None
 ------------------------------
 
 updating u1's plan from 0th action
@@ -895,29 +895,29 @@ tau_pred 1551.4285714285713, tau_prev 1551.4285714285713, 20 ---> 1571.428571428
 tau_pred 1551.4285714285713, tau_prev 1551.4285714285713, 20 ---> 1571.4285714285713
 ------------------------------
 1:
-	'id': 140341486013552, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486010720
-	'id': 140341486010720, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486013552, 'succ':140341486020016
-	'id': 140341486020016, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486010720, 'succ':140341486021648
-	'id': 140341486021648, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486020016, 'succ':140341486020544
-	'id': 140341486020544, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486021648, 'succ':None
+	'id': 140175734221984, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734219152
+	'id': 140175734219152, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734221984, 'succ':140175734226224
+	'id': 140175734226224, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734219152, 'succ':140175734223824
+	'id': 140175734223824, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734226224, 'succ':140175734223536
+	'id': 140175734223536, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734223824, 'succ':None
 
 2:
-	'id': 140341486013360, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486043728
-	'id': 140341486043728, 'type':move, 'x': 2, 'y': 5, 'd': 2, 'p': 1, 'tau': None, 'pred': 140341486013360, 'succ':140341486034800
-	'id': 140341486034800, 'type':unload, 'x': 5, 'y': 5, 'd': 2, 'p': 2, 'tau': None, 'pred': 140341486043728, 'succ':140341486022176
-	'id': 140341486014032, 'type':load, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': None, 'pred': 140341486012160, 'succ':140341486012592
-	'id': 140341486012592, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 4, 'tau': None, 'pred': 140341486014032, 'succ':140341485923968
-	'id': 140341485923968, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140341486012592, 'succ':140341486005216
-	'id': 140341486005216, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 6, 'tau': 1531.4285714285713, 'pred': 140341485923968, 'succ':None
+	'id': 140175734221792, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734248064
+	'id': 140175734248064, 'type':move, 'x': 2, 'y': 5, 'd': 2, 'p': 1, 'tau': None, 'pred': 140175734221792, 'succ':140175734238944
+	'id': 140175734238944, 'type':unload, 'x': 5, 'y': 5, 'd': 2, 'p': 2, 'tau': None, 'pred': 140175734248064, 'succ':140175734226560
+	'id': 140175734222464, 'type':load, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': None, 'pred': 140175734220592, 'succ':140175734221024
+	'id': 140175734221024, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 4, 'tau': None, 'pred': 140175734222464, 'succ':140175734208352
+	'id': 140175734208352, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 5, 'tau': 1511.4285714285713, 'pred': 140175734221024, 'succ':140175734210512
+	'id': 140175734210512, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 6, 'tau': 1531.4285714285713, 'pred': 140175734208352, 'succ':None
 
 3:
-	'id': 140341486011008, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486020304
-	'id': 140341486020304, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486011008, 'succ':140341486012160
-	'id': 140341486012160, 'type':unload, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': 140341486020304, 'succ':140341486014032
-	'id': 140341486022176, 'type':load, 'x': 5, 'y': 5, 'd': 2, 'p': 3, 'tau': None, 'pred': 140341486034800, 'succ':140341485921520
-	'id': 140341485921520, 'type':swap, 'x': 5, 'y': 5, 'd': 2, 'p': 4, 'tau': None, 'pred': 140341486022176, 'succ':140341486013696
-	'id': 140341486013696, 'type':move, 'x': 5, 'y': 4, 'd': 2, 'p': 5, 'tau': None, 'pred': 140341485921520, 'succ':140341486018768
-	'id': 140341486018768, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 6, 'tau': 1470.0, 'pred': 140341486013696, 'succ':None
+	'id': 140175734219440, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734224640
+	'id': 140175734224640, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734219440, 'succ':140175734220592
+	'id': 140175734220592, 'type':unload, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': None, 'pred': 140175734224640, 'succ':140175734222464
+	'id': 140175734226560, 'type':load, 'x': 5, 'y': 5, 'd': 2, 'p': 3, 'tau': None, 'pred': 140175734238944, 'succ':140175734209264
+	'id': 140175734209264, 'type':swap, 'x': 5, 'y': 5, 'd': 2, 'p': 4, 'tau': None, 'pred': 140175734226560, 'succ':140175734222128
+	'id': 140175734222128, 'type':move, 'x': 5, 'y': 4, 'd': 2, 'p': 5, 'tau': None, 'pred': 140175734209264, 'succ':140175734225552
+	'id': 140175734225552, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 6, 'tau': 1470.0, 'pred': 140175734222128, 'succ':None
 ------------------------------
 
 updating u3's plan from 0th action
@@ -934,29 +934,29 @@ tau_pred 1551.4285714285713, tau_prev 1551.4285714285713, 20 ---> 1571.428571428
 tau_pred 1551.4285714285713, tau_prev 1551.4285714285713, 20 ---> 1571.4285714285713
 ------------------------------
 1:
-	'id': 140341486013552, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486010720
-	'id': 140341486010720, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486013552, 'succ':140341486020016
-	'id': 140341486020016, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140341486010720, 'succ':140341486021648
-	'id': 140341486021648, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140341486020016, 'succ':140341486020544
-	'id': 140341486020544, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140341486021648, 'succ':None
+	'id': 140175734221984, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734219152
+	'id': 140175734219152, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734221984, 'succ':140175734226224
+	'id': 140175734226224, 'type':swap, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 795.7142857142857, 'pred': 140175734219152, 'succ':140175734223824
+	'id': 140175734223824, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 3, 'tau': 1511.4285714285713, 'pred': 140175734226224, 'succ':140175734223536
+	'id': 140175734223536, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 4, 'tau': 1531.4285714285713, 'pred': 140175734223824, 'succ':None
 
 2:
-	'id': 140341486013360, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486043728
-	'id': 140341486043728, 'type':move, 'x': 2, 'y': 5, 'd': 2, 'p': 1, 'tau': None, 'pred': 140341486013360, 'succ':140341486034800
-	'id': 140341486034800, 'type':unload, 'x': 5, 'y': 5, 'd': 2, 'p': 2, 'tau': None, 'pred': 140341486043728, 'succ':140341486022176
-	'id': 140341486014032, 'type':load, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': 775.7142857142857, 'pred': 140341486012160, 'succ':140341486012592
-	'id': 140341486012592, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 4, 'tau': 835.7142857142857, 'pred': 140341486014032, 'succ':140341485923968
-	'id': 140341485923968, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 5, 'tau': 1551.4285714285713, 'pred': 140341486012592, 'succ':140341486005216
-	'id': 140341486005216, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 6, 'tau': 1571.4285714285713, 'pred': 140341485923968, 'succ':None
+	'id': 140175734221792, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734248064
+	'id': 140175734248064, 'type':move, 'x': 2, 'y': 5, 'd': 2, 'p': 1, 'tau': None, 'pred': 140175734221792, 'succ':140175734238944
+	'id': 140175734238944, 'type':unload, 'x': 5, 'y': 5, 'd': 2, 'p': 2, 'tau': None, 'pred': 140175734248064, 'succ':140175734226560
+	'id': 140175734222464, 'type':load, 'x': 5, 'y': 5, 'd': 3, 'p': 3, 'tau': 775.7142857142857, 'pred': 140175734220592, 'succ':140175734221024
+	'id': 140175734221024, 'type':swap, 'x': 5, 'y': 5, 'd': 3, 'p': 4, 'tau': 835.7142857142857, 'pred': 140175734222464, 'succ':140175734208352
+	'id': 140175734208352, 'type':move, 'x': 5, 'y': 4, 'd': 3, 'p': 5, 'tau': 1551.4285714285713, 'pred': 140175734221024, 'succ':140175734210512
+	'id': 140175734210512, 'type':unload, 'x': 4, 'y': 4, 'd': 3, 'p': 6, 'tau': 1571.4285714285713, 'pred': 140175734208352, 'succ':None
 
 3:
-	'id': 140341486011008, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140341486020304
-	'id': 140341486020304, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140341486011008, 'succ':140341486012160
-	'id': 140341486012160, 'type':unload, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 755.7142857142857, 'pred': 140341486020304, 'succ':140341486014032
-	'id': 140341486022176, 'type':load, 'x': 5, 'y': 5, 'd': 2, 'p': 3, 'tau': 775.7142857142857, 'pred': 140341486034800, 'succ':140341485921520
-	'id': 140341485921520, 'type':swap, 'x': 5, 'y': 5, 'd': 2, 'p': 4, 'tau': 835.7142857142857, 'pred': 140341486022176, 'succ':140341486013696
-	'id': 140341486013696, 'type':move, 'x': 5, 'y': 4, 'd': 2, 'p': 5, 'tau': 1551.4285714285713, 'pred': 140341485921520, 'succ':140341486018768
-	'id': 140341486018768, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 6, 'tau': 1571.4285714285713, 'pred': 140341486013696, 'succ':None
+	'id': 140175734219440, 'type':load, 'x': 3, 'y': 3, 'd': 3, 'p': 0, 'tau': 20, 'pred': None, 'succ':140175734224640
+	'id': 140175734224640, 'type':move, 'x': 3, 'y': 5, 'd': 3, 'p': 1, 'tau': 735.7142857142857, 'pred': 140175734219440, 'succ':140175734220592
+	'id': 140175734220592, 'type':unload, 'x': 5, 'y': 5, 'd': 3, 'p': 2, 'tau': 755.7142857142857, 'pred': 140175734224640, 'succ':140175734222464
+	'id': 140175734226560, 'type':load, 'x': 5, 'y': 5, 'd': 2, 'p': 3, 'tau': 775.7142857142857, 'pred': 140175734238944, 'succ':140175734209264
+	'id': 140175734209264, 'type':swap, 'x': 5, 'y': 5, 'd': 2, 'p': 4, 'tau': 835.7142857142857, 'pred': 140175734226560, 'succ':140175734222128
+	'id': 140175734222128, 'type':move, 'x': 5, 'y': 4, 'd': 2, 'p': 5, 'tau': 1551.4285714285713, 'pred': 140175734209264, 'succ':140175734225552
+	'id': 140175734225552, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 6, 'tau': 1571.4285714285713, 'pred': 140175734222128, 'succ':None
 ------------------------------
 
 updating u2's plan from 0th action
