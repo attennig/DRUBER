@@ -1,0 +1,81 @@
+Constructor : 
+	simulation seed: 13
+	output path: ./out/Small
+	input data folder ./in/MILPexp
+	output data folder ./out/Small/S6D3U4/13
+	loading data from ./in/MILPexp
+	initializing MILP Solver
+Set parameter Username
+Set parameter TimeLimit to value 86400
+Set parameter MemLimit to value 64
+Set parameter Method to value 0
+Academic license - for non-commercial use only - expires 2023-04-21
+	 Setting up MILP
+6, 6
+	 Saving MILP in ./out/Small/S6D3U4/13/MILP-primal/model.lp
+Warning: linear constraint 105355 and linear constraint 374015 have the same name "socInit_1"
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (linux64)
+Thread count: 24 physical cores, 48 logical processors, using up to 24 threads
+Optimize a model with 376947 rows, 969 columns and 2319636 nonzeros
+Model fingerprint: 0xd1faa327
+Variable types: 57 continuous, 912 integer (912 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+05]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+06]
+Presolve removed 63602 rows and 181 columns (presolve time = 5s) ...
+Presolve removed 63602 rows and 181 columns
+Presolve time: 8.88s
+Presolved: 313345 rows, 788 columns, 1923723 nonzeros
+Variable types: 45 continuous, 743 integer (743 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -1.5594184e+07   0.000000e+00   1.216547e+09     14s
+   13808    9.7735732e+00   0.000000e+00   2.517328e+06     15s
+   20436    5.0000000e+00   0.000000e+00   0.000000e+00     16s
+   20436    5.0000000e+00   0.000000e+00   0.000000e+00     16s
+   20436    5.0000000e+00   0.000000e+00   0.000000e+00     17s
+
+Root relaxation: objective 5.000000e+00, 20436 iterations, 6.16 seconds (3.92 work units)
+Total elapsed time = 21.36s
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    5.00000    0  152          -    5.00000      -     -   23s
+     0     0    9.71533    0  163          -    9.71533      -     -   40s
+     0     0    9.71936    0  159          -    9.71936      -     -   43s
+     0     0   15.44313    0  211          -   15.44313      -     -   60s
+     0     0   15.44313    0  209          -   15.44313      -     -   66s
+     0     0   17.34624    0  171          -   17.34624      -     -   80s
+     0     0   18.28519    0  202          -   18.28519      -     -   85s
+     0     0   18.28519    0  202          -   18.28519      -     -   88s
+     0     0   18.55956    0  201          -   18.55956      -     -  104s
+     0     0   18.55956    0  196          -   18.55956      -     -  109s
+     0     0   18.56266    0  185          -   18.56266      -     -  125s
+     0     0   18.56266    0  186          -   18.56266      -     -  138s
+     0     0   18.57614    0  200          -   18.57614      -     -  145s
+     0     0   18.57614    0  190          -   18.57614      -     -  147s
+     0     0   18.57614    0  193          -   18.57614      -     -  148s
+     0     0   18.57614    0  188          -   18.57614      -     -  149s
+     0     0   18.58836    0  169          -   18.58836      -     -  161s
+     0     0   18.58836    0  141          -   18.58836      -     -  163s
+     0     0   18.58836    0  193          -   18.58836      -     -  169s
+     0     0   18.58836    0  198          -   18.58836      -     -  171s
+     0     0   18.58836    0  161          -   18.58836      -     -  190s
+     0     0   18.58836    0  148          -   18.58836      -     -  208s
+     0     2   18.58836    0  148          -   18.58836      -     -  369s
+     1     4   19.06502    1  146          -   18.58836      -   234  370s
+     3     8   19.06502    2  151          -   18.58836      -   131  376s
+     7    16   19.06502    3  144          -   18.58836      -   157  384s
+    15    32   19.06502    4  174          -   18.58836      -   154  391s
+    31    56   20.09595    5  169          -   19.06502      -   150  432s
+    55    80   40.67985    6   99          -   19.06502      -   257  446s
+    79   104   20.09595    6  159          -   19.06502      -   287  450s
+   103   128   40.52313    7   95          -   19.06502      -   242  460s
+   127   162   23.20979    7  206          -   19.06502      -   221  470s
+   161   197   23.50418    8  196          -   19.06502      -   194  498s
+   196   234   23.80613   10  188          -   19.06502      -   179  509s

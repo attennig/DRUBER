@@ -1,0 +1,125 @@
+Constructor : 
+	simulation seed: 9
+	output path: ./out/Small
+	input data folder ./in/MILPexp
+	output data folder ./out/Small/S5D2U2/9
+	loading data from ./in/MILPexp
+	initializing MILP Solver
+Set parameter Username
+Set parameter TimeLimit to value 86400
+Set parameter MemLimit to value 64
+Set parameter Method to value 0
+Academic license - for non-commercial use only - expires 2023-04-21
+	 Setting up MILP
+6, 6
+	 Saving MILP in ./out/Small/S5D2U2/9/MILP-primal/model.lp
+Warning: linear constraint 15030 and linear constraint 45560 have the same name "socInit_1"
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (linux64)
+Thread count: 24 physical cores, 48 logical processors, using up to 24 threads
+Optimize a model with 46306 rows, 377 columns and 277830 nonzeros
+Model fingerprint: 0x2efb8c15
+Variable types: 29 continuous, 348 integer (348 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+05]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+06]
+Presolve removed 9832 rows and 88 columns
+Presolve time: 0.73s
+Presolved: 36474 rows, 289 columns, 221142 nonzeros
+Variable types: 23 continuous, 266 integer (266 binary)
+
+Root relaxation: objective 1.000000e+01, 322 iterations, 0.22 seconds (0.21 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   10.00000    0   73          -   10.00000      -     -    1s
+     0     0   19.80423    0   65          -   19.80423      -     -    2s
+     0     0   20.90766    0  118          -   20.90766      -     -    3s
+     0     0   21.32095    0  115          -   21.32095      -     -    3s
+     0     0   21.35853    0  125          -   21.35853      -     -    3s
+     0     0   21.41918    0  123          -   21.41918      -     -    4s
+     0     0   21.41918    0  127          -   21.41918      -     -    4s
+     0     0   23.35545    0  107          -   23.35545      -     -    4s
+     0     0   23.35545    0  107          -   23.35545      -     -    4s
+     0     0   24.00000    0   92          -   24.00000      -     -    5s
+     0     0   24.00000    0   93          -   24.00000      -     -    5s
+     0     0   24.96284    0   90          -   24.96284      -     -    6s
+     0     2   24.96284    0   90          -   24.96284      -     -    9s
+    15    32   24.96284    4   78          -   24.96284      -  45.7   10s
+   334   287   80.00000   13   54          -   28.23529      -  75.9   15s
+   901   519 infeasible   31               -   28.23529      -  50.3   20s
+* 1265   607              17    2123.1622320   32.00000  98.5%  42.3   21s
+H 1363   645                    2123.1622317   32.00000  98.5%  41.0   22s
+* 1498   677              25    2083.1622320   32.00000  98.5%  39.1   23s
+H 1616   707                    1531.4285714   32.00000  97.9%  37.8   23s
+  1883   725  280.62911   13   53 1531.42857   35.00000  97.7%  35.6   26s
+H 1898   725                    1531.4285138   35.00000  97.7%  35.7   26s
+  2108   793 1471.42857   24   27 1531.42851   35.00000  97.7%  34.7   36s
+  2374   830   40.03410   16   60 1531.42851   40.00000  97.4%  33.1   40s
+  3153  1007   46.66667   18   35 1531.42851   40.00000  97.4%  29.1   45s
+  3970  1165 infeasible   32      1531.42851   40.00000  97.4%  27.8   50s
+  4689  1290 infeasible   19      1531.42851   40.00000  97.4%  27.1   56s
+  5573  1299 1047.61286   24   76 1531.42851   40.00000  97.4%  26.1   61s
+  6324  1277 1480.00000   19   36 1531.42851   40.00000  97.4%  26.2   66s
+* 6674  1238              28    1511.4285714   48.50000  96.8%  26.5   68s
+  6808  1213   60.07833   13   61 1511.42857   50.66667  96.6%  26.5   70s
+  7434  1176 infeasible   18      1511.42857   60.00000  96.0%  26.6   77s
+H 7466  1176                    1511.4285713   60.00000  96.0%  26.7   77s
+  7527  1171   60.06197   24   60 1511.42857   60.00000  96.0%  26.7   80s
+  8445  1134 infeasible   12      1511.42857   80.00000  94.7%  27.2   87s
+  8747  1114 infeasible   18      1511.42857   80.00000  94.7%  27.5   94s
+  9056  1086 1060.38112    9   60 1511.42857  634.28713  58.0%  27.4   97s
+  9500  1062 1042.88399   14   57 1511.42857  755.71429  50.0%  27.3  100s
+ 10716  1018 1051.58112   31   16 1511.42857  755.71429  50.0%  26.5  107s
+ 11305   974 1051.58112    7   52 1511.42857  755.71429  50.0%  26.3  111s
+ 12247   843 1058.24778    9   33 1511.42857 1051.58112  30.4%  26.5  118s
+ 12808   801 1091.58112   18   37 1511.42857 1051.58112  30.4%  26.5  122s
+ 13255   726 1098.24778   16   33 1511.42857 1061.58112  29.8%  26.7  125s
+ 13937   677 1091.58112   10   48 1511.42857 1091.58112  27.8%  26.5  130s
+ 15636   395 1474.75239   23    8 1511.42857 1091.58112  27.8%  25.7  140s
+ 16924   233 1490.00000   30    2 1511.42857 1461.35135  3.31%  24.7  145s
+ 18941     0 infeasible   26      1511.42857 1470.00000  2.74%  23.5  151s
+
+Cutting planes:
+  Gomory: 1
+  Cover: 223
+  Implied bound: 62
+  Clique: 17
+  MIR: 12
+  GUB cover: 23
+  Inf proof: 106
+  Zero half: 11
+  RLT: 55
+  BQP: 1
+
+Explored 19266 nodes (449968 simplex iterations) in 151.46 seconds (113.70 work units)
+Thread count was 24 (of 48 available processors)
+
+Solution count 6: 1511.43 1531.43 1531.43 ... 2123.16
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.511428571277e+03, best bound 1.511428571277e+03, gap 0.0000%
+Gurobi status: 2
+------------------------------
+1:
+	'id': 139874307943200, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 19.999999999999318, 'pred': None, 'succ':139874307943152
+	'id': 139874307943152, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.7142857143181, 'pred': 139874307943200, 'succ':139874307943104
+	'id': 139874307943104, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 755.7142857143181, 'pred': 139874307943152, 'succ':139874299281264
+	'id': 139874307943056, 'type':load, 'x': 5, 'y': 5, 'd': 2, 'p': 3, 'tau': 775.7142857143181, 'pred': None, 'succ':139874307943584
+	'id': 139874307943584, 'type':move, 'x': 5, 'y': 4, 'd': 2, 'p': 4, 'tau': 1491.4285712773935, 'pred': 139874307943056, 'succ':139874307943536
+	'id': 139874307943536, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1511.4285712773935, 'pred': 139874307943584, 'succ':139874307943248
+
+2:
+	'id': 139874307943248, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 19.999999999999318, 'pred': 139874307943536, 'succ':139874299846608
+	'id': 139874299846608, 'type':move, 'x': 2, 'y': 5, 'd': 2, 'p': 1, 'tau': 735.7142857143181, 'pred': 139874307943248, 'succ':139874299617232
+	'id': 139874299617232, 'type':unload, 'x': 5, 'y': 5, 'd': 2, 'p': 2, 'tau': 755.7142857143181, 'pred': 139874299846608, 'succ':None
+	'id': 139874299281264, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': 775.7142857143181, 'pred': 139874307943104, 'succ':139874299281312
+	'id': 139874299281312, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 4, 'tau': 1491.4285712773935, 'pred': 139874299281264, 'succ':139874299281360
+	'id': 139874299281360, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 5, 'tau': 1511.4285712773935, 'pred': 139874299281312, 'succ':None
+------------------------------
+
+	Saving solution in ./out/Small/S5D2U2/9/MILP-primal/schedule.json
+saving schedule
+saving metrics
