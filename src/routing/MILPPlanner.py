@@ -350,9 +350,10 @@ class MILPPlanner(PathPlanner):
                                 self.model.addConstr(
                                     C[f"{u},{k}"] >=
                                     C[f"{u2},{k2}"] + self.simulation.load_time * delta[f"{u},{k},load"]
-                                    + self.simulation.unload_time * delta[f"{u},{k},unload"] + self.simulation.swap_time * delta[f"{u},{k},swap"]
                                     - self.simulation.horizon * (2 - (seq[f"{u},{k},{d},{p}"] + seq[f"{u2},{k2},{d},{p - 1}"])),
                                     f"deliveryPred_{d},{p},{u},{k},{u2},{k2}")
+                                    #+ self.simulation.unload_time * delta[f"{u},{k},unload"] + self.simulation.swap_time * delta[f"{u},{k},swap"]
+
                                 #for (i, j) in self.simulation.edges:
                                 #    self.model.addConstr(
                                 #        C[f"{u},{k}"] >=
