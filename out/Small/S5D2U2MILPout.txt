@@ -1,0 +1,110 @@
+Constructor : 
+	simulation seed: 9
+	output path: ./out/Small
+	input data folder ./in/MILPexp
+	output data folder ./out/Small/S5D2U2/9
+	loading data from ./in/MILPexp
+	initializing MILP Solver
+Set parameter Username
+Set parameter TimeLimit to value 86400
+Set parameter MemLimit to value 64
+Set parameter Method to value 0
+Academic license - for non-commercial use only - expires 2023-04-21
+	 Setting up MILP
+6, 6
+	 Saving MILP in ./out/Small/S5D2U2/9/MILP-primal/model.lp
+Warning: linear constraint 15030 and linear constraint 16760 have the same name "socInit_1"
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (linux64)
+Thread count: 24 physical cores, 48 logical processors, using up to 24 threads
+Optimize a model with 17506 rows, 377 columns and 78150 nonzeros
+Model fingerprint: 0x11a6424b
+Variable types: 29 continuous, 348 integer (348 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+05]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 6e+05]
+Presolve removed 5998 rows and 102 columns
+Presolve time: 0.23s
+Presolved: 11508 rows, 275 columns, 51898 nonzeros
+Variable types: 23 continuous, 252 integer (252 binary)
+
+Root relaxation: objective 2.000000e+01, 415 iterations, 0.11 seconds (0.13 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.00000    0   23          -   20.00000      -     -    0s
+     0     0   20.00000    0   55          -   20.00000      -     -    0s
+     0     0   20.41557    0   43          -   20.41557      -     -    1s
+     0     0   29.85388    0   92          -   29.85388      -     -    1s
+     0     0   30.00000    0  101          -   30.00000      -     -    1s
+     0     0   30.00000    0  104          -   30.00000      -     -    1s
+     0     0   30.00000    0   99          -   30.00000      -     -    1s
+     0     0   30.00000    0   98          -   30.00000      -     -    1s
+     0     0   30.00000    0   93          -   30.00000      -     -    1s
+H    0     0                    1531.4285714   30.00000  98.0%     -    1s
+     0     0   30.00000    0   96 1531.42857   30.00000  98.0%     -    1s
+     0     0   40.00000    0   93 1531.42857   40.00000  97.4%     -    1s
+     0     0   40.00000    0   90 1531.42857   40.00000  97.4%     -    1s
+     0     0   40.00000    0   98 1531.42857   40.00000  97.4%     -    2s
+     0     0   40.00000    0   98 1531.42857   40.00000  97.4%     -    2s
+     0     0   40.00000    0   87 1531.42857   40.00000  97.4%     -    2s
+     0     0   40.00000    0   87 1531.42857   40.00000  97.4%     -    2s
+     0     0   40.00000    0   78 1531.42857   40.00000  97.4%     -    2s
+     0     0   40.00000    0   89 1531.42857   40.00000  97.4%     -    2s
+     0     0   40.00000    0   79 1531.42857   40.00000  97.4%     -    2s
+     0     0   40.00000    0   88 1531.42857   40.00000  97.4%     -    2s
+     0     0   40.00000    0   80 1531.42857   40.00000  97.4%     -    2s
+     0     0   40.00000    0   80 1531.42857   40.00000  97.4%     -    3s
+     0     2   40.00000    0   80 1531.42857   40.00000  97.4%     -    3s
+H   36    51                    1531.4285713   40.00000  97.4%   124    3s
+   422   204 1051.58112   17   45 1531.42857   40.00000  97.4%  57.2    5s
+  3752   720   51.60991    8   70 1531.42857   40.00000  97.4%  29.4   10s
+  7205   802 infeasible   18      1531.42857   40.01100  97.4%  28.5   15s
+* 8272   825              21    1511.4285714   40.06129  97.3%  29.0   16s
+ 10066   798 1471.42857   17   54 1511.42857  755.71429  50.0%  30.8   20s
+ 13941   450 infeasible   12      1511.42857 1091.58112  27.8%  29.9   25s
+
+Cutting planes:
+  Gomory: 23
+  Cover: 282
+  Implied bound: 265
+  Clique: 10
+  MIR: 28
+  StrongCG: 4
+  GUB cover: 32
+  Inf proof: 78
+  Zero half: 14
+  Mod-K: 2
+  RLT: 60
+
+Explored 19835 nodes (539077 simplex iterations) in 29.83 seconds (21.26 work units)
+Thread count was 24 (of 48 available processors)
+
+Solution count 3: 1511.43 1531.43 1531.43 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.511428571429e+03, best bound 1.511428571429e+03, gap 0.0000%
+Gurobi status: 2
+------------------------------
+1:
+	'id': 139860249435008, 'type':load, 'x': 1, 'y': 1, 'd': 1, 'p': 0, 'tau': 20.0, 'pred': None, 'succ':139860249434960
+	'id': 139860249434960, 'type':move, 'x': 1, 'y': 5, 'd': 1, 'p': 1, 'tau': 735.714285714278, 'pred': 139860249435008, 'succ':139860249434912
+	'id': 139860249434912, 'type':unload, 'x': 5, 'y': 5, 'd': 1, 'p': 2, 'tau': 755.714285714278, 'pred': 139860249434960, 'succ':139860177978416
+	'id': 139860249434864, 'type':load, 'x': 5, 'y': 5, 'd': 2, 'p': 3, 'tau': 775.7142857143252, 'pred': None, 'succ':139860249434816
+	'id': 139860249434816, 'type':move, 'x': 5, 'y': 4, 'd': 2, 'p': 4, 'tau': 1491.4285714286116, 'pred': 139860249434864, 'succ':139860249435344
+	'id': 139860249435344, 'type':unload, 'x': 4, 'y': 4, 'd': 2, 'p': 5, 'tau': 1511.4285714286116, 'pred': 139860249434816, 'succ':139860249435056
+
+2:
+	'id': 139860249435056, 'type':load, 'x': 2, 'y': 2, 'd': 2, 'p': 0, 'tau': 20.0, 'pred': 139860249435344, 'succ':139860249434576
+	'id': 139860249434576, 'type':move, 'x': 2, 'y': 5, 'd': 2, 'p': 1, 'tau': 735.7142857142926, 'pred': 139860249435056, 'succ':139860177833888
+	'id': 139860177833888, 'type':unload, 'x': 5, 'y': 5, 'd': 2, 'p': 2, 'tau': 755.7142857142926, 'pred': 139860249434576, 'succ':None
+	'id': 139860177978416, 'type':load, 'x': 5, 'y': 5, 'd': 1, 'p': 3, 'tau': 775.7142857142926, 'pred': 139860249434912, 'succ':139860177978464
+	'id': 139860177978464, 'type':move, 'x': 5, 'y': 3, 'd': 1, 'p': 4, 'tau': 1491.4285714286116, 'pred': 139860177978416, 'succ':139860177978512
+	'id': 139860177978512, 'type':unload, 'x': 3, 'y': 3, 'd': 1, 'p': 5, 'tau': 1511.4285714286116, 'pred': 139860177978464, 'succ':None
+------------------------------
+
+	Saving solution in ./out/Small/S5D2U2/9/MILP-primal/schedule.json
+saving schedule
+saving metrics
