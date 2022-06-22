@@ -5,10 +5,8 @@ class Delivery:
         self.src = ws_src
         self.dst = ws_dst
         self.weight = weight
-        self.currentStation = ws_src
 
-    def updateStation(self, w: Station):
-        self.currentStation = w
+
 
     def printInfo(self):
         print(f"Mission source: {self.src.ID}")

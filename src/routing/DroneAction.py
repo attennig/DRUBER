@@ -49,6 +49,7 @@ class DroneAction:
         if self.type == "swap":
             return SWAP_TIME
         return 0
+
     def getEnergyCost(self, simulation):
         if self.type == "move":
             w = 0

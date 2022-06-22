@@ -6,13 +6,5 @@ class PathPlanner:
         self.simulation = sim
         self.exec_time = 0
 
-    def setupProblem(self):
-        pass
-
     def solveProblem(self): #-> Schedule
         pass
-
-    def getRunTime(self):
-        pass
-
-

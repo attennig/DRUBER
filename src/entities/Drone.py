@@ -6,11 +6,7 @@ class Drone:
         self.ID = ID
         self.home = home
         self.SoC = initSoC
-        self.currentStation = home
-        self.isRecharging = False
 
-    def updateStation(self, s : Station):
-        self.currentStation = s
 
     def printInfo(self):
         print(f"Drone {self.ID} is initially located in way-station number {self.home.ID}")

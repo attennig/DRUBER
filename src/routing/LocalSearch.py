@@ -7,8 +7,7 @@ class LocalSearch(PathPlanner):
         PathPlanner.__init__(self, sim)
         self.algo = algo
 
-    def setupProblem(self):
-        pass
+
 
     def solveProblem(self):
 
@@ -41,21 +40,6 @@ class LocalSearch(PathPlanner):
             neighbours = state.computeNeighbours()
             Q += [n for n in neighbours if n not in V]
         return objstate
-
-    def copystates(self):
-        state = self.stateInit()
-        state_copy = copy.deepcopy(state)
-        state_copy.updateTimes(2,0)
-        #print(f"original state {state}")
-        #print(f"copied state {state}")
-        return state
-
-    def exp(self):
-        state = self.stateInit()
-        for i in range(300):
-            neighbours = state.computeNeighbours()
-            #print(f"visiting \n{state}\n\twith value {state.getCompletionTime()}")
-            state = sorted(neighbours, key=lambda state: state.getCompletionTime())[0]
 
 
     def BFSOPT(self):
@@ -114,6 +98,3 @@ class LocalSearch(PathPlanner):
         greedySolver = Greedy(self.simulation)
         solution = greedySolver.solveProblem()
         return solution
-
-    def getRunTime(self):
-        pass
