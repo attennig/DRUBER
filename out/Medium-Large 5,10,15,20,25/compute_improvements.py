@@ -16,7 +16,7 @@ with open('aggregate_res_10d_out.csv', mode='w') as out_file:
             UT_gr = float(line[3])
         CT_alg = float(line[2])
         UT_alg = float(line[3])
-        new_line = f"{line_str},{100*(CT_gr-CT_alg)/CT_alg},{100*(UT_alg-UT_gr)/UT_gr}\n"
+        new_line = f"{line_str},{100*(CT_alg-CT_gr)/CT_gr},{100*(UT_alg-UT_gr)/UT_gr}\n"
         out_file.write(new_line)
 
 '''
