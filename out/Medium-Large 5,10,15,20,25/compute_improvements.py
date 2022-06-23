@@ -1,22 +1,37 @@
 
 
-with open('aggregate_results10.csv', mode='r') as in_file:
+with open('results.csv', mode='r') as in_file:
     content = in_file.read().splitlines()
 CT_gr = 0
-with open('aggregate_res_10d_out.csv', mode='w') as out_file:
+with open('results_out.csv', mode='w') as out_file:
+    # completion time
+    # CT reduction perc
+    # mean numbero of parcel handover
+    # drone utilization
+    # drone utilization time
+    # UT increase perc
+    # exec time
+    # mean drone energy consumption
+    # mean number of battery replecement
+    # ,,mean_schedule_time 6 ,mean_flight_time 7 ,mean_swap_time 8,mean_load_unload_time9,mean_waiting_time10,mean_delivery_time11,mean_schedule_distance12,,,total_number_parcel_handover17,mean_number_parcel_handover,execution_time,perc_flight_time,perc_swap_time,perc_load_unload_time,perc_waiting_time,diff_demand-cons
 
-    out_file.write(f"{content[0]},CT_reduction_perc,UT_increase_perc\n")
+    out_file.write(f"nstations,ndeliveries,ndrones,seed,algorithm,completion_time,mean_schedule_energy,mean_number_swaps,drone_utilization_time,drone_utilization,mean_number_parcel_handover,execution_time,CT_reduction_perc,UT_increase_perc\n")
+    #                 0         1            2      3      4            5         13                    14                 15                      16              18                               19
 
+
+    #line = content[0].split(",")
+    #print(f"{','.join(map(str,line[:6]))},{','.join(map(str,line[13:17]))},{','.join(map(str,line[18:20]))}")
     for line_str in content[1:]:
-        print(line_str)
-        line = line_str.split(",")
 
-        if line[1] == "GREEDY":
-            CT_gr = float(line[2])
-            UT_gr = float(line[3])
-        CT_alg = float(line[2])
-        UT_alg = float(line[3])
-        new_line = f"{line_str},{100*(CT_alg-CT_gr)/CT_gr},{100*(UT_alg-UT_gr)/UT_gr}\n"
+        line = line_str.split(",")
+        if line[4] == "GREEDY":
+            CT_gr = float(line[5])
+            UT_gr = float(line[15])
+            print(f"{CT_gr}, {UT_gr}")
+        CT_alg = float(line[5])
+        UT_alg = float(line[15])
+
+        new_line = f"{','.join(map(str,line[:6]))},{','.join(map(str,line[13:17]))},{','.join(map(str,line[18:20]))},{100*(CT_alg-CT_gr)/CT_gr},{100*(UT_alg-UT_gr)/UT_gr}\n"
         out_file.write(new_line)
 
 '''
